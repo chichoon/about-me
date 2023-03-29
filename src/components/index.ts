@@ -7,3 +7,4 @@ export { IntroPage } from './IntroPage';
 export { ProjectsPage } from './ProjectsPage';
 export { ProjectPage } from './ProjectPage';
 export { FootprintsPage } from './FootprintsPage';
+export { FootprintPage } from './FootprintPage';
