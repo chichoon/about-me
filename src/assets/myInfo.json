@@ -17,7 +17,8 @@
   },
   "projects": [
     {
-      "title": "뭐뭐하는프로젝트",
+      "key": "jst",
+      "title": "JST",
       "imageRef": "https://avatars.githubusercontent.com/u/37893979?v=4",
       "period": "2017년 3월 ~ 2021년 2월",
       "github": "https://github.com/chichoon",
@@ -26,7 +27,8 @@
       "description": ["뭐뭐뭐", "뭐뭐뭐", "뭐뭐뭐"]
     },
     {
-      "title": "뭐뭐하는프로젝트",
+      "key": "scopa",
+      "title": "SCOPA",
       "imageRef": "https://avatars.githubusercontent.com/u/37893979?v=4",
       "period": "2017년 3월 ~ 2021년 2월",
       "github": "https://github.com/chichoon",

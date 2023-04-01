@@ -1,6 +1,8 @@
 import Head from 'next/head';
 
+import myInfo from '@/assets/myInfo.json';
 import styles from '@/styles/Home.module.css';
+import Link from 'next/link';
 
 const Home = () => {
   return (
@@ -11,7 +13,17 @@ const Home = () => {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <main className={styles.main}>hihi</main>
+      <main className={styles.main}>
+        <menu>
+          {myInfo.projects.map(({ key, title }) => (
+            <li key={`experience-${key}`}>
+              <Link href={`/projects/${key}`}>
+                <span>{title}</span>
+              </Link>
+            </li>
+          ))}
+        </menu>
+      </main>
     </>
   );
 };
