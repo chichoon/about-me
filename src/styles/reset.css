@@ -143,12 +143,44 @@ a {
 button {
   background-color: transparent;
   color: initial;
-  border: none;
   font-size: initial;
+  border: 0;
   padding: 0;
   margin: 0;
+  cursor: pointer;
+  user-select: none;
 }
 
-button:hover {
-  cursor: pointer;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  letter-spacing: -0.05em;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+img {
+  border: 0;
+}
+
+input::-webkit-contacts-auto-fill-button {
+  position: absolute;
+  right: 0;
+  display: none !important;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+input {
+  background-color: transparent;
+  background-image: none !important;
+  border: 0;
 }
