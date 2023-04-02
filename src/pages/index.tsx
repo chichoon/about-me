@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 
 import myInfo from '@/assets/myInfo.json';
 import styles from '@/styles/Home.module.css';
@@ -14,6 +15,7 @@ const Home = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main className={styles.main}>
+        <Image src='/profile.png' alt='my profile photo' width={150} height={150} />
         <menu>
           {myInfo.projects.map(({ key, title }) => (
             <li key={`experience-${key}`}>
