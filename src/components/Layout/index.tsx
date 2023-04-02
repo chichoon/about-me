@@ -1,10 +1,12 @@
 import Head from 'next/head';
 
+import { Header } from './Header';
+
 interface Props {
   children: JSX.Element;
 }
 
-const Layout = ({ children }: Props) => {
+export const Layout = ({ children }: Props) => {
   return (
     <>
       <Head>
@@ -13,9 +15,8 @@ const Layout = ({ children }: Props) => {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
+      <Header />
       <main>{children}</main>
     </>
   );
 };
-
-export default Layout;
