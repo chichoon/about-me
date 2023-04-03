@@ -1,0 +1,63 @@
+.headerWrapper {
+  background-color: $WHITE;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100vw;
+  height: 200px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 50px;
+  margin-bottom: 25px;
+  border: 1px solid black; // TODO: 지울 것
+
+  @include after(SD) {
+    height: 150px;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+.headerImage {
+  border-radius: 5px;
+  @include after(SD) {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.headerProfileSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100px;
+  margin-left: 50px;
+
+  @include after(SD) {
+    height: 75px;
+    margin-left: 25px;
+  }
+}
+
+.headerProfileNamespace {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 25px;
+
+  & > h1 {
+    font-size: $FONT_XL;
+  }
+
+  & > a {
+    width: 30px;
+    height: 30px;
+    margin-left: 25px;
+  }
+}
+
+.headerIcons {
+  width: 30px;
+  height: 30px;
+}

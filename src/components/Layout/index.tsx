@@ -10,8 +10,8 @@ export const Layout = ({ children }: Props) => {
   return (
     <>
       <Head>
-        <title>About Chichoon</title>
-        <meta name='description' content='치춘에 관한 소개글' />
+        <title>About Ji Yoon Choi</title>
+        <meta name='description' content='About Ji Yoon Choi' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
