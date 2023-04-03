@@ -5,7 +5,7 @@ import myInfo from '@/assets/myInfo.json';
 
 import styles from './Header.module.scss';
 
-export const Header = ({}) => {
+export const Header = () => {
   return (
     <header className={styles.headerWrapper}>
       <Image src='/profile.jpg' alt='chichoon profile' width={150} height={150} className={styles.headerImage} />
