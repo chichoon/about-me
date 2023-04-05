@@ -1,24 +1,22 @@
 import { css } from '@emotion/react';
-import styled from '@emotion/styled';
 
-// export const starWrapper = css({
-//   display: 'flex',
-//   flexDirection: 'row',
-//   alignItems: 'center',
+import { COLORS } from '@/styles/colors';
+import { ELEMENT_SHADOW } from '@/pages/secret/constants';
 
-//   svg: {
-//     width: 20,
-//     height: 20,
-//     transform: 'rotate(15deg)',
-//     ':not(:first-child)': {
-//       marginLeft: -8,
-//     },
-//   },
-// });
+export const starWrapper = css({
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
 
-export const starWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  fill: ${({ theme }) => theme.color.$WHITE};
-`;
+  svg: {
+    width: 25,
+    height: 25,
+    transform: 'rotate(15deg)',
+    fill: COLORS.WHITE,
+    filter: `drop-shadow(${ELEMENT_SHADOW})`,
+
+    ':not(:first-child)': {
+      marginLeft: -10,
+    },
+  },
+});

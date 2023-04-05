@@ -9,6 +9,7 @@ export const SECRET_COLORS = {
   BUTTON_ICON_INNER: '#2f2f2f',
 
   BOX_SHADOW: '#00000060',
+  BOX_SHADOW_THICK: '#000000A0',
   GROUP_ICON: '#00000033',
 };
 
@@ -21,3 +22,4 @@ export const SECRET_LEVELS = {
 
 export const UI_SHADOW = `0 0 10px 10px ${SECRET_COLORS.BOX_SHADOW}`;
 export const BG_SHADOW = `0 0 30px 30px ${SECRET_COLORS.BOX_SHADOW}`;
+export const ELEMENT_SHADOW = `0 0 3px ${SECRET_COLORS.BOX_SHADOW_THICK}`;
