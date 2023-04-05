@@ -10,8 +10,10 @@ import SquareIcon from './squareIcon.svg';
 import StarIcon from './starIcon.svg';
 import SwordIcon from './swordIcon.svg';
 import InfoIcon from './infoIcon.svg';
+import ReactIcon from './reactIcon.svg';
 
 export {
+  ReactIcon,
   InfoIcon,
   CheckIcon,
   FastForwardIcon,
