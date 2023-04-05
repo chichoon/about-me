@@ -9,8 +9,10 @@ import ShieldIcon from './shieldIcon.svg';
 import SquareIcon from './squareIcon.svg';
 import StarIcon from './starIcon.svg';
 import SwordIcon from './swordIcon.svg';
+import InfoIcon from './infoIcon.svg';
 
 export {
+  InfoIcon,
   CheckIcon,
   FastForwardIcon,
   HangerIcon,
