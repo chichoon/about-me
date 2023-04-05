@@ -1,15 +1,21 @@
-import styles from './FileIcon.module.scss';
+import {
+  wrapperDivStyle,
+  innerDivElementStyle,
+  innerDivWrapperStyle,
+  innerDivPositionStyle,
+  lineStyle,
+} from './FileIcon.styles';
 
 export const FileIcon = () => {
   return (
-    <div className={styles.wrapperDiv}>
-      <div className={`${styles.innerDivElement} ${styles.innerDiv1}`} />
-      <hr className={`${styles.line} ${styles.line1}`} />
-      <div className={`${styles.innerDivElement} ${styles.innerDiv3}`} />
-      <hr className={`${styles.line} ${styles.line2}`} />
-      <div className={`${styles.innerDivElement} ${styles.innerDiv4}`} />
-      <div className={styles.innerDivWrapper}>
-        <div className={styles.innerDivElement} />
+    <div css={wrapperDivStyle}>
+      <div css={[innerDivElementStyle, innerDivPositionStyle(0, 0)]} />
+      <hr css={lineStyle(false)} />
+      <div css={[innerDivElementStyle, innerDivPositionStyle(16, 16)]} />
+      <hr css={lineStyle(true)} />
+      <div css={[innerDivElementStyle, innerDivPositionStyle(20, 20)]} />
+      <div css={innerDivWrapperStyle}>
+        <div css={innerDivElementStyle} />
       </div>
     </div>
   );
