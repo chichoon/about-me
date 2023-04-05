@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+
 import { TopButtonSection } from './TopButtonSection';
 import { StatusSection } from './StatusSection/index';
+
+import styles from './secret.module.scss';
 
 export const Secret = () => {
   const [windowWidth, setWindowWidth] = useState(0);
@@ -23,7 +26,7 @@ export const Secret = () => {
   }, []);
 
   return (
-    <main>
+    <main className={styles.backgroundWrapper}>
       {windowWidth > 720 ? (
         <>
           <TopButtonSection />

@@ -1,4 +1,4 @@
-import { Secret } from './Secret';
+import { Secret } from './components/Secret';
 
 const secret = () => {
   return <Secret />;
