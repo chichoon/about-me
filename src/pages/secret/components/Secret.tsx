@@ -30,13 +30,7 @@ export const Secret = () => {
     <main className={styles.secretPageBackgroundWrapper}>
       {windowWidth > 300 ? (
         <>
-          <Image
-            src='/test_bg.png'
-            width={1280}
-            height={720}
-            alt='background'
-            className={styles.secretPageBackgroundImage}
-          />
+          <Image src='/test_bg.png' width={1280} height={720} alt='background' />
           <ReactIcon className={styles.groupIcon} />
           <TopButtonSection />
           <Image src='/test_goat.png' width={720} height={720} alt='operator' className={styles.characterImage} />

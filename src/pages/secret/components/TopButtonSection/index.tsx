@@ -6,7 +6,7 @@ import { FileIcon } from './FileIcon';
 
 export const TopButtonSection = () => {
   return (
-    <section className={styles.buttonWrapper}>
+    <nav className={styles.buttonWrapper}>
       <div className={styles.leftButtonWrapper}>
         <button type='button' className={`${styles.topButton} ${styles.goBackButton}`}>
           <LeftArrowIcon />
@@ -29,6 +29,6 @@ export const TopButtonSection = () => {
       <button type='button' className={`${styles.topButton} ${styles.infoButton}`}>
         <RookIcon />
       </button>
-    </section>
+    </nav>
   );
 };
