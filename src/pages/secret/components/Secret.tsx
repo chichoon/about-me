@@ -26,13 +26,22 @@ export const Secret = () => {
   }, []);
 
   return (
-    <main className={styles.backgroundWrapper}>
+    <main className={styles.secretPageBackgroundWrapper}>
       {windowWidth > 720 ? (
         <>
-          <TopButtonSection />
-          <div>
-            <Image src='/test_goat.png' width={720} height={720} alt='operator' />
-            <StatusSection />
+          <Image
+            src='/test_bg.png'
+            width={1280}
+            height={720}
+            alt='background'
+            className={styles.secretPageBackgroundImage}
+          />
+          <div className={styles.secretPageBackgroundInner}>
+            <TopButtonSection />
+            <div>
+              <Image src='/test_goat.png' width={720} height={720} alt='operator' />
+              <StatusSection />
+            </div>
           </div>
         </>
       ) : (
