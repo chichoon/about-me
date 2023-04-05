@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-import { SECRET_COLORS, SECRET_LEVELS } from '../../constants';
+import { SECRET_COLORS, SECRET_LEVELS } from '@/pages/secret/constants';
 
 export const wrapperStyle = css({
   backgroundColor: SECRET_COLORS.BG_UI,

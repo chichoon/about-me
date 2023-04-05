@@ -1,13 +1,12 @@
 import { LeftArrowIcon } from '@/assets/svgs';
 import { FileIcon } from './FileIcon';
-import { HangerIcon, HomeIcon, InfoIcon, RookIcon } from '../../assets';
+import { HangerIcon, InfoIcon, RookIcon } from '@/pages/secret/assets';
 
 import {
   buttonWrapperStyle,
   leftButtonWrapperStyle,
   topButtonStyle,
   goBackButtonStyle,
-  homeButtonStyle,
   infoButtonStyle,
   fileIconStyle,
   buttonIconStyle,

@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 import { TopButtonSection } from './TopButtonSection/index';
 import { StatusSection } from './StatusSection/index';
-import { ReactIcon } from '../assets';
+import { ReactIcon } from '@/pages/secret/assets';
 
 import { groupIconStyle, secretPageBackgroundWrapperStyle, characterImageStyle } from './Secret.styles';
 

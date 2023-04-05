@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { Roboto_Condensed } from 'next/font/google';
 
-import { StarIcon } from '@/pages/secret/assets';
+import { Stars } from './Stars';
 
 const robotoCondensed = Roboto_Condensed({ subsets: ['latin'], weight: '700' });
 
@@ -13,15 +13,9 @@ export const NameAndJobStats = () => {
         <span>{'>>'}</span>
         <span>0%</span>
       </div>
-      <div className={robotoCondensed.className}>
-        <div>
-          <StarIcon />
-          <StarIcon />
-          <StarIcon />
-          <StarIcon />
-          <StarIcon />
-        </div>
-        <h1>chichoon</h1>
+      <div>
+        <Stars nOfStars={4} />
+        <h1 className={robotoCondensed.className}>chichoon</h1>
       </div>
       <div>
         <Image src='' alt='job icon' />

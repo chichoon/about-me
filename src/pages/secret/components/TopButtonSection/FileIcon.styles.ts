@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-import { SECRET_COLORS } from '../../constants';
+import { SECRET_COLORS } from '@/pages/secret/constants';
 
 export const wrapperDivStyle = css({
   position: 'relative',
