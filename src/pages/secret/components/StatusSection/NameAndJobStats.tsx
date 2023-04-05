@@ -1,8 +1,9 @@
-import localFont from 'next/font/local';
 import Image from 'next/image';
-import { StarIcon } from '../../assets';
+import { Roboto_Condensed } from 'next/font/google';
 
-const helveticaCondenced = localFont({ src: '../../../../assets/HelveticaNeue-Condensed.otf' });
+import { StarIcon } from '@/pages/secret/assets';
+
+const robotoCondensed = Roboto_Condensed({ subsets: ['latin'], weight: '700' });
 
 export const NameAndJobStats = () => {
   return (
@@ -12,7 +13,7 @@ export const NameAndJobStats = () => {
         <span>{'>>'}</span>
         <span>0%</span>
       </div>
-      <div className={helveticaCondenced.className}>
+      <div className={robotoCondensed.className}>
         <div>
           <StarIcon />
           <StarIcon />
