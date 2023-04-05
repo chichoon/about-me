@@ -1,17 +1,7 @@
-import Image from 'next/image';
-import { TopButtonSection } from './TopButtonSection';
-import { StatusSection } from './StatusSection/index';
+import { Secret } from './Secret';
 
 const secret = () => {
-  return (
-    <main>
-      <TopButtonSection />
-      <div>
-        <Image src='' alt='operator' />
-        <StatusSection />
-      </div>
-    </main>
-  );
+  return <Secret />;
 };
 
 export default secret;
