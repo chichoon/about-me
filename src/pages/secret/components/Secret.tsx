@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
-import { TopButtonSection } from './TopButtonSection';
+import { TopButtonSection } from './TopButtonSection/index';
 import { StatusSection } from './StatusSection/index';
 
 import styles from './secret.module.scss';
@@ -27,7 +27,7 @@ export const Secret = () => {
 
   return (
     <main className={styles.secretPageBackgroundWrapper}>
-      {windowWidth > 720 ? (
+      {windowWidth > 300 ? (
         <>
           <Image
             src='/test_bg.png'
