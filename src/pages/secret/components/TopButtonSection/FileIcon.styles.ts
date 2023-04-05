@@ -1,17 +1,11 @@
 import { css } from '@emotion/react';
+
 import { SECRET_COLORS } from '../../constants';
 
 export const wrapperDivStyle = css({
   position: 'relative',
   width: 25,
   height: 25,
-});
-
-export const innerDivElementStyle = css({
-  position: 'absolute',
-  backgroundColor: SECRET_COLORS.BUTTON_ICON,
-  width: 4,
-  height: 4,
 });
 
 export const innerDivWrapperStyle = css({
@@ -26,12 +20,15 @@ export const innerDivWrapperStyle = css({
   border: `1px solid ${SECRET_COLORS.BUTTON_ICON}`,
 });
 
-export const innerDivPositionStyle = (top: number, right: number) => {
-  return css({
+export const innerDivElementStyle = (top: number, right: number) =>
+  css({
+    position: 'absolute',
+    backgroundColor: SECRET_COLORS.BUTTON_ICON,
+    width: 4,
+    height: 4,
     top,
     right,
   });
-};
 
 export const lineStyle = (isLeftToRight: boolean) => {
   return css({

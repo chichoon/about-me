@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-import { BG_SHADOW, SECRET_COLORS, SECRET_LEVELS, UI_SHADOW } from '../constants';
+import { BG_SHADOW, SECRET_COLORS, SECRET_LEVELS } from '../constants';
 
 export const secretPageBackgroundWrapperStyle = css({
   width: '100vw',

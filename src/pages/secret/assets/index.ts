@@ -11,8 +11,10 @@ import StarIcon from './starIcon.svg';
 import SwordIcon from './swordIcon.svg';
 import InfoIcon from './infoIcon.svg';
 import ReactIcon from './reactIcon.svg';
+import HomeBgSvg from './homeBg.svg';
 
 export {
+  HomeBgSvg,
   ReactIcon,
   InfoIcon,
   CheckIcon,

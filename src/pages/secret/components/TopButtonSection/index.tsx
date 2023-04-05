@@ -10,32 +10,32 @@ import {
   homeButtonStyle,
   infoButtonStyle,
   fileIconStyle,
+  buttonIconStyle,
 } from './TopButtonSection.styles';
+import { GoHomeButton } from './GoHomeButton';
 
 export const TopButtonSection = () => {
   return (
     <nav css={buttonWrapperStyle}>
       <div css={leftButtonWrapperStyle}>
         <button type='button' css={[topButtonStyle, goBackButtonStyle]}>
-          <LeftArrowIcon />
+          <LeftArrowIcon css={buttonIconStyle} />
         </button>
-        <button type='button' css={[topButtonStyle, homeButtonStyle]}>
-          <HomeIcon />
-        </button>
+        <GoHomeButton />
       </div>
       <button type='button' css={[topButtonStyle, infoButtonStyle]}>
         <div>
-          <InfoIcon />
+          <InfoIcon css={buttonIconStyle} />
         </div>
       </button>
       <button type='button' css={[topButtonStyle, fileIconStyle]}>
         <FileIcon />
       </button>
       <button type='button' css={topButtonStyle}>
-        <HangerIcon />
+        <HangerIcon css={buttonIconStyle} />
       </button>
       <button type='button' css={[topButtonStyle, infoButtonStyle]}>
-        <RookIcon />
+        <RookIcon css={buttonIconStyle} />
       </button>
     </nav>
   );

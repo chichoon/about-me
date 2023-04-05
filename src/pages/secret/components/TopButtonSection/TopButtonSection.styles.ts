@@ -27,12 +27,12 @@ export const topButtonStyle = css({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+});
 
-  svg: {
-    width: 25,
-    height: 25,
-    fill: SECRET_COLORS.BUTTON_ICON,
-  },
+export const buttonIconStyle = css({
+  width: 25,
+  height: 25,
+  fill: SECRET_COLORS.BUTTON_ICON,
 });
 
 export const goBackButtonStyle = css({
