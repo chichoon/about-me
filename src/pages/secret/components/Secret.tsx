@@ -3,6 +3,7 @@ import Image from 'next/image';
 
 import { TopButtonSection } from './TopButtonSection/index';
 import { StatusSection } from './StatusSection/index';
+import { ReactIcon } from '../assets';
 
 import styles from './secret.module.scss';
 
@@ -36,13 +37,10 @@ export const Secret = () => {
             alt='background'
             className={styles.secretPageBackgroundImage}
           />
-          <div className={styles.secretPageBackgroundInner}>
-            <TopButtonSection />
-            <div>
-              <Image src='/test_goat.png' width={720} height={720} alt='operator' />
-              <StatusSection />
-            </div>
-          </div>
+          <ReactIcon className={styles.groupIcon} />
+          <TopButtonSection />
+          <Image src='/test_goat.png' width={720} height={720} alt='operator' className={styles.characterImage} />
+          <StatusSection />
         </>
       ) : (
         <div>Width is too small!</div>
