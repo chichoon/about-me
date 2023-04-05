@@ -1,4 +1,8 @@
+import localFont from 'next/font/local';
 import Image from 'next/image';
+import { StarIcon } from '../../assets';
+
+const helveticaCondenced = localFont({ src: '../../../../assets/HelveticaNeue-Condensed.otf' });
 
 export const NameAndJobStats = () => {
   return (
@@ -8,10 +12,15 @@ export const NameAndJobStats = () => {
         <span>{'>>'}</span>
         <span>0%</span>
       </div>
-      <div>
-        <div>별별별별별별</div>
-        <span>영문명</span>
-        <h1>캐릭터명</h1>
+      <div className={helveticaCondenced.className}>
+        <div>
+          <StarIcon />
+          <StarIcon />
+          <StarIcon />
+          <StarIcon />
+          <StarIcon />
+        </div>
+        <h1>chichoon</h1>
       </div>
       <div>
         <Image src='' alt='job icon' />
