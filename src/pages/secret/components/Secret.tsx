@@ -4,12 +4,8 @@ import Image from 'next/image';
 import { TopButtonSection } from './TopButtonSection/index';
 import { StatusSection } from './StatusSection/index';
 import { ReactIcon } from '../assets';
-import {
-  groupIconStyle,
-  secretPageBackgroundImageStyle,
-  secretPageBackgroundWrapperStyle,
-  characterImageStyle,
-} from './Secret.styles';
+
+import { groupIconStyle, secretPageBackgroundWrapperStyle, characterImageStyle } from './Secret.styles';
 
 export const Secret = () => {
   const [windowWidth, setWindowWidth] = useState(0);
@@ -34,10 +30,9 @@ export const Secret = () => {
     <main css={secretPageBackgroundWrapperStyle}>
       {windowWidth > 300 ? (
         <>
-          <Image src='/test_bg.png' width={1280} height={720} alt='background' css={secretPageBackgroundImageStyle} />
           <ReactIcon css={groupIconStyle} />
           <TopButtonSection />
-          <Image src='/test_goat.png' width={720} height={720} alt='operator' css={characterImageStyle} />
+          <Image src='/test_goat.png' fill alt='operator' css={characterImageStyle} />
           <StatusSection />
         </>
       ) : (

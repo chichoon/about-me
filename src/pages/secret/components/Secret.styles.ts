@@ -1,21 +1,15 @@
 import { css } from '@emotion/react';
 
-import { SECRET_COLORS, SECRET_LEVELS, UI_SHADOW } from '../constants';
+import { BG_SHADOW, SECRET_COLORS, SECRET_LEVELS, UI_SHADOW } from '../constants';
 
 export const secretPageBackgroundWrapperStyle = css({
   width: '100vw',
   height: '100vh',
   overflow: 'hidden',
   position: 'relative',
-});
-
-export const secretPageBackgroundImageStyle = css({
-  position: 'absolute',
-  zIndex: SECRET_LEVELS.LEVEL_BACKGROUND,
-  width: '100vw',
-  height: '100vh',
-  objectFit: 'cover',
-  boxShadow: UI_SHADOW,
+  background: `no-repeat url('/test_bg.png')`,
+  backgroundSize: 'cover',
+  boxShadow: `inset ${BG_SHADOW}`,
 });
 
 export const groupIconStyle = css({
@@ -29,5 +23,7 @@ export const groupIconStyle = css({
 });
 
 export const characterImageStyle = css({
+  position: 'absolute',
+  objectFit: 'contain',
   zIndex: SECRET_LEVELS.LEVEL_CHAR_IMAGE,
 });
