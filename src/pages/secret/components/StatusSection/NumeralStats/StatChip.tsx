@@ -17,6 +17,7 @@ export const StatChip = ({ children, value, maxValue, hoverText }: Props) => {
       <div css={valueWrapperStyle(percentage)}>
         <span>{value}</span>
       </div>
+      <span style={{ display: 'none' }}>{hoverText}</span> {/* TODO: 호버링 하면 숨겨진 텍스트 표시 */}
     </div>
   );
 };

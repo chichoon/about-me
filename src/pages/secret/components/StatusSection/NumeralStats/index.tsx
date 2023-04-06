@@ -22,7 +22,7 @@ export const NumeralStats = () => {
           <SwordIcon />
         </StatChip>
         <StatChip value={21} hoverText='코스트'>
-          <PlusIcon />
+          <SquareIcon />
         </StatChip>
       </div>
       <div css={statChipDividerStyle}>
