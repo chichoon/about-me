@@ -6,7 +6,7 @@ import { SIZES } from '@/styles/sizes';
 
 export const trustWrapperStyle = css({
   background: `linear-gradient(to right, ${COLORS.WHITE} 0 30%, ${COLORS.WHITE_TRANSPARENT} 70% 100%)`,
-  width: '30vw',
+  width: 400,
   height: 30,
   borderRadius: 5,
   padding: '3px 1px 1px 1px',
