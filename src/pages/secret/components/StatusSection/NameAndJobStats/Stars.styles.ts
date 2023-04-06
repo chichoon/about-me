@@ -7,10 +7,11 @@ export const starWrapper = css({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
+  marginBottom: -5,
 
   svg: {
-    width: 25,
-    height: 25,
+    width: 30,
+    height: 30,
     transform: 'rotate(15deg)',
     fill: COLORS.WHITE,
     filter: `drop-shadow(${ELEMENT_SHADOW})`,

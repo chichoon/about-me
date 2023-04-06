@@ -7,7 +7,11 @@ import {
   trustWrapperStyle,
 } from './TrustStat.styles';
 
-export const TrustStat = () => {
+interface Props {
+  trustPercentage: number;
+}
+
+export const TrustStat = ({ trustPercentage }: Props) => {
   return (
     <div css={trustWrapperStyle}>
       <div css={trustTextWrapperStyle}>
@@ -15,9 +19,9 @@ export const TrustStat = () => {
           <span css={trustTextStyle}>신뢰도</span>
           <FastForwardIcon />
         </div>
-        <span css={trustTextStyle}>0%</span>
+        <span css={trustTextStyle}>{trustPercentage}%</span>
       </div>
-      <div css={progressBarStyle(50)} />
+      <div css={progressBarStyle(trustPercentage)} />
     </div>
   );
 };

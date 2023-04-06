@@ -3,17 +3,19 @@ import { Roboto_Condensed } from 'next/font/google';
 
 import { TrustStat } from './TrustStat';
 import { Stars } from './Stars';
+import { nameStyle, subNameStyle } from './NameAndJobStats.styles';
 
 const robotoCondensed = Roboto_Condensed({ subsets: ['latin'], weight: '700' });
 
 export const NameAndJobStats = () => {
   return (
-    <div>
-      <TrustStat />
-      <div>
-        <Stars nOfStars={4} />
-        <h1 className={robotoCondensed.className}>chichoon</h1>
-      </div>
+    <>
+      <TrustStat trustPercentage={0} />
+      <Stars nOfStars={4} />
+      <h2 css={subNameStyle}>Ji Yoon Choi</h2>
+      <h1 className={robotoCondensed.className} css={nameStyle}>
+        chichoon
+      </h1>
       <div>
         <Image src='' alt='job icon' />
         <div>
@@ -29,6 +31,6 @@ export const NameAndJobStats = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
