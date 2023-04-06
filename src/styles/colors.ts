@@ -10,5 +10,5 @@ export const COLORS = {
   GRAYE: '#eeeeee',
 
   BLACK_TRANSPARENT: '#11111170',
-  WHITE_TRANSPARENT: '#ffffff70',
+  WHITE_TRANSPARENT: '#ffffffC0',
 };

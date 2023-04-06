@@ -16,14 +16,14 @@ export const SECRET_COLORS = {
 };
 
 export const SECRET_LEVELS = {
-  LEVEL_BACKGROUND: '1',
-  LEVEL_CHAR_IMAGE: '3',
-  LEVEL_GROUP_IMAGE: '2',
-  LEVEL_UI: '4',
+  LEVEL_BACKGROUND: 1,
+  LEVEL_CHAR_IMAGE: 3,
+  LEVEL_GROUP_IMAGE: 2,
+  LEVEL_UI: 4,
 };
 
 export const SECRET_SIZES = {
-  SIZE_NAME: 100,
+  SIZE_NAME: 80,
   SIZE_SUBNAME: 20,
 };
 
