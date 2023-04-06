@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
-import { TopButtonSection } from './TopButtonSection/index';
+import { NavButtonSection } from './NavButtonSection/index';
 import { StatusSection } from './StatusSection/index';
 import { ReactIcon } from '@/pages/secret/assets';
 
@@ -31,7 +31,7 @@ export const Secret = () => {
       {windowWidth > 300 ? (
         <>
           <ReactIcon css={groupIconStyle} />
-          <TopButtonSection />
+          <NavButtonSection />
           <Image src='/test_goat.png' fill alt='operator' css={characterImageStyle} />
           <StatusSection />
         </>
