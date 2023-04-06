@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Roboto_Condensed } from 'next/font/google';
 
+import { TrustStat } from './TrustStat';
 import { Stars } from './Stars';
 
 const robotoCondensed = Roboto_Condensed({ subsets: ['latin'], weight: '700' });
@@ -8,11 +9,7 @@ const robotoCondensed = Roboto_Condensed({ subsets: ['latin'], weight: '700' });
 export const NameAndJobStats = () => {
   return (
     <div>
-      <div>
-        <span>신뢰도</span>
-        <span>{'>>'}</span>
-        <span>0%</span>
-      </div>
+      <TrustStat />
       <div>
         <Stars nOfStars={4} />
         <h1 className={robotoCondensed.className}>chichoon</h1>

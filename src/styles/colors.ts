@@ -9,5 +9,6 @@ export const COLORS = {
   GRAYC: '#cccccc',
   GRAYE: '#eeeeee',
 
-  BLACK_TRANSPARENT: '#11111111',
+  BLACK_TRANSPARENT: '#11111170',
+  WHITE_TRANSPARENT: '#ffffff70',
 };
