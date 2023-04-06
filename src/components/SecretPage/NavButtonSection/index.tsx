@@ -1,6 +1,6 @@
 import { LeftArrowIcon } from '@/assets/svgs';
 import { FileIcon } from './FileIcon';
-import { HangerIcon, InfoIcon, RookIcon } from '@/pages/secret/assets';
+import { HangerIcon, InfoIcon, RookIcon } from '@/components/SecretPage/assets';
 
 import {
   buttonWrapperStyle,

@@ -1,4 +1,4 @@
-import { StarIcon } from '@/pages/secret/assets';
+import { StarIcon } from '@/components/SecretPage/assets';
 import { starWrapper } from './Stars.styles';
 
 interface Props {

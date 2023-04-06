@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 
 import { ExpAndEliteLevelStats } from './ExpAndEliteLevelStats';
 import { SkillsAndTalentStats } from './SkillsAndTalentStats';
-import { SECRET_LEVELS } from '@/pages/secret/constants';
+import { SECRET_LEVELS } from '@/components/SecretPage/constants';
 
 export const RightStatusSection = () => {
   return (

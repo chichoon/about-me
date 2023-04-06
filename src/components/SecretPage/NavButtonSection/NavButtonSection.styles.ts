@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-import { SECRET_COLORS, SECRET_LEVELS, UI_SHADOW } from '@/pages/secret/constants';
+import { SECRET_COLORS, SECRET_LEVELS, UI_SHADOW } from '@/components/SecretPage/constants';
 
 export const buttonWrapperStyle = css({
   display: 'flex',

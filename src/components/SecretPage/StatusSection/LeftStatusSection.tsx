@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 
 import { NumeralStats } from './NumeralStats';
 import { NameAndJobStats } from './NameAndJobStats';
-import { SECRET_LEVELS } from '@/pages/secret/constants';
+import { SECRET_LEVELS } from '@/components/SecretPage/constants';
 
 export const LeftStatusSection = () => {
   return (

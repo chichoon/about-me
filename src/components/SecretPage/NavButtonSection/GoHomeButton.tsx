@@ -1,4 +1,4 @@
-import { HomeBgSvg, HomeIcon } from '@/pages/secret/assets';
+import { HomeBgSvg, HomeIcon } from '@/components/SecretPage/assets';
 import { wrapperStyle, homeBgSvgStyle, homeSvgStyle } from './GoHomeButton.styles';
 
 export const GoHomeButton = () => {

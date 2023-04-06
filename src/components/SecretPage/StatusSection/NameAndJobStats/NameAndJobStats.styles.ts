@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-import { SECRET_SIZES } from '@/pages/secret/constants';
+import { SECRET_SIZES } from '@/components/SecretPage/constants';
 import { COLORS } from '@/styles/colors';
 
 export const nameStyle = css({

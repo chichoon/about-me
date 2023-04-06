@@ -1,4 +1,4 @@
-import { FastForwardIcon } from '@/pages/secret/assets';
+import { FastForwardIcon } from '@/components/SecretPage/assets';
 import {
   progressBarStyle,
   trustLeftTextStyle,

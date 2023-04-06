@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 
 import { COLORS } from '@/styles/colors';
-import { ELEMENT_SHADOW } from '@/pages/secret/constants';
+import { ELEMENT_SHADOW } from '@/components/SecretPage/constants';
 
 export const starWrapper = css({
   display: 'flex',

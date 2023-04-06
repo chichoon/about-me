@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-import { SECRET_COLORS } from '@/pages/secret/constants';
+import { SECRET_COLORS } from '@/components/SecretPage/constants';
 import { COLORS } from '@/styles/colors';
 import { SIZES } from '@/styles/sizes';
 

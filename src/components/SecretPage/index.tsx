@@ -1,13 +1,17 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
-import { NavButtonSection } from './NavButtonSection';
-import { StatusSection } from './StatusSection';
-import { ReactIcon } from '@/pages/secret/assets';
+import { NavButtonSection } from '@/components/SecretPage/NavButtonSection';
+import { StatusSection } from '@/components/SecretPage/StatusSection';
+import { ReactIcon } from '@/components/SecretPage/assets';
 
-import { groupIconStyle, secretPageBackgroundWrapperStyle, characterImageStyle } from './Secret.styles';
+import {
+  groupIconStyle,
+  secretPageBackgroundWrapperStyle,
+  characterImageStyle,
+} from '@/components/SecretPage/Secret.styles';
 
-export const Secret = () => {
+export const SecretPage = () => {
   const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {

@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 
 import { COLORS } from '@/styles/colors';
-import { SECRET_COLORS } from '@/pages/secret/constants';
+import { SECRET_COLORS } from '@/components/SecretPage/constants';
 import { SIZES } from '@/styles/sizes';
 
 export const numeralStatsWrapperStyle = css({

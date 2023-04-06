@@ -1,4 +1,11 @@
-import { FastForwardIcon, HourglassIcon, PlusIcon, ShieldIcon, SquareIcon, SwordIcon } from '@/pages/secret/assets';
+import {
+  FastForwardIcon,
+  HourglassIcon,
+  PlusIcon,
+  ShieldIcon,
+  SquareIcon,
+  SwordIcon,
+} from '@/components/SecretPage/assets';
 import { StatChip } from './StatChip';
 import { numeralStatsTitleStyle, numeralStatsWrapperStyle, statChipDividerStyle } from './NumeralStats.styles';
 
