@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
-import { NavButtonSection } from './NavButtonSection/index';
-import { StatusSection } from './StatusSection/index';
+import { NavButtonSection } from './NavButtonSection';
+import { StatusSection } from './StatusSection';
 import { ReactIcon } from '@/pages/secret/assets';
 
 import { groupIconStyle, secretPageBackgroundWrapperStyle, characterImageStyle } from './Secret.styles';
