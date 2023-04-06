@@ -9,11 +9,11 @@ export const numeralStatsWrapperStyle = css({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  width: 200,
+  width: 205,
 });
 
 export const numeralStatsTitleStyle = css({
-  background: `linear-gradient(to right, ${COLORS.WHITE} 0 30%, ${COLORS.WHITE_TRANSPARENT} 70% 100%)`,
+  background: COLORS.WHITE_TRANSPARENT,
   width: '100%',
   height: 20,
   padding: 1,
@@ -40,4 +40,8 @@ export const statChipDividerStyle = css({
   alignItems: 'center',
   justifyContent: 'space-between',
   width: '100%',
+
+  ':not(:last-child)': {
+    marginBottom: 5,
+  },
 });

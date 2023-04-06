@@ -6,7 +6,7 @@ import { COLORS } from '@/styles/colors';
 export const statChipWrapperStyle = css({
   width: 100,
   height: 20,
-  background: `linear-gradient(to right, ${COLORS.WHITE} 0 30%, ${COLORS.WHITE_TRANSPARENT} 70% 100%)`,
+  background: COLORS.WHITE_TRANSPARENT,
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
