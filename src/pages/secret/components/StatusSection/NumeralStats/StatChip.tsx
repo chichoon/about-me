@@ -1,4 +1,4 @@
-import { iconWrapperStyle, statChipWrapperStyle } from './StatChip.styles';
+import { iconWrapperStyle, statChipWrapperStyle, valueWrapperStyle } from './StatChip.styles';
 
 interface Props {
   children: JSX.Element;
@@ -8,11 +8,13 @@ interface Props {
 }
 
 export const StatChip = ({ children, value, maxValue, hoverText }: Props) => {
-  console.log(hoverText);
+  const percentage =
+    typeof value === 'number' && typeof maxValue === 'number' ? Math.floor((value * 100) / maxValue) : 0;
+
   return (
     <div css={statChipWrapperStyle}>
       <div css={iconWrapperStyle}>{children}</div>
-      <div>
+      <div css={valueWrapperStyle(percentage)}>
         <span>{value}</span>
       </div>
     </div>

@@ -18,6 +18,7 @@ export const numeralStatsTitleStyle = css({
   height: 20,
   padding: 1,
   marginBottom: 5,
+  borderRadius: 2,
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'flex-end',
