@@ -10,10 +10,10 @@ import {
   infoButtonStyle,
   fileIconStyle,
   buttonIconStyle,
-} from './TopButtonSection.styles';
+} from './NavButtonSection.styles';
 import { GoHomeButton } from './GoHomeButton';
 
-export const TopButtonSection = () => {
+export const NavButtonSection = () => {
   return (
     <nav css={buttonWrapperStyle}>
       <div css={leftButtonWrapperStyle}>
