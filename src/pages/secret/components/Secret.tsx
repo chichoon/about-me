@@ -32,7 +32,7 @@ export const Secret = () => {
         <>
           <ReactIcon css={groupIconStyle} />
           <NavButtonSection />
-          <Image src='/test_goat.png' fill alt='operator' css={characterImageStyle} />
+          <Image src='/test_operator.png' fill alt='operator' css={characterImageStyle} />
           <StatusSection />
         </>
       ) : (
