@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 
 import { NumeralStats } from './NumeralStats';
 import { NameAndJobStats } from './NameAndJobStats';
+import { SECRET_LEVELS } from '@/pages/secret/constants';
 
 export const LeftStatusSection = () => {
   return (
@@ -13,6 +14,7 @@ export const LeftStatusSection = () => {
 };
 
 export const leftStatSectionWrapper = css({
-  width: '30vw',
-  overflow: 'hidden',
+  maxWidth: '50vw',
+  padding: 20,
+  zIndex: SECRET_LEVELS.LEVEL_UI,
 });

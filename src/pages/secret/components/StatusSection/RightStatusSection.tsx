@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 
 import { ExpAndEliteLevelStats } from './ExpAndEliteLevelStats';
 import { SkillsAndTalentStats } from './SkillsAndTalentStats';
+import { SECRET_LEVELS } from '@/pages/secret/constants';
 
 export const RightStatusSection = () => {
   return (
@@ -13,6 +14,6 @@ export const RightStatusSection = () => {
 };
 
 export const rightStatSectionWrapper = css({
-  width: '30vw',
-  overflow: 'hidden',
+  maxWidth: '50vw',
+  zIndex: SECRET_LEVELS.LEVEL_UI,
 });
