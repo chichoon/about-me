@@ -14,9 +14,9 @@ export const NameAndJobStats = () => {
     <>
       <TrustStat trustPercentage={0} />
       <Stars nOfStars={4} />
-      <h2 css={subNameStyle}>Ji Yoon Choi</h2>
+      <h2 css={subNameStyle}>testnickname</h2>
       <h1 className={robotoCondensed.className} css={nameStyle}>
-        chichoon
+        testName
       </h1>
       <div>
         <Image src='' alt='job icon' />
