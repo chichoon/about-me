@@ -1,13 +1,18 @@
 /* eslint-disable camelcase */
 
 import Image from 'next/image';
-import { Roboto_Condensed } from 'next/font/google';
+import { Nanum_Myeongjo } from 'next/font/google';
 
 import { TrustStat } from './TrustStat';
 import { Stars } from './Stars';
 import { nameStyle, subNameStyle } from './NameAndJobStats.styles';
+import { css } from '@emotion/react';
 
-const robotoCondensed = Roboto_Condensed({ subsets: ['latin'], weight: '700' });
+const nanumMyeongjo = Nanum_Myeongjo({ subsets: ['latin'], weight: '800' });
+
+const fontFamily = css({
+  fontFamily: nanumMyeongjo.style.fontFamily,
+});
 
 export const NameAndJobStats = () => {
   return (
@@ -15,9 +20,7 @@ export const NameAndJobStats = () => {
       <TrustStat trustPercentage={0} />
       <Stars nOfStars={4} />
       <h2 css={subNameStyle}>testnickname</h2>
-      <h1 className={robotoCondensed.className} css={nameStyle}>
-        testName
-      </h1>
+      <h1 css={[nameStyle, fontFamily]}>chichoon</h1>
       <div>
         <Image src='' alt='job icon' />
         <div>

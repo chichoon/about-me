@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { css } from '@emotion/react';
 
 import { SECRET_SIZES } from '@/components/SecretPage/constants';
