@@ -1,5 +1,6 @@
 import { css } from '@emotion/react';
-import { SECRET_COLORS, UI_SHADOW_DIMMED } from '../../constants';
+
+import { SECRET_COLORS, UI_SHADOW_DIMMED } from '@/components/SecretPage/constants';
 import { SIZES } from '@/styles/sizes';
 
 export const jobStatWrapperStyle = css({
@@ -33,7 +34,7 @@ export const rangeWrapperStyle = css({
   marginLeft: 5,
   width: 100,
   height: 60,
-  borderRadius: 5,
+  borderRadius: 3,
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -41,6 +42,7 @@ export const rangeWrapperStyle = css({
   padding: 3,
 
   span: {
+    userSelect: 'none',
     fontSize: SIZES.$FONT_S,
     color: SECRET_COLORS.BUTTON_ICON,
   },

@@ -1,5 +1,6 @@
 import { FrontIcon } from '@/components/SecretPage/assets';
 import { RangeIcon } from './RangeIcon';
+import { Keywords } from './Keywords';
 
 import { jobIconStyle, jobStatDivStyle, jobStatWrapperStyle, rangeWrapperStyle } from './JobStat.styles';
 
@@ -13,14 +14,7 @@ export const JobStat = () => {
         <RangeIcon />
         <span>공격 범위</span>
       </div>
-      <div>
-        <div css={[jobStatDivStyle]}>
-          <span>원거리</span>
-        </div>
-        <div css={[jobStatDivStyle]}>
-          <span>범위공격 지원 제어형</span>
-        </div>
-      </div>
+      <Keywords />
     </div>
   );
 };
