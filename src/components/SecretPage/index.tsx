@@ -36,7 +36,7 @@ export const SecretPage = () => {
         <>
           <ReactIcon css={groupIconStyle} />
           <NavButtonSection />
-          <Image src='/test_operator.png' fill alt='operator' css={characterImageStyle} />
+          <Image src='/test.png' fill alt='operator' css={characterImageStyle} />
           <StatusSection />
         </>
       ) : (

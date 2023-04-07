@@ -28,6 +28,6 @@ export const groupIconStyle = css({
 
 export const characterImageStyle = css({
   position: 'absolute',
-  objectFit: 'cover',
+  objectFit: 'contain',
   zIndex: SECRET_LEVELS.LEVEL_CHAR_IMAGE,
 });
