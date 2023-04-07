@@ -7,6 +7,7 @@ import { COLORS } from '@/styles/colors';
 export const nameStyle = css({
   fontSize: SECRET_SIZES.SIZE_NAME,
   color: COLORS.WHITE,
+  marginBottom: 5,
   filter: `drop-shadow(0 0 2px ${COLORS.BLACK})`,
 });
 

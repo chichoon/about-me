@@ -39,7 +39,7 @@ export const trustLeftTextStyle = css({
 });
 
 export const trustTextStyle = css({
-  fontSize: SIZES.$FONT_M,
+  fontSize: SIZES.$FONT_ML,
 });
 
 export function progressBarStyle(percentage: number) {
