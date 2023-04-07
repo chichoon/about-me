@@ -8,10 +8,11 @@ export const starWrapper = css({
   flexDirection: 'row',
   alignItems: 'center',
   marginBottom: -5,
+  marginLeft: -5,
 
   svg: {
-    width: 30,
-    height: 30,
+    width: 40,
+    height: 40,
     transform: 'rotate(15deg)',
     fill: COLORS.WHITE,
     filter: `drop-shadow(${ELEMENT_SHADOW})`,

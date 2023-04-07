@@ -24,7 +24,7 @@ export const SECRET_LEVELS = {
 
 export const SECRET_SIZES = {
   SIZE_NAME: 80,
-  SIZE_SUBNAME: 20,
+  SIZE_SUBNAME: 30,
 };
 
 export const UI_SHADOW = `0 0 10px 10px ${SECRET_COLORS.BOX_SHADOW}`;
