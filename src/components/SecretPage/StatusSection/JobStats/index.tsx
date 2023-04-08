@@ -2,9 +2,9 @@ import { FrontIcon } from '@/components/SecretPage/assets';
 import { RangeIcon } from './RangeIcon';
 import { Keywords } from './Keywords';
 
-import { jobIconStyle, jobStatDivStyle, jobStatWrapperStyle, rangeWrapperStyle } from './JobStat.styles';
+import { jobIconStyle, jobStatDivStyle, jobStatWrapperStyle, rangeWrapperStyle } from './JobStats.styles';
 
-export const JobStat = () => {
+export const JobStats = () => {
   return (
     <div css={jobStatWrapperStyle}>
       <div css={[jobStatDivStyle, jobIconStyle]}>

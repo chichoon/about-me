@@ -1,4 +1,4 @@
-import { jobStatDivStyle } from './JobStat.styles';
+import { jobStatDivStyle } from './JobStats.styles';
 import { keywordInner, keywordWrapper } from './Keywords.styles';
 
 export const Keywords = () => {
