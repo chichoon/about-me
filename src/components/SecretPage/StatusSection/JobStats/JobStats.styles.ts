@@ -47,3 +47,31 @@ export const rangeWrapperStyle = css({
     color: SECRET_COLORS.BUTTON_ICON,
   },
 });
+
+export const keywordWrapper = css({
+  width: 120,
+  height: 60,
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  marginLeft: 5,
+});
+
+export const keywordInner = css({
+  width: '100%',
+  height: '100%',
+  textAlign: 'center',
+  borderRadius: 3,
+  padding: 2,
+
+  span: {
+    wordBreak: 'keep-all',
+    userSelect: 'none',
+    color: SECRET_COLORS.BUTTON_ICON,
+    fontSize: SIZES.$FONT_MS,
+    lineHeight: `${SIZES.$FONT_MS}px`,
+    height: `${SIZES.$FONT_MS}px`,
+    verticalAlign: 'center',
+  },
+});

@@ -23,7 +23,7 @@ export const ExpStats = () => {
         <div css={expInnerRowStyle}>
           <div css={expBarStyle}>
             <span>EXP</span>
-            <span>0/100</span>
+            <span>{percentage} / 100</span>
           </div>
           <div css={fillingBarStyle} />
         </div>

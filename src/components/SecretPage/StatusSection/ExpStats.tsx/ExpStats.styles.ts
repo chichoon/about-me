@@ -110,14 +110,14 @@ export const expBarStyle = css({
   span: {
     marginLeft: -10,
     color: COLORS.WHITE,
-    fontSize: SIZES.$FONT_S,
-    lineHeight: `${SIZES.$FONT_S}px`,
+    fontSize: SIZES.$FONT_M,
+    lineHeight: `${SIZES.$FONT_M}px`,
     marginBottom: 3,
   },
 
   'span:last-child': {
-    fontSize: SIZES.$FONT_XS,
-    lineHeight: `${SIZES.$FONT_XS}px`,
+    fontSize: SIZES.$FONT_S,
+    lineHeight: `${SIZES.$FONT_S}px`,
     marginBottom: 0,
   },
 });
