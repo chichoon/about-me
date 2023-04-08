@@ -20,5 +20,6 @@ export const RightStatusSection = () => {
 export const rightStatSectionWrapper = css({
   maxWidth: '50vw',
   padding: 20,
+  paddingRight: 0,
   zIndex: SECRET_LEVELS.LEVEL_UI,
 });

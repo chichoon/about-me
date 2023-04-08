@@ -141,7 +141,7 @@ export const jobTextWrapperStyle = css({
 export const talentWrapperStyle = css({
   display: 'flex',
   flexDirection: 'row',
-  marginTop: 10,
+  marginTop: 20,
 
   div: {
     padding: 5,

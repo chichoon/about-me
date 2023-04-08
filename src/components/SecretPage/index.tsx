@@ -9,15 +9,18 @@ import {
   groupIconStyle,
   secretPageBackgroundWrapperStyle,
   characterImageStyle,
+  tooSmallMessage,
 } from '@/components/SecretPage/Secret.styles';
 
 export const SecretPage = () => {
   const [windowWidth, setWindowWidth] = useState(0);
+  const [windowHeight, setWindowHeight] = useState(0);
 
   useEffect(() => {
     function onScreenResize(e: Event) {
       const target = e.target as Window;
       setWindowWidth(target.innerWidth);
+      setWindowHeight(target.innerHeight);
     }
 
     window.addEventListener('resize', onScreenResize);
@@ -27,12 +30,13 @@ export const SecretPage = () => {
   useEffect(() => {
     if (window instanceof Window) {
       setWindowWidth(window.innerWidth);
+      setWindowHeight(window.innerHeight);
     }
   }, []);
 
   return (
     <main css={secretPageBackgroundWrapperStyle}>
-      {windowWidth > 300 ? (
+      {windowWidth > 900 && windowHeight > 540 ? (
         <>
           <ReactIcon css={groupIconStyle} />
           <NavButtonSection />
@@ -40,7 +44,9 @@ export const SecretPage = () => {
           <StatusSection />
         </>
       ) : (
-        <div>Width is too small!</div>
+        <div css={tooSmallMessage}>
+          <span>Screen is too small!</span>
+        </div>
       )}
     </main>
   );
