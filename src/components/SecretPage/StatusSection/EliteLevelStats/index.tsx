@@ -1,10 +1,10 @@
-import { EliteParallelogram } from './EliteParallelogram';
+import { EliteIcon } from './EliteIcon';
 
 export const EliteLevelStats = () => {
   return (
     <div>
       <div>
-        <EliteParallelogram />
+        <EliteIcon />
         <div>
           <span>정예화</span>
           <span>+</span>
