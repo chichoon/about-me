@@ -8,7 +8,7 @@ export const expStatsWrapperStyle = css({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
-  width: 500,
+  width: 400,
 });
 
 export const levelCircleStyle = () =>

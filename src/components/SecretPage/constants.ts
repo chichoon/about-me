@@ -15,6 +15,7 @@ export const SECRET_COLORS = {
 
   HIGHLIGHT_ORANGE: '#FFAF6D',
   HIGHLIGHT_YELLOW: '#FFDE08',
+  HIGHLIGHT_BLUE: '#5DA5CF',
 };
 
 export const SECRET_LEVELS = {

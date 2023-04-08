@@ -1,21 +1,22 @@
 import { EliteIcon } from './EliteIcon';
+import { PotentialIcon } from './PotentialIcon';
 
-import { eliteStatsWrapperStyle, eliteWrapperStyle } from './EliteStats.styles';
+import { eliteInnerBarStyle, eliteStatsWrapperStyle, eliteWrapperStyle } from './EliteStats.styles';
 
 export const EliteStats = () => {
   return (
     <div css={eliteStatsWrapperStyle}>
       <div css={eliteWrapperStyle}>
         <EliteIcon />
-        <div>
+        <div css={eliteInnerBarStyle}>
           <span>정예화</span>
           <div>
             <span>MAX</span>
           </div>
         </div>
       </div>
-      <div>
-        <div>{/* 잠재능력 아이콘 */}</div>
+      <div css={eliteWrapperStyle}>
+        <PotentialIcon />
         <div>
           <span>잠재능력</span>
           <span>+</span>
