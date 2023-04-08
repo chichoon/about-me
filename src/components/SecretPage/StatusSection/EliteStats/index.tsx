@@ -1,13 +1,17 @@
 import { EliteIcon } from './EliteIcon';
 
-export const EliteLevelStats = () => {
+import { eliteStatsWrapperStyle, eliteWrapperStyle } from './EliteStats.styles';
+
+export const EliteStats = () => {
   return (
-    <div>
-      <div>
+    <div css={eliteStatsWrapperStyle}>
+      <div css={eliteWrapperStyle}>
         <EliteIcon />
         <div>
           <span>정예화</span>
-          <span>+</span>
+          <div>
+            <span>MAX</span>
+          </div>
         </div>
       </div>
       <div>
