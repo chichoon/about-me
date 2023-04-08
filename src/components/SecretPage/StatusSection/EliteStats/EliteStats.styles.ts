@@ -8,6 +8,7 @@ export const eliteStatsWrapperStyle = css({
   flexDirection: 'row',
   alignItems: 'center',
   width: 400,
+  marginBottom: 10,
 });
 
 export const eliteWrapperStyle = css({

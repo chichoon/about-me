@@ -1,11 +1,4 @@
-import {
-  FastForwardIcon,
-  HourglassIcon,
-  PlusIcon,
-  ShieldIcon,
-  SquareIcon,
-  SwordIcon,
-} from '@/components/SecretPage/assets';
+import { FastForwardIcon, HourglassIcon, PlusIcon, ShieldIcon, SwordIcon } from '@/components/SecretPage/assets';
 import { StatChip } from './StatChip';
 import { numeralStatsTitleStyle, numeralStatsWrapperStyle, statChipDividerStyle } from './NumeralStats.styles';
 
@@ -29,7 +22,7 @@ export const NumeralStats = () => {
           <SwordIcon />
         </StatChip>
         <StatChip value={21} hoverText='코스트'>
-          <SquareIcon />
+          <ShieldIcon />
         </StatChip>
       </div>
       <div css={statChipDividerStyle}>

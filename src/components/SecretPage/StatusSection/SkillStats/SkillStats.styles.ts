@@ -10,6 +10,7 @@ export const skillStatsWrapperStyle = css({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
+  marginBottom: 10,
 });
 
 export const skillIconsWrapperStyle = css({
