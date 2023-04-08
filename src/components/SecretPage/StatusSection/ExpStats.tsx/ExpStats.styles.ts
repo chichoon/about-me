@@ -67,6 +67,7 @@ export const expWrapperStyle = css({
   alignItems: 'flex-start',
   justifyContent: 'center',
   position: 'relative',
+  filter: `drop-shadow(0 0 2px ${SECRET_COLORS.BOX_SHADOW})`,
 });
 
 export const expBarStyle = css({
