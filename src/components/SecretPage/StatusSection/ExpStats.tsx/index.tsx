@@ -1,4 +1,12 @@
-import { expStatsWrapperStyle, levelCircleStyle, levelGraphStyle } from './ExpStats.styles';
+import {
+  expBarLeftTextStyle,
+  expBarStyle,
+  expStatsWrapperStyle,
+  expWrapperStyle,
+  levelAmountLeftStyle,
+  levelCircleStyle,
+  levelGraphStyle,
+} from './ExpStats.styles';
 
 export const ExpStats = () => {
   const percentage = 40;
@@ -10,15 +18,12 @@ export const ExpStats = () => {
         <span>LV</span>
         <span>90</span>
       </div>
-      <div>
-        <div>
-          <div>
-            <span>EXP</span>
-            <span>0/100</span>
-          </div>
-          <span>+</span>
+      <div css={expWrapperStyle}>
+        <div css={expBarStyle}>
+          <span>EXP</span>
+          <span>0/100</span>
         </div>
-        <span>/90</span>
+        <span css={levelAmountLeftStyle}>/ 90</span>
       </div>
     </div>
   );

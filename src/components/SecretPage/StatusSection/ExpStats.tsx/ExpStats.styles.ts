@@ -13,9 +13,10 @@ export const expStatsWrapperStyle = css({
 
 export const levelCircleStyle = () =>
   css({
-    width: 80,
-    height: 80,
+    width: 90,
+    height: 90,
     borderRadius: 50,
+    border: `5px solid transparent`,
     filter: `drop-shadow(0 0 2px ${SECRET_COLORS.BOX_SHADOW})`,
     display: 'flex',
     flexDirection: 'column',
@@ -40,8 +41,8 @@ export const levelCircleStyle = () =>
 
 export const levelGraphStyle = (degree: number) =>
   css({
-    width: 90,
-    height: 90,
+    width: 80,
+    height: 80,
     backgroundColor: COLORS.WHITE_TRANSPARENT,
     backgroundImage:
       degree <= 180
@@ -55,7 +56,52 @@ export const levelGraphStyle = (degree: number) =>
     mask: `radial-gradient(transparent 35px, ${COLORS.WHITE_TRANSPARENT} 35px, ${COLORS.WHITE_TRANSPARENT} 40px)`,
     transform: 'scaleX(-1)',
     position: 'absolute',
-    top: -5,
-    left: -5,
+    top: 0,
+    left: 0,
     zIndex: SECRET_LEVELS.LEVEL_BACKGROUND,
   });
+
+export const expWrapperStyle = css({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'flex-start',
+  justifyContent: 'center',
+  position: 'relative',
+});
+
+export const expBarStyle = css({
+  backgroundColor: SECRET_COLORS.BG_UI,
+  width: 300,
+  height: 40,
+  marginLeft: -30,
+  paddingLeft: 30,
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'flex-start',
+  justifyContent: 'center',
+
+  '-webkit-mask': `radial-gradient(circle, transparent 45px, ${SECRET_COLORS.BG_UI} 45px, ${SECRET_COLORS.BG_UI} 50px) -170px`,
+  mask: `radial-gradient(circle, transparent 45px, ${SECRET_COLORS.BG_UI} 45px, ${SECRET_COLORS.BG_UI} 50px) -170px`,
+
+  span: {
+    color: COLORS.WHITE,
+    fontSize: SIZES.$FONT_S,
+    lineHeight: `${SIZES.$FONT_S}px`,
+    marginBottom: 3,
+  },
+
+  'span:last-child': {
+    fontSize: SIZES.$FONT_XS,
+    lineHeight: `${SIZES.$FONT_XS}px`,
+    marginBottom: 0,
+  },
+});
+
+export const levelAmountLeftStyle = css({
+  position: 'absolute',
+  bottom: -15,
+  left: -7,
+  color: COLORS.WHITE,
+  fontSize: SIZES.$FONT_MS,
+  fontWeight: 700,
+});
