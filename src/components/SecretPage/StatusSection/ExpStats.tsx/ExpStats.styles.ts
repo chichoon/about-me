@@ -61,6 +61,15 @@ export const levelGraphStyle = (degree: number) =>
     zIndex: SECRET_LEVELS.LEVEL_BACKGROUND,
   });
 
+export const levelAmountLeftStyle = css({
+  position: 'absolute',
+  bottom: -15,
+  left: -7,
+  color: COLORS.WHITE,
+  fontSize: SIZES.$FONT_MS,
+  fontWeight: 700,
+});
+
 export const expWrapperStyle = css({
   display: 'flex',
   flexDirection: 'column',
@@ -70,21 +79,35 @@ export const expWrapperStyle = css({
   filter: `drop-shadow(0 0 2px ${SECRET_COLORS.BOX_SHADOW})`,
 });
 
-export const expBarStyle = css({
-  backgroundColor: SECRET_COLORS.BG_UI,
+export const expInnerRowStyle = css({
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'center',
+  position: 'relative',
   width: 300,
   height: 40,
-  marginLeft: -30,
+});
+
+export const expBarStyle = css({
+  backgroundColor: SECRET_COLORS.BG_UI,
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  width: 300,
+  height: 40,
+  borderRadius: 3,
   paddingLeft: 30,
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'flex-start',
   justifyContent: 'center',
 
-  '-webkit-mask': `radial-gradient(circle, transparent 45px, ${SECRET_COLORS.BG_UI} 45px, ${SECRET_COLORS.BG_UI} 50px) -170px`,
-  mask: `radial-gradient(circle, transparent 45px, ${SECRET_COLORS.BG_UI} 45px, ${SECRET_COLORS.BG_UI} 50px) -170px`,
+  '-webkit-mask': `radial-gradient(circle, transparent 45px, ${SECRET_COLORS.BG_UI} 45px) -190px`,
+  mask: `radial-gradient(circle, transparent 45px, ${SECRET_COLORS.BG_UI} 45px) -190px`,
 
   span: {
+    marginLeft: -10,
     color: COLORS.WHITE,
     fontSize: SIZES.$FONT_S,
     lineHeight: `${SIZES.$FONT_S}px`,
@@ -98,11 +121,12 @@ export const expBarStyle = css({
   },
 });
 
-export const levelAmountLeftStyle = css({
+export const fillingBarStyle = css({
+  backgroundColor: SECRET_COLORS.BG_UI,
+  width: 100,
+  height: 40,
+  borderRadius: 3,
   position: 'absolute',
-  bottom: -15,
-  left: -7,
-  color: COLORS.WHITE,
-  fontSize: SIZES.$FONT_MS,
-  fontWeight: 700,
+  top: 0,
+  right: 0,
 });

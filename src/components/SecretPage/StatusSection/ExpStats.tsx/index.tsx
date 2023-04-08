@@ -1,7 +1,9 @@
 import {
   expBarStyle,
+  expInnerRowStyle,
   expStatsWrapperStyle,
   expWrapperStyle,
+  fillingBarStyle,
   levelAmountLeftStyle,
   levelCircleStyle,
   levelGraphStyle,
@@ -18,9 +20,12 @@ export const ExpStats = () => {
         <span>90</span>
       </div>
       <div css={expWrapperStyle}>
-        <div css={expBarStyle}>
-          <span>EXP</span>
-          <span>0/100</span>
+        <div css={expInnerRowStyle}>
+          <div css={expBarStyle}>
+            <span>EXP</span>
+            <span>0/100</span>
+          </div>
+          <div css={fillingBarStyle} />
         </div>
         <span css={levelAmountLeftStyle}>/ 90</span>
       </div>
