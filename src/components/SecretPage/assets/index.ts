@@ -13,8 +13,14 @@ import InfoIcon from './infoIcon.svg';
 import ReactIcon from './reactIcon.svg';
 import HomeBgSvg from './homeBg.svg';
 import FrontIcon from './frontIcon.svg';
+import CSSIcon from './css3Icon.svg';
+import HTML5Icon from './html5Icon.svg';
+import TypescriptIcon from './typescriptIcon.svg';
 
 export {
+  TypescriptIcon,
+  CSSIcon,
+  HTML5Icon,
   FrontIcon,
   HomeBgSvg,
   ReactIcon,
