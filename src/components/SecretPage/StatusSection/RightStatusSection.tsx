@@ -4,6 +4,7 @@ import { SECRET_LEVELS } from '@/components/SecretPage/constants';
 import { ExpStats } from './ExpStats.tsx';
 import { EliteStats } from './EliteStats';
 import { SkillStats } from './SkillStats';
+import { TalentStats } from './TalentStats';
 
 export const RightStatusSection = () => {
   return (
@@ -11,6 +12,7 @@ export const RightStatusSection = () => {
       <ExpStats />
       <EliteStats />
       <SkillStats />
+      <TalentStats />
     </section>
   );
 };

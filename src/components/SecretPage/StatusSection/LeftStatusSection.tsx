@@ -3,14 +3,14 @@ import { css } from '@emotion/react';
 import { SECRET_LEVELS } from '@/components/SecretPage/constants';
 import { NumeralStats } from './NumeralStats';
 import { NameArea } from './NameArea';
-import { JobStat } from './JobStat';
+import { JobStats } from './JobStats';
 
 export const LeftStatusSection = () => {
   return (
     <section css={leftStatSectionWrapper}>
       <NumeralStats />
       <NameArea />
-      <JobStat />
+      <JobStats />
     </section>
   );
 };
