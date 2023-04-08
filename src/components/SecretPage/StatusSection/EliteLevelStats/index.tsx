@@ -1,10 +1,10 @@
-import Image from 'next/image';
+import { EliteParallelogram } from './EliteParallelogram';
 
 export const EliteLevelStats = () => {
   return (
     <div>
       <div>
-        <Image src='' alt='elite icon' />
+        <EliteParallelogram />
         <div>
           <span>정예화</span>
           <span>+</span>

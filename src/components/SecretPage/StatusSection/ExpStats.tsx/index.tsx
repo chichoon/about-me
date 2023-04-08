@@ -1,5 +1,4 @@
 import {
-  expBarLeftTextStyle,
   expBarStyle,
   expStatsWrapperStyle,
   expWrapperStyle,
