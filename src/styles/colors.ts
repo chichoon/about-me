@@ -11,4 +11,5 @@ export const COLORS = {
 
   BLACK_TRANSPARENT: '#11111170',
   WHITE_TRANSPARENT: '#ffffffC0',
+  WHITE_TRANSPARENT_DIMMED: '#ffffff90',
 };

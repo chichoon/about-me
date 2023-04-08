@@ -7,4 +7,5 @@ export const SIZES = {
   $FONT_L: 20,
   $FONT_XL: 25,
   $FONT_XXL: 30,
+  $FONT_XXXL: 40,
 };

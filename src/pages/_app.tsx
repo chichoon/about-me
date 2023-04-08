@@ -18,7 +18,7 @@ const App = ({ Component, pageProps }: AppProps) => {
             font-family: ${noto.style.fontFamily};
           }
         `}</style>
-        <Global styles={global} /> <Component {...pageProps} />;
+        <Global styles={global} /> <Component {...pageProps} />
       </>
     </ThemeProvider>
   );
