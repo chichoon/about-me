@@ -128,5 +128,5 @@ export const fillingBarStyle = css({
   borderRadius: 3,
   position: 'absolute',
   top: 0,
-  right: 0,
+  right: 25,
 });

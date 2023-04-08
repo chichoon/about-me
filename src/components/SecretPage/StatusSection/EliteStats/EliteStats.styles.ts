@@ -1,7 +1,6 @@
 import { css } from '@emotion/react';
 
 import { SECRET_COLORS } from '@/components/SecretPage/constants';
-import { COLORS } from '@/styles/colors';
 import { SIZES } from '@/styles/sizes';
 
 export const eliteStatsWrapperStyle = css({
@@ -32,7 +31,7 @@ export const eliteInnerBarStyle = css({
   justifyContent: 'center',
 
   span: {
-    color: COLORS.WHITE,
+    color: SECRET_COLORS.BUTTON_ICON_DIMMED,
   },
 
   div: {

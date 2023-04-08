@@ -17,9 +17,11 @@ export const EliteStats = () => {
       </div>
       <div css={eliteWrapperStyle}>
         <PotentialIcon />
-        <div>
+        <div css={eliteInnerBarStyle}>
           <span>잠재능력</span>
-          <span>+</span>
+          <div>
+            <span>MAX</span>
+          </div>
         </div>
       </div>
     </div>
