@@ -1,13 +1,15 @@
 import { css } from '@emotion/react';
 
-import { ExpAndEliteLevelStats } from './ExpAndEliteLevelStats';
-import { SkillsAndTalentStats } from './SkillsAndTalentStats';
 import { SECRET_LEVELS } from '@/components/SecretPage/constants';
+import { SkillsAndTalentStats } from './SkillsAndTalentStats';
+import { ExpStats } from './ExpStats.tsx';
+import { EliteLevelStats } from './EliteLevelStats';
 
 export const RightStatusSection = () => {
   return (
     <section css={rightStatSectionWrapper}>
-      <ExpAndEliteLevelStats />
+      <ExpStats />
+      <EliteLevelStats />
       <SkillsAndTalentStats />
     </section>
   );
