@@ -39,8 +39,9 @@ export const tooSmallMessage = css({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  backgroundColor: SECRET_COLORS.BG_UI,
 
   span: {
-    color: COLORS.BLACK,
+    color: COLORS.WHITE,
   },
 });

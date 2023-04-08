@@ -22,7 +22,10 @@ export const JobStats = () => {
       </div>
       <div css={keywordWrapper}>
         <div css={[jobStatDivStyle, keywordInner]}>
-          <span>UI Design & Background Asset ⓒ Hypergryph</span>
+          <span>
+            Original UI Design & Background
+            <br />ⓒ Hypergryph
+          </span>
         </div>
       </div>
     </div>
