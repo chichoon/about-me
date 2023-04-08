@@ -14,6 +14,7 @@ export const SECRET_COLORS = {
   GROUP_ICON: '#00000033',
 
   HIGHLIGHT_ORANGE: '#FFAF6D',
+  HIGHLIGHT_YELLOW: '#FFDE08',
 };
 
 export const SECRET_LEVELS = {
