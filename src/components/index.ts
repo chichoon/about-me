@@ -1,2 +1,2 @@
 export { Layout } from './Layout';
-export { SecretPage } from './SecretPage';
+export { GithubStats } from './GithubStats';
