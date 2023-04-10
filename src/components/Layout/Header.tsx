@@ -41,7 +41,7 @@ export const Header = () => {
         <Link href='/projects' css={tabStyle(router.pathname === '/projects')}>
           <span>프로젝트</span>
         </Link>
-        <Link href='/footprints' css={tabStyle(router.pathname === '/history')}>
+        <Link href='/footprints' css={tabStyle(router.pathname === '/footprints')}>
           <span>발자취</span>
         </Link>
       </nav>
