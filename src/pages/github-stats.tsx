@@ -19,7 +19,7 @@ const githubStats = ({ data }: any) => {
   return (
     <>
       <Head>
-        <title>chichoon's GitHub Stats</title>
+        <title>chichoon&apos;s GitHub Stats</title>
         <meta name='description' content={"chichoon's GitHub Stats"} />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='apple-touch-icon' sizes='57x57' href='/gh-icon/apple-icon-57x57.png' />
