@@ -114,12 +114,14 @@ export const tabStyle = (isSelected: boolean) =>
     alignItems: 'center',
     justifyContent: 'center',
     transition: 'background 0.2s linear',
+    borderTopLeftRadius: 5,
+    borderTopRightRadius: 5,
 
     span: {
       userSelect: 'none',
     },
 
     ':hover': {
-      backgroundColor: isSelected ? COLORS.WHITE : COLORS.GRAY9,
+      backgroundColor: isSelected ? COLORS.WHITE : COLORS.GRAYE,
     },
   });

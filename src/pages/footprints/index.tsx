@@ -3,7 +3,7 @@ import { Layout } from '@/components';
 const Footprints = () => {
   return (
     <Layout>
-      <div>안녕하세요!!</div>
+      <span>안녕하세요!!</span>
     </Layout>
   );
 };

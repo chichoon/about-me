@@ -1,6 +1,7 @@
 import Head from 'next/head';
 
 import { Header } from './Header';
+import { mainWrapperStyle } from './Layout.styles';
 
 interface Props {
   children: JSX.Element;
@@ -16,7 +17,9 @@ export const Layout = ({ children }: Props) => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Header />
-      {children}
+      <main css={mainWrapperStyle}>
+        <div>{children}</div>
+      </main>
     </>
   );
 };

@@ -7,17 +7,15 @@ import myInfo from '@/assets/myInfo.json';
 const projects = () => {
   return (
     <Layout>
-      <main>
-        <menu>
-          {myInfo.projects.map(({ key, title }) => (
-            <li key={`experience-${key}`}>
-              <Link href={`/projects/${key}`}>
-                <span>{title}</span>
-              </Link>
-            </li>
-          ))}
-        </menu>
-      </main>
+      <menu>
+        {myInfo.projects.map(({ key, title }) => (
+          <li key={`experience-${key}`}>
+            <Link href={`/projects/${key}`}>
+              <span>{title}</span>
+            </Link>
+          </li>
+        ))}
+      </menu>
     </Layout>
   );
 };
