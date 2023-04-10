@@ -90,3 +90,40 @@ export const headerProfileCommentStyle = css({
     '-webkit-line-clamp': 1,
   },
 });
+
+export const navTabsStyle = css({
+  width: '100vw',
+  height: 50,
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'flex-start',
+  padding: '0 50px',
+
+  [getResponsiveAfter('SD')]: {
+    padding: '0 275px',
+  },
+});
+
+export const tabStyle = (isSelected: boolean) =>
+  css({
+    background: isSelected ? COLORS.WHITE : 'none',
+    width: 100,
+    height: 50,
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    transition: 'background 0.2s linear',
+    borderTopLeftRadius: 5,
+    borderTopRightRadius: 5,
+
+    span: {
+      userSelect: 'none',
+      fontSize: SIZES.$FONT_M,
+    },
+
+    ':hover': {
+      backgroundColor: isSelected ? COLORS.WHITE : COLORS.GRAYE,
+    },
+  });

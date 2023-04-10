@@ -29,9 +29,9 @@ function getMaxBreakpoint(media: string): number {
 }
 
 export function getResponsiveAfter(media: string) {
-  return `@media only screen and (min-width: ${getMinBreakpoint(media)})`;
+  return `@media only screen and (min-width: ${getMinBreakpoint(media)}px)`;
 }
 
 export function getResponsiveBetween(min: string, max: string) {
-  return `@media only screen and (min-width: ${getMinBreakpoint(min)} and (max-width: ${getMaxBreakpoint(max)}))`;
+  return `@media only screen and (min-width: ${getMinBreakpoint(min)}px) and (max-width: ${getMaxBreakpoint(max)}px)`;
 }
