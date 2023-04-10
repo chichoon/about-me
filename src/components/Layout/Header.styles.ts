@@ -98,9 +98,10 @@ export const navTabsStyle = css({
   flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'flex-start',
+  padding: '0 50px',
 
   [getResponsiveAfter('SD')]: {
-    paddingLeft: 275,
+    padding: '0 275px',
   },
 });
 
@@ -119,6 +120,7 @@ export const tabStyle = (isSelected: boolean) =>
 
     span: {
       userSelect: 'none',
+      fontSize: SIZES.$FONT_M,
     },
 
     ':hover': {

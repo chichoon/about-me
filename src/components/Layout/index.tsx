@@ -2,6 +2,7 @@ import Head from 'next/head';
 
 import { Header } from './Header';
 import { mainWrapperStyle } from './Layout.styles';
+import { Footer } from './Footer';
 
 interface Props {
   children: JSX.Element;
@@ -20,6 +21,7 @@ export const Layout = ({ children }: Props) => {
       <main css={mainWrapperStyle}>
         <div>{children}</div>
       </main>
+      <Footer />
     </>
   );
 };
