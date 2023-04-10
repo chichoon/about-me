@@ -8,8 +8,8 @@ interface Props {
 export const Stars = ({ nOfStars }: Props) => {
   return (
     <div css={starWrapper}>
-      {[...Array(nOfStars)].map((v) => (
-        <StarIcon key={`star-${v}`} />
+      {[...Array(nOfStars)].map((_, i) => (
+        <StarIcon key={`star-${i}`} />
       ))}
     </div>
   );
