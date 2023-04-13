@@ -2,9 +2,11 @@
   "name": "최지윤",
   "nameInEng": "Ji Yoon Choi",
   "email": "chichoon.choi@gmail.com",
+  "profileImageRef": "https://user-images.githubusercontent.com/37893979/231682998-8d7cc385-133c-48cd-a209-fb1f97b8bd20.png",
   "githubUsername": "chichoon",
   "blogLink": "https://blog.chichoon.com/",
   "oneLineBio": "감자감자왕감자프론트엔드",
+  "summary": "프론트엔드 개발 공부를 합니다",
   "stacks": [
     "javascript",
     "typescript",

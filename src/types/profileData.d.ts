@@ -3,8 +3,10 @@ export interface ProfileType {
   nameInEng: string;
   email: string;
   githubUsername: string;
+  profileImageRef: string;
   blogLink: string;
   oneLineBio: string;
+  summary: string;
   stacks: string[];
   projects: ProjectType[];
   footprints: FootprintType[];
