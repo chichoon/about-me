@@ -18,11 +18,11 @@ interface Props {
   name: string;
   email: string;
   oneLineBio: string;
-  githubLink: string;
+  githubUsername: string;
   blogLink: string;
 }
 
-export const Header = ({ name, email, oneLineBio, githubLink, blogLink }: Props) => {
+export const Header = ({ name, email, oneLineBio, githubUsername, blogLink }: Props) => {
   const router = useRouter();
   return (
     <>
@@ -34,7 +34,7 @@ export const Header = ({ name, email, oneLineBio, githubLink, blogLink }: Props)
             <a href={`mailto:${email}`} target='_blank'>
               <EmailIcon />
             </a>
-            <a href={githubLink} target='_blank'>
+            <a href={`https://github.com/${githubUsername}`} target='_blank'>
               <GithubIcon />
             </a>
             <a href={blogLink} target='_blank'>

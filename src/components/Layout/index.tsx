@@ -12,6 +12,8 @@ interface Props {
 }
 
 export const Layout = ({ children, profileData }: Props) => {
+  const { githubUsername, bioGithubLink } = profileData;
+
   return (
     <>
       <HeadMetaData />
@@ -19,7 +21,7 @@ export const Layout = ({ children, profileData }: Props) => {
       <main css={mainWrapperStyle}>
         <div>{children}</div>
       </main>
-      <Footer />
+      <Footer githubUsername={githubUsername} bioGithubLink={bioGithubLink} />
     </>
   );
 };
