@@ -2,7 +2,7 @@
   "name": "최지윤",
   "nameInEng": "Ji Yoon Choi",
   "email": "chichoon.choi@gmail.com",
-  "githubLink": "https://github.com/chichoon",
+  "githubUsername": "chichoon",
   "blogLink": "https://blog.chichoon.com/",
   "oneLineBio": "감자감자왕감자프론트엔드",
   "stacks": [
@@ -141,5 +141,6 @@
         }
       ]
     }
-  ]
+  ],
+  "bioGithubLink": "https://github.com/chichoon/about-me"
 }

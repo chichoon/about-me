@@ -2,12 +2,13 @@ export interface ProfileType {
   name: string;
   nameInEng: string;
   email: string;
-  githubLink: string;
+  githubUsername: string;
   blogLink: string;
   oneLineBio: string;
   stacks: string[];
   projects: ProjectType[];
   footprints: FootprintType[];
+  bioGithubLink: string;
 }
 
 interface HistoryType {
