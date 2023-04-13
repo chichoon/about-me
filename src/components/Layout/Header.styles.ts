@@ -107,7 +107,7 @@ export const navTabsStyle = css({
   padding: '0 50px',
 
   [getResponsiveAfter('SD')]: {
-    padding: '0 275px',
+    padding: '0 75px 0 275px',
   },
 });
 

@@ -18,9 +18,7 @@ export const Layout = ({ children, profileData }: Props) => {
     <>
       <HeadMetaData />
       <Header {...profileData} />
-      <main css={mainWrapperStyle}>
-        <div>{children}</div>
-      </main>
+      <main css={mainWrapperStyle}>{children}</main>
       <Footer githubUsername={githubUsername} bioGithubLink={bioGithubLink} />
     </>
   );
