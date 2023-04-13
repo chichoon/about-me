@@ -6,10 +6,8 @@ export interface ProfileType {
   profileImageRef: string;
   blogLink: string;
   oneLineBio: string;
-  summary: string;
+  summary: string[];
   stacks: string[];
-  projects: ProjectType[];
-  footprints: FootprintType[];
   bioGithubLink: string;
 }
 
