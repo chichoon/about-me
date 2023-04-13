@@ -1,7 +1,11 @@
+/* eslint-disable camelcase */
 import { css } from '@emotion/react';
+import { Noto_Sans_KR } from 'next/font/google';
 
 import { BG_SHADOW, SECRET_COLORS, SECRET_LEVELS } from '@/components/GithubStats/constants';
 import { COLORS } from '@/styles/colors';
+
+const noto = Noto_Sans_KR({ subsets: ['latin'], weight: '500' });
 
 export const statPageBackgroundWrapperStyle = css({
   width: '100vw',
@@ -15,6 +19,7 @@ export const statPageBackgroundWrapperStyle = css({
   background: `no-repeat url('/test_bg.png')`,
   backgroundSize: 'cover',
   boxShadow: `inset ${BG_SHADOW}`,
+  fontFamily: noto.style.fontFamily,
 });
 
 export const groupIconStyle = css({
