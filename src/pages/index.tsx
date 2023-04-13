@@ -1,4 +1,4 @@
-import { Layout } from '@/components';
+import { Layout, MainPage } from '@/components';
 import { getProfile } from '@/services/getProfile';
 import { ProfileType } from '@/types/profileData';
 
@@ -14,10 +14,10 @@ interface Props {
 }
 
 const Home = ({ data }: Props) => {
-  console.log(data);
+  const { profileImageRef, summary } = data;
   return (
     <Layout profileData={data}>
-      <span>안녕하세요~</span>
+      <MainPage profileImageRef={profileImageRef} summary={summary} />
     </Layout>
   );
 };
