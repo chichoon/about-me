@@ -1,14 +1,25 @@
 import Link from 'next/link';
 
 import { Layout } from '@/components';
+import { ProfileType } from '@/types/profileData';
+import { getProfile } from '@/services/getProfile';
 
-import myInfo from '@/assets/myInfo.json';
+export async function getStaticProps() {
+  const data = await getProfile();
+  return {
+    props: { data }, // will be passed to the page component as props
+  };
+}
 
-const projects = () => {
+interface Props {
+  data: ProfileType;
+}
+
+const projects = ({ data }: Props) => {
   return (
-    <Layout>
+    <Layout profileData={data}>
       <menu>
-        {myInfo.projects.map(({ key, title }) => (
+        {data.projects.map(({ key, title }) => (
           <li key={`experience-${key}`}>
             <Link href={`/projects/${key}`}>
               <span>{title}</span>
