@@ -6,6 +6,7 @@
     "startDate": "2017년 3월",
     "githubLink": "https://github.com/chichoon",
     "publishedLink": "https://github.com/chichoon",
+    "stacks": [{ "name": "JavaScript", "color": "F7DF1E", "logo": "JavaScript" }],
     "summary": "뭐뭐했습니다.",
     "description": [
       {
@@ -30,6 +31,7 @@
     "endDate": "2021년 1월",
     "githubLink": "https://github.com/chichoon",
     "publishedLink": "https://github.com/chichoon",
+    "stacks": [{ "name": "TypeScript", "color": "3178C6", "logo": "TypeScript" }],
     "summary": "뭐뭐했습니다.",
     "description": [
       {

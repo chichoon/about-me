@@ -1,7 +1,11 @@
-const serverUrl = process.env.NODE_ENV === 'production' ? 'https://about-me.chichoon.com' : 'http://localhost:3000';
+import profile from '@/assets/myInfo.json';
+
+import { ProfileType } from '@/types/profileData';
 
 export async function getProfile() {
-  const data = await fetch(`${serverUrl}/myInfo.json`).then((response) => response.json());
+  const data = await new Promise<ProfileType>((resolve) => {
+    resolve(profile);
+  });
 
   return data;
 }

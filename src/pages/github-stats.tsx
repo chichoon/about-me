@@ -14,7 +14,8 @@ export async function getStaticProps() {
   };
 }
 
-const githubStats = ({ data }: any) => {
+const githubStats = () => {
+  // const githubStats = ({ data }: any) => {
   // console.log(data);
   return (
     <>
