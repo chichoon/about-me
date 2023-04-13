@@ -1,7 +1,7 @@
-import { Octokit } from 'octokit';
+// import { Octokit } from 'octokit';
 
 import { GithubStats } from '@/components';
-import { getGithubStats } from '@/services';
+// import { getGithubStats } from '@/services';
 import { HeadMetaData } from '@/components/Layout/HeadMetaData';
 
 export async function getStaticProps() {
@@ -15,7 +15,7 @@ export async function getStaticProps() {
 }
 
 const githubStats = ({ data }: any) => {
-  console.log(data);
+  // console.log(data);
   return (
     <>
       <HeadMetaData />
