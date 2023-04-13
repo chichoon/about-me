@@ -1,4 +1,4 @@
-interface ProfileType {
+export interface ProfileType {
   name: string;
   nameInEng: string;
   email: string;
@@ -10,28 +10,31 @@ interface ProfileType {
   footprints: FootprintType[];
 }
 
-interface ProjectType {
+interface HistoryType {
   key: string;
   title: string;
   imageRef: string;
   startDate: string;
   endDate?: string;
-  githubLink: string;
-  publishedLink: string;
   summary: string;
-  description: DescriptionType[];
 }
 
-interface DescriptionType {
+export interface AchievementsType {
+  title: string;
+  githubLink: string;
+}
+
+export interface DescriptionType {
   title?: string;
   mainText: string;
 }
 
-interface FootprintType extends ProjectType {
-  achievements: AchievementsType[];
+export interface ProjectType extends HistoryType {
+  githubLink: string;
+  publishedLink: string;
+  description: DescriptionType[];
 }
 
-interface AchievementsType {
-  title: string;
-  githubLink: string;
+export interface FootprintType extends HistoryType {
+  achievements: AchievementsType[];
 }
