@@ -1,4 +1,4 @@
-const serverUrl = process.env.NODE_ENV === 'production' ? 'https://about-me.chichoon.com' : 'http://localhost:3000';
+const serverUrl = process.env.NODE_ENV === 'production' ? process.env.VERCEL_URL : process.env.DEV_URL;
 
 export async function getProfile() {
   const data = await fetch(`${serverUrl}/myInfo.json`).then((response) => response.json());
