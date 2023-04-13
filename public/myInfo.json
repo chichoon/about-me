@@ -1,0 +1,145 @@
+{
+  "name": "최지윤",
+  "nameInEng": "Ji Yoon Choi",
+  "email": "chichoon.choi@gmail.com",
+  "githubLink": "https://github.com/chichoon",
+  "blogLink": "https://blog.chichoon.com/",
+  "oneLineBio": "감자감자왕감자프론트엔드",
+  "stacks": [
+    "javascript",
+    "typescript",
+    "HTML",
+    "CSS",
+    "SCSS",
+    "React",
+    "slack",
+    "figma",
+    "notion",
+    "git",
+    "github",
+    "vscode"
+  ],
+  "projects": [
+    {
+      "key": "jst",
+      "title": "JST",
+      "imageRef": "https://avatars.githubusercontent.com/u/37893979?v=4",
+      "startDate": "2017년 3월",
+      "githubLink": "https://github.com/chichoon",
+      "publishedLink": "https://github.com/chichoon",
+      "summary": "뭐뭐했습니다.",
+      "description": [
+        {
+          "title": "hihi",
+          "mainText": "뭐뭐뭐"
+        },
+        {
+          "title": "hihi",
+          "mainText": "뭐뭐뭐"
+        },
+        {
+          "title": "hihi",
+          "mainText": "뭐뭐뭐"
+        }
+      ]
+    },
+    {
+      "key": "scopa",
+      "title": "SCOPA",
+      "imageRef": "https://avatars.githubusercontent.com/u/37893979?v=4",
+      "startDate": "2017년 3월",
+      "endDate": "2021년 1월",
+      "githubLink": "https://github.com/chichoon",
+      "publishedLink": "https://github.com/chichoon",
+      "summary": "뭐뭐했습니다.",
+      "description": [
+        {
+          "title": "hihi",
+          "mainText": "뭐뭐뭐"
+        },
+        {
+          "title": "hihi",
+          "mainText": "뭐뭐뭐"
+        },
+        {
+          "title": "hihi",
+          "mainText": "뭐뭐뭐"
+        }
+      ]
+    }
+  ],
+  "footprints": [
+    {
+      "key": "asd",
+      "title": "뭐뭐했음",
+      "imageRef": "https://avatars.githubusercontent.com/u/37893979?v=4",
+      "startDate": "2017년 3월",
+      "endDate": "2021년 1월",
+      "summary": "뭐뭐했다",
+      "description": [
+        {
+          "title": "hihi",
+          "mainText": "뭐뭐뭐"
+        },
+        {
+          "title": "hihi",
+          "mainText": "뭐뭐뭐"
+        },
+        {
+          "title": "hihi",
+          "mainText": "뭐뭐뭐"
+        }
+      ],
+      "achievements": [
+        {
+          "title": "hihi",
+          "mainText": "뭐뭐뭐"
+        },
+        {
+          "title": "hihi",
+          "mainText": "뭐뭐뭐"
+        },
+        {
+          "title": "hihi",
+          "mainText": "뭐뭐뭐"
+        }
+      ]
+    },
+    {
+      "key": "aa",
+      "title": "뭐뭐했음",
+      "imageRef": "https://avatars.githubusercontent.com/u/37893979?v=4",
+      "startDate": "2017년 3월",
+      "endDate": "2021년 1월",
+      "summary": "뭐뭐했다",
+      "description": [
+        {
+          "title": "hihi",
+          "mainText": "뭐뭐뭐"
+        },
+        {
+          "title": "hihi",
+          "mainText": "뭐뭐뭐"
+        },
+        {
+          "title": "hihi",
+          "mainText": "뭐뭐뭐"
+        }
+      ],
+      "achievements": [
+        {
+          "title": "hihi",
+          "mainText": "뭐뭐뭐"
+        },
+        {
+          "title": "hihi",
+          "mainText": "뭐뭐뭐"
+        },
+        {
+          "title": "hihi",
+          "mainText": "뭐뭐뭐"
+        }
+      ]
+    }
+  ]
+}
