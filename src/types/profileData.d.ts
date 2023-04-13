@@ -18,6 +18,7 @@ interface HistoryType {
   startDate: string;
   endDate?: string;
   summary: string;
+  stacks: StackType[];
 }
 
 export interface StackType {
