@@ -18,7 +18,6 @@ interface HistoryType {
   startDate: string;
   endDate?: string;
   summary: string;
-  stacks: StackType[];
 }
 
 export interface StackType {
@@ -47,6 +46,7 @@ export interface LinkType {
 export interface ProjectType extends HistoryType {
   githubLink: string;
   publishedLink: string;
+  stacks: StackType[];
   description: DescriptionType[];
 }
 
