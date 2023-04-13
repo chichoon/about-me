@@ -7,7 +7,7 @@ import { Global, ThemeProvider } from '@emotion/react';
 import '@/styles/reset.css';
 import { global } from '@/styles/global';
 
-const noto = Noto_Sans_KR({ subsets: ['latin'], weight: '500' });
+const noto = Noto_Sans_KR({ subsets: ['latin'], weight: '400' });
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
