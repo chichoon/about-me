@@ -1,10 +1,56 @@
 import { css } from '@emotion/react';
 
+import { NextIcon, PlusIcon, ReactIcon } from '@/components/GithubStats/assets';
 import { SECRET_COLORS, SECRET_LEVELS } from '@/components/GithubStats/constants';
 import { SIZES } from '@/styles/sizes';
 import { COLORS } from '@/styles/colors';
 
-export const talentStatWrapperStyle = css({
+export const TalentStats = () => {
+  return (
+    <div css={talentStatWrapperStyle}>
+      <div css={talentStatTopStyle}>
+        <div css={jobWrapperStyle}>
+          <NextIcon />
+          <span>
+            Made with
+            <br />
+            NextJS
+          </span>
+        </div>
+        <div css={detailedJobStyle}>
+          <div css={detailedJobIconStyle}>
+            <div css={blushShadowStyle} />
+            <ReactIcon />
+            <div css={jobTextWrapperStyle}>
+              <span>React</span>
+              <span>JS</span>
+            </div>
+          </div>
+          <div css={detailedJobDescriptionStyle}>
+            <div css={stageWrapperStyle}>
+              <span>STAGE</span>
+              <span>1</span>
+            </div>
+            <div css={stageManageStyle}>
+              <span>관리</span>
+              <PlusIcon />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div css={talentWrapperStyle}>
+        <div>
+          <span>Next 어렵다</span>
+        </div>
+        <div>
+          <span>아아아아아</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const talentStatWrapperStyle = css({
   width: 360,
   height: 120,
   borderRadius: 3,
@@ -13,14 +59,14 @@ export const talentStatWrapperStyle = css({
   marginTop: 80,
 });
 
-export const talentStatTopStyle = css({
+const talentStatTopStyle = css({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'flex-start',
   justifyContent: 'space-between',
 });
 
-export const jobWrapperStyle = css({
+const jobWrapperStyle = css({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
@@ -41,13 +87,13 @@ export const jobWrapperStyle = css({
   },
 });
 
-export const detailedJobStyle = css({
+const detailedJobStyle = css({
   display: 'flex',
   flexDirection: 'row',
   flex: 1,
 });
 
-export const detailedJobIconStyle = css({
+const detailedJobIconStyle = css({
   width: 70,
   height: 70,
   border: `2px solid ${SECRET_COLORS.BUTTON_ICON_DIMMED}`,
@@ -68,14 +114,14 @@ export const detailedJobIconStyle = css({
   },
 });
 
-export const detailedJobDescriptionStyle = css({
+const detailedJobDescriptionStyle = css({
   display: 'flex',
   flexDirection: 'column',
   flex: 1,
   alignItems: 'flex-end',
 });
 
-export const stageWrapperStyle = css({
+const stageWrapperStyle = css({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
@@ -93,7 +139,7 @@ export const stageWrapperStyle = css({
   },
 });
 
-export const stageManageStyle = css({
+const stageManageStyle = css({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
@@ -111,7 +157,7 @@ export const stageManageStyle = css({
   },
 });
 
-export const blushShadowStyle = css({
+const blushShadowStyle = css({
   width: 50,
   height: 0,
   position: 'absolute',
@@ -120,7 +166,7 @@ export const blushShadowStyle = css({
   boxShadow: `0 0 3px 3px ${SECRET_COLORS.HIGHLIGHT_BLUE}`,
 });
 
-export const jobTextWrapperStyle = css({
+const jobTextWrapperStyle = css({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
@@ -138,7 +184,7 @@ export const jobTextWrapperStyle = css({
   },
 });
 
-export const talentWrapperStyle = css({
+const talentWrapperStyle = css({
   display: 'flex',
   flexDirection: 'row',
   marginTop: 20,

@@ -1,16 +1,17 @@
+/* eslint-disable camelcase */
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { css } from '@emotion/react';
+import { Noto_Sans_KR } from 'next/font/google';
 
 import { NavButtonSection } from '@/components/GithubStats/NavButtonSection';
 import { StatusSection } from '@/components/GithubStats/StatusSection';
-import { ReactIcon } from '@/components/GithubStats/assets';
 
-import {
-  groupIconStyle,
-  statPageBackgroundWrapperStyle,
-  characterImageStyle,
-  tooSmallMessage,
-} from '@/components/GithubStats/GithubStats.styles';
+import { ReactIcon } from '@/components/GithubStats/assets';
+import { BG_SHADOW, SECRET_COLORS, SECRET_LEVELS } from '@/components/GithubStats/constants';
+import { COLORS } from '@/styles/colors';
+
+const noto = Noto_Sans_KR({ subsets: ['latin'], weight: '500' });
 
 export const GithubStats = () => {
   const [windowWidth, setWindowWidth] = useState(0);
@@ -51,3 +52,47 @@ export const GithubStats = () => {
     </main>
   );
 };
+
+const statPageBackgroundWrapperStyle = css({
+  width: '100vw',
+  height: '100vh',
+  overflow: 'hidden',
+  position: 'relative',
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'flex-end',
+  justifyContent: 'space-between',
+  background: `no-repeat url('/test_bg.png')`,
+  backgroundSize: 'cover',
+  boxShadow: `inset ${BG_SHADOW}`,
+  fontFamily: noto.style.fontFamily,
+});
+
+const groupIconStyle = css({
+  position: 'absolute',
+  top: 10,
+  left: 10,
+  width: 220,
+  height: 220,
+  fill: SECRET_COLORS.GROUP_ICON,
+  zIndex: SECRET_LEVELS.LEVEL_GROUP_IMAGE,
+});
+
+const characterImageStyle = css({
+  position: 'absolute',
+  objectFit: 'contain',
+  zIndex: SECRET_LEVELS.LEVEL_CHAR_IMAGE,
+});
+
+const tooSmallMessage = css({
+  width: '100vw',
+  height: '100vh',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  backgroundColor: SECRET_COLORS.BG_UI,
+
+  span: {
+    color: COLORS.WHITE,
+  },
+});

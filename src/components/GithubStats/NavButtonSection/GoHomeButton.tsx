@@ -1,5 +1,7 @@
+import { css } from '@emotion/react';
+
 import { HomeBgSvg, HomeIcon } from '@/components/GithubStats/assets';
-import { wrapperStyle, homeBgSvgStyle, homeSvgStyle } from './GoHomeButton.styles';
+import { SECRET_COLORS, SECRET_LEVELS } from '@/components/GithubStats/constants';
 
 export const GoHomeButton = () => {
   return (
@@ -9,3 +11,31 @@ export const GoHomeButton = () => {
     </button>
   );
 };
+
+const wrapperStyle = css({
+  backgroundColor: SECRET_COLORS.BG_UI,
+  width: 120,
+  height: 40,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  position: 'relative',
+  overflow: 'hidden',
+});
+
+const homeBgSvgStyle = css({
+  width: 120,
+  height: 40,
+  position: 'absolute',
+  top: 18,
+  left: 85,
+  transform: 'scale(220%)',
+  opacity: 0.8,
+});
+
+const homeSvgStyle = css({
+  zIndex: SECRET_LEVELS.LEVEL_UI,
+  width: 25,
+  height: 25,
+  fill: SECRET_COLORS.BUTTON_ICON,
+});

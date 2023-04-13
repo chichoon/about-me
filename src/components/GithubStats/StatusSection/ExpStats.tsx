@@ -4,7 +4,31 @@ import { SECRET_COLORS, SECRET_LEVELS } from '@/components/GithubStats/constants
 import { COLORS } from '@/styles/colors';
 import { SIZES } from '@/styles/sizes';
 
-export const expStatsWrapperStyle = css({
+export const ExpStats = () => {
+  const percentage = 40;
+  const degree = 360 - (percentage * 360) / 100;
+  return (
+    <div css={expStatsWrapperStyle}>
+      <div css={levelCircleStyle}>
+        <div css={levelGraphStyle(degree)} />
+        <span>LV</span>
+        <span>90</span>
+      </div>
+      <div css={expWrapperStyle}>
+        <div css={expInnerRowStyle}>
+          <div css={expBarStyle}>
+            <span>EXP</span>
+            <span>{percentage} / 100</span>
+          </div>
+          <div css={fillingBarStyle} />
+        </div>
+        <span css={levelAmountLeftStyle}>/ 90</span>
+      </div>
+    </div>
+  );
+};
+
+const expStatsWrapperStyle = css({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
@@ -12,7 +36,7 @@ export const expStatsWrapperStyle = css({
   marginBottom: 10,
 });
 
-export const levelCircleStyle = () =>
+const levelCircleStyle = () =>
   css({
     width: 90,
     height: 90,
@@ -40,7 +64,7 @@ export const levelCircleStyle = () =>
     },
   });
 
-export const levelGraphStyle = (degree: number) =>
+const levelGraphStyle = (degree: number) =>
   css({
     width: 80,
     height: 80,
@@ -62,7 +86,7 @@ export const levelGraphStyle = (degree: number) =>
     zIndex: SECRET_LEVELS.LEVEL_BACKGROUND,
   });
 
-export const levelAmountLeftStyle = css({
+const levelAmountLeftStyle = css({
   position: 'absolute',
   bottom: -15,
   left: -7,
@@ -71,7 +95,7 @@ export const levelAmountLeftStyle = css({
   fontWeight: 700,
 });
 
-export const expWrapperStyle = css({
+const expWrapperStyle = css({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'flex-start',
@@ -80,7 +104,7 @@ export const expWrapperStyle = css({
   filter: `drop-shadow(0 0 2px ${SECRET_COLORS.BOX_SHADOW})`,
 });
 
-export const expInnerRowStyle = css({
+const expInnerRowStyle = css({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
@@ -90,7 +114,7 @@ export const expInnerRowStyle = css({
   height: 40,
 });
 
-export const expBarStyle = css({
+const expBarStyle = css({
   backgroundColor: SECRET_COLORS.BG_UI,
   position: 'absolute',
   top: 0,
@@ -122,7 +146,7 @@ export const expBarStyle = css({
   },
 });
 
-export const fillingBarStyle = css({
+const fillingBarStyle = css({
   backgroundColor: SECRET_COLORS.BG_UI,
   width: 100,
   height: 40,

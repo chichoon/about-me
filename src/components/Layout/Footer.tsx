@@ -1,13 +1,49 @@
-import { GithubIcon } from '@/assets/svgs';
-import { footerWrapperStyle } from './Footer.styles';
+import { css } from '@emotion/react';
 
-export const Footer = () => {
+import { GithubIcon } from '@/assets/svgs';
+import { COLORS } from '@/styles/colors';
+import { SIZES } from '@/styles/sizes';
+
+interface Props {
+  githubUsername: string;
+  bioGithubLink: string;
+}
+
+export const Footer = ({ githubUsername, bioGithubLink }: Props) => {
   return (
     <footer css={footerWrapperStyle}>
-      <span>© 2022 chichoon</span>
-      <a href='https://github.com/chichoon/about-me' target='_blank'>
+      <span>© 2022 {githubUsername}</span>
+      <a href={bioGithubLink} target='_blank'>
         <GithubIcon />
       </a>
     </footer>
   );
 };
+
+const footerWrapperStyle = css({
+  width: '100vw',
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'center',
+  padding: 50,
+
+  span: {
+    color: COLORS.GRAY9,
+    marginRight: 10,
+    fontSize: SIZES.$FONT_M,
+    userSelect: 'none',
+    cursor: 'default',
+  },
+
+  a: {
+    padding: 0,
+    margin: 0,
+    width: 20,
+    height: 20,
+  },
+
+  svg: {
+    fill: COLORS.GRAY9,
+  },
+});

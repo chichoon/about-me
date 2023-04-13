@@ -10,6 +10,10 @@ const nextConfig = {
     });
     return config;
   },
+
+  images: {
+    domains: ['user-images.githubusercontent.com', 'localhost', 'img.shields.io'],
+  },
 };
 
 module.exports = nextConfig;

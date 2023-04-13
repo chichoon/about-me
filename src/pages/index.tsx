@@ -1,9 +1,23 @@
-import { Layout } from '@/components';
+import { Layout, MainPage } from '@/components';
+import { getProfile } from '@/services';
+import { ProfileType } from '@/types/profileData';
 
-const Home = () => {
+export async function getStaticProps() {
+  const data = await getProfile();
+  return {
+    props: { data }, // will be passed to the page component as props
+  };
+}
+
+interface Props {
+  data: ProfileType;
+}
+
+const Home = ({ data }: Props) => {
+  const { profileImageRef, summaries, stacks } = data;
   return (
-    <Layout>
-      <span>안녕하세요~</span>
+    <Layout profileData={data}>
+      <MainPage profileImageRef={profileImageRef} summaries={summaries} stacks={stacks} />
     </Layout>
   );
 };
