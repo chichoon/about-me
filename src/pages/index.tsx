@@ -14,10 +14,10 @@ interface Props {
 }
 
 const Home = ({ data }: Props) => {
-  const { profileImageRef, summaries } = data;
+  const { profileImageRef, summaries, stacks } = data;
   return (
     <Layout profileData={data}>
-      <MainPage profileImageRef={profileImageRef} summaries={summaries} />
+      <MainPage profileImageRef={profileImageRef} summaries={summaries} stacks={stacks} />
     </Layout>
   );
 };

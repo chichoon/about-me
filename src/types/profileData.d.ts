@@ -7,7 +7,7 @@ export interface ProfileType {
   blogLink: string;
   oneLineBio: string;
   summaries: string[];
-  stacks: string[];
+  stacks: StackType[];
   bioGithubLink: string;
 }
 
@@ -18,6 +18,12 @@ interface HistoryType {
   startDate: string;
   endDate?: string;
   summary: string;
+}
+
+export interface StackType {
+  name: string;
+  color: string;
+  logo?: string;
 }
 
 export interface AchievementsType {
