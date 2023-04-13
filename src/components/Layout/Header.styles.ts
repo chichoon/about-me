@@ -60,9 +60,15 @@ export const headerProfileNamespaceStyle = css({
   },
 
   a: {
+    padding: 2.5,
     width: 30,
     height: 30,
-    marginLeft: 25,
+    marginLeft: 15,
+  },
+
+  svg: {
+    width: 25,
+    height: 25,
   },
 
   [getResponsiveAfter('SD')]: {
