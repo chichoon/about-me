@@ -24,12 +24,19 @@ interface HistoryType {
 
 export interface AchievementsType {
   title: string;
-  githubLink: string;
+  githubLink?: string;
+  link?: linkType[];
 }
 
 export interface DescriptionType {
-  title?: string;
+  title: string;
   mainText: string;
+  link?: linkType[];
+}
+
+export interface LinkType {
+  title: string;
+  link: string;
 }
 
 export interface ProjectType extends HistoryType {
