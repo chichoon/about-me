@@ -1,7 +1,11 @@
-const serverUrl = process.env.NODE_ENV === 'production' ? process.env.VERCEL_URL : process.env.DEV_URL;
+import profile from '@/assets/myInfo.json';
+
+import { ProfileType } from '@/types/profileData';
 
 export async function getProfile() {
-  const data = await fetch(`https://${serverUrl}/myInfo.json`).then((response) => response.json());
+  const data = await new Promise<ProfileType>((resolve) => {
+    resolve(profile);
+  });
 
   return data;
 }

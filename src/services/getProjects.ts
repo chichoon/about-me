@@ -1,8 +1,11 @@
-const serverUrl = process.env.NODE_ENV === 'production' ? process.env.VERCEL_URL : process.env.DEV_URL;
+import projects from '@/assets/projectsInfo.json';
+
+import { ProjectType } from '@/types/profileData';
 
 export async function getProjects() {
-  console.log(serverUrl);
-  const data = await fetch(`https://${serverUrl}/projectsInfo.json`).then((response) => response.json());
+  const data = await new Promise<ProjectType[]>((resolve) => {
+    resolve(projects);
+  });
 
   return data;
 }

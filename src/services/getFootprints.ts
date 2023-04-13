@@ -1,7 +1,11 @@
-const serverUrl = process.env.NODE_ENV === 'production' ? process.env.VERCEL_URL : process.env.DEV_URL;
+import footprints from '@/assets/footprintsInfo.json';
+
+import { FootprintType } from '@/types/profileData';
 
 export async function getFootprints() {
-  const data = await fetch(`https://${serverUrl}/footprintsInfo.json`).then((response) => response.json());
+  const data = await new Promise<FootprintType[]>((resolve) => {
+    resolve(footprints);
+  });
 
   return data;
 }
