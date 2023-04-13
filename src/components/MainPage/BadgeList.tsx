@@ -29,11 +29,12 @@ const badgeWrapperStyle = css({
   alignItems: 'center',
   justifyContent: 'center',
   flexWrap: 'wrap',
-  marginBottom: 25,
+  marginBottom: 15,
   userSelect: 'none',
 });
 
 const badgeStyle = css({
   height: SIZES.$FONT_L,
   marginRight: 10,
+  marginBottom: 10,
 });

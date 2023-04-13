@@ -126,11 +126,6 @@ const headerProfileNamespaceStyle = css({
   },
 });
 
-const headerIconStyle = css({
-  width: 30,
-  height: 30,
-});
-
 const headerProfileCommentStyle = css({
   display: '-webkit-box',
   width: '100%',

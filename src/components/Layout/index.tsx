@@ -20,7 +20,9 @@ export const Layout = ({ children, profileData }: Props) => {
     <>
       <HeadMetaData />
       <Header {...profileData} />
-      <main css={mainWrapperStyle}>{children}</main>
+      <main css={mainWrapperStyle}>
+        <div css={mainInnerStyle}>{children}</div>
+      </main>
       <Footer githubUsername={githubUsername} bioGithubLink={bioGithubLink} />
     </>
   );
@@ -32,14 +34,22 @@ const mainWrapperStyle = css({
   [getResponsiveAfter('SD')]: {
     padding: '0 100px',
   },
+});
 
-  '> div': {
-    backgroundColor: COLORS.WHITE,
-    padding: 25,
-    borderRadius: 5,
+const mainInnerStyle = css({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  backgroundColor: COLORS.WHITE,
+  padding: 25,
+  borderRadius: 5,
+  overflowX: 'hidden',
 
-    [getResponsiveAfter('SD')]: {
-      padding: 50,
-    },
+  [getResponsiveAfter('ML')]: {
+    display: 'block',
+  },
+
+  [getResponsiveAfter('SD')]: {
+    padding: 50,
   },
 });

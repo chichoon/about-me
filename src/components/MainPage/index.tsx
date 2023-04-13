@@ -15,7 +15,7 @@ interface Props {
 
 export const MainPage = ({ profileImageRef, stacks, summaries }: Props) => {
   return (
-    <div css={mainPageWrapperStyle}>
+    <>
       <Image src={profileImageRef} alt='Profile' width={200} height={200} css={imageStyle} />
       <BadgeList stacks={stacks} />
       {summaries.map((summary, i) => (
@@ -23,22 +23,9 @@ export const MainPage = ({ profileImageRef, stacks, summaries }: Props) => {
           {summary}
         </p>
       ))}
-    </div>
+    </>
   );
 };
-
-const mainPageWrapperStyle = css({
-  height: 480,
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  overflowX: 'hidden',
-  overflowY: 'scroll',
-
-  [getResponsiveAfter('ML')]: {
-    display: 'block',
-  },
-});
 
 const imageStyle = css({
   borderRadius: 5,
