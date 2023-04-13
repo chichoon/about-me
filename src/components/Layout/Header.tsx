@@ -1,8 +1,8 @@
+import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 
-import { EmailIcon, GithubIcon } from '@/assets/svgs';
-import myInfo from '@/assets/myInfo.json';
+import { BlogIcon, EmailIcon, GithubIcon } from '@/assets/svgs';
 
 import {
   headerImageStyle,
@@ -13,9 +13,16 @@ import {
   navTabsStyle,
   tabStyle,
 } from './Header.styles';
-import Link from 'next/link';
 
-export const Header = () => {
+interface Props {
+  name: string;
+  email: string;
+  oneLineBio: string;
+  githubLink: string;
+  blogLink: string;
+}
+
+export const Header = ({ name, email, oneLineBio, githubLink, blogLink }: Props) => {
   const router = useRouter();
   return (
     <>
@@ -23,15 +30,18 @@ export const Header = () => {
         <Image src='/profile.jpg' alt='chichoon profile' width={150} height={150} css={headerImageStyle} />
         <div css={headerProfileSectionStyle}>
           <div css={headerProfileNamespaceStyle}>
-            <h1>{myInfo.name}</h1>
-            <a href={`mailto:${myInfo.email}`} target='_blank'>
+            <h1>{name}</h1>
+            <a href={`mailto:${email}`} target='_blank'>
               <EmailIcon />
             </a>
-            <a href={myInfo.github} target='_blank'>
+            <a href={githubLink} target='_blank'>
               <GithubIcon />
             </a>
+            <a href={blogLink} target='_blank'>
+              <BlogIcon />
+            </a>
           </div>
-          <h2 css={headerProfileCommentStyle}>{myInfo.bio.title}</h2>
+          <h2 css={headerProfileCommentStyle}>{oneLineBio}</h2>
         </div>
       </header>
       <nav css={navTabsStyle}>
