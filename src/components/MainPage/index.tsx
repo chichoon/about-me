@@ -3,14 +3,18 @@ import { css } from '@emotion/react';
 
 interface Props {
   profileImageRef: string;
-  summary: string;
+  summaries: string[];
 }
 
-export const MainPage = ({ profileImageRef, summary }: Props) => {
+export const MainPage = ({ profileImageRef, summaries }: Props) => {
   return (
     <div css={mainPageWrapperStyle}>
       <Image src={profileImageRef} alt='Profile' width={300} height={300} css={imageStyle} />
-      <p css={paragraphStyle}>{summary}</p>
+      {summaries.map((summary, i) => (
+        <p key={`summary-${i}`} css={paragraphStyle}>
+          {summary}
+        </p>
+      ))}
     </div>
   );
 };

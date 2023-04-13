@@ -1,5 +1,5 @@
 import { Layout, MainPage } from '@/components';
-import { getProfile } from '@/services/getProfile';
+import { getProfile } from '@/services';
 import { ProfileType } from '@/types/profileData';
 
 export async function getStaticProps() {
@@ -14,10 +14,10 @@ interface Props {
 }
 
 const Home = ({ data }: Props) => {
-  const { profileImageRef, summary } = data;
+  const { profileImageRef, summaries } = data;
   return (
     <Layout profileData={data}>
-      <MainPage profileImageRef={profileImageRef} summary={summary} />
+      <MainPage profileImageRef={profileImageRef} summaries={summaries} />
     </Layout>
   );
 };
