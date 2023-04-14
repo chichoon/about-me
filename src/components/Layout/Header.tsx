@@ -1,12 +1,11 @@
-import Link from 'next/link';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
 import { css } from '@emotion/react';
 
 import { BlogIcon, EmailIcon, GithubIcon } from '@/assets/svgs';
 import { COLORS } from '@/styles/colors';
-import { getResponsiveAfter } from '@/styles/getResponsiveBreakpoint';
+import { getResponsiveAfter, getResponsiveBetween } from '@/styles/getResponsiveBreakpoint';
 import { SIZES } from '@/styles/sizes';
+import { NavBar } from './NavBar';
 
 interface Props {
   name: string;
@@ -17,7 +16,6 @@ interface Props {
 }
 
 export const Header = ({ name, email, oneLineBio, githubUsername, blogLink }: Props) => {
-  const router = useRouter();
   return (
     <>
       <header css={headerWrapperStyle}>
@@ -38,17 +36,7 @@ export const Header = ({ name, email, oneLineBio, githubUsername, blogLink }: Pr
           <h2 css={headerProfileCommentStyle}>{oneLineBio}</h2>
         </div>
       </header>
-      <nav css={navTabsStyle}>
-        <Link href='/' css={tabStyle(router.pathname === '/')}>
-          <span>소개</span>
-        </Link>
-        <Link href='/projects' css={tabStyle(router.pathname === '/projects')}>
-          <span>프로젝트</span>
-        </Link>
-        <Link href='/footprints' css={tabStyle(router.pathname === '/footprints')}>
-          <span>발자취</span>
-        </Link>
-      </nav>
+      <NavBar />
     </>
   );
 };
@@ -70,8 +58,13 @@ const headerWrapperStyle = css({
 const headerImageStyle = css({
   borderRadius: 5,
   marginTop: 25,
+  display: 'none',
   width: 125,
   height: 125,
+
+  [getResponsiveAfter('M')]: {
+    display: 'block',
+  },
 
   [getResponsiveAfter('SD')]: {
     marginTop: 50,
@@ -86,10 +79,15 @@ const headerProfileSectionStyle = css({
   justifyContent: 'flex-end',
   width: 300,
   height: 100,
-  marginTop: 25,
-  marginLeft: 25,
+  marginTop: 30,
   overflowX: 'scroll',
   overflowY: 'hidden',
+
+  [getResponsiveAfter('M')]: {
+    display: 'block',
+    marginTop: 25,
+    marginLeft: 25,
+  },
 
   [getResponsiveAfter('SD')]: {
     justifyContent: 'flex-start',
@@ -140,40 +138,3 @@ const headerProfileCommentStyle = css({
     '-webkit-line-clamp': 1,
   },
 });
-
-const navTabsStyle = css({
-  width: '100vw',
-  height: 50,
-  display: 'flex',
-  flexDirection: 'row',
-  alignItems: 'center',
-  justifyContent: 'flex-start',
-  padding: '0 50px',
-
-  [getResponsiveAfter('SD')]: {
-    padding: '0 75px 0 275px',
-  },
-});
-
-const tabStyle = (isSelected: boolean) =>
-  css({
-    background: isSelected ? COLORS.WHITE : 'none',
-    width: 100,
-    height: 50,
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    transition: 'background 0.2s linear',
-    borderTopLeftRadius: 5,
-    borderTopRightRadius: 5,
-
-    span: {
-      userSelect: 'none',
-      fontSize: SIZES.$FONT_M,
-    },
-
-    ':hover': {
-      backgroundColor: isSelected ? COLORS.WHITE : COLORS.GRAYE,
-    },
-  });
