@@ -42,7 +42,6 @@ const imageStyle = css({
   [getResponsiveAfter('ML')]: {
     float: 'left',
     marginRight: 25,
-    marginBottom: 0,
   },
 });
 
