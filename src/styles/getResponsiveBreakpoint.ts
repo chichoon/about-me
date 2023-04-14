@@ -35,8 +35,5 @@ export function getResponsiveAfter(media: string | number) {
 }
 
 export function getResponsiveBetween(min: string | number, max: string | number) {
-  console.log(
-    `@media only screen and (min-width: ${getMinBreakpoint(min)}px) and (max-width: ${getMaxBreakpoint(max)}px)`
-  );
   return `@media only screen and (min-width: ${getMinBreakpoint(min)}px) and (max-width: ${getMaxBreakpoint(max)}px)`;
 }
