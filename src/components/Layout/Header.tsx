@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 
 import { BlogIcon, EmailIcon, GithubIcon } from '@/assets/svgs';
 import { COLORS } from '@/styles/colors';
-import { getResponsiveAfter, getResponsiveBetween } from '@/styles/getResponsiveBreakpoint';
+import { getResponsiveAfter } from '@/styles/getResponsiveBreakpoint';
 import { SIZES } from '@/styles/sizes';
 import { NavBar } from './NavBar';
 
