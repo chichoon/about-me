@@ -84,7 +84,6 @@ const headerProfileSectionStyle = css({
   overflowY: 'hidden',
 
   [getResponsiveAfter('M')]: {
-    display: 'block',
     marginTop: 25,
     marginLeft: 25,
   },
