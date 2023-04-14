@@ -26,12 +26,16 @@ export const NavBar = () => {
 
 const navTabsStyle = css({
   width: '100vw',
-  height: 50,
+  height: 40,
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'flex-start',
   padding: '0 50px',
+
+  [getResponsiveAfter('M')]: {
+    height: 50,
+  },
 
   [getResponsiveAfter('SD')]: {
     padding: '0 75px 0 275px',
@@ -41,8 +45,9 @@ const navTabsStyle = css({
 const tabStyle = (isSelected: boolean) =>
   css({
     background: isSelected ? COLORS.WHITE : 'none',
-    width: 100,
-    height: 50,
+    flex: 1,
+    maxWidth: 100,
+    height: 40,
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
@@ -53,10 +58,19 @@ const tabStyle = (isSelected: boolean) =>
 
     span: {
       userSelect: 'none',
-      fontSize: SIZES.$FONT_M,
+      fontSize: SIZES.$FONT_MS,
     },
 
     ':hover': {
       backgroundColor: isSelected ? COLORS.WHITE : COLORS.GRAYE,
+    },
+
+    [getResponsiveAfter('M')]: {
+      width: 100,
+      height: 50,
+
+      span: {
+        fontSize: SIZES.$FONT_M,
+      },
     },
   });
