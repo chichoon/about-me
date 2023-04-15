@@ -22,18 +22,18 @@ export const SimpleIcon = ({ slug }: Props): JSX.Element => {
   if (!slug) return <div css={blankDivStyle} />;
   return (
     {
-      JavaScript: <SiJavascript width={15} height={15} />,
-      TypeScript: <SiTypescript width={15} height={15} />,
-      HTML5: <SiHtml5 width={15} height={15} />,
-      CSS3: <SiCss3 width={15} height={15} />,
-      Sass: <SiSass width={15} height={15} />,
-      React: <SiReact width={15} height={15} />,
-      'Next.js': <SiNextdotjs width={15} height={15} />,
-      'Socket.io': <SiSocketdotio width={15} height={15} />,
-      'React%20Query': <SiReactquery width={15} height={15} />,
-      'Styled%20Components': <SiStyledcomponents width={15} height={15} />,
-      ESLint: <SiEslint width={15} height={15} />,
-      Prettier: <SiPrettier width={15} height={15} />,
+      JavaScript: <SiJavascript width={15} height={15} color='#ffffff' />,
+      TypeScript: <SiTypescript width={15} height={15} color='#ffffff' />,
+      HTML5: <SiHtml5 width={15} height={15} color='#ffffff' />,
+      CSS3: <SiCss3 width={15} height={15} color='#ffffff' />,
+      Sass: <SiSass width={15} height={15} color='#ffffff' />,
+      React: <SiReact width={15} height={15} color='#ffffff' />,
+      'Next.js': <SiNextdotjs width={15} height={15} color='#ffffff' />,
+      'Socket.io': <SiSocketdotio width={15} height={15} color='#ffffff' />,
+      'React%20Query': <SiReactquery width={15} height={15} color='#ffffff' />,
+      'Styled%20Components': <SiStyledcomponents width={15} height={15} color='#ffffff' />,
+      ESLint: <SiEslint width={15} height={15} color='#ffffff' />,
+      Prettier: <SiPrettier width={15} height={15} color='#ffffff' />,
     }[slug] || <div css={blankDivStyle} />
   );
 };
