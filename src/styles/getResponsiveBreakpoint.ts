@@ -1,4 +1,5 @@
-function getMinBreakpoint(media: string): number {
+function getMinBreakpoint(media: string | number): number {
+  if (typeof media === 'number') return media;
   return (
     {
       M: 375,
@@ -13,7 +14,8 @@ function getMinBreakpoint(media: string): number {
   );
 }
 
-function getMaxBreakpoint(media: string): number {
+function getMaxBreakpoint(media: string | number): number {
+  if (typeof media === 'number') return media;
   return (
     {
       M: 374,
@@ -28,10 +30,10 @@ function getMaxBreakpoint(media: string): number {
   );
 }
 
-export function getResponsiveAfter(media: string) {
+export function getResponsiveAfter(media: string | number) {
   return `@media only screen and (min-width: ${getMinBreakpoint(media)}px)`;
 }
 
-export function getResponsiveBetween(min: string, max: string) {
+export function getResponsiveBetween(min: string | number, max: string | number) {
   return `@media only screen and (min-width: ${getMinBreakpoint(min)}px) and (max-width: ${getMaxBreakpoint(max)}px)`;
 }

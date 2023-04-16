@@ -31,11 +31,17 @@ const imageStyle = css({
   borderRadius: 5,
   boxShadow: `0 0 5px 5px ${COLORS.BLACK_TRANSPARENT}`,
   marginBottom: 25,
+  width: 150,
+  height: 150,
+
+  [getResponsiveAfter('M')]: {
+    width: 200,
+    height: 200,
+  },
 
   [getResponsiveAfter('ML')]: {
     float: 'left',
     marginRight: 25,
-    marginBottom: 0,
   },
 });
 
