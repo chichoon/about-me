@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 import { SIZES } from '@/styles/sizes';
 
-export const ErrorPage = () => {
+export const ErrorPage404 = () => {
   return (
     <div css={errorSectionWrapperStyle}>
       <Image src='/error.png' alt='error icon' width={200} height={200} />

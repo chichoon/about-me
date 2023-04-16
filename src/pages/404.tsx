@@ -1,4 +1,4 @@
-import { Layout, ErrorPage } from '@/components';
+import { Layout, ErrorPage404 } from '@/components';
 import { getProfile } from '@/services';
 import { ProfileType } from '@/types/profileData';
 
@@ -16,7 +16,7 @@ interface Props {
 const Custom404 = ({ data }: Props) => {
   return (
     <Layout profileData={data}>
-      <ErrorPage />
+      <ErrorPage404 />
     </Layout>
   );
 };
