@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-export const headMetaData = () => {
+export const HeadMetaData = () => {
   return (
     <Head>
       <title>chichoon&apos;s GitHub Stats</title>
