@@ -10,6 +10,7 @@ import { StatusSection } from '@/components/GithubStats/StatusSection';
 import { ReactIcon } from '@/components/GithubStats/assets';
 import { BG_SHADOW, SECRET_COLORS, SECRET_LEVELS } from '@/components/GithubStats/constants';
 import { COLORS } from '@/styles/colors';
+import { HeadMetaData } from './HeadMetaData';
 
 const noto = Noto_Sans_KR({ subsets: ['latin'], weight: '500' });
 
@@ -36,20 +37,23 @@ export const GithubStats = () => {
   }, []);
 
   return (
-    <main css={statPageBackgroundWrapperStyle}>
-      {windowWidth > 900 && windowHeight > 540 ? (
-        <>
-          <ReactIcon css={groupIconStyle} />
-          <NavButtonSection />
-          <Image src='/test.png' fill alt='operator' css={characterImageStyle} />
-          <StatusSection />
-        </>
-      ) : (
-        <div css={tooSmallMessage}>
-          <span>Screen is too small!</span>
-        </div>
-      )}
-    </main>
+    <>
+      <HeadMetaData />
+      <main css={statPageBackgroundWrapperStyle}>
+        {windowWidth > 900 && windowHeight > 540 ? (
+          <>
+            <ReactIcon css={groupIconStyle} />
+            <NavButtonSection />
+            <Image src='/test.png' fill alt='operator' css={characterImageStyle} />
+            <StatusSection />
+          </>
+        ) : (
+          <div css={tooSmallMessage}>
+            <span>Screen is too small!</span>
+          </div>
+        )}
+      </main>
+    </>
   );
 };
 
