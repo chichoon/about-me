@@ -1,5 +1,4 @@
-import { Layout } from '@/components';
-import { ErrorPage } from '@/components/ErrorPage';
+import { Layout, ErrorPage } from '@/components';
 import { getProfile } from '@/services';
 import { ProfileType } from '@/types/profileData';
 
