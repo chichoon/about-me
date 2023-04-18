@@ -5,7 +5,7 @@ import { COLORS } from '@/styles/colors';
 import { getResponsiveAfter } from '@/styles/getResponsiveBreakpoint';
 import { SIZES } from '@/styles/sizes';
 import { StackType } from '@/types/profileData';
-import { BadgeList } from './BadgeList';
+import { BadgeList } from '../BadgeList';
 
 interface Props {
   profileImageRef: string;

@@ -1,0 +1,25 @@
+name: CI Tests
+
+on:
+  pull_request:
+    branches: ['**']
+    types: [labeled, unlabeled, opened, synchronize, reopened]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}-${{ github.event_name }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Lint Check
+        run: npm run lint
+      - name: Run Cypress
+        uses: cypress-io/github-action@v5
+        with:
+          build: npm run build
+          start: npm start
+          browser: chrome

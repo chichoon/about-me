@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 
 import { SIZES } from '@/styles/sizes';
 import { StackType } from '@/types/profileData';
-import { SimpleIcon } from '../SimpleIcon';
+import { SimpleIcon } from './SimpleIcon';
 import { COLORS } from '@/styles/colors';
 
 interface Props {

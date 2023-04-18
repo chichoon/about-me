@@ -11,7 +11,7 @@ export const ProjectsPage = ({ projectData }: Props) => {
       {projectData.map(({ key, title }) => (
         <li key={`experience-${key}`}>
           <Link href={`/projects/${key}`}>
-            <span>{title}</span>
+            <h3>{title}</h3>
           </Link>
         </li>
       ))}
