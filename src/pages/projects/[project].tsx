@@ -1,10 +1,41 @@
-import { useRouter } from 'next/router';
+import { Layout, ProjectPage } from '@/components';
+import { getProfile, getProjectByKey, getProjectKeys } from '@/services';
+import { ProfileType, ProjectType } from '@/types/profileData';
 
-const Project = () => {
-  const router = useRouter();
-  const { project } = router.query;
+interface Props {
+  profileData: ProfileType;
+  projectData: ProjectType;
+}
 
-  return <p>{project}</p>;
+interface Params {
+  params: {
+    project: string;
+  };
+}
+
+export async function getStaticPaths() {
+  const keys = await getProjectKeys();
+
+  return {
+    paths: keys.map(({ key }) => ({ params: { project: key } })),
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }: Params) {
+  const profileData = await getProfile();
+  const projectData = await getProjectByKey(params.project);
+  return {
+    props: { profileData, projectData }, // will be passed to the page component as props
+  };
+}
+
+const Project = ({ profileData, projectData }: Props) => {
+  return (
+    <Layout profileData={profileData}>
+      <ProjectPage project={projectData} />
+    </Layout>
+  );
 };
 
 export default Project;

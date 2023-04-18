@@ -1,14 +1,15 @@
-import { ProjectType } from '@/types/profileData';
 import Link from 'next/link';
 
+import { ProjectKeyAndTitleType } from '@/types/profileData';
+
 interface Props {
-  projectData: ProjectType[];
+  projectKeysAndTitles: ProjectKeyAndTitleType[];
 }
 
-export const ProjectsPage = ({ projectData }: Props) => {
+export const ProjectsPage = ({ projectKeysAndTitles }: Props) => {
   return (
     <menu>
-      {projectData.map(({ key, title }) => (
+      {projectKeysAndTitles.map(({ key, title }) => (
         <li key={`experience-${key}`}>
           <Link href={`/projects/${key}`}>
             <h3>{title}</h3>

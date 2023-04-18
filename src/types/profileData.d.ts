@@ -61,3 +61,8 @@ export interface ProjectListType {
 export interface FootprintListType {
   [key: string]: FootprintType;
 }
+
+export interface ProjectKeyAndTitleType {
+  key: string;
+  title: string;
+}
