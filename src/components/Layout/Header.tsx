@@ -19,7 +19,7 @@ export const Header = ({ name, email, oneLineBio, githubUsername, blogLink }: Pr
   return (
     <>
       <header css={headerWrapperStyle}>
-        <Image src='/profile.jpg' alt='chichoon profile' width={150} height={150} css={headerImageStyle} />
+        <Image priority src='/profile.jpg' alt='chichoon profile' width={150} height={150} css={headerImageStyle} />
         <div css={headerProfileSectionStyle}>
           <div css={headerProfileNamespaceStyle}>
             <h1>{name}</h1>
