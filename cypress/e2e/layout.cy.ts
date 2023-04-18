@@ -17,13 +17,13 @@ describe('Header', () => {
 
   it('should contain H1 tag that indicates name, Only 1 h1 tag should be shown', () => {
     cy.visit('/');
-    cy.get('header > div > div > h1').should('have.length', 1);
+    cy.get('header h1').should('have.length', 1);
     cy.get('h1').should('have.length', 1);
   });
 
   it('should contain H1 tag that explains this person, Only 1 h2 tag should be shown', () => {
     cy.visit('/');
-    cy.get('header > div > h2').should('have.length', 1);
+    cy.get('header h2').should('have.length', 1);
     cy.get('h2').should('have.length', 1);
   });
 });
