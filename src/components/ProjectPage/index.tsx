@@ -1,9 +1,15 @@
 import { ProjectType } from '@/types/profileData';
+import { ProjectInfoHeader } from './ProjectInfoHeader';
 
 interface Props {
   project: ProjectType;
 }
 
 export const ProjectPage = ({ project }: Props) => {
-  return <div>{project.title}</div>;
+  return (
+    <>
+      <ProjectInfoHeader project={project} />
+      <div>hihi</div>
+    </>
+  );
 };

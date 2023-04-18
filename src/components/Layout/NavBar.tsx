@@ -14,10 +14,10 @@ export const NavBar = () => {
       <Link href='/' css={tabStyle(router.pathname === '/')}>
         <span>소개</span>
       </Link>
-      <Link href='/projects' css={tabStyle(router.pathname === '/projects')}>
+      <Link href='/projects' css={tabStyle(router.pathname.startsWith('/projects'))}>
         <span>프로젝트</span>
       </Link>
-      <Link href='/footprints' css={tabStyle(router.pathname === '/footprints')}>
+      <Link href='/footprints' css={tabStyle(router.pathname.startsWith('/footprints'))}>
         <span>발자취</span>
       </Link>
     </nav>
