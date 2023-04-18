@@ -12,7 +12,6 @@ export interface ProfileType {
 }
 
 interface HistoryType {
-  key: string;
   title: string;
   imageRef: string;
   startDate: string;
@@ -53,4 +52,12 @@ export interface ProjectType extends HistoryType {
 
 export interface FootprintType extends HistoryType {
   achievements: AchievementsType[];
+}
+
+export interface ProjectListType {
+  [key: string]: ProjectType;
+}
+
+export interface FootprintListType {
+  [key: string]: FootprintType;
 }

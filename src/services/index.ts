@@ -1,5 +1,9 @@
 // export { getGithubStats } from './getGithubStats';
-export { getFootprints } from './getFootprints';
-export { getProjects } from './getProjects';
+
 export { getProfile } from './getProfile';
-export { getProjectByIndex } from './getProjectByIndex';
+
+export { getProjects } from './getProjects';
+export { getProjectByKey } from './getProjectByKey';
+export { getProjectKeys } from './getProjectKeys';
+
+export { getFootprints } from './getFootprints';
