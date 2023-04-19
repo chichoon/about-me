@@ -57,13 +57,20 @@ const headerWrapperStyle = css({
 
 const headerImageStyle = css({
   borderRadius: 5,
-  marginTop: 25,
   display: 'none',
-  width: 125,
-  height: 125,
-
+  
   [getResponsiveAfter('M')]: {
     display: 'block',
+    marginTop: 50,
+    width: 100,
+    height: 100,
+  },
+
+  [getResponsiveAfter('ML')]: {
+    display: 'block',
+    marginTop: 25,
+    width: 125,
+    height: 125,
   },
 
   [getResponsiveAfter('SD')]: {
@@ -102,19 +109,37 @@ const headerProfileNamespaceStyle = css({
   marginBottom: 10,
 
   h1: {
-    fontSize: SIZES.$FONT_XL,
+    fontSize: SIZES.$FONT_L,
   },
 
   a: {
     padding: 2.5,
-    width: 30,
-    height: 30,
+    width: 25,
+    height: 25,
     marginLeft: 15,
   },
 
   svg: {
-    width: 25,
-    height: 25,
+    width: 20,
+    height: 20,
+  },
+
+  [getResponsiveAfter('ML')]: {
+    h1: {
+      fontSize: SIZES.$FONT_XL,
+    },
+
+    a: {
+      padding: 2.5,
+      width: 30,
+      height: 30,
+      marginLeft: 15,
+    },
+
+    svg: {
+      width: 25,
+      height: 25,
+    },
   },
 
   [getResponsiveAfter('SD')]: {
@@ -126,11 +151,15 @@ const headerProfileNamespaceStyle = css({
 const headerProfileCommentStyle = css({
   display: '-webkit-box',
   width: '100%',
-  fontSize: SIZES.$FONT_L,
+  fontSize: SIZES.$FONT_M,
   overflow: 'hidden',
   lineClamp: 2,
   '-webkit-box-orient': 'vertical',
   '-webkit-line-clamp': 2,
+
+  [getResponsiveAfter('ML')]: {
+    fontSize: SIZES.$FONT_L,
+  },
 
   [getResponsiveAfter('SD')]: {
     lineClamp: 1,
