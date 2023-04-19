@@ -46,10 +46,10 @@ const badgeStyle = (color: string) =>
     marginBottom: 5,
     padding: '0 5px',
 
-  [getResponsiveAfter('M')]: {
-    marginRight: 10,
-    marginBottom: 10,
-  },
+    [getResponsiveAfter('M')]: {
+      marginRight: 10,
+      marginBottom: 10,
+    },
 
     span: {
       marginLeft: 5,

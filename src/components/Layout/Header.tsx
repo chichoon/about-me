@@ -58,7 +58,7 @@ const headerWrapperStyle = css({
 const headerImageStyle = css({
   borderRadius: 5,
   display: 'none',
-  
+
   [getResponsiveAfter('M')]: {
     display: 'block',
     marginTop: 50,
