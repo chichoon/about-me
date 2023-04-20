@@ -1,19 +1,19 @@
 import Link from 'next/link';
 import { css } from '@emotion/react';
 
-import { ProjectKeyAndTitleType } from '@/types/profileData';
+import { ProjectTimestampType } from '@/types/profileData';
 
 import { COLORS } from '@/styles/colors';
 import { LEVELS } from '@/styles/levels';
 
 interface Props {
-  projectKeysAndTitles: ProjectKeyAndTitleType[];
+  projectTimestamps: ProjectTimestampType[];
 }
 
-export const ProjectsPage = ({ projectKeysAndTitles }: Props) => {
+export const ProjectsPage = ({ projectTimestamps }: Props) => {
   return (
     <menu css={projectPageWrapperStyle(100)}>
-      {projectKeysAndTitles.map(({ key, title }, index) => (
+      {projectTimestamps.map(({ key, title }, index) => (
         <li key={`experience-${key}`} css={projectElementStyle(index * 50)}>
           <Link href={`/projects/${key}`}>
             <h3>{title}</h3>
