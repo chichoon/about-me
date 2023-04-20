@@ -46,9 +46,13 @@ const headerWrapperStyle = css({
   display: 'flex',
   flexDirection: 'row',
   width: '100vw',
-  height: 150,
+  height: 100,
   padding: '0 25px',
   marginBottom: 25,
+
+  [getResponsiveAfter('M')]: {
+    height: 150,
+  },
 
   [getResponsiveAfter('SD')]: {
     padding: '0 100px',
@@ -86,13 +90,15 @@ const headerProfileSectionStyle = css({
   justifyContent: 'flex-end',
   width: 300,
   height: 100,
-  marginTop: 30,
+  marginTop: 0,
+  padding: 10,
   overflowX: 'scroll',
   overflowY: 'hidden',
 
   [getResponsiveAfter('M')]: {
     marginTop: 25,
     marginLeft: 25,
+    padding: 0,
   },
 
   [getResponsiveAfter('SD')]: {
