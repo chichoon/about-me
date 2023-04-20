@@ -1,8 +1,10 @@
 import { css } from '@emotion/react';
 
-import { SIZES } from '@/styles/sizes';
-import { StackType } from '@/types/profileData';
 import { SimpleIcon } from './SimpleIcon';
+import { StackType } from '@/types/profileData';
+
+import { getResponsiveAfter } from '@/styles/getResponsiveBreakpoint';
+import { SIZES } from '@/styles/sizes';
 import { COLORS } from '@/styles/colors';
 
 interface Props {
@@ -40,9 +42,14 @@ const badgeStyle = (color: string) =>
     justifyContent: 'center',
     backgroundColor: `#${color}`,
     height: SIZES.$FONT_L,
-    marginRight: 10,
-    marginBottom: 10,
+    marginRight: 5,
+    marginBottom: 5,
     padding: '0 5px',
+
+    [getResponsiveAfter('M')]: {
+      marginRight: 10,
+      marginBottom: 10,
+    },
 
     span: {
       marginLeft: 5,

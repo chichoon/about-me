@@ -28,15 +28,15 @@ export const MainPage = ({ profileImageRef, stacks, summaries }: Props) => {
 };
 
 const imageStyle = css({
-  borderRadius: 5,
-  boxShadow: `0 0 5px 5px ${COLORS.BLACK_TRANSPARENT}`,
-  marginBottom: 25,
-  width: 150,
-  height: 150,
+  display: 'none',
 
   [getResponsiveAfter('M')]: {
+    display: 'block',
     width: 200,
     height: 200,
+    borderRadius: 5,
+    boxShadow: `0 0 5px 5px ${COLORS.BLACK_TRANSPARENT}`,
+    marginBottom: 25,
   },
 
   [getResponsiveAfter('ML')]: {
