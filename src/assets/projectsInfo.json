@@ -1,32 +1,86 @@
-[
-  {
-    "key": "jst",
-    "title": "JST",
-    "imageRef": "https://avatars.githubusercontent.com/u/37893979?v=4",
-    "startDate": "2017년 3월",
-    "githubLink": "https://github.com/chichoon",
-    "publishedLink": "https://github.com/chichoon",
-    "stacks": [{ "name": "JavaScript", "color": "F7DF1E", "logo": "JavaScript" }],
-    "summary": "뭐뭐했습니다.",
+{
+  "42world": {
+    "title": "42World",
+    "imageRef": "https://user-images.githubusercontent.com/37893979/231683789-374c9b8b-6243-4b80-b05b-bc8f737ee5aa.png",
+    "startDate": "2022년 3월",
+    "githubLink": "https://github.com/42-world",
+    "publishedLink": "https://www.42world.kr/",
+    "stacks": [
+      { "name": "JavaScript", "color": "F7DF1E", "logo": "JavaScript" },
+      { "name": "TypeScript", "color": "3178C6", "logo": "TypeScript" },
+      { "name": "React", "color": "61DAFB", "logo": "React" },
+      { "name": "React Query", "color": "FF4154", "logo": "React%20Query" },
+      { "name": "Styled Components", "color": "DB7093", "logo": "Styled%20Components" },
+      { "name": "Emotion", "color": "D26AC2" }
+    ],
+    "summary": "취업자, 창업자, 알럼나이, 카뎃을 아우르는\n42서울 통합 커뮤니티 채널",
     "description": [
       {
-        "title": "hihi",
-        "mainText": "뭐뭐뭐"
+        "title": "만들게 된 계기",
+        "mainText": "슬랙 메신저를 활용할 수 없는 42서울 지원 종료 학생과 졸업생, 재학생 모두가 함께할 수 있는 커뮤니티를 만들자는 아이디어를 가지고 42서울 학생들이 모여 만든 커뮤니티 게시판 서비스"
       },
       {
-        "title": "hihi",
-        "mainText": "뭐뭐뭐"
+        "title": "프로젝트 규모",
+        "mainText": "프론트엔드 4~6인, 백엔드 4~5인으로 구성된 팀 프로젝트이며, 본인은 프론트엔드 마이페이지 파트 및 애셋 담당"
       },
       {
-        "title": "hihi",
-        "mainText": "뭐뭐뭐"
+        "title": "성과",
+        "mainText": "42서울 커뮤니티에서의 꾸준한 홍보와 이벤트를 통해 누적 500명 이상의 회원수를 확보\n실제 사용자들에게 피드백과 버그리포팅을 받아 다듬음으로써 사용자와 가까이 할 수 있는 기회가 되었다."
+      }
+    ],
+    "technicalSpec": [
+      {
+        "title": "React Query와 캐시를 이용한 전역 상태관리",
+        "mainText": [
+          "유저 로그인 정보는 모든 페이지에서 이용되기 때문에 전역으로 관리할 필요가 있으며, 따라서 유저 정보는 React Query와 Axios를 이용하여 요청하고, 전역 상태관리는 Recoil을 사용했었다.",
+          "React Query의 useQuery를 사용하면 반복적인 요청을 보내는 대신 캐싱된 데이터를 이용할 수 있으므로, useQuery를 호출하는 커스텀 훅을 만들면 전역 상태값을 사용하듯이 유저 정보를 캐시에서 불러와 사용할 수 있게 된다.",
+          "따라서 유저 정보는 Recoil을 사용하지 않고 React Query만으로도 전역으로 상태 관리가 가능해졌다."
+        ],
+        "link": [
+          {
+            "title": "React-Query의 useQuery 사용기",
+            "link": "https://blog.chichoon.com/555"
+          }
+        ]
+      },
+      {
+        "title": "React Portal과 이벤트 위임을 통한 모달 제작",
+        "mainText": [
+          "마이페이지에서 프로필 캐릭터 선택 화면은 React에서 지원하는 Portal과 이벤트 위임을 이용하여 모달으로 구성하였다.",
+          "Portal은 부모 요소가 아닌 다른 요소의 하위에 렌더링을 할 수 있으며, 이벤트 위임을 통해 문서의 최상단 노드 (document) 에서 이벤트를 감지하되 핸들러 내부에서 이벤트 발생 위치를 파악하고 서로 다른 동작을 수행한다.",
+          "모달이 적용되어야 하는 페이지가 마이페이지밖에 없기 때문에 여러 기능이 포함되어 무거운 라이브러리를 설치하는 것보다는 지역적으로 사용되는 hook과 컴포넌트로 관리하는 것이 적합하다고 판단했다."
+        ],
+        "link": [
+          {
+            "title": "React Portal 사용하기",
+            "link": "https://blog.chichoon.com/527"
+          },
+          {
+            "title": "이벤트 위임을 통한 useClickOutside 구현하기",
+            "link": "https://blog.chichoon.com/622"
+          }
+        ]
+      },
+      {
+        "title": "코드 리팩터링 일지",
+        "mainText": [
+          "기존에 팀에서 시범적으로 도입하였던 Atomic 구조는 아토믹 디자인에 대한 상세한 이해가 부족한 상태에서 적용했던 탓에 Atom과 Molecule의 경계가 모호하게 느껴졌다.",
+          "협업 시에도 어떤 컴포넌트가 어느 폴더에 있는지 직관적으로 알기 어렵다는 문제점이 있었다.",
+          "약 2주간 팀원들과 회의를 통해 폴더 구조 및 컨벤션 개편을 진행하였고, 그에 맞추어 코드를 가독성 좋게 리팩터링하였다.",
+          "현재는 JavaScript로 작성된 코드를 하나씩 TypeScript로 변환하여 타입 관련 오류를 사전에 발견할 수 있게끔 하고, 복잡한 API 데이터 형식을 타입을 통해 정형화함으로써 읽기 쉬운 코드를 만들고 있다."
+        ],
+        "link": [
+          {
+            "title": "Mypage 코드 리팩터링하기",
+            "link": "https://blog.chichoon.com/621"
+          }
+        ]
       }
     ]
   },
-  {
-    "key": "scopa",
+  "scopa": {
     "title": "SCOPA",
-    "imageRef": "https://avatars.githubusercontent.com/u/37893979?v=4",
+    "imageRef": "https://user-images.githubusercontent.com/37893979/231683723-f86e8439-115e-4e1e-a9e3-3880d038d831.png",
     "startDate": "2017년 3월",
     "endDate": "2021년 1월",
     "githubLink": "https://github.com/chichoon",
@@ -47,5 +101,31 @@
         "mainText": "뭐뭐뭐"
       }
     ]
+  },
+  "jst": {
+    "title": "지최표준시",
+    "imageRef": "https://user-images.githubusercontent.com/37893979/231683869-d1fe004e-b7f5-41ee-8f97-884e4aa647ef.png",
+    "startDate": "2022년 6월",
+    "githubLink": "https://github.com/chichoon/JiychoiStandardTime",
+    "publishedLink": "https://jst.chichoon.com/main",
+    "stacks": [
+      { "name": "TypeScript", "color": "3178C6", "logo": "TypeScript" },
+
+      { "name": "React", "color": "61DAFB", "logo": "React" },
+      { "name": "React Query", "color": "FF4154", "logo": "React%20Query" },
+      { "name": "Redux Toolkit", "color": "764ABC" },
+      { "name": "Sass", "color": "CC6699", "logo": "Sass" }
+    ],
+    "summary": "좋은 아침 🌄 입니다\n지최의 추천곡을 웹에서 즐겨요",
+    "description": [
+      {
+        "title": "만들게 된 계기",
+        "mainText": "42서울 슬랙 채널에서 2021년 8월부터 아침마다 꾸준히 음악 추천을 하였는데, 채널에 메시지가 쌓일 수록 과거의 추천곡들을 모아보기가 어렵다는 문제점이 있었다.\n재생 목록을 만들되 슬랙 메시지 포맷과 매일매일 업로드된다는 이점을 살리고 싶어 개인 프로젝트로 제작하게 되었다."
+      },
+      {
+        "title": "프로젝트 규모",
+        "mainText": "배운 내용을 복습하기 위해 단기간 빠르게 배포하는 것을 목표로 한 프로젝트로, 기획부터 배포까지 1인 프로젝트로 수행하였다.\n평소에 아이디어만 갖고 있던 프로젝트를 도전해본다는 마음으로 약 일주일 간 빠르게 기획부터 Netlify로 배포까지 전 과정을 혼자 진행하였다."
+      }
+    ]
   }
-]
+}
