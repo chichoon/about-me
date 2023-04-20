@@ -160,8 +160,8 @@ const headerProfileCommentStyle = css({
   fontSize: SIZES.$FONT_M,
   overflow: 'hidden',
   lineClamp: 2,
-  '-webkit-box-orient': 'vertical',
-  '-webkit-line-clamp': 2,
+  WebkitBoxOrient: 'vertical',
+  WebkitLineClamp: 2,
 
   [getResponsiveAfter('ML')]: {
     fontSize: SIZES.$FONT_L,
@@ -169,6 +169,6 @@ const headerProfileCommentStyle = css({
 
   [getResponsiveAfter('SD')]: {
     lineClamp: 1,
-    '-webkit-line-clamp': 1,
+    WebkitLineClamp: 1,
   },
 });
