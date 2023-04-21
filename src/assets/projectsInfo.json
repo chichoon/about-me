@@ -2,7 +2,7 @@
   "42world": {
     "title": "42World",
     "imageRef": "https://user-images.githubusercontent.com/37893979/231683789-374c9b8b-6243-4b80-b05b-bc8f737ee5aa.png",
-    "startDate": "2022년 3월",
+    "startDate": "2022 03",
     "githubLink": "https://github.com/42-world",
     "publishedLink": "https://www.42world.kr/",
     "stacks": [
@@ -81,8 +81,8 @@
   "scopa": {
     "title": "SCOPA",
     "imageRef": "https://user-images.githubusercontent.com/37893979/231683723-f86e8439-115e-4e1e-a9e3-3880d038d831.png",
-    "startDate": "2017년 3월",
-    "endDate": "2021년 1월",
+    "startDate": "2022 11",
+    "endDate": "2022 12",
     "githubLink": "https://github.com/chichoon",
     "publishedLink": "https://github.com/chichoon",
     "stacks": [{ "name": "TypeScript", "color": "3178C6", "logo": "TypeScript" }],
@@ -105,7 +105,7 @@
   "jst": {
     "title": "지최표준시",
     "imageRef": "https://user-images.githubusercontent.com/37893979/231683869-d1fe004e-b7f5-41ee-8f97-884e4aa647ef.png",
-    "startDate": "2022년 6월",
+    "startDate": "2022 06",
     "githubLink": "https://github.com/chichoon/JiychoiStandardTime",
     "publishedLink": "https://jst.chichoon.com/main",
     "stacks": [
