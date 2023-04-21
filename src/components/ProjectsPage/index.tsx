@@ -1,42 +1,43 @@
 import { css } from '@emotion/react';
 
-import { ProjectTimestampType } from '@/types/profileData';
+import { ProjectType } from '@/types/profileData';
 import { ProjectElement } from './ProjectElement';
 
 import { COLORS } from '@/styles/colors';
 import { LEVELS } from '@/styles/levels';
+import { SIZES } from '@/styles/sizes';
 
 interface Props {
-  projectTimestamps: ProjectTimestampType[];
+  projectsData: ProjectType[];
 }
 
 function getTopOffsetPercentage(min: number, max: number, year: number, month: number) {
   return (max - (year * 12 + month)) / (max - min);
 }
 
-export const ProjectsPage = ({ projectTimestamps }: Props) => {
+export const ProjectsPage = ({ projectsData }: Props) => {
   const min =
-    projectTimestamps[projectTimestamps.length - 1].year * 12 + projectTimestamps[projectTimestamps.length - 1].month;
-  const max = projectTimestamps[0].year * 12 + projectTimestamps[0].month;
+    projectsData[projectsData.length - 1].startDateYear * 12 + projectsData[projectsData.length - 1].startDateMonth;
+  const max = projectsData[0].startDateYear * 12 + projectsData[0].startDateMonth;
 
   return (
-    <menu css={projectPageWrapperStyle(100)}>
-      {projectTimestamps.map(({ key, title, year, month }) => (
+    <menu css={projectPageWrapperStyle()}>
+      {projectsData.map(({ key, title, startDateYear, startDateMonth }) => (
         <ProjectElement
           key={`experience-${key}`}
           keyValue={key}
           title={title}
-          topOffset={getTopOffsetPercentage(min, max, year, month)}
+          topOffset={getTopOffsetPercentage(min, max, startDateYear, startDateMonth)}
         />
       ))}
     </menu>
   );
 };
 
-const projectPageWrapperStyle = (height: number) =>
+const projectPageWrapperStyle = () =>
   css({
     position: 'relative',
-    height,
+    height: SIZES.$BRANCH_MAINSTREAM_HEIGHT + 100,
 
     ':after': {
       content: '""',
@@ -46,7 +47,7 @@ const projectPageWrapperStyle = (height: number) =>
       top: 10,
       left: 25,
       width: 10,
-      height,
-      backgroundColor: COLORS.GRAY9,
+      height: SIZES.$BRANCH_MAINSTREAM_HEIGHT + 100,
+      backgroundColor: COLORS.GRAYC,
     },
   });

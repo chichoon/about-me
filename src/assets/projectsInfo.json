@@ -1,5 +1,6 @@
 {
   "scopa": {
+    "key": "scopa",
     "title": "SCOPA",
     "imageRef": "https://user-images.githubusercontent.com/37893979/231683723-f86e8439-115e-4e1e-a9e3-3880d038d831.png",
     "startDate": "2022 11",
@@ -28,6 +29,7 @@
     ]
   },
   "jst": {
+    "key": "jst",
     "title": "지최표준시",
     "imageRef": "https://user-images.githubusercontent.com/37893979/231683869-d1fe004e-b7f5-41ee-8f97-884e4aa647ef.png",
     "startDateYear": 2022,
@@ -55,6 +57,7 @@
     ]
   },
   "42world": {
+    "key": "42world",
     "title": "42World",
     "imageRef": "https://user-images.githubusercontent.com/37893979/231683789-374c9b8b-6243-4b80-b05b-bc8f737ee5aa.png",
     "startDateYear": 2022,
