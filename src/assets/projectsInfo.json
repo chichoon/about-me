@@ -1,8 +1,64 @@
 {
+  "scopa": {
+    "title": "SCOPA",
+    "imageRef": "https://user-images.githubusercontent.com/37893979/231683723-f86e8439-115e-4e1e-a9e3-3880d038d831.png",
+    "startDate": "2022 11",
+    "endDate": "2022 12",
+    "startDateYear": 2022,
+    "startDateMonth": 11,
+    "endDateYear": 2022,
+    "endDateMonth": 12,
+    "githubLink": "https://github.com/chichoon",
+    "publishedLink": "https://github.com/chichoon",
+    "stacks": [{ "name": "TypeScript", "color": "3178C6", "logo": "TypeScript" }],
+    "summary": "뭐뭐했습니다.",
+    "description": [
+      {
+        "title": "hihi",
+        "mainText": "뭐뭐뭐"
+      },
+      {
+        "title": "hihi",
+        "mainText": "뭐뭐뭐"
+      },
+      {
+        "title": "hihi",
+        "mainText": "뭐뭐뭐"
+      }
+    ]
+  },
+  "jst": {
+    "title": "지최표준시",
+    "imageRef": "https://user-images.githubusercontent.com/37893979/231683869-d1fe004e-b7f5-41ee-8f97-884e4aa647ef.png",
+    "startDateYear": 2022,
+    "startDateMonth": 6,
+    "githubLink": "https://github.com/chichoon/JiychoiStandardTime",
+    "publishedLink": "https://jst.chichoon.com/main",
+    "stacks": [
+      { "name": "TypeScript", "color": "3178C6", "logo": "TypeScript" },
+
+      { "name": "React", "color": "61DAFB", "logo": "React" },
+      { "name": "React Query", "color": "FF4154", "logo": "React%20Query" },
+      { "name": "Redux Toolkit", "color": "764ABC" },
+      { "name": "Sass", "color": "CC6699", "logo": "Sass" }
+    ],
+    "summary": "좋은 아침 🌄 입니다\n지최의 추천곡을 웹에서 즐겨요",
+    "description": [
+      {
+        "title": "만들게 된 계기",
+        "mainText": "42서울 슬랙 채널에서 2021년 8월부터 아침마다 꾸준히 음악 추천을 하였는데, 채널에 메시지가 쌓일 수록 과거의 추천곡들을 모아보기가 어렵다는 문제점이 있었다.\n재생 목록을 만들되 슬랙 메시지 포맷과 매일매일 업로드된다는 이점을 살리고 싶어 개인 프로젝트로 제작하게 되었다."
+      },
+      {
+        "title": "프로젝트 규모",
+        "mainText": "배운 내용을 복습하기 위해 단기간 빠르게 배포하는 것을 목표로 한 프로젝트로, 기획부터 배포까지 1인 프로젝트로 수행하였다.\n평소에 아이디어만 갖고 있던 프로젝트를 도전해본다는 마음으로 약 일주일 간 빠르게 기획부터 Netlify로 배포까지 전 과정을 혼자 진행하였다."
+      }
+    ]
+  },
   "42world": {
     "title": "42World",
     "imageRef": "https://user-images.githubusercontent.com/37893979/231683789-374c9b8b-6243-4b80-b05b-bc8f737ee5aa.png",
-    "startDate": "2022 03",
+    "startDateYear": 2022,
+    "startDateMonth": 3,
     "githubLink": "https://github.com/42-world",
     "publishedLink": "https://www.42world.kr/",
     "stacks": [
@@ -75,56 +131,6 @@
             "link": "https://blog.chichoon.com/621"
           }
         ]
-      }
-    ]
-  },
-  "scopa": {
-    "title": "SCOPA",
-    "imageRef": "https://user-images.githubusercontent.com/37893979/231683723-f86e8439-115e-4e1e-a9e3-3880d038d831.png",
-    "startDate": "2022 11",
-    "endDate": "2022 12",
-    "githubLink": "https://github.com/chichoon",
-    "publishedLink": "https://github.com/chichoon",
-    "stacks": [{ "name": "TypeScript", "color": "3178C6", "logo": "TypeScript" }],
-    "summary": "뭐뭐했습니다.",
-    "description": [
-      {
-        "title": "hihi",
-        "mainText": "뭐뭐뭐"
-      },
-      {
-        "title": "hihi",
-        "mainText": "뭐뭐뭐"
-      },
-      {
-        "title": "hihi",
-        "mainText": "뭐뭐뭐"
-      }
-    ]
-  },
-  "jst": {
-    "title": "지최표준시",
-    "imageRef": "https://user-images.githubusercontent.com/37893979/231683869-d1fe004e-b7f5-41ee-8f97-884e4aa647ef.png",
-    "startDate": "2022 06",
-    "githubLink": "https://github.com/chichoon/JiychoiStandardTime",
-    "publishedLink": "https://jst.chichoon.com/main",
-    "stacks": [
-      { "name": "TypeScript", "color": "3178C6", "logo": "TypeScript" },
-
-      { "name": "React", "color": "61DAFB", "logo": "React" },
-      { "name": "React Query", "color": "FF4154", "logo": "React%20Query" },
-      { "name": "Redux Toolkit", "color": "764ABC" },
-      { "name": "Sass", "color": "CC6699", "logo": "Sass" }
-    ],
-    "summary": "좋은 아침 🌄 입니다\n지최의 추천곡을 웹에서 즐겨요",
-    "description": [
-      {
-        "title": "만들게 된 계기",
-        "mainText": "42서울 슬랙 채널에서 2021년 8월부터 아침마다 꾸준히 음악 추천을 하였는데, 채널에 메시지가 쌓일 수록 과거의 추천곡들을 모아보기가 어렵다는 문제점이 있었다.\n재생 목록을 만들되 슬랙 메시지 포맷과 매일매일 업로드된다는 이점을 살리고 싶어 개인 프로젝트로 제작하게 되었다."
-      },
-      {
-        "title": "프로젝트 규모",
-        "mainText": "배운 내용을 복습하기 위해 단기간 빠르게 배포하는 것을 목표로 한 프로젝트로, 기획부터 배포까지 1인 프로젝트로 수행하였다.\n평소에 아이디어만 갖고 있던 프로젝트를 도전해본다는 마음으로 약 일주일 간 빠르게 기획부터 Netlify로 배포까지 전 과정을 혼자 진행하였다."
       }
     ]
   }
