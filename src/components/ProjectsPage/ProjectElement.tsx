@@ -92,7 +92,8 @@ const projectBranchStyle = (isHover: boolean) =>
       position: 'absolute',
       left: 20,
       top: -5,
-      color: COLORS.GRAYA,
+      color: isHover ? COLORS.GRAYA : COLORS.GRAYC,
+      transition: `color 0.2s ease-in`,
     },
 
     ':before': {
