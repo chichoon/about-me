@@ -6,13 +6,17 @@ export async function getProjectTimestamp() {
   const projectList = projects as ProjectListType;
   const data = await new Promise<ProjectTimestampType[]>((resolve) => {
     resolve(
-      Object.keys(projectList).map((key) => ({
-        key,
-        title: projectList[key].title,
-        startDate: projectList[key].startDate,
-      }))
+      Object.keys(projectList).map((key) => {
+        const yearAndMonth = projectList[key].startDate.split(' ').map(Number);
+        return {
+          key,
+          title: projectList[key].title,
+          year: yearAndMonth[0],
+          month: yearAndMonth[1],
+        };
+      })
     );
   });
 
-  return data;
+  return data.sort((a, b) => b.year - a.year || b.month - a.month);
 }
