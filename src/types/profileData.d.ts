@@ -65,5 +65,6 @@ export interface FootprintListType {
 export interface ProjectTimestampType {
   key: string;
   title: string;
-  startDate: string;
+  year: number;
+  month: number;
 }
