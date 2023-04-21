@@ -9,7 +9,8 @@ interface Props {
 }
 
 export const ProjectInfoHeader = ({ project }: Props) => {
-  const { title, imageRef, startDate, endDate, githubLink, publishedLink } = project;
+  const { title, imageRef, startDateMonth, startDateYear, endDateMonth, endDateYear, githubLink, publishedLink } =
+    project;
   return (
     <div>
       <Image width={160} height={50} src={imageRef} alt={`${title} logo`} />
@@ -25,7 +26,7 @@ export const ProjectInfoHeader = ({ project }: Props) => {
             </a>
           )}
         </div>
-        <span>{`${startDate} ~ ${endDate ?? ''}`}</span>
+        <span>{`${startDateYear}. ${startDateMonth} ~ ${endDateYear ? `${endDateYear}. ${endDateMonth}` : ''}`}</span>
       </div>
     </div>
   );
