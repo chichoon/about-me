@@ -22,12 +22,11 @@ export const ProjectsPage = ({ projectsData }: Props) => {
 
   return (
     <menu css={projectPageWrapperStyle()}>
-      {projectsData.map(({ key, title, startDateYear, startDateMonth }) => (
+      {projectsData.map((project) => (
         <ProjectElement
-          key={`experience-${key}`}
-          keyValue={key}
-          title={title}
-          topOffset={getTopOffsetPercentage(min, max, startDateYear, startDateMonth)}
+          key={`experience-${project.key}`}
+          project={project}
+          topOffset={getTopOffsetPercentage(min, max, project.startDateYear, project.startDateMonth)}
         />
       ))}
     </menu>
@@ -49,7 +48,7 @@ const projectPageWrapperStyle = () =>
       zIndex: LEVELS.MAINSTREAM_BRANCH,
       width: 10,
       height: SIZES.$BRANCH_MAINSTREAM_HEIGHT + 100,
-      background: `linear-gradient(to top, ${COLORS.GRAYC} 90%, ${COLORS.WHITE} 100% )`,
+      background: `linear-gradient(to top, ${COLORS.GRAY9} 90%, ${COLORS.WHITE} 100% )`,
     },
 
     ':after': {
@@ -61,6 +60,6 @@ const projectPageWrapperStyle = () =>
       width: 40,
       height: 40,
       borderRadius: 25,
-      border: `5px solid ${COLORS.GRAYC}`,
+      border: `5px solid ${COLORS.GRAY9}`,
     },
   });
