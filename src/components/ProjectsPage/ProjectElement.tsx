@@ -23,7 +23,7 @@ const projectElementStyle = (topOffset: number) =>
   css({
     position: 'absolute',
     zIndex: LEVELS.SUB_BRANCH,
-    top: topOffset * 50,
+    top: topOffset * 100,
 
     a: {
       width: '100%',
