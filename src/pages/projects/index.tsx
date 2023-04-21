@@ -5,21 +5,21 @@ import { getProjectTimestamp } from '@/services/getProjectTimestamp';
 
 export async function getStaticProps() {
   const profileData = await getProfile();
-  const projectKeysAndTitles = await getProjectTimestamp();
+  const projectTimestamps = await getProjectTimestamp();
   return {
-    props: { profileData, projectKeysAndTitles }, // will be passed to the page component as props
+    props: { profileData, projectTimestamps }, // will be passed to the page component as props
   };
 }
 
 interface Props {
   profileData: ProfileType;
-  projectTimestamp: ProjectTimestampType[];
+  projectTimestamps: ProjectTimestampType[];
 }
 
-const projects = ({ profileData, projectTimestamp }: Props) => {
+const projects = ({ profileData, projectTimestamps }: Props) => {
   return (
     <Layout profileData={profileData}>
-      <ProjectsPage projectTimestamps={projectTimestamp} />
+      <ProjectsPage projectTimestamps={projectTimestamps} />
     </Layout>
   );
 };

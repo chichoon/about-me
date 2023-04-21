@@ -17,7 +17,7 @@ export async function getStaticPaths() {
   const keys = await getProjectKeys();
 
   return {
-    paths: keys.map(({ key }) => ({ params: { project: key } })),
+    paths: keys.map((key) => ({ params: { project: key } })),
     fallback: false,
   };
 }
