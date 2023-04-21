@@ -37,17 +37,30 @@ export const ProjectsPage = ({ projectsData }: Props) => {
 const projectPageWrapperStyle = () =>
   css({
     position: 'relative',
-    height: SIZES.$BRANCH_MAINSTREAM_HEIGHT + 100,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    paddingLeft: 25,
+    height: SIZES.$BRANCH_MAINSTREAM_HEIGHT + 150,
+
+    ':before': {
+      content: '""',
+      display: 'block',
+      zIndex: LEVELS.MAINSTREAM_BRANCH,
+      width: 10,
+      height: SIZES.$BRANCH_MAINSTREAM_HEIGHT + 100,
+      background: `linear-gradient(to top, ${COLORS.GRAYC} 90%, ${COLORS.WHITE} 100% )`,
+    },
 
     ':after': {
       content: '""',
-      display: 'block',
-      position: 'absolute',
-      zIndex: LEVELS.MAINSTREAM_BRANCH,
-      top: 10,
-      left: 25,
-      width: 10,
-      height: SIZES.$BRANCH_MAINSTREAM_HEIGHT + 100,
-      backgroundColor: COLORS.GRAYC,
+      backgroundColor: COLORS.WHITE,
+      zIndex: LEVELS.SUB_BRANCH,
+      marginLeft: -20,
+      marginTop: -1,
+      width: 40,
+      height: 40,
+      borderRadius: 25,
+      border: `5px solid ${COLORS.GRAYC}`,
     },
   });
