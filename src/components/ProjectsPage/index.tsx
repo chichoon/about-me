@@ -6,6 +6,7 @@ import { ProjectElement } from './ProjectElement';
 import { COLORS } from '@/styles/colors';
 import { LEVELS } from '@/styles/levels';
 import { SIZES } from '@/styles/sizes';
+import { getResponsiveAfter } from '@/styles/getResponsiveBreakpoint';
 
 interface Props {
   projectsData: ProjectType[];
@@ -39,8 +40,10 @@ const projectPageWrapperStyle = () =>
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-start',
-    paddingLeft: 25,
+    paddingLeft: 10,
+    width: 'calc(100% - 10px)',
     height: SIZES.$BRANCH_MAINSTREAM_HEIGHT + 150,
+    overflowX: 'scroll',
 
     ':before': {
       content: '""',
@@ -55,11 +58,22 @@ const projectPageWrapperStyle = () =>
       content: '""',
       backgroundColor: COLORS.WHITE,
       zIndex: LEVELS.SUB_BRANCH,
-      marginLeft: -20,
+      marginLeft: -10,
       marginTop: -1,
-      width: 40,
-      height: 40,
+      width: 20,
+      height: 20,
       borderRadius: 25,
       border: `5px solid ${COLORS.GRAY9}`,
+    },
+
+    [getResponsiveAfter('ML')]: {
+      paddingLeft: 25,
+      width: 'calc(100% - 25px)',
+
+      ':after': {
+        marginLeft: -20,
+        width: 40,
+        height: 40,
+      },
     },
   });

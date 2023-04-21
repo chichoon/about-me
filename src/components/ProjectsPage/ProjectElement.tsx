@@ -10,6 +10,7 @@ import { GithubIcon, ShareIcon } from '@/assets/svgs';
 import { LEVELS } from '@/styles/levels';
 import { SIZES } from '@/styles/sizes';
 import { COLORS } from '@/styles/colors';
+import { getResponsiveAfter } from '@/styles/getResponsiveBreakpoint';
 
 interface Props {
   project: ProjectType;
@@ -35,12 +36,12 @@ export const ProjectElement = ({ project, topOffset }: Props) => {
       onMouseOut={handleOut}
       onBlur={handleOut}
     >
+      <div css={projectBranchStyle(isHover)}>
+        <span>
+          {startDateYear}. {startDateMonth.toString().padStart(2, '0')}
+        </span>
+      </div>
       <Link href={`/projects/${key}`} css={projectLinkInnerStyle}>
-        <div css={projectBranchStyle(isHover)}>
-          <span>
-            {startDateYear}. {startDateMonth.toString().padStart(2, '0')}
-          </span>
-        </div>
         <Image src={imageRef} width={160} height={50} alt={`${key}-logo`} css={coverImageStyle(isHover)} />
       </Link>
       <div css={sideIconDivStyle(isHover)}>
@@ -61,7 +62,6 @@ const projectElementStyle = (topOffset: number) =>
     zIndex: LEVELS.SUB_BRANCH,
     top: topOffset * SIZES.$BRANCH_MAINSTREAM_HEIGHT + 50,
     left: 15,
-    width: '100%',
     height: 50,
     display: 'flex',
     flexDirection: 'row',
@@ -73,23 +73,24 @@ const projectLinkInnerStyle = css({
   flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'flex-start',
-  width: 310,
-  height: '100%',
+  width: 120,
+  height: 37.5,
 
-  h3: {
-    border: `1px solid black`,
+  [getResponsiveAfter('ML')]: {
+    width: 160,
+    height: 50,
   },
 });
 
 const projectBranchStyle = (isHover: boolean) =>
   css({
     position: 'relative',
-    width: 150,
+    width: 100,
     height: 30,
 
     span: {
       position: 'absolute',
-      left: 35,
+      left: 20,
       top: -5,
       color: COLORS.GRAYA,
     },
@@ -99,10 +100,10 @@ const projectBranchStyle = (isHover: boolean) =>
       content: '""',
       backgroundColor: isHover ? COLORS.GRAY9 : COLORS.GRAYC,
       transition: `background-color 0.2s ease-in`,
-      width: 100,
+      width: 70,
       height: 5,
       top: 12.5,
-      left: 29,
+      left: 14,
     },
 
     ':after': {
@@ -115,15 +116,39 @@ const projectBranchStyle = (isHover: boolean) =>
       height: 20,
       borderRadius: 20,
       top: 0,
-      left: 0,
+      left: -15,
+    },
+
+    [getResponsiveAfter('ML')]: {
+      width: 150,
+
+      span: {
+        left: 35,
+      },
+
+      ':before': {
+        width: 100,
+        left: 29,
+      },
+
+      ':after': {
+        left: 0,
+      },
     },
   });
 
 const coverImageStyle = (isHover: boolean) =>
   css({
+    width: 120,
+    height: 37.5,
     objectFit: 'cover',
     opacity: isHover ? 1 : 0.6,
     transition: `opacity 0.2s ease-in`,
+
+    [getResponsiveAfter('ML')]: {
+      width: 160,
+      height: 50,
+    },
   });
 
 const sideIconDivStyle = (isHover: boolean) =>
