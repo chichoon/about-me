@@ -1,10 +1,11 @@
-import { ProjectType } from '@/types/profileData';
+import { ProjectListType } from '@/types/profileData';
 
 import projects from '@/assets/projectsInfo.json';
 
 export async function getProjects() {
-  const data = await new Promise<ProjectType[]>((resolve) => {
-    resolve(projects);
+  const projectList = projects as ProjectListType;
+  const data = await new Promise<ProjectListType>((resolve) => {
+    resolve(projectList);
   });
 
   return data;
