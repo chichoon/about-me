@@ -8,4 +8,6 @@ export const SIZES = {
   $FONT_XL: 25,
   $FONT_XXL: 30,
   $FONT_XXXL: 40,
+
+  $BRANCH_MAINSTREAM_HEIGHT: 600,
 };

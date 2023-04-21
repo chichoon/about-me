@@ -19,7 +19,7 @@ export const Header = ({ name, email, oneLineBio, githubUsername, blogLink }: Pr
   return (
     <>
       <header css={headerWrapperStyle}>
-        <Image src='/profile.jpg' alt='chichoon profile' width={150} height={150} css={headerImageStyle} />
+        <Image priority src='/profile.jpg' alt='chichoon profile' width={150} height={150} css={headerImageStyle} />
         <div css={headerProfileSectionStyle}>
           <div css={headerProfileNamespaceStyle}>
             <h1>{name}</h1>
@@ -158,17 +158,22 @@ const headerProfileCommentStyle = css({
   display: '-webkit-box',
   width: '100%',
   fontSize: SIZES.$FONT_M,
+  lineHeight: `${SIZES.$FONT_M}px`,
+  height: SIZES.$FONT_M * 2,
   overflow: 'hidden',
   lineClamp: 2,
-  '-webkit-box-orient': 'vertical',
-  '-webkit-line-clamp': 2,
+  WebkitBoxOrient: 'vertical',
+  WebkitLineClamp: 2,
 
   [getResponsiveAfter('ML')]: {
     fontSize: SIZES.$FONT_L,
+    lineHeight: `${SIZES.$FONT_L}px`,
+    height: SIZES.$FONT_L * 2,
   },
 
   [getResponsiveAfter('SD')]: {
     lineClamp: 1,
-    '-webkit-line-clamp': 1,
+    WebkitLineClamp: 1,
+    height: SIZES.$FONT_L,
   },
 });

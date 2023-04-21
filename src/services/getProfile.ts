@@ -1,6 +1,6 @@
-import profile from '@/assets/myInfo.json';
-
 import { ProfileType } from '@/types/profileData';
+
+import profile from '@/assets/myInfo.json';
 
 export async function getProfile() {
   const data = await new Promise<ProfileType>((resolve) => {

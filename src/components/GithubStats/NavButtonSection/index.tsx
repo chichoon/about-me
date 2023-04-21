@@ -5,6 +5,7 @@ import { GoHomeButton } from './GoHomeButton';
 
 import { LeftArrowIcon } from '@/assets/svgs';
 import { HangerIcon, InfoIcon, RookIcon } from '@/components/GithubStats/assets';
+
 import { SECRET_COLORS, SECRET_LEVELS, UI_SHADOW } from '@/components/GithubStats/constants';
 
 export const NavButtonSection = () => {

@@ -15,8 +15,10 @@ interface HistoryType {
   key: string;
   title: string;
   imageRef: string;
-  startDate: string;
-  endDate?: string;
+  startDateYear: number;
+  startDateMonth: number;
+  endDateYear?: number;
+  endDateMonth?: number;
   summary: string;
 }
 
@@ -44,8 +46,8 @@ export interface LinkType {
 }
 
 export interface ProjectType extends HistoryType {
-  githubLink: string;
-  publishedLink: string;
+  githubLink?: string;
+  publishedLink?: string;
   stacks: StackType[];
   description: DescriptionType[];
   technicalSpec?: DescriptionType[];
@@ -53,4 +55,19 @@ export interface ProjectType extends HistoryType {
 
 export interface FootprintType extends HistoryType {
   achievements: AchievementsType[];
+}
+
+export interface ProjectListType {
+  [key: string]: ProjectType;
+}
+
+export interface FootprintListType {
+  [key: string]: FootprintType;
+}
+
+export interface ProjectTimestampType {
+  key: string;
+  title: string;
+  year: number;
+  month: number;
 }

@@ -3,8 +3,10 @@
     "key": "asd",
     "title": "뭐뭐했음",
     "imageRef": "https://avatars.githubusercontent.com/u/37893979?v=4",
-    "startDate": "2017년 3월",
-    "endDate": "2021년 1월",
+    "startDateYear": 2022,
+    "startDateMonth": 3,
+    "endDateYear": 2022,
+    "endDateMonth": 4,
     "summary": "뭐뭐했다",
     "description": [
       {
@@ -39,8 +41,10 @@
     "key": "aa",
     "title": "뭐뭐했음",
     "imageRef": "https://avatars.githubusercontent.com/u/37893979?v=4",
-    "startDate": "2017년 3월",
-    "endDate": "2021년 1월",
+    "startDateYear": 2022,
+    "startDateMonth": 5,
+    "endDateYear": 2022,
+    "endDateMonth": 7,
     "summary": "뭐뭐했다",
     "description": [
       {

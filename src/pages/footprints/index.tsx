@@ -19,8 +19,8 @@ const footprints = ({ profileData, footprintData }: Props) => {
   return (
     <Layout profileData={profileData}>
       <menu>
-        {footprintData.map((footprint) => (
-          <span key={`footprint-${footprint.key}`}>{footprint.title}</span>
+        {footprintData.map((footprint, index) => (
+          <span key={`footprint-${index}`}>{footprint.title}</span>
         ))}
         <span>안녕하세요!!</span>
       </menu>

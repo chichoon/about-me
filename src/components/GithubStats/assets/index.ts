@@ -1,6 +1,5 @@
 import FastForwardIcon from './fastForwardIcon.svg';
 import HangerIcon from './hangerIcon.svg';
-import HomeIcon from './homeIcon.svg';
 import HourglassIcon from './hourglassIcon.svg';
 import PlusIcon from './plusIcon.svg';
 import RookIcon from './rookIcon.svg';
@@ -27,7 +26,6 @@ export {
   InfoIcon,
   FastForwardIcon,
   HangerIcon,
-  HomeIcon,
   HourglassIcon,
   PlusIcon,
   RookIcon,

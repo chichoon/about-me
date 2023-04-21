@@ -1,25 +1,24 @@
-import { Layout } from '@/components';
+import { Layout, ProjectsPage } from '@/components';
 import { ProfileType, ProjectType } from '@/types/profileData';
 import { getProfile, getProjects } from '@/services';
-import { ProjectsPage } from '@/components/ProjectsPage';
 
 export async function getStaticProps() {
   const profileData = await getProfile();
-  const projectData = await getProjects();
+  const projectsData = await getProjects();
   return {
-    props: { profileData, projectData }, // will be passed to the page component as props
+    props: { profileData, projectsData }, // will be passed to the page component as props
   };
 }
 
 interface Props {
   profileData: ProfileType;
-  projectData: ProjectType[];
+  projectsData: ProjectType[];
 }
 
-const projects = ({ profileData, projectData }: Props) => {
+const projects = ({ profileData, projectsData }: Props) => {
   return (
     <Layout profileData={profileData}>
-      <ProjectsPage projectData={projectData} />
+      <ProjectsPage projectsData={projectsData} />
     </Layout>
   );
 };

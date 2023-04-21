@@ -77,7 +77,7 @@ const levelGraphStyle = (degree: number) =>
         : `linear-gradient(${degree - 90}deg, transparent 50%, ${
             COLORS.WHITE_TRANSPARENT
           } 50%), linear-gradient(90deg, ${SECRET_COLORS.HIGHLIGHT_YELLOW} 50%, transparent 50%)`,
-    '-webkit-mask': `radial-gradient(transparent 35px, ${COLORS.WHITE_TRANSPARENT} 35px, ${COLORS.WHITE_TRANSPARENT} 40px)`,
+    webkitMask: `radial-gradient(transparent 35px, ${COLORS.WHITE_TRANSPARENT} 35px, ${COLORS.WHITE_TRANSPARENT} 40px)`,
     mask: `radial-gradient(transparent 35px, ${COLORS.WHITE_TRANSPARENT} 35px, ${COLORS.WHITE_TRANSPARENT} 40px)`,
     transform: 'scaleX(-1)',
     position: 'absolute',
@@ -128,7 +128,7 @@ const expBarStyle = css({
   alignItems: 'flex-start',
   justifyContent: 'center',
 
-  '-webkit-mask': `radial-gradient(circle, transparent 45px, ${SECRET_COLORS.BG_UI} 45px) -190px`,
+  webkitMask: `radial-gradient(circle, transparent 45px, ${SECRET_COLORS.BG_UI} 45px) -190px`,
   mask: `radial-gradient(circle, transparent 45px, ${SECRET_COLORS.BG_UI} 45px) -190px`,
 
   span: {

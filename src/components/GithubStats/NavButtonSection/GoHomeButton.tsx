@@ -1,6 +1,8 @@
 import { css } from '@emotion/react';
 
-import { HomeBgSvg, HomeIcon } from '@/components/GithubStats/assets';
+import { HomeBgSvg } from '@/components/GithubStats/assets';
+import { HomeIcon } from '@/assets/svgs';
+
 import { SECRET_COLORS, SECRET_LEVELS } from '@/components/GithubStats/constants';
 
 export const GoHomeButton = () => {
