@@ -1,0 +1,1 @@
+export { useGetScreenResizeEvent } from './useGetScreenResizeEvent';
