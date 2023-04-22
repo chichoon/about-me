@@ -1,8 +1,9 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useContext, useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { css } from '@emotion/react';
 
+import { useGetScreenResizeEvent } from '@/hooks';
 import { ProjectType } from '@/types/profileData';
 
 import { GithubIcon, ShareIcon } from '@/assets/svgs';
@@ -10,7 +11,8 @@ import { GithubIcon, ShareIcon } from '@/assets/svgs';
 import { LEVELS } from '@/styles/levels';
 import { SIZES } from '@/styles/sizes';
 import { COLORS } from '@/styles/colors';
-import { getResponsiveAfter } from '@/styles/getResponsiveBreakpoint';
+import { getMinBreakpoint, getResponsiveAfter } from '@/styles/getResponsiveBreakpoint';
+import { SelectedProjectKeyContext } from '@/context';
 
 interface Props {
   project: ProjectType;
@@ -19,14 +21,30 @@ interface Props {
 
 export const ProjectElement = ({ project, topOffset }: Props) => {
   const { key, imageRef, githubLink, publishedLink, startDateMonth, startDateYear } = project;
+  const { windowWidth } = useGetScreenResizeEvent();
+  const { selectedProjectKey, setSelectedProjectKey } = useContext(SelectedProjectKeyContext);
   const [isHover, setIsHover] = useState(false);
+  const [isSelected, setIsSelected] = useState(false);
 
   const handleHover = useCallback(function handleHoverCallback() {
     setIsHover(true);
   }, []);
+
   const handleOut = useCallback(function handleHoverCallback() {
     setIsHover(false);
   }, []);
+
+  const handleClickProjectButton = useCallback(
+    function handleClickProjectCallback() {
+      setSelectedProjectKey(key);
+      setIsSelected(true);
+    },
+    [key, setSelectedProjectKey]
+  );
+
+  useEffect(() => {
+    if (key !== selectedProjectKey) setIsSelected(false);
+  }, [key, selectedProjectKey]);
 
   return (
     <li
@@ -36,15 +54,33 @@ export const ProjectElement = ({ project, topOffset }: Props) => {
       onMouseOut={handleOut}
       onBlur={handleOut}
     >
-      <div css={projectBranchStyle(isHover)}>
+      <div css={projectBranchStyle(isHover || isSelected)}>
         <span>
           {startDateYear}. {startDateMonth.toString().padStart(2, '0')}
         </span>
       </div>
-      <Link href={`/projects/${key}`} css={projectLinkInnerStyle}>
-        <Image src={imageRef} width={160} height={50} alt={`${key}-logo`} css={coverImageStyle(isHover)} />
-      </Link>
-      <div css={sideIconDivStyle(isHover)}>
+      {windowWidth <= getMinBreakpoint('LD') ? (
+        <Link href={`/projects/${key}`} css={projectLinkInnerStyle}>
+          <Image
+            src={imageRef}
+            width={160}
+            height={50}
+            alt={`${key}-logo`}
+            css={coverImageStyle(isHover || isSelected)}
+          />
+        </Link>
+      ) : (
+        <button type='button' onClick={handleClickProjectButton} css={projectLinkInnerStyle}>
+          <Image
+            src={imageRef}
+            width={160}
+            height={50}
+            alt={`${key}-logo`}
+            css={coverImageStyle(isHover || isSelected)}
+          />
+        </button>
+      )}
+      <div css={sideIconDivStyle(isHover || isSelected)}>
         <a href={githubLink}>
           <GithubIcon />
         </a>
