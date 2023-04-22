@@ -12,6 +12,9 @@ export const NavBar = () => {
   return (
     <nav css={navTabsStyle}>
       <Link href='/' css={tabStyle(router.pathname === '/')}>
+        <span>홈</span>
+      </Link>
+      <Link href='/introduction' css={tabStyle(router.pathname === '/introduction')}>
         <span>소개</span>
       </Link>
       <Link href='/projects' css={tabStyle(router.pathname.startsWith('/projects'))}>

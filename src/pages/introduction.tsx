@@ -1,4 +1,4 @@
-import { Layout, MainPage } from '@/components';
+import { Layout, IntroPage } from '@/components';
 import { getProfile } from '@/services';
 import { ProfileType } from '@/types/profileData';
 
@@ -13,13 +13,13 @@ interface Props {
   data: ProfileType;
 }
 
-const Home = ({ data }: Props) => {
-  const { stacks } = data;
+const Introduction = ({ data }: Props) => {
+  const { profileImageRef, summaries } = data;
   return (
     <Layout profileData={data}>
-      <MainPage stacks={stacks} />
+      <IntroPage profileImageRef={profileImageRef} summaries={summaries} />
     </Layout>
   );
 };
 
-export default Home;
+export default Introduction;
