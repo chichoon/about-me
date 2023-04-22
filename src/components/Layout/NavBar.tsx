@@ -58,7 +58,7 @@ const tabStyle = (isSelected: boolean) =>
 
     span: {
       userSelect: 'none',
-      fontSize: SIZES.$FONT_MS,
+      fontSize: SIZES.FONT_MS,
     },
 
     ':hover': {
@@ -70,7 +70,7 @@ const tabStyle = (isSelected: boolean) =>
       height: 50,
 
       span: {
-        fontSize: SIZES.$FONT_M,
+        fontSize: SIZES.FONT_M,
       },
     },
   });

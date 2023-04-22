@@ -50,7 +50,7 @@ const paragraphStyle = css({
   width: '100%',
   whiteSpace: 'pre-line',
   marginBottom: 25,
-  fontSize: SIZES.$FONT_M,
+  fontSize: SIZES.FONT_M,
   fontWeight: 400,
-  lineHeight: `${SIZES.$FONT_M + 5}px`,
+  lineHeight: `${SIZES.FONT_M + 5}px`,
 });

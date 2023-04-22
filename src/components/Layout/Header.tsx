@@ -115,7 +115,7 @@ const headerProfileNamespaceStyle = css({
   marginBottom: 10,
 
   h1: {
-    fontSize: SIZES.$FONT_L,
+    fontSize: SIZES.FONT_L,
   },
 
   a: {
@@ -132,7 +132,7 @@ const headerProfileNamespaceStyle = css({
 
   [getResponsiveAfter('ML')]: {
     h1: {
-      fontSize: SIZES.$FONT_XL,
+      fontSize: SIZES.FONT_XL,
     },
 
     a: {
@@ -157,23 +157,23 @@ const headerProfileNamespaceStyle = css({
 const headerProfileCommentStyle = css({
   display: '-webkit-box',
   width: '100%',
-  fontSize: SIZES.$FONT_M,
-  lineHeight: `${SIZES.$FONT_M}px`,
-  height: SIZES.$FONT_M * 2,
+  fontSize: SIZES.FONT_M,
+  lineHeight: `${SIZES.FONT_M}px`,
+  height: SIZES.FONT_M * 2,
   overflow: 'hidden',
   lineClamp: 2,
   WebkitBoxOrient: 'vertical',
   WebkitLineClamp: 2,
 
   [getResponsiveAfter('ML')]: {
-    fontSize: SIZES.$FONT_L,
-    lineHeight: `${SIZES.$FONT_L}px`,
-    height: SIZES.$FONT_L * 2,
+    fontSize: SIZES.FONT_L,
+    lineHeight: `${SIZES.FONT_L}px`,
+    height: SIZES.FONT_L * 2,
   },
 
   [getResponsiveAfter('SD')]: {
     lineClamp: 1,
     WebkitLineClamp: 1,
-    height: SIZES.$FONT_L,
+    height: SIZES.FONT_L,
   },
 });

@@ -25,6 +25,6 @@ const errorSectionWrapperStyle = css({
   },
 
   h3: {
-    fontSize: SIZES.$FONT_L,
+    fontSize: SIZES.FONT_L,
   },
 });

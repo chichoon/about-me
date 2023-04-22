@@ -93,6 +93,6 @@ const projectTitleSectionStyle = css({
   },
 
   h3: {
-    fontSize: SIZES.$FONT_XL,
+    fontSize: SIZES.FONT_XL,
   },
 });

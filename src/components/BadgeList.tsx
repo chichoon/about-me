@@ -41,7 +41,7 @@ const badgeStyle = (color: string) =>
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: `#${color}`,
-    height: SIZES.$FONT_L,
+    height: SIZES.FONT_L,
     marginRight: 5,
     marginBottom: 5,
     padding: '0 5px',
@@ -53,7 +53,7 @@ const badgeStyle = (color: string) =>
 
     span: {
       marginLeft: 5,
-      fontSize: SIZES.$FONT_S,
+      fontSize: SIZES.FONT_S,
       lineHeight: '15px',
       verticalAlign: 'center',
       color: COLORS.WHITE,
