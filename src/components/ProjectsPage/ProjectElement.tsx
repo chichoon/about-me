@@ -96,7 +96,7 @@ const projectElementStyle = (topOffset: number) =>
   css({
     position: 'absolute',
     zIndex: LEVELS.SUB_BRANCH,
-    top: topOffset * SIZES.$BRANCH_MAINSTREAM_HEIGHT + 50,
+    top: topOffset * SIZES.BRANCH_MAINSTREAM_HEIGHT + 50,
     left: 15,
     height: 50,
     display: 'flex',

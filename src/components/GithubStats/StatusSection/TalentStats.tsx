@@ -82,7 +82,7 @@ const jobWrapperStyle = css({
   },
 
   span: {
-    fontSize: SIZES.$FONT_ML,
+    fontSize: SIZES.FONT_ML,
     color: SECRET_COLORS.BUTTON_ICON,
   },
 });
@@ -127,13 +127,13 @@ const stageWrapperStyle = css({
   alignItems: 'center',
 
   span: {
-    fontSize: SIZES.$FONT_MS,
+    fontSize: SIZES.FONT_MS,
     color: COLORS.WHITE_TRANSPARENT,
     marginRight: 5,
   },
 
   'span:last-child': {
-    fontSize: SIZES.$FONT_M,
+    fontSize: SIZES.FONT_M,
     color: COLORS.WHITE,
     fontWeight: 700,
   },
@@ -146,7 +146,7 @@ const stageManageStyle = css({
   marginTop: 5,
 
   span: {
-    fontSize: SIZES.$FONT_MS,
+    fontSize: SIZES.FONT_MS,
     color: COLORS.WHITE_TRANSPARENT,
     marginRight: 5,
   },
@@ -173,12 +173,12 @@ const jobTextWrapperStyle = css({
   justifyContent: 'center',
 
   span: {
-    fontSize: SIZES.$FONT_MS,
+    fontSize: SIZES.FONT_MS,
     color: COLORS.WHITE_TRANSPARENT,
   },
 
   'span:last-child': {
-    fontSize: SIZES.$FONT_M,
+    fontSize: SIZES.FONT_M,
     color: COLORS.WHITE,
     fontWeight: 700,
   },
@@ -200,7 +200,7 @@ const talentWrapperStyle = css({
 
     span: {
       color: SECRET_COLORS.BG_UI,
-      fontSIze: SIZES.$FONT_M,
+      fontSIze: SIZES.FONT_M,
     },
   },
 });

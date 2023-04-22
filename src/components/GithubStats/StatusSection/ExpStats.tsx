@@ -51,15 +51,15 @@ const levelCircleStyle = () =>
 
     span: {
       color: COLORS.WHITE,
-      fontSize: SIZES.$FONT_L,
-      lineHeight: `${SIZES.$FONT_L}px`,
+      fontSize: SIZES.FONT_L,
+      lineHeight: `${SIZES.FONT_L}px`,
       zIndex: SECRET_LEVELS.LEVEL_UI,
       marginTop: 5,
     },
 
     'span:last-child': {
-      fontSize: SIZES.$FONT_XXXL,
-      lineHeight: `${SIZES.$FONT_XXXL}px`,
+      fontSize: SIZES.FONT_XXXL,
+      lineHeight: `${SIZES.FONT_XXXL}px`,
       marginTop: 0,
     },
   });
@@ -91,7 +91,7 @@ const levelAmountLeftStyle = css({
   bottom: -15,
   left: -7,
   color: COLORS.WHITE,
-  fontSize: SIZES.$FONT_MS,
+  fontSize: SIZES.FONT_MS,
   fontWeight: 700,
 });
 
@@ -134,14 +134,14 @@ const expBarStyle = css({
   span: {
     marginLeft: -10,
     color: COLORS.WHITE,
-    fontSize: SIZES.$FONT_M,
-    lineHeight: `${SIZES.$FONT_M}px`,
+    fontSize: SIZES.FONT_M,
+    lineHeight: `${SIZES.FONT_M}px`,
     marginBottom: 3,
   },
 
   'span:last-child': {
-    fontSize: SIZES.$FONT_S,
-    lineHeight: `${SIZES.$FONT_S}px`,
+    fontSize: SIZES.FONT_S,
+    lineHeight: `${SIZES.FONT_S}px`,
     marginBottom: 0,
   },
 });

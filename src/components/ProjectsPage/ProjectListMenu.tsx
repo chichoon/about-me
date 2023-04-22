@@ -42,7 +42,7 @@ const projectPageMenuStyle = () =>
     alignItems: 'flex-start',
     paddingLeft: 10,
     width: 'calc(100% - 10px)',
-    height: SIZES.$BRANCH_MAINSTREAM_HEIGHT + 150,
+    height: SIZES.BRANCH_MAINSTREAM_HEIGHT + 150,
     overflowX: 'scroll',
 
     ':before': {
@@ -50,7 +50,7 @@ const projectPageMenuStyle = () =>
       display: 'block',
       zIndex: LEVELS.MAINSTREAM_BRANCH,
       width: 10,
-      height: SIZES.$BRANCH_MAINSTREAM_HEIGHT + 100,
+      height: SIZES.BRANCH_MAINSTREAM_HEIGHT + 100,
       background: `linear-gradient(to top, ${COLORS.GRAY9} 90%, ${COLORS.WHITE} 100% )`,
     },
 

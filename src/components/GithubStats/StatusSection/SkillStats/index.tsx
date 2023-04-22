@@ -72,12 +72,12 @@ const skillRankWrapperStyle = css({
 
   span: {
     color: SECRET_COLORS.BUTTON_ICON_DIMMED,
-    fontSize: SIZES.$FONT_ML,
+    fontSize: SIZES.FONT_ML,
   },
 
   'span:last-child': {
     color: COLORS.WHITE,
-    fontSize: SIZES.$FONT_L,
+    fontSize: SIZES.FONT_L,
     marginLeft: 5,
   },
 });

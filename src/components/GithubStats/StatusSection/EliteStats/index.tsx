@@ -75,8 +75,8 @@ const eliteInnerBarStyle = css({
 
     span: {
       color: SECRET_COLORS.BG_UI,
-      fontSize: SIZES.$FONT_S,
-      lineHeight: `${SIZES.$FONT_XS}px`,
+      fontSize: SIZES.FONT_S,
+      lineHeight: `${SIZES.FONT_XS}px`,
     },
   },
 });

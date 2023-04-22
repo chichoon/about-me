@@ -5,9 +5,9 @@ import { ProjectListType } from '@/types/profileData';
 import { SelectedProjectKeyContext } from '@/context';
 import { useGetScreenSize } from '@/hooks';
 import { ProjectListMenu } from './ProjectListMenu';
+import { ProjectPage } from '../ProjectPage';
 
 import { getMinBreakpoint } from '@/styles/getResponsiveBreakpoint';
-import { ProjectPage } from '../ProjectPage';
 import { COLORS } from '@/styles/colors';
 
 interface Props {
@@ -54,7 +54,7 @@ const projectPageWrapperStyle = css({
 const projectPageSideSectionStyle = css({
   flex: 1,
   maxWidth: 'calc(100% - 420px)',
-  height: '100%',
+  minHeight: '100%',
   overflow: 'scroll',
   boxShadow: `inset 0 0 10px 5px ${COLORS.GRAYC}`,
   padding: 25,
