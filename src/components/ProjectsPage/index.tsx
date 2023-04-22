@@ -8,6 +8,7 @@ import { ProjectListMenu } from './ProjectListMenu';
 
 import { getMinBreakpoint } from '@/styles/getResponsiveBreakpoint';
 import { ProjectPage } from '../ProjectPage';
+import { COLORS } from '@/styles/colors';
 
 interface Props {
   projectsData: ProjectListType;
@@ -51,8 +52,10 @@ const projectPageWrapperStyle = css({
 });
 
 const projectPageSideSectionStyle = css({
-  width: '100%',
-  height: '100%',
-  border: '1px solid black', // TODO: DEBUG
   flex: 1,
+  maxWidth: 'calc(100% - 420px)',
+  height: '100%',
+  overflow: 'scroll',
+  boxShadow: `inset 0 0 10px 5px ${COLORS.GRAYC}`,
+  padding: 25,
 });
