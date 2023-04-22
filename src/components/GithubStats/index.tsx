@@ -1,40 +1,21 @@
 /* eslint-disable camelcase */
-import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { css } from '@emotion/react';
 import { Noto_Sans_KR } from 'next/font/google';
 
+import { useGetScreenSize } from '@/hooks';
 import { NavButtonSection } from '@/components/GithubStats/NavButtonSection';
 import { StatusSection } from '@/components/GithubStats/StatusSection';
+import { HeadMetaData } from './HeadMetaData';
 
 import { ReactIcon } from '@/components/GithubStats/assets';
 import { BG_SHADOW, SECRET_COLORS, SECRET_LEVELS } from '@/components/GithubStats/constants';
 import { COLORS } from '@/styles/colors';
-import { HeadMetaData } from './HeadMetaData';
 
 const noto = Noto_Sans_KR({ subsets: ['latin'], weight: '500' });
 
 export const GithubStats = () => {
-  const [windowWidth, setWindowWidth] = useState(0);
-  const [windowHeight, setWindowHeight] = useState(0);
-
-  useEffect(() => {
-    function onScreenResize(e: Event) {
-      const target = e.target as Window;
-      setWindowWidth(target.innerWidth);
-      setWindowHeight(target.innerHeight);
-    }
-
-    window.addEventListener('resize', onScreenResize);
-    return () => window.removeEventListener('resize', onScreenResize);
-  }, []);
-
-  useEffect(() => {
-    if (window instanceof Window) {
-      setWindowWidth(window.innerWidth);
-      setWindowHeight(window.innerHeight);
-    }
-  }, []);
+  const { windowWidth, windowHeight } = useGetScreenSize();
 
   return (
     <>

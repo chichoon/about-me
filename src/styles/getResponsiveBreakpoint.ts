@@ -1,4 +1,4 @@
-function getMinBreakpoint(media: string | number): number {
+export function getMinBreakpoint(media: string | number): number {
   if (typeof media === 'number') return media;
   return (
     {
@@ -19,7 +19,7 @@ function getMaxBreakpoint(media: string | number): number {
   return (
     {
       M: 374,
-      ML: 6599,
+      ML: 599,
       SD: 767,
       MD: 999,
       LD: 1199,

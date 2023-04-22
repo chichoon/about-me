@@ -1,5 +1,5 @@
 import { Layout, ProjectsPage } from '@/components';
-import { ProfileType, ProjectType } from '@/types/profileData';
+import { ProfileType, ProjectListType } from '@/types/profileData';
 import { getProfile, getProjects } from '@/services';
 
 export async function getStaticProps() {
@@ -12,7 +12,7 @@ export async function getStaticProps() {
 
 interface Props {
   profileData: ProfileType;
-  projectsData: ProjectType[];
+  projectsData: ProjectListType;
 }
 
 const projects = ({ profileData, projectsData }: Props) => {
