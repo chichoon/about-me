@@ -34,6 +34,8 @@ export const DescriptionList = ({ descriptionData }: Props) => {
 
 const descriptionListWrapperStyle = css({
   padding: 10,
+  width: '100%',
+  maxWidth: 960,
 });
 
 const descriptionElementStyle = css({
@@ -64,7 +66,7 @@ const descriptionInnerListStyle = css({
 });
 
 const descriptionParagraphStyle = css({
-  wordBreak: 'break-word',
+  wordBreak: 'keep-all',
   width: '100%',
   whiteSpace: 'pre-line',
   fontSize: SIZES.FONT_M,

@@ -46,7 +46,7 @@ const imageStyle = css({
 });
 
 const paragraphStyle = css({
-  wordBreak: 'break-word',
+  wordBreak: 'keep-all',
   width: '100%',
   whiteSpace: 'pre-line',
   marginBottom: 25,
