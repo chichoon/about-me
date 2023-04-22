@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { css } from '@emotion/react';
 import { Noto_Sans_KR } from 'next/font/google';
 
-import { useGetScreenResizeEvent } from '@/hooks';
+import { useGetScreenSize } from '@/hooks';
 import { NavButtonSection } from '@/components/GithubStats/NavButtonSection';
 import { StatusSection } from '@/components/GithubStats/StatusSection';
 import { HeadMetaData } from './HeadMetaData';
@@ -15,7 +15,7 @@ import { COLORS } from '@/styles/colors';
 const noto = Noto_Sans_KR({ subsets: ['latin'], weight: '500' });
 
 export const GithubStats = () => {
-  const { windowWidth, windowHeight } = useGetScreenResizeEvent();
+  const { windowWidth, windowHeight } = useGetScreenSize();
 
   return (
     <>

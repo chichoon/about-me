@@ -1,1 +1,1 @@
-export { useGetScreenResizeEvent } from './useGetScreenResizeEvent';
+export { useGetScreenSize } from './useGetScreenSize';

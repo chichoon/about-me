@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export function useGetScreenResizeEvent() {
+export function useGetScreenSize() {
   const [windowWidth, setWindowWidth] = useState(0);
   const [windowHeight, setWindowHeight] = useState(0);
 
