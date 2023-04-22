@@ -3,18 +3,18 @@ import { css } from '@emotion/react';
 import { DescriptionType } from '@/types/profileData';
 
 import { SIZES } from '@/styles/sizes';
+import { COLORS } from '@/styles/colors';
 
 interface Props {
-  title: string;
   descriptionData: DescriptionType[];
 }
 
-export const DescriptionList = ({ title, descriptionData }: Props) => {
+export const DescriptionList = ({ descriptionData }: Props) => {
   return (
-    <ul>
+    <ul css={descriptionListWrapperStyle}>
       {descriptionData.map((description, index) => (
-        <li key={`${title}-description-${index}`} css={descriptionElementStyle}>
-          <h4>{description.title}</h4>
+        <li key={`description-${index}`} css={descriptionElementStyle}>
+          <h5>{description.title}</h5>
           <p>{description.mainText}</p>
         </li>
       ))}
@@ -22,11 +22,29 @@ export const DescriptionList = ({ title, descriptionData }: Props) => {
   );
 };
 
+const descriptionListWrapperStyle = css({
+  marginBottom: 15,
+  padding: 10,
+});
+
 const descriptionElementStyle = css({
+  marginBottom: 10,
+
+  h5: {
+    fontSize: SIZES.FONT_ML,
+    color: COLORS.GRAY3,
+    marginBottom: 5,
+  },
+
   p: {
     wordBreak: 'break-word',
     width: '100%',
     whiteSpace: 'pre-line',
     fontSize: SIZES.FONT_M,
+    color: COLORS.GRAY6,
+  },
+
+  ':last-child': {
+    marginBottom: 0,
   },
 });

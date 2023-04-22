@@ -51,7 +51,7 @@ const projectHeaderWrapperStyle = css({
   },
 
   [getResponsiveAfter('ML')]: {
-    height: 75,
+    height: 'fit-content',
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'flex-end',
@@ -59,6 +59,7 @@ const projectHeaderWrapperStyle = css({
     img: {
       marginBottom: 0,
       marginRight: 25,
+      objectFit: 'cover',
     },
   },
 });
