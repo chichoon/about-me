@@ -59,6 +59,7 @@ const tabStyle = (isSelected: boolean) =>
     span: {
       userSelect: 'none',
       fontSize: SIZES.FONT_MS,
+      color: isSelected ? COLORS.GRAY3 : COLORS.GRAY9,
     },
 
     ':hover': {

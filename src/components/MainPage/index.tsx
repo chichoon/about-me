@@ -52,5 +52,6 @@ const paragraphStyle = css({
   marginBottom: 25,
   fontSize: SIZES.FONT_M,
   fontWeight: 400,
+  color: COLORS.GRAY3,
   lineHeight: `${SIZES.FONT_M + 5}px`,
 });

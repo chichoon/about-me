@@ -116,6 +116,7 @@ const headerProfileNamespaceStyle = css({
 
   h1: {
     fontSize: SIZES.FONT_L,
+    color: COLORS.GRAY3,
   },
 
   a: {
@@ -158,6 +159,7 @@ const headerProfileCommentStyle = css({
   display: '-webkit-box',
   width: '100%',
   fontSize: SIZES.FONT_M,
+  color: COLORS.GRAY3,
   lineHeight: `${SIZES.FONT_M}px`,
   height: SIZES.FONT_M * 2,
   overflow: 'hidden',
