@@ -5,7 +5,6 @@ import { css } from '@emotion/react';
 
 import { useGetScreenSize } from '@/hooks';
 import { SelectedProjectKeyContext } from '@/context';
-import { SelectedProjectKeyContextType } from '@/types/context';
 import { ProjectType } from '@/types/profileData';
 
 import { GithubIcon, ShareIcon } from '@/assets/svgs';
@@ -23,8 +22,7 @@ interface Props {
 export const ProjectElement = ({ project, topOffset }: Props) => {
   const { key, imageRef, githubLink, publishedLink, startDateMonth, startDateYear } = project;
   const { windowWidth } = useGetScreenSize();
-  const { selectedProjectKey, setSelectedProjectKey } =
-    useContext<SelectedProjectKeyContextType>(SelectedProjectKeyContext);
+  const { selectedProjectKey, setSelectedProjectKey } = useContext(SelectedProjectKeyContext);
   const [isHover, setIsHover] = useState(false);
   const [isSelected, setIsSelected] = useState(false);
 

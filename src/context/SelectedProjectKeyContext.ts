@@ -1,8 +1,11 @@
-import { createContext } from 'react';
+import { createContext, Dispatch, SetStateAction } from 'react';
 
-import { SelectedProjectKeyContextType } from '@/types/context';
+export interface ContextType {
+  selectedProjectKey: string | null;
+  setSelectedProjectKey: Dispatch<SetStateAction<string | null>>;
+}
 
-export const SelectedProjectKeyContext = createContext<SelectedProjectKeyContextType>({
+export const SelectedProjectKeyContext = createContext<ContextType>({
   selectedProjectKey: null,
   setSelectedProjectKey: () => {},
 });
