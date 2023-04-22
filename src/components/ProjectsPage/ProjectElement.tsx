@@ -76,6 +76,10 @@ const projectLinkInnerStyle = css({
   width: 120,
   height: 37.5,
 
+  ':hover': {
+    cursor: 'pointer',
+  },
+
   [getResponsiveAfter('ML')]: {
     width: 160,
     height: 50,
@@ -94,6 +98,7 @@ const projectBranchStyle = (isHover: boolean) =>
       top: -5,
       color: isHover ? COLORS.GRAYA : COLORS.GRAYC,
       transition: `color 0.2s ease-in`,
+      userSelect: 'none',
     },
 
     ':before': {
