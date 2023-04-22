@@ -46,8 +46,6 @@ const projectHeaderWrapperStyle = css({
   height: 150,
   marginBottom: 25,
 
-  border: `1px solid red`, // TODO: DEBUG
-
   img: {
     marginBottom: 25,
   },
@@ -68,10 +66,15 @@ const projectHeaderWrapperStyle = css({
 const projectHeaderInfoWrapperStyle = css({
   display: 'flex',
   flexDirection: 'column',
-  alignItems: 'flex-start',
+  alignItems: 'center',
 
   '> span': {
     color: COLORS.GRAYA,
+    fontSize: SIZES.FONT_M,
+  },
+
+  [getResponsiveAfter('ML')]: {
+    alignItems: 'flex-start',
   },
 });
 
@@ -79,6 +82,7 @@ const projectTitleSectionStyle = css({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
+  marginBottom: 5,
 
   a: {
     width: 30,
