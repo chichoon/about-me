@@ -15,7 +15,17 @@ export const DescriptionList = ({ descriptionData }: Props) => {
       {descriptionData.map((description, index) => (
         <li key={`description-${index}`} css={descriptionElementStyle}>
           <h5>{description.title}</h5>
-          <p>{description.mainText}</p>
+          {Array.isArray(description.mainText) ? (
+            <ul css={descriptionInnerListStyle}>
+              {description.mainText.map((text, textIndex) => (
+                <li key={`description-${index}-${textIndex}`}>
+                  <p css={descriptionParagraphStyle}>{text}</p>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p css={descriptionParagraphStyle}>{description.mainText}</p>
+          )}
         </li>
       ))}
     </ul>
@@ -23,7 +33,6 @@ export const DescriptionList = ({ descriptionData }: Props) => {
 };
 
 const descriptionListWrapperStyle = css({
-  marginBottom: 15,
   padding: 10,
 });
 
@@ -33,18 +42,32 @@ const descriptionElementStyle = css({
   h5: {
     fontSize: SIZES.FONT_ML,
     color: COLORS.GRAY3,
-    marginBottom: 5,
-  },
-
-  p: {
-    wordBreak: 'break-word',
-    width: '100%',
-    whiteSpace: 'pre-line',
-    fontSize: SIZES.FONT_M,
-    color: COLORS.GRAY6,
+    marginBottom: 10,
   },
 
   ':last-child': {
     marginBottom: 0,
   },
+});
+
+const descriptionInnerListStyle = css({
+  paddingLeft: 25,
+
+  li: {
+    listStyle: 'square',
+    marginBottom: 5,
+  },
+
+  'li:last-child': {
+    marginBottom: 0,
+  },
+});
+
+const descriptionParagraphStyle = css({
+  wordBreak: 'break-word',
+  width: '100%',
+  whiteSpace: 'pre-line',
+  fontSize: SIZES.FONT_M,
+  color: COLORS.GRAY6,
+  lineHeight: `${SIZES.FONT_M + 5}px`,
 });
