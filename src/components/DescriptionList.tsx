@@ -35,7 +35,7 @@ export const DescriptionList = ({ descriptionData }: Props) => {
 const descriptionListWrapperStyle = css({
   padding: 10,
   width: '100%',
-  maxWidth: 960,
+  maxWidth: SIZES.MAIN_INNER_MAX_WIDTH,
 });
 
 const descriptionElementStyle = css({

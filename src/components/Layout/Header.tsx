@@ -103,7 +103,7 @@ const headerProfileSectionStyle = css({
 
   [getResponsiveAfter('SD')]: {
     justifyContent: 'flex-start',
-    width: 700,
+    width: SIZES.MAIN_INNER_MAX_WIDTH,
     marginTop: 50,
   },
 });

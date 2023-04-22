@@ -9,11 +9,12 @@ import { COLORS } from '@/styles/colors';
 
 interface Props {
   stacks: StackType[];
+  isCentered?: boolean;
 }
 
-export const BadgeList = ({ stacks }: Props) => {
+export const BadgeList = ({ stacks, isCentered }: Props) => {
   return (
-    <div css={badgeWrapperStyle}>
+    <div css={badgeWrapperStyle(isCentered)}>
       {stacks.map(({ name, color, logo }) => (
         <div key={`${name}-badge`} css={badgeStyle(color)}>
           <SimpleIcon slug={logo} />
@@ -24,17 +25,22 @@ export const BadgeList = ({ stacks }: Props) => {
   );
 };
 
-const badgeWrapperStyle = css({
-  width: '100%',
-  maxWidth: 960,
-  display: 'flex',
-  flexDirection: 'row',
-  alignItems: 'center',
-  justifyContent: 'center',
-  flexWrap: 'wrap',
-  marginBottom: 15,
-  userSelect: 'none',
-});
+const badgeWrapperStyle = (isCentered: boolean | undefined) =>
+  css({
+    width: '100%',
+    maxWidth: SIZES.MAIN_INNER_MAX_WIDTH,
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+    marginBottom: 15,
+    userSelect: 'none',
+
+    [getResponsiveAfter('ML')]: {
+      justifyContent: isCentered ? 'center' : 'flex-start',
+    },
+  });
 
 const badgeStyle = (color: string) =>
   css({
