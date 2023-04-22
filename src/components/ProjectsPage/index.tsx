@@ -54,7 +54,7 @@ const projectPageWrapperStyle = css({
 const projectPageSideSectionStyle = css({
   flex: 1,
   maxWidth: 'calc(100% - 420px)',
-  height: '100%',
+  minHeight: '100%',
   overflow: 'scroll',
   boxShadow: `inset 0 0 10px 5px ${COLORS.GRAYC}`,
   padding: 25,
