@@ -1,6 +1,7 @@
 import { ProjectType } from '@/types/profileData';
 import { ProjectInfoHeader } from './ProjectInfoHeader';
 import { BadgeList } from '../BadgeList';
+import { DescriptionList } from '../DescriptionList';
 
 interface Props {
   project: ProjectType;
@@ -11,7 +12,7 @@ export const ProjectPage = ({ project }: Props) => {
     <>
       <ProjectInfoHeader project={project} />
       <BadgeList stacks={project.stacks} />
-      <div>hihi</div>
+      <DescriptionList descriptionData={project.description} />
     </>
   );
 };
