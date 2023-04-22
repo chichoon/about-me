@@ -68,7 +68,7 @@ const projectPageMenuStyle = () =>
 
     [getResponsiveAfter('ML')]: {
       paddingLeft: 25,
-      width: 'calc(100% - 25px)',
+      width: 370,
 
       ':after': {
         marginLeft: -20,
@@ -78,9 +78,9 @@ const projectPageMenuStyle = () =>
     },
 
     [getResponsiveAfter('LD')]: {
-      flex: 1,
       paddingLeft: 25,
-      width: 'calc(100% - 25px)',
+      width: 370,
+      marginRight: 50,
 
       ':after': {
         marginLeft: -20,

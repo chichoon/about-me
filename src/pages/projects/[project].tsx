@@ -1,5 +1,4 @@
 import { Layout, ProjectPage } from '@/components';
-import { useGetScreenSize } from '@/hooks';
 import { getProfile, getProjectByKey, getProjectKeys } from '@/services';
 import { ProfileType, ProjectType } from '@/types/profileData';
 
@@ -32,8 +31,6 @@ export async function getStaticProps({ params }: Params) {
 }
 
 const Project = ({ profileData, projectData }: Props) => {
-  const { windowWidth } = useGetScreenSize();
-
   return (
     <Layout profileData={profileData}>
       <ProjectPage project={projectData} />

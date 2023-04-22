@@ -1,20 +1,21 @@
 import { useEffect, useMemo, useState } from 'react';
 import { css } from '@emotion/react';
 
-import { ProjectType } from '@/types/profileData';
+import { ProjectListType } from '@/types/profileData';
 import { SelectedProjectKeyContext } from '@/context';
-import { useGetScreenResizeEvent } from '@/hooks';
+import { useGetScreenSize } from '@/hooks';
 import { ProjectListMenu } from './ProjectListMenu';
 
 import { getMinBreakpoint } from '@/styles/getResponsiveBreakpoint';
+import { ProjectPage } from '../ProjectPage';
 
 interface Props {
-  projectsData: ProjectType[];
+  projectsData: ProjectListType;
 }
 
 export const ProjectsPage = ({ projectsData }: Props) => {
   const [selectedProjectKey, setSelectedProjectKey] = useState<string | null>(null);
-  const { windowWidth } = useGetScreenResizeEvent();
+  const { windowWidth } = useGetScreenSize();
 
   const value = useMemo(
     () => ({ selectedProjectKey, setSelectedProjectKey }),
@@ -28,12 +29,16 @@ export const ProjectsPage = ({ projectsData }: Props) => {
   }, []);
 
   return windowWidth <= getMinBreakpoint('LD') ? (
-    <ProjectListMenu projectsData={projectsData} />
+    <ProjectListMenu projectsData={Object.values(projectsData)} />
   ) : (
     <div css={projectPageWrapperStyle}>
       <SelectedProjectKeyContext.Provider value={value}>
-        <ProjectListMenu projectsData={projectsData} />
-        {selectedProjectKey && <div css={projectPageSideSectionStyle}>하이 ㅋㅋ</div>}
+        <ProjectListMenu projectsData={Object.values(projectsData)} />
+        {selectedProjectKey && (
+          <div css={projectPageSideSectionStyle}>
+            <ProjectPage project={projectsData[selectedProjectKey]} />
+          </div>
+        )}
       </SelectedProjectKeyContext.Provider>
     </div>
   );

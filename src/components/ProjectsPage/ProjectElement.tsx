@@ -3,7 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { css } from '@emotion/react';
 
-import { useGetScreenResizeEvent } from '@/hooks';
+import { useGetScreenSize } from '@/hooks';
+import { SelectedProjectKeyContext } from '@/context';
 import { ProjectType } from '@/types/profileData';
 
 import { GithubIcon, ShareIcon } from '@/assets/svgs';
@@ -12,7 +13,6 @@ import { LEVELS } from '@/styles/levels';
 import { SIZES } from '@/styles/sizes';
 import { COLORS } from '@/styles/colors';
 import { getMinBreakpoint, getResponsiveAfter } from '@/styles/getResponsiveBreakpoint';
-import { SelectedProjectKeyContext } from '@/context';
 
 interface Props {
   project: ProjectType;
@@ -21,7 +21,7 @@ interface Props {
 
 export const ProjectElement = ({ project, topOffset }: Props) => {
   const { key, imageRef, githubLink, publishedLink, startDateMonth, startDateYear } = project;
-  const { windowWidth } = useGetScreenResizeEvent();
+  const { windowWidth } = useGetScreenSize();
   const { selectedProjectKey, setSelectedProjectKey } = useContext(SelectedProjectKeyContext);
   const [isHover, setIsHover] = useState(false);
   const [isSelected, setIsSelected] = useState(false);
