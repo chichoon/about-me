@@ -25,6 +25,8 @@ export const BadgeList = ({ stacks }: Props) => {
 };
 
 const badgeWrapperStyle = css({
+  width: '100%',
+  maxWidth: 960,
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
