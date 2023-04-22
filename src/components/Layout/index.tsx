@@ -5,8 +5,8 @@ import { Header } from './Header';
 import { Footer } from './Footer';
 import { HeadMetaData } from './HeadMetaData';
 
-import { COLORS } from '@/styles/colors';
 import { getResponsiveAfter } from '@/styles/getResponsiveBreakpoint';
+import { COLORS } from '@/styles/colors';
 
 interface Props {
   children: JSX.Element;
