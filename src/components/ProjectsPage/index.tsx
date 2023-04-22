@@ -1,79 +1,53 @@
+import { useEffect, useMemo, useState } from 'react';
 import { css } from '@emotion/react';
 
 import { ProjectType } from '@/types/profileData';
-import { ProjectElement } from './ProjectElement';
+import { SelectedProjectKeyContext } from '@/context';
+import { useGetScreenResizeEvent } from '@/hooks';
+import { ProjectListMenu } from './ProjectListMenu';
 
-import { COLORS } from '@/styles/colors';
-import { LEVELS } from '@/styles/levels';
-import { SIZES } from '@/styles/sizes';
-import { getResponsiveAfter } from '@/styles/getResponsiveBreakpoint';
+import { getMinBreakpoint } from '@/styles/getResponsiveBreakpoint';
 
 interface Props {
   projectsData: ProjectType[];
 }
 
-function getTopOffsetPercentage(min: number, max: number, year: number, month: number) {
-  return (max - (year * 12 + month)) / (max - min);
-}
-
 export const ProjectsPage = ({ projectsData }: Props) => {
-  const min =
-    projectsData[projectsData.length - 1].startDateYear * 12 + projectsData[projectsData.length - 1].startDateMonth;
-  const max = projectsData[0].startDateYear * 12 + projectsData[0].startDateMonth;
+  const [selectedProjectKey, setSelectedProjectKey] = useState<string | null>(null);
+  const { windowWidth } = useGetScreenResizeEvent();
 
-  return (
-    <menu css={projectPageWrapperStyle()}>
-      {projectsData.map((project) => (
-        <ProjectElement
-          key={`experience-${project.key}`}
-          project={project}
-          topOffset={getTopOffsetPercentage(min, max, project.startDateYear, project.startDateMonth)}
-        />
-      ))}
-    </menu>
+  const value = useMemo(
+    () => ({ selectedProjectKey, setSelectedProjectKey }),
+    [selectedProjectKey, setSelectedProjectKey]
+  );
+
+  useEffect(() => {
+    return () => {
+      setSelectedProjectKey(null);
+    };
+  }, []);
+
+  return windowWidth <= getMinBreakpoint('LD') ? (
+    <ProjectListMenu projectsData={projectsData} />
+  ) : (
+    <div css={projectPageWrapperStyle}>
+      <SelectedProjectKeyContext.Provider value={value}>
+        <ProjectListMenu projectsData={projectsData} />
+        {selectedProjectKey && <div css={projectPageSideSectionStyle}>하이 ㅋㅋ</div>}
+      </SelectedProjectKeyContext.Provider>
+    </div>
   );
 };
 
-const projectPageWrapperStyle = () =>
-  css({
-    position: 'relative',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-    paddingLeft: 10,
-    width: 'calc(100% - 10px)',
-    height: SIZES.$BRANCH_MAINSTREAM_HEIGHT + 150,
-    overflowX: 'scroll',
+const projectPageWrapperStyle = css({
+  width: '100%',
+  display: 'flex',
+  flexDirection: 'row',
+});
 
-    ':before': {
-      content: '""',
-      display: 'block',
-      zIndex: LEVELS.MAINSTREAM_BRANCH,
-      width: 10,
-      height: SIZES.$BRANCH_MAINSTREAM_HEIGHT + 100,
-      background: `linear-gradient(to top, ${COLORS.GRAY9} 90%, ${COLORS.WHITE} 100% )`,
-    },
-
-    ':after': {
-      content: '""',
-      backgroundColor: COLORS.WHITE,
-      zIndex: LEVELS.SUB_BRANCH,
-      marginLeft: -10,
-      marginTop: -1,
-      width: 20,
-      height: 20,
-      borderRadius: 25,
-      border: `5px solid ${COLORS.GRAY9}`,
-    },
-
-    [getResponsiveAfter('ML')]: {
-      paddingLeft: 25,
-      width: 'calc(100% - 25px)',
-
-      ':after': {
-        marginLeft: -20,
-        width: 40,
-        height: 40,
-      },
-    },
-  });
+const projectPageSideSectionStyle = css({
+  width: '100%',
+  height: '100%',
+  border: '1px solid black', // TODO: DEBUG
+  flex: 1,
+});
