@@ -1,4 +1,4 @@
-function getMinBreakpoint(media: string | number): number {
+export function getMinBreakpoint(media: string | number): number {
   if (typeof media === 'number') return media;
   return (
     {
