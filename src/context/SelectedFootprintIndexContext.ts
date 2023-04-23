@@ -1,11 +1,11 @@
 import { createContext, Dispatch, SetStateAction } from 'react';
 
 interface ContextType {
-  selectedFootprintIndex: number | null;
-  setSelectedFootprintIndex: Dispatch<SetStateAction<string | null>>;
+  selectedFootprintIndex: number;
+  setSelectedFootprintIndex: Dispatch<SetStateAction<number>>;
 }
 
 export const SelectedFootprintIndexContext = createContext<ContextType>({
-  selectedFootprintIndex: null,
+  selectedFootprintIndex: -1,
   setSelectedFootprintIndex: () => {},
 });
