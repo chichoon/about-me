@@ -11,10 +11,10 @@ import { getMinBreakpoint } from '@/styles/getResponsiveBreakpoint';
 import { COLORS } from '@/styles/colors';
 
 interface Props {
-  projectsData: ProjectListType;
+  projectData: ProjectListType;
 }
 
-export const ProjectsPage = ({ projectsData }: Props) => {
+export const ProjectsPage = ({ projectData }: Props) => {
   const [selectedProjectKey, setSelectedProjectKey] = useState<string | null>(null);
   const { windowWidth } = useGetScreenSize();
 
@@ -30,14 +30,14 @@ export const ProjectsPage = ({ projectsData }: Props) => {
   }, []);
 
   return windowWidth <= getMinBreakpoint('LD') ? (
-    <ProjectListMenu projectsData={Object.values(projectsData)} />
+    <ProjectListMenu projectData={Object.values(projectData)} />
   ) : (
     <div css={projectPageWrapperStyle}>
       <SelectedProjectKeyContext.Provider value={value}>
-        <ProjectListMenu projectsData={Object.values(projectsData)} />
+        <ProjectListMenu projectData={Object.values(projectData)} />
         {selectedProjectKey && (
           <div css={projectPageSideSectionStyle}>
-            <ProjectPage project={projectsData[selectedProjectKey]} />
+            <ProjectPage project={projectData[selectedProjectKey]} />
           </div>
         )}
       </SelectedProjectKeyContext.Provider>

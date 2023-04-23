@@ -3,15 +3,15 @@ import { ProjectElement } from './ProjectElement';
 import { getTopOffsetPercentage } from '@/utils';
 
 interface Props {
-  projectsData: ProjectType[];
+  projectData: ProjectType[];
 }
 
-export const ProjectList = ({ projectsData }: Props) => {
+export const ProjectList = ({ projectData }: Props) => {
   const min =
-    projectsData[projectsData.length - 1].startDateYear * 12 + projectsData[projectsData.length - 1].startDateMonth;
-  const max = projectsData[0].startDateYear * 12 + projectsData[0].startDateMonth;
+    projectData[projectData.length - 1].startDateYear * 12 + projectData[projectData.length - 1].startDateMonth;
+  const max = projectData[0].startDateYear * 12 + projectData[0].startDateMonth;
 
-  return projectsData.map((project) => (
+  return projectData.map((project) => (
     <ProjectElement
       key={`experience-${project.key}`}
       project={project}
