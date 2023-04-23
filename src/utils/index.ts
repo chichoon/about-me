@@ -1,0 +1,1 @@
+export { getTopOffsetPercentage } from './getTopOffsetPercentage';
