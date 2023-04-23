@@ -1,14 +1,11 @@
 import { ProjectType } from '@/types/profileData';
+import { getTopOffsetPercentage } from '@/utils';
 import { ProjectElement } from './ProjectElement';
 
 import { BranchListWrapper } from '../BranchListWrapper';
 
 interface Props {
   projectData: ProjectType[];
-}
-
-function getTopOffsetPercentage(min: number, max: number, year: number, month: number) {
-  return (max - (year * 12 + month)) / (max - min);
 }
 
 export const ProjectListMenu = ({ projectData }: Props) => {

@@ -7,6 +7,7 @@ import { FootprintType } from '@/types/profileData';
 
 import { getMinBreakpoint } from '@/styles/getResponsiveBreakpoint';
 import { COLORS } from '@/styles/colors';
+import { FootprintListMenu } from './FootprintListMenu';
 
 interface Props {
   footprintData: FootprintType[];
@@ -28,11 +29,11 @@ export const FootprintsPage = ({ footprintData }: Props) => {
   }, []);
 
   return windowWidth <= getMinBreakpoint('LD') ? (
-    <div>temp</div>
+    <FootprintListMenu footprintData={footprintData} />
   ) : (
     <div css={footprintPageWrapperStyle}>
       <SelectedFootprintIndexContext.Provider value={value}>
-        <div>temp</div>
+        <FootprintListMenu footprintData={footprintData} />
         {selectedFootprintIndex >= 0 && (
           <div css={footprintPageSideSectionStyle}>
             <div>temp</div>
