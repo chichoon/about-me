@@ -6,3 +6,4 @@ export { MainPage } from './MainPage';
 export { IntroPage } from './IntroPage';
 export { ProjectsPage } from './ProjectsPage';
 export { ProjectPage } from './ProjectPage';
+export { FootprintsPage } from './FootprintsPage';
