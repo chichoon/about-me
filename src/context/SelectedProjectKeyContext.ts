@@ -1,6 +1,6 @@
 import { createContext, Dispatch, SetStateAction } from 'react';
 
-export interface ContextType {
+interface ContextType {
   selectedProjectKey: string | null;
   setSelectedProjectKey: Dispatch<SetStateAction<string | null>>;
 }
