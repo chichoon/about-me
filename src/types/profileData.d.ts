@@ -14,7 +14,7 @@ export interface ProfileType {
 interface HistoryType {
   key: string;
   title: string;
-  imageRef: string;
+  imageRef?: string;
   startDateYear: number;
   startDateMonth: number;
   endDateYear?: number;
