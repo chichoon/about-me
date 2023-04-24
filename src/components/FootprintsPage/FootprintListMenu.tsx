@@ -1,5 +1,7 @@
 import { FootprintType } from '@/types/profileData';
 import { BranchListWrapper } from '../BranchListWrapper';
+import { FootprintElement } from './FootprintElement';
+import { getTopOffsetPercentage } from '@/utils';
 
 interface Props {
   footprintData: FootprintType[];
@@ -13,9 +15,14 @@ export const FootprintListMenu = ({ footprintData }: Props) => {
   return (
     <BranchListWrapper>
       <>
-        {footprintData.map((footprint) => {
-          <div key={`footprint-${footprint.key}`}>{footprint.title}</div>;
-        })}
+        {footprintData.map((footprint, index) => (
+          <FootprintElement
+            key={`footprint-${footprint.key}`}
+            footprint={footprint}
+            index={index}
+            topOffset={getTopOffsetPercentage(min, max, footprint.startDateYear, footprint.startDateMonth)}
+          />
+        ))}
       </>
     </BranchListWrapper>
   );
