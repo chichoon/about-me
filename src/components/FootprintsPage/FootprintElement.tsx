@@ -18,7 +18,7 @@ interface Props {
 }
 
 export const FootprintElement = ({ footprint, index, topOffset }: Props) => {
-  const { title, startDateMonth, startDateYear } = footprint;
+  const { title, startDateMonth, startDateYear, endDateMonth, endDateYear } = footprint;
   const { windowWidth } = useGetScreenSize();
   const { selectedFootprintIndex, setSelectedFootprintIndex } = useContext(SelectedFootprintIndexContext);
   const [isHover, setIsHover] = useState(false);
@@ -60,10 +60,18 @@ export const FootprintElement = ({ footprint, index, topOffset }: Props) => {
       {windowWidth <= getMinBreakpoint('LD') ? (
         <Link href={`/footprints/${index}`} css={footprintLinkInnerStyle}>
           <h3>{title}</h3>
+          <span>
+            {startDateYear}. {startDateMonth.toString().padStart(2, '0')} ~{' '}
+            {endDateYear ? `${endDateYear}. ${endDateMonth?.toString().padStart(2, '0')}` : ''}
+          </span>
         </Link>
       ) : (
         <button type='button' onClick={handleClickFootprintButton} css={footprintLinkInnerStyle}>
           <h3>{title}</h3>
+          <span>
+            {startDateYear}. {startDateMonth.toString().padStart(2, '0')} ~{' '}
+            {endDateYear ? `${endDateYear}. ${endDateMonth?.toString().padStart(2, '0')}` : ''}
+          </span>
         </button>
       )}
     </li>
@@ -141,14 +149,24 @@ const footprintBranchStyle = (isHover: boolean) =>
 
 const footprintLinkInnerStyle = css({
   display: 'flex',
-  flexDirection: 'row',
+  flexDirection: 'column',
   alignItems: 'center',
-  justifyContent: 'flex-start',
+  justifyContent: 'center',
   width: 120,
-  height: 37.5,
+  height: 45,
 
   ':hover': {
     cursor: 'pointer',
+  },
+
+  h3: {
+    fontSize: SIZES.FONT_ML,
+    marginBottom: 10,
+  },
+
+  span: {
+    fontSize: SIZES.FONT_MS,
+    color: COLORS.GRAYA,
   },
 
   [getResponsiveAfter('ML')]: {
