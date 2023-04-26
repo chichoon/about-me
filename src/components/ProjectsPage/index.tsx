@@ -56,6 +56,6 @@ const projectPageSideSectionStyle = css({
   maxWidth: 'calc(100% - 420px)',
   minHeight: '100%',
   overflow: 'scroll',
-  boxShadow: `inset 0 0 10px 5px ${COLORS.GRAYC}`,
+  borderLeft: `2px solid ${COLORS.GRAYC}`,
   padding: 25,
 });
