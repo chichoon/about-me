@@ -58,7 +58,7 @@ export const FootprintElement = ({ footprint, index, topOffset }: Props) => {
         </span>
       </div>
       {windowWidth <= getMinBreakpoint('LD') ? (
-        <Link href={`/footprints/${index}`} css={footprintLinkInnerStyle}>
+        <Link href={`/footprints/${index}`} css={footprintLinkInnerStyle(isHover || isSelected)}>
           <h3>{title}</h3>
           <span>
             {startDateYear}. {startDateMonth.toString().padStart(2, '0')} ~{' '}
@@ -66,7 +66,7 @@ export const FootprintElement = ({ footprint, index, topOffset }: Props) => {
           </span>
         </Link>
       ) : (
-        <button type='button' onClick={handleClickFootprintButton} css={footprintLinkInnerStyle}>
+        <button type='button' onClick={handleClickFootprintButton} css={footprintLinkInnerStyle(isHover || isSelected)}>
           <h3>{title}</h3>
           <span>
             {startDateYear}. {startDateMonth.toString().padStart(2, '0')} ~{' '}
@@ -93,7 +93,7 @@ const footprintElementStyle = (topOffset: number) =>
 const footprintBranchStyle = (isHover: boolean) =>
   css({
     position: 'relative',
-    width: 100,
+    width: 120,
     height: 30,
 
     span: {
@@ -110,10 +110,10 @@ const footprintBranchStyle = (isHover: boolean) =>
       content: '""',
       backgroundColor: isHover ? COLORS.GRAY9 : COLORS.GRAYC,
       transition: `background-color 0.2s ease-in`,
-      width: 70,
+      width: 120,
       height: 5,
       top: 12.5,
-      left: 14,
+      left: 1,
     },
 
     ':after': {
@@ -137,8 +137,8 @@ const footprintBranchStyle = (isHover: boolean) =>
       },
 
       ':before': {
-        width: 100,
-        left: 29,
+        width: 120,
+        left: 30,
       },
 
       ':after': {
@@ -147,30 +147,34 @@ const footprintBranchStyle = (isHover: boolean) =>
     },
   });
 
-const footprintLinkInnerStyle = css({
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  justifyContent: 'center',
-  width: 120,
-  height: 45,
+const footprintLinkInnerStyle = (isHover: boolean) =>
+  css({
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 150,
+    height: 60,
+    border: `2px solid ${isHover ? COLORS.GRAYA : COLORS.GRAYC}`,
+    transition: `border 0.2s ease-in`,
+    borderRadius: 5,
 
-  ':hover': {
-    cursor: 'pointer',
-  },
+    ':hover': {
+      cursor: 'pointer',
+    },
 
-  h3: {
-    fontSize: SIZES.FONT_ML,
-    marginBottom: 10,
-  },
+    h3: {
+      fontSize: SIZES.FONT_ML,
+      marginBottom: 10,
+    },
 
-  span: {
-    fontSize: SIZES.FONT_MS,
-    color: COLORS.GRAYA,
-  },
+    span: {
+      fontSize: SIZES.FONT_MS,
+      color: COLORS.GRAYA,
+    },
 
-  [getResponsiveAfter('ML')]: {
-    width: 160,
-    height: 50,
-  },
-});
+    [getResponsiveAfter('ML')]: {
+      width: 200,
+      height: 75,
+    },
+  });
