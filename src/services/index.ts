@@ -7,3 +7,4 @@ export { getProjectKeys } from './getProjectKeys';
 export { getProjectByKey } from './getProjectByKey';
 
 export { getFootprints } from './getFootprints';
+export { getFootprintIndexes } from './getFootprintIndexes';
