@@ -1,6 +1,6 @@
 import { ProjectListType } from '@/types/profileData';
 
-import projects from '@/assets/projectsInfo.json';
+import projects from '@/assets/data/projectsInfo.json';
 
 export async function getProjects() {
   const projectList = projects as ProjectListType;

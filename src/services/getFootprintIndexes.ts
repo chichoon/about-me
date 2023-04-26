@@ -1,4 +1,4 @@
-import footprints from '@/assets/footprintsInfo.json';
+import footprints from '@/assets/data/footprintsInfo.json';
 
 export async function getFootprintIndexes() {
   const data = await new Promise<number>((resolve) => {

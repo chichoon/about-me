@@ -1,4 +1,4 @@
-import footprints from '@/assets/footprintsInfo.json';
+import footprints from '@/assets/data/footprintsInfo.json';
 import { FootprintType } from '@/types/profileData';
 
 export async function getFootprintByIndex(index: number) {
