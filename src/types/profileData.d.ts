@@ -61,10 +61,6 @@ export interface ProjectListType {
   [key: string]: ProjectType;
 }
 
-export interface FootprintListType {
-  [key: string]: FootprintType;
-}
-
 export interface ProjectTimestampType {
   key: string;
   title: string;
