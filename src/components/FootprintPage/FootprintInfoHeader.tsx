@@ -41,8 +41,8 @@ const projectHeaderWrapperStyle = css({
 });
 
 const projectHeaderTitleStyle = css({
-  fontSize: SIZES.FONT_L,
-  color: COLORS.BLACK,
+  fontSize: SIZES.FONT_XL,
+  color: COLORS.GRAY3,
 });
 
 const projectHeaderSummaryStyle = css({
@@ -57,7 +57,7 @@ const projectHeaderSummaryStyle = css({
 });
 
 const projectHeaderDateStyle = css({
-  marginTop: 5,
+  marginTop: 10,
   color: COLORS.GRAYA,
   fontSize: SIZES.FONT_MS,
   transition: `color 0.2s ease-in`,
@@ -65,6 +65,6 @@ const projectHeaderDateStyle = css({
 
   [getResponsiveAfter('ML')]: {
     marginTop: 0,
-    marginLeft: 5,
+    marginLeft: 10,
   },
 });

@@ -30,14 +30,14 @@ export interface StackType {
 
 export interface AchievementsType {
   title: string;
-  githubLink?: LinkType[];
-  link?: LinkType[];
+  githubLink?: string;
+  link?: LinkType;
 }
 
 export interface DescriptionType {
   title: string;
   mainText: string | string[];
-  link?: LinkType[];
+  link?: LinkType;
 }
 
 export interface LinkType {
@@ -54,7 +54,8 @@ export interface ProjectType extends HistoryType {
 }
 
 export interface FootprintType extends HistoryType {
-  achievements: AchievementsType[];
+  description: DescriptionType[];
+  achievements?: AchievementsType[];
 }
 
 export interface ProjectListType {
