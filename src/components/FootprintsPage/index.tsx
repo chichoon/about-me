@@ -4,10 +4,11 @@ import { css } from '@emotion/react';
 import { useGetScreenSize } from '@/hooks';
 import { SelectedFootprintIndexContext } from '@/context';
 import { FootprintType } from '@/types/profileData';
+import { FootprintListMenu } from './FootprintListMenu';
+import { FootprintPage } from '../FootprintPage';
 
 import { getMinBreakpoint } from '@/styles/getResponsiveBreakpoint';
 import { COLORS } from '@/styles/colors';
-import { FootprintListMenu } from './FootprintListMenu';
 
 interface Props {
   footprintData: FootprintType[];
@@ -36,7 +37,7 @@ export const FootprintsPage = ({ footprintData }: Props) => {
         <FootprintListMenu footprintData={footprintData} />
         {selectedFootprintIndex >= 0 && (
           <div css={footprintPageSideSectionStyle}>
-            <div>temp</div>
+            <FootprintPage footprint={footprintData[selectedFootprintIndex]} />
           </div>
         )}
       </SelectedFootprintIndexContext.Provider>

@@ -6,7 +6,7 @@ import { SIZES } from '@/styles/sizes';
 export const ErrorPage404 = () => {
   return (
     <div css={errorSectionWrapperStyle}>
-      <Image src='/error.png' alt='error icon' width={200} height={200} />
+      <Image src='/error.png' priority alt='error icon' width={200} height={200} />
       <h3>페이지를 찾을 수 없습니다</h3>
     </div>
   );
