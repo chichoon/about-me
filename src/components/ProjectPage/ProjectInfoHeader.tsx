@@ -16,9 +16,10 @@ interface Props {
 export const ProjectInfoHeader = ({ project }: Props) => {
   const { title, imageRef, startDateMonth, startDateYear, endDateMonth, endDateYear, githubLink, publishedLink } =
     project;
+
   return (
     <div css={projectHeaderWrapperStyle}>
-      <Image width={160} height={50} src={imageRef} alt={`${title} logo`} />
+      <Image width={160} height={50} src={imageRef ?? ''} alt={`${title} logo`} />
       <div css={projectHeaderInfoWrapperStyle}>
         <div css={projectTitleSectionStyle}>
           <h3>{title}</h3>
