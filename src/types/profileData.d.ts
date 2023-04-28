@@ -31,13 +31,13 @@ export interface StackType {
 export interface AchievementsType {
   title: string;
   githubLink?: string;
-  link?: LinkType;
+  link?: LinkType[];
 }
 
 export interface DescriptionType {
   title: string;
   mainText: string | string[];
-  link?: LinkType;
+  link?: LinkType[];
 }
 
 export interface LinkType {

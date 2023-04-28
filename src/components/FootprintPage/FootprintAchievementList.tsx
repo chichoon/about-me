@@ -14,18 +14,26 @@ interface Props {
 export const FootprintAchievementList = ({ achievementData }: Props) => {
   return (
     <ul css={achievementListWrapperStyle}>
-      {achievementData.map(({ title, githubLink, link }, index) => (
+      {achievementData.map(({ title, githubLink, link: links }, index) => (
         <li key={`achievement-${index}`} css={achievementElementStyle}>
-          <h5>{title}</h5>
-          {link && (
-            <a href={link.link} target='_blank' css={linkStyle}>
-              {link.title}
-            </a>
-          )}
-          {githubLink && (
-            <a href={githubLink} target='_blank' css={githubLinkStyle}>
-              <GithubIcon />
-            </a>
+          <div css={achievementInnerLeftStyle}>
+            <h5>{title}</h5>
+            {githubLink && (
+              <a href={githubLink} target='_blank' css={githubLinkStyle}>
+                <GithubIcon />
+              </a>
+            )}
+          </div>
+          {links && (
+            <ul css={innerListStyle}>
+              {links.map((link, i) => (
+                <li key={`achievement-${index}-${i}`}>
+                  <a href={link.link} target='_blank' css={linkStyle}>
+                    <span>{link.title}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
           )}
         </li>
       ))}
@@ -41,18 +49,34 @@ const achievementListWrapperStyle = css({
 
 const achievementElementStyle = css({
   marginBottom: 15,
+
+  ':last-child': {
+    marginBottom: 0,
+  },
+});
+
+const achievementInnerLeftStyle = css({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
-  justifyContent: 'flex-start',
+  marginBottom: 10,
 
   h5: {
     fontSize: SIZES.FONT_ML,
     color: COLORS.GRAY3,
   },
+});
 
-  ':last-child': {
-    marginBottom: 0,
+const innerListStyle = css({
+  paddingLeft: 25,
+
+  li: {
+    listStyle: 'square',
+    marginTop: 5,
+  },
+
+  'li:first-child': {
+    marginTop: 0,
   },
 });
 
