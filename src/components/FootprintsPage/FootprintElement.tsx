@@ -100,6 +100,7 @@ const footprintBranchStyle = (isHover: boolean) =>
       position: 'absolute',
       left: 20,
       top: -5,
+      fontSize: SIZES.FONT_MS,
       color: isHover ? COLORS.GRAYA : COLORS.GRAYC,
       transition: `color 0.2s ease-in`,
       userSelect: 'none',
