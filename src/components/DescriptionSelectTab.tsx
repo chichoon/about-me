@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction, useCallback } from 'react';
 import { css } from '@emotion/react';
 import { COLORS } from '@/styles/colors';
 import { SIZES } from '@/styles/sizes';
+import { getResponsiveAfter } from '@/styles/getResponsiveBreakpoint';
 
 interface Props {
   selectedTabIndex: number;
@@ -42,6 +43,13 @@ const tabListWrapperStyle = css({
   padding: '10px 0',
   display: 'flex',
   flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: '100%',
+
+  [getResponsiveAfter('ML')]: {
+    justifyContent: 'flex-start',
+  },
 });
 
 const tabListElementWrapperStyle = css({

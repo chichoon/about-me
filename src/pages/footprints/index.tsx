@@ -1,4 +1,4 @@
-import { Layout } from '@/components';
+import { FootprintsPage, Layout } from '@/components';
 import { getFootprints, getProfile } from '@/services';
 import { FootprintType, ProfileType } from '@/types/profileData';
 
@@ -18,12 +18,7 @@ interface Props {
 const footprints = ({ profileData, footprintData }: Props) => {
   return (
     <Layout profileData={profileData}>
-      <menu>
-        {footprintData.map((footprint, index) => (
-          <span key={`footprint-${index}`}>{footprint.title}</span>
-        ))}
-        <span>안녕하세요!!</span>
-      </menu>
+      <FootprintsPage footprintData={footprintData} />
     </Layout>
   );
 };

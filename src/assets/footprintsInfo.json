@@ -2,7 +2,6 @@
   {
     "key": "asd",
     "title": "뭐뭐했음",
-    "imageRef": "https://avatars.githubusercontent.com/u/37893979?v=4",
     "startDateYear": 2022,
     "startDateMonth": 3,
     "endDateYear": 2022,
@@ -38,40 +37,50 @@
     ]
   },
   {
-    "key": "aa",
-    "title": "뭐뭐했음",
-    "imageRef": "https://avatars.githubusercontent.com/u/37893979?v=4",
-    "startDateYear": 2022,
-    "startDateMonth": 5,
-    "endDateYear": 2022,
-    "endDateMonth": 7,
-    "summary": "뭐뭐했다",
+    "key": "konkuk-university",
+    "title": "건국대학교",
+    "startDateYear": 2017,
+    "startDateMonth": 3,
+    "endDateYear": 2021,
+    "endDateMonth": 2,
+    "summary": "전자공학과",
     "description": [
       {
-        "title": "hihi",
-        "mainText": "뭐뭐뭐"
-      },
-      {
-        "title": "hihi",
-        "mainText": "뭐뭐뭐"
-      },
-      {
-        "title": "hihi",
-        "mainText": "뭐뭐뭐"
+        "title": "전자공학과 학사 졸업",
+        "mainText": [
+          "이동통신개론, 무선통신공학 등의 통신 관련 과목 수강",
+          "안드로이드 프로그래밍, 알고리즘 자료구조, 실시간 운영체제, 논리회로 등 컴퓨터과학 과목 수강"
+        ]
       }
     ],
     "achievements": [
       {
-        "title": "hihi",
-        "mainText": "뭐뭐뭐"
+        "title": "졸업작품 (설탕한컵)",
+        "mainText": "졸업작품으로 음료의 당도를 측정하여 칼로리를 예측하는 하드웨어를 만들었다.",
+        "githubLink": "https://github.com/chichoon/Sugar1Cup"
       },
       {
-        "title": "hihi",
-        "mainText": "뭐뭐뭐"
-      },
-      {
-        "title": "hihi",
-        "mainText": "뭐뭐뭐"
+        "title": "졸업작품 (설탕한컵)",
+        "mainText": "졸업작품으로 음료의 당도를 측정하여 칼로리를 예측하는 하드웨어를 만들었다.",
+        "githubLink": "https://github.com/chichoon/Sugar1Cup",
+        "link": [
+          {
+            "link": "https://github.com/chichoon/Sugar1Cup",
+            "title": "Github"
+          },
+          {
+            "link": "https://github.com/chichoon/Sugar1Cup",
+            "title": "asd"
+          },
+          {
+            "link": "https://github.com/chichoon/Sugar1Cup",
+            "title": "qwe"
+          },
+          {
+            "link": "https://github.com/chichoon/Sugar1Cup",
+            "title": "aaa"
+          }
+        ]
       }
     ]
   }

@@ -4,21 +4,21 @@ import { getProfile, getProjects } from '@/services';
 
 export async function getStaticProps() {
   const profileData = await getProfile();
-  const projectsData = await getProjects();
+  const projectData = await getProjects();
   return {
-    props: { profileData, projectsData }, // will be passed to the page component as props
+    props: { profileData, projectData }, // will be passed to the page component as props
   };
 }
 
 interface Props {
   profileData: ProfileType;
-  projectsData: ProjectListType;
+  projectData: ProjectListType;
 }
 
-const projects = ({ profileData, projectsData }: Props) => {
+const projects = ({ profileData, projectData }: Props) => {
   return (
     <Layout profileData={profileData}>
-      <ProjectsPage projectsData={projectsData} />
+      <ProjectsPage projectData={projectData} />
     </Layout>
   );
 };
