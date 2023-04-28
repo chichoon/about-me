@@ -9,10 +9,10 @@ import { ProjectType } from '@/types/profileData';
 
 import { GithubIcon, ShareIcon } from '@/assets/svgs';
 
+import { getMinBreakpoint, getResponsiveAfter } from '@/styles/getResponsiveBreakpoint';
 import { LEVELS } from '@/styles/levels';
 import { SIZES } from '@/styles/sizes';
 import { COLORS } from '@/styles/colors';
-import { getMinBreakpoint, getResponsiveAfter } from '@/styles/getResponsiveBreakpoint';
 
 interface Props {
   project: ProjectType;
@@ -62,7 +62,7 @@ export const ProjectElement = ({ project, topOffset }: Props) => {
       {windowWidth <= getMinBreakpoint('LD') ? (
         <Link href={`/projects/${key}`} css={projectLinkInnerStyle}>
           <Image
-            src={imageRef}
+            src={imageRef ?? ''}
             width={160}
             height={50}
             alt={`${key}-logo`}
@@ -72,7 +72,7 @@ export const ProjectElement = ({ project, topOffset }: Props) => {
       ) : (
         <button type='button' onClick={handleClickProjectButton} css={projectLinkInnerStyle}>
           <Image
-            src={imageRef}
+            src={imageRef ?? ''}
             width={160}
             height={50}
             alt={`${key}-logo`}
