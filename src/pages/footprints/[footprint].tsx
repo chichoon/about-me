@@ -9,22 +9,21 @@ interface Props {
 
 interface Params {
   params: {
-    index: number;
+    footprint: string;
   };
 }
 
 export async function getStaticPaths() {
-  const keys = await getFootprintIndexes();
-
+  const indexes = await getFootprintIndexes();
   return {
-    paths: Array(keys).map((_, index) => ({ params: { index } })),
+    paths: [...Array(indexes)].map((_, index) => ({ params: { footprint: index.toString() } })),
     fallback: false,
   };
 }
 
 export async function getStaticProps({ params }: Params) {
   const profileData = await getProfile();
-  const footprintData = await getFootprintByIndex(params.index);
+  const footprintData = await getFootprintByIndex(Number(params.footprint));
 
   return { props: { profileData, footprintData } };
 }
