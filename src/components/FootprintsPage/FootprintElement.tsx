@@ -5,6 +5,7 @@ import { css } from '@emotion/react';
 import { FootprintType } from '@/types/profileData';
 import { SelectedFootprintIndexContext } from '@/context';
 import { useGetScreenSize } from '@/hooks';
+import { getTopOffsetPercentage } from '@/utils';
 
 import { getMinBreakpoint, getResponsiveAfter } from '@/styles/getResponsiveBreakpoint';
 import { LEVELS } from '@/styles/levels';
@@ -14,15 +15,18 @@ import { SIZES } from '@/styles/sizes';
 interface Props {
   footprint: FootprintType;
   index: number;
-  topOffset: number;
+  minDay: number;
+  maxDay: number;
 }
 
-export const FootprintElement = ({ footprint, index, topOffset }: Props) => {
+export const FootprintElement = ({ footprint, index, minDay, maxDay }: Props) => {
   const { title, startDateMonth, startDateYear, endDateMonth, endDateYear } = footprint;
   const { windowWidth } = useGetScreenSize();
   const { selectedFootprintIndex, setSelectedFootprintIndex } = useContext(SelectedFootprintIndexContext);
   const [isHover, setIsHover] = useState(false);
   const [isSelected, setIsSelected] = useState(false);
+
+  const startDateOffset = getTopOffsetPercentage(minDay, maxDay, startDateYear, startDateMonth, 1);
 
   const handleHover = useCallback(function handleHoverCallback() {
     setIsHover(true);
@@ -46,7 +50,7 @@ export const FootprintElement = ({ footprint, index, topOffset }: Props) => {
 
   return (
     <li
-      css={footprintElementStyle(topOffset)}
+      css={footprintElementStyle(startDateOffset)}
       onMouseOver={handleHover}
       onFocus={handleHover}
       onMouseOut={handleOut}

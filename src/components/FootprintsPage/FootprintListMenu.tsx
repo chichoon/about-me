@@ -1,7 +1,6 @@
 import { FootprintType } from '@/types/profileData';
 import { BranchListWrapper } from '../BranchListWrapper';
 import { FootprintElement } from './FootprintElement';
-import { getTopOffsetPercentage } from '@/utils';
 
 interface Props {
   footprintData: FootprintType[];
@@ -9,8 +8,10 @@ interface Props {
 
 export const FootprintListMenu = ({ footprintData }: Props) => {
   const min =
-    footprintData[footprintData.length - 1].startDateYear * 12 + footprintData[footprintData.length - 1].startDateMonth;
-  const max = footprintData[0].startDateYear * 12 + footprintData[0].startDateMonth;
+    footprintData[footprintData.length - 1].startDateYear * 12 * 30 +
+    footprintData[footprintData.length - 1].startDateMonth * 30 +
+    1;
+  const max = footprintData[0].startDateYear * 12 * 30 + footprintData[0].startDateMonth * 30 + 1;
 
   return (
     <BranchListWrapper>
@@ -20,7 +21,8 @@ export const FootprintListMenu = ({ footprintData }: Props) => {
             key={`footprint-${footprint.key}`}
             footprint={footprint}
             index={index}
-            topOffset={getTopOffsetPercentage(min, max, footprint.startDateYear, footprint.startDateMonth)}
+            minDay={min}
+            maxDay={max}
           />
         ))}
       </>
