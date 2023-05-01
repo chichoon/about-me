@@ -1,7 +1,6 @@
 import { ProjectType } from '@/types/profileData';
 import { getTopOffsetPercentage } from '@/utils';
 import { ProjectElement } from './ProjectElement';
-
 import { BranchListWrapper } from '../BranchListWrapper';
 
 interface Props {
@@ -9,9 +8,14 @@ interface Props {
 }
 
 export const ProjectListMenu = ({ projectData }: Props) => {
-  const min =
-    projectData[projectData.length - 1].startDateYear * 12 + projectData[projectData.length - 1].startDateMonth;
-  const max = projectData[0].startDateYear * 12 + projectData[0].startDateMonth;
+  const {
+    startDateYear: minYear,
+    startDateMonth: minMonth,
+    startDateDay: minDay,
+  } = projectData[projectData.length - 1];
+  const { startDateYear: maxYear, startDateMonth: maxMonth, startDateDay: maxDay } = projectData[0];
+  const min = minYear * 12 * 30 + minMonth * 30 + minDay;
+  const max = maxYear * 12 * 30 + maxMonth * 30 + maxDay;
 
   return (
     <BranchListWrapper>
@@ -20,7 +24,13 @@ export const ProjectListMenu = ({ projectData }: Props) => {
           <ProjectElement
             key={`experience-${project.key}`}
             project={project}
-            topOffset={getTopOffsetPercentage(min, max, project.startDateYear, project.startDateMonth)}
+            topOffset={getTopOffsetPercentage(
+              min,
+              max,
+              project.startDateYear,
+              project.startDateMonth,
+              project.startDateDay
+            )}
           />
         ))}
       </>

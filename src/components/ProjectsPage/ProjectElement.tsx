@@ -20,7 +20,7 @@ interface Props {
 }
 
 export const ProjectElement = ({ project, topOffset }: Props) => {
-  const { key, imageRef, githubLink, publishedLink, startDateMonth, startDateYear } = project;
+  const { key, imageRef, githubLink, publishedLink, startDateMonth, startDateYear, startDateDay } = project;
   const { windowWidth } = useGetScreenSize();
   const { selectedProjectKey, setSelectedProjectKey } = useContext(SelectedProjectKeyContext);
   const [isHover, setIsHover] = useState(false);
@@ -56,7 +56,7 @@ export const ProjectElement = ({ project, topOffset }: Props) => {
     >
       <div css={projectBranchStyle(isHover || isSelected)}>
         <span>
-          {startDateYear}. {startDateMonth.toString().padStart(2, '0')}
+          {startDateYear}. {startDateMonth.toString().padStart(2, '0')}. {startDateDay.toString().padStart(2, '0')}
         </span>
       </div>
       {windowWidth <= getMinBreakpoint('LD') ? (
@@ -130,11 +130,12 @@ const projectBranchStyle = (isHover: boolean) =>
 
     span: {
       position: 'absolute',
-      left: 20,
+      left: 15,
       top: -5,
       color: isHover ? COLORS.GRAYA : COLORS.GRAYC,
       transition: `color 0.2s ease-in`,
       userSelect: 'none',
+      fontSize: SIZES.FONT_MS,
     },
 
     ':before': {
@@ -165,7 +166,8 @@ const projectBranchStyle = (isHover: boolean) =>
       width: 150,
 
       span: {
-        left: 35,
+        left: 40,
+        fontSize: SIZES.FONT_M,
       },
 
       ':before': {
