@@ -1,12 +1,54 @@
 {
+  "transcendence": {
+    "key": "transcendence",
+    "title": "ft_transcendence",
+    "imageRef": "https://user-images.githubusercontent.com/37893979/231684149-aa654edc-3ae9-4416-97a2-b6d558ef3b54.png",
+    "startDateYear": 2023,
+    "startDateMonth": 1,
+    "startDateDay": 20,
+    "endDateYear": 2023,
+    "endDateMonth": 3,
+    "endDateDay": 3,
+    "githubLink": "https://github.com/42Blank/ft_transcendence",
+    "stacks": [
+      { "name": "TypeScript", "color": "3178C6", "logo": "TypeScript" },
+      { "name": "React", "color": "61DAFB", "logo": "React" },
+      { "name": "React Query", "color": "FF4154", "logo": "React%20Query" },
+      { "name": "Emotion", "color": "D26AC2" },
+      { "name": "Socket.io", "color": "010101", "logo": "Socket.io" }
+    ],
+    "summary": "42 서울 마지막 과제로, 온라인으로 Pong 멀티플레이가 가능한 웹 페이지 제작",
+    "description": [
+      {
+        "title": "과제 목표",
+        "mainText": "최초의 비디오 게임인 Pong을 웹 게임으로 구현하는 과제로, 플레이어는 다른 유저와의 채팅, 친구 추가 및 삭제, 게임 매칭, 플레이 기능 등을 사용할 수 있어야 한다."
+      },
+      {
+        "title": "프로젝트 규모",
+        "mainText": "프론트엔드 3인, 백엔드 2인으로 구성된 프로젝트이며, 전체 페이지 디자인 및 채팅 기능, 메인 페이지와 채팅 페이지, 소켓 통신 로직을 맡았다."
+      }
+    ],
+    "technicalSpec": [
+      {
+        "title": "전역 상태관리를 통한 최상단 훅에서의 소켓 관리",
+        "mainText": [
+          "소켓 객체는 단 하나만을 최상단 컴포넌트에서 생성하도록 하고, 이 소켓 객체에서 모든 소켓 통신을 전담하게끔 구조를 잡고 싶었다.",
+          "Socket.io에서 제공하는 소켓 객체는 통신이 이루어질 때마다 변화하므로 Read-Only인 상태값으로서 관리할 수 없어, 대신 소켓 통신에서 사용하는 모든 데이터를 전역으로 관리하는 방향으로 노선을 틀게 되었다.",
+          "채팅을 보내거나 게임 방을 생성할 때마다 전역 데이터를 조작하고, 최상위 훅에서 전역 데이터의 변화를 감지하여 소켓 이벤트를 발생시키는 방식으로 최상단에서만 소켓이 활성화되도록 했다."
+        ]
+      }
+    ]
+  },
   "scopa": {
     "key": "scopa",
     "title": "SCOPA",
     "imageRef": "https://user-images.githubusercontent.com/37893979/231683723-f86e8439-115e-4e1e-a9e3-3880d038d831.png",
     "startDateYear": 2022,
     "startDateMonth": 11,
+    "startDateDay": 7,
     "endDateYear": 2022,
     "endDateMonth": 12,
+    "endDateDay": 16,
     "githubLink": "https://github.com/boostcampwm-2022/web25-SCOPA",
     "publishedLink": "https://scopa.ga",
     "stacks": [
@@ -19,10 +61,7 @@
     "description": [
       {
         "title": "만들게 된 계기",
-        "mainText": [
-          "부스트캠프에서 팀 프로젝트를 수행하기 위해 팀을 구성했을 때, 팀원 간에 선호하는 코드 스타일이나 컨벤션이 달라서 이를 맞추는 데에 긴 시간이 소요되었다.",
-          "이에 착안하여 코드 스타일을 보고 팀원을 구할 수 있다면 이러한 부분에서 시간을 단축시킬 수 있지 않을까 하는 마음에 프로젝트 주제를 결정하였다."
-        ]
+        "mainText": "부스트캠프에서 팀 프로젝트를 수행하기 위해 팀을 구성했을 때, 팀원 간에 선호하는 코드 스타일이나 컨벤션이 달라서 이를 맞추는 데에 긴 시간이 소요되었다.\n이에 착안하여 코드 스타일을 보고 팀원을 구할 수 있다면 이러한 부분에서 시간을 단축시킬 수 있지 않을까 하는 마음에 프로젝트 주제를 결정하였다."
       },
       {
         "title": "프로젝트 규모",
@@ -97,11 +136,11 @@
     "imageRef": "https://user-images.githubusercontent.com/37893979/231683869-d1fe004e-b7f5-41ee-8f97-884e4aa647ef.png",
     "startDateYear": 2022,
     "startDateMonth": 6,
+    "startDateDay": 12,
     "githubLink": "https://github.com/chichoon/JiychoiStandardTime",
     "publishedLink": "https://jst.chichoon.com/main",
     "stacks": [
       { "name": "TypeScript", "color": "3178C6", "logo": "TypeScript" },
-
       { "name": "React", "color": "61DAFB", "logo": "React" },
       { "name": "React Query", "color": "FF4154", "logo": "React%20Query" },
       { "name": "Redux Toolkit", "color": "764ABC" },
@@ -119,12 +158,51 @@
       }
     ]
   },
+  "dashboard": {
+    "key": "dashboard",
+    "title": "할일 대시보드",
+    "imageRef": "https://user-images.githubusercontent.com/37893979/231684231-9f40d2cd-b7c6-43c8-8013-1ef607d7baf8.png",
+    "startDateYear": 2022,
+    "startDateMonth": 5,
+    "startDateDay": 22,
+    "endDateYear": 2022,
+    "endDateMonth": 6,
+    "endDateDay": 23,
+    "githubLink": "https://ultimate-todoboard.netlify.app/dashboard",
+    "publishedLink": "https://github.com/chichoon/Ultimate-TodoBoard",
+    "stacks": [
+      { "name": "TypeScript", "color": "3178C6", "logo": "TypeScript" },
+      { "name": "React", "color": "61DAFB", "logo": "React" },
+      { "name": "React Query", "color": "FF4154", "logo": "React%20Query" },
+      { "name": "Redux Toolkit", "color": "764ABC" },
+      { "name": "Sass", "color": "CC6699", "logo": "Sass" }
+    ],
+    "summary": "디데이와 할일, 알고리즘 문제풀이 목록, 날씨 등 컴퓨터 사용 시 필요한 유틸리티들을 한번에 모아볼 수 있는 웹 프로젝트",
+    "description": [
+      {
+        "title": "프로젝트 규모",
+        "mainText": "1인 프론트엔드 프로젝트로, 기획부터 배포까지 혼자 진행하였다."
+      }
+    ],
+    "technicalSpec": [
+      {
+        "title": "반응형 레이아웃 작업",
+        "mainText": [
+          "모바일 환경, 태블릿 환경 등 대부분의 화면 크기에서 대응하기 위해 미디어 쿼리와 그리드 레이아웃을 이용하여 반응형 레이아웃을 구현하였다",
+          "모바일 환경에서의 CSS 로딩을 최소화하기 위해서 모바일 레이아웃을 먼저 작업한 뒤 큰 사이즈의 화면에 대응하도록 했다.",
+          "메뉴바의 위치가 조정되거나, 그리드 레이아웃과 flex 레이아웃 간 전환 등으로 모바일 환경에서도 레이아웃이 유연하게 배치된다."
+        ]
+      }
+    ]
+  },
+
   "42world": {
     "key": "42world",
     "title": "42World",
     "imageRef": "https://user-images.githubusercontent.com/37893979/231683789-374c9b8b-6243-4b80-b05b-bc8f737ee5aa.png",
     "startDateYear": 2022,
     "startDateMonth": 3,
+    "startDateDay": 4,
     "githubLink": "https://github.com/42-world",
     "publishedLink": "https://www.42world.kr/",
     "stacks": [
