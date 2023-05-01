@@ -6,6 +6,7 @@ import { css } from '@emotion/react';
 import { useGetScreenSize } from '@/hooks';
 import { SelectedProjectKeyContext } from '@/context';
 import { ProjectType } from '@/types/profileData';
+import { getTopOffsetPercentage } from '@/utils';
 
 import { GithubIcon, ShareIcon } from '@/assets/svgs';
 
@@ -16,15 +17,18 @@ import { COLORS } from '@/styles/colors';
 
 interface Props {
   project: ProjectType;
-  topOffset: number;
+  minDay: number;
+  maxDay: number;
 }
 
-export const ProjectElement = ({ project, topOffset }: Props) => {
+export const ProjectElement = ({ project, minDay, maxDay }: Props) => {
   const { key, imageRef, githubLink, publishedLink, startDateMonth, startDateYear, startDateDay } = project;
   const { windowWidth } = useGetScreenSize();
   const { selectedProjectKey, setSelectedProjectKey } = useContext(SelectedProjectKeyContext);
   const [isHover, setIsHover] = useState(false);
   const [isSelected, setIsSelected] = useState(false);
+
+  const startDateOffset = getTopOffsetPercentage(minDay, maxDay, startDateYear, startDateMonth, startDateDay);
 
   const handleHover = useCallback(function handleHoverCallback() {
     setIsHover(true);
@@ -48,7 +52,7 @@ export const ProjectElement = ({ project, topOffset }: Props) => {
 
   return (
     <li
-      css={projectElementStyle(topOffset)}
+      css={projectElementStyle(startDateOffset)}
       onMouseOver={handleHover}
       onFocus={handleHover}
       onMouseOut={handleOut}
