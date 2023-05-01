@@ -102,7 +102,7 @@ const footprintBranchStyle = (isHover: boolean) =>
 
     span: {
       position: 'absolute',
-      left: 20,
+      left: 15,
       top: -5,
       fontSize: SIZES.FONT_MS,
       color: isHover ? COLORS.GRAYA : COLORS.GRAYC,
@@ -138,7 +138,8 @@ const footprintBranchStyle = (isHover: boolean) =>
       width: 150,
 
       span: {
-        left: 35,
+        left: 40,
+        fontSize: SIZES.FONT_M,
       },
 
       ':before': {
