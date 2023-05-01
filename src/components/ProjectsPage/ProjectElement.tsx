@@ -22,7 +22,7 @@ interface Props {
 }
 
 export const ProjectElement = ({ project, minDay, maxDay }: Props) => {
-  const { key, imageRef, githubLink, publishedLink, startDateMonth, startDateYear, startDateDay } = project;
+  const { key, imageRef, githubLink, publishedLink, startDateMonth, startDateYear, startDateDay = 1 } = project;
   const { windowWidth } = useGetScreenSize();
   const { selectedProjectKey, setSelectedProjectKey } = useContext(SelectedProjectKeyContext);
   const [isHover, setIsHover] = useState(false);

@@ -8,7 +8,7 @@ interface Props {
 
 export const ProjectListMenu = ({ projectData }: Props) => {
   const date = new Date();
-  const { startDateYear, startDateMonth, startDateDay } = projectData[projectData.length - 1];
+  const { startDateYear, startDateMonth, startDateDay = 1 } = projectData[projectData.length - 1];
   const {
     endDateYear = date.getFullYear(),
     endDateMonth = date.getMonth() + 1,
