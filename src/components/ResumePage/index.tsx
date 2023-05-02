@@ -10,6 +10,14 @@ interface Props {
 export const ResumePage = ({ profileData, projectData, footprintData }: Props) => {
   return (
     <>
+      <style jsx global>
+        {`
+          body {
+            width: 1000px;
+            height: 1414.2px;
+          }
+        `}
+      </style>
       <ResumeHeader profileData={profileData} />
     </>
   );

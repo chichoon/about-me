@@ -1,9 +1,77 @@
+import Image from 'next/image';
+import { css } from '@emotion/react';
+
 import { ProfileType } from '@/types/profileData';
+
+import { SIZES } from '@/styles/sizes';
+import { COLORS } from '@/styles/colors';
 
 interface Props {
   profileData: ProfileType;
 }
 
 export const ResumeHeader = ({ profileData }: Props) => {
-  return <header>{profileData.name}</header>;
+  return (
+    <header css={headerWrapperStyle}>
+      <Image src={profileData.profileImageRef} width={200} height={200} css={imageStyle} />
+      <div>
+        <h1>{profileData.name}</h1>
+        <div css={headerDataWrapperStyle}>
+          <h2>이메일</h2>
+          <a href={`mailto:${profileData.email}`}>
+            <span>{profileData.email}</span>
+          </a>
+        </div>
+        <div css={headerDataWrapperStyle}>
+          <h2>전화번호</h2>
+          <span>{profileData.blogLink}</span>
+        </div>
+        <div css={headerDataWrapperStyle}>
+          <h2>GitHub</h2>
+          <a href={`https://github.com/${profileData.githubUsername}`}>
+            <span>{`https://github.com/${profileData.githubUsername}`}</span>
+          </a>
+        </div>
+        <div css={headerDataWrapperStyle}>
+          <h2>블로그</h2>
+          <a href={profileData.blogLink}>
+            <span>{profileData.blogLink}</span>
+          </a>
+        </div>
+      </div>
+    </header>
+  );
 };
+
+const headerWrapperStyle = css({
+  width: '100%',
+  padding: 50,
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'center',
+  backgroundColor: COLORS.WHITE,
+
+  h1: {
+    fontSize: SIZES.FONT_XL,
+    color: COLORS.BLACK,
+    marginBottom: 20,
+    fontWeight: 700,
+  },
+});
+
+const headerDataWrapperStyle = css({
+  display: 'flex',
+  flexDirection: 'row',
+  marginBottom: 10,
+  h2: { fontSize: SIZES.FONT_ML, color: COLORS.GRAY6, marginRight: 5 },
+
+  span: {
+    color: COLORS.GRAY9,
+    textDecoration: 'underline',
+  },
+});
+
+const imageStyle = css({
+  marginRight: 20,
+});
