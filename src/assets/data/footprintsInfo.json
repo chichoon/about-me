@@ -1,40 +1,51 @@
 [
   {
-    "key": "asd",
-    "title": "뭐뭐했음",
-    "startDateYear": 2022,
-    "startDateMonth": 3,
-    "endDateYear": 2022,
+    "key": "42cursus",
+    "title": "42 Seoul 본과정 (Learner)",
+    "startDateYear": 2021,
+    "startDateMonth": 5,
+    "endDateYear": 2023,
     "endDateMonth": 4,
-    "summary": "뭐뭐했다",
+    "summary": "4기",
     "description": [
       {
-        "title": "hihi",
-        "mainText": "뭐뭐뭐"
-      },
-      {
-        "title": "hihi",
-        "mainText": "뭐뭐뭐"
-      },
-      {
-        "title": "hihi",
-        "mainText": "뭐뭐뭐"
+        "title": "42 Seoul 본과정 수료",
+        "mainText": ["2년 간 공통과정 (Inner Circle) 에 있는 모든 과제를 통과하여 Outer Circle에 도달했다", ""]
       }
     ],
     "achievements": [
       {
-        "title": "hihi",
-        "mainText": "뭐뭐뭐"
+        "title": "공통과정 돌파",
+        "mainText": "공통과정의 모든 과제 수행"
       },
       {
-        "title": "hihi",
-        "mainText": "뭐뭐뭐"
-      },
-      {
-        "title": "hihi",
-        "mainText": "뭐뭐뭐"
+        "title": "ft_transcendence",
+        "mainText": "42 Seoul 에서의 마지막 과제로, Pong을 플레이하고 점수를 얻으며, 친구와 채팅이 가능한 웹 페이지 구현",
+        "githubLink": "https://github.com/42Blank/ft_transcendence",
+        "link": [
+          {
+            "link": "http://localhost:3000/projects/transcendence",
+            "title": "프로젝트 개요"
+          }
+        ]
       }
     ]
+  },
+  {
+    "key": "piscine",
+    "title": "42 Seoul La Piscine",
+    "startDateYear": 2021,
+    "startDateMonth": 3,
+    "endDateYear": 2023,
+    "endDateMonth": 4,
+    "summary": "4기",
+    "description": [
+      {
+        "title": "La Piscine 과정 수료",
+        "mainText": ["2021.03 ~ 2021.04 약 한 달간 La Piscine 과정을 수료하고 Learner로 거듭났다"]
+      }
+    ],
+    "achievements": []
   },
   {
     "key": "konkuk-university",
@@ -57,28 +68,11 @@
       {
         "title": "졸업작품 (설탕한컵)",
         "mainText": "졸업작품으로 음료의 당도를 측정하여 칼로리를 예측하는 하드웨어를 만들었다.",
-        "githubLink": "https://github.com/chichoon/Sugar1Cup"
-      },
-      {
-        "title": "졸업작품 (설탕한컵)",
-        "mainText": "졸업작품으로 음료의 당도를 측정하여 칼로리를 예측하는 하드웨어를 만들었다.",
         "githubLink": "https://github.com/chichoon/Sugar1Cup",
         "link": [
           {
             "link": "https://github.com/chichoon/Sugar1Cup",
             "title": "Github"
-          },
-          {
-            "link": "https://github.com/chichoon/Sugar1Cup",
-            "title": "asd"
-          },
-          {
-            "link": "https://github.com/chichoon/Sugar1Cup",
-            "title": "qwe"
-          },
-          {
-            "link": "https://github.com/chichoon/Sugar1Cup",
-            "title": "aaa"
           }
         ]
       }
