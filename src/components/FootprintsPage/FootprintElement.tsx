@@ -155,14 +155,16 @@ const footprintBranchStyle = (isHover: boolean) =>
 
 const footprintLinkInnerStyle = (isHover: boolean) =>
   css({
+    backgroundColor: COLORS.WHITE,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
     width: 150,
     height: 60,
-    border: `2px solid ${isHover ? COLORS.GRAYA : COLORS.GRAYC}`,
-    transition: `border 0.2s ease-in`,
+    border: `2px solid ${COLORS.GRAYA}`,
+    opacity: isHover ? 1 : 0.5,
+    transition: `all 0.2s ease-in`,
     borderRadius: 5,
 
     ':hover': {
