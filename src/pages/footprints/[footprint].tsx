@@ -1,3 +1,5 @@
+import Head from 'next/head';
+
 import { FootprintPage, Layout } from '@/components';
 import { getFootprintByIndex, getFootprintIndexes, getProfile } from '@/services';
 import { FootprintType, ProfileType } from '@/types/profileData';
@@ -31,7 +33,14 @@ export async function getStaticProps({ params }: Params) {
 const Footprint = ({ profileData, footprintData }: Props) => {
   return (
     <Layout profileData={profileData}>
-      <FootprintPage footprint={footprintData} />
+      <>
+        <Head>
+          <meta name='title' content={`chichoon's footprint ${footprintData.key}`} />
+          <meta name='description' content={`치춘이 머물렀던 ${footprintData.title}`} />
+          <meta name='keywords' content={`${footprintData.key} Page`} />
+        </Head>
+        <FootprintPage footprint={footprintData} />
+      </>
     </Layout>
   );
 };
