@@ -21,6 +21,9 @@ interface HistoryType {
   endDateYear?: number;
   endDateMonth?: number;
   endDateDay?: number;
+  fakeDateYear?: number;
+  fakeDateMonth?: number;
+  fakeDateDay?: number;
   summary: string;
 }
 

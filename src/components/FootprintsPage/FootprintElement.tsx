@@ -20,13 +20,29 @@ interface Props {
 }
 
 export const FootprintElement = ({ footprint, index, minDay, maxDay }: Props) => {
-  const { title, startDateMonth, startDateYear, endDateMonth, endDateYear } = footprint;
+  const {
+    title,
+    startDateMonth,
+    startDateYear,
+    endDateMonth,
+    endDateYear,
+    startDateDay = 1,
+    fakeDateYear,
+    fakeDateMonth,
+    fakeDateDay,
+  } = footprint;
   const { windowWidth } = useGetScreenSize();
   const { selectedFootprintIndex, setSelectedFootprintIndex } = useContext(SelectedFootprintIndexContext);
   const [isHover, setIsHover] = useState(false);
   const [isSelected, setIsSelected] = useState(false);
 
-  const startDateOffset = getTopOffsetPercentage(minDay, maxDay, startDateYear, startDateMonth, 1);
+  const offsetDate = {
+    year: fakeDateYear ?? startDateYear,
+    month: fakeDateMonth ?? startDateMonth,
+    day: fakeDateDay ?? startDateDay,
+  };
+
+  const startDateOffset = getTopOffsetPercentage(minDay, maxDay, offsetDate.year, offsetDate.month, offsetDate.day);
 
   const handleHover = useCallback(function handleHoverCallback() {
     setIsHover(true);
@@ -91,7 +107,7 @@ const footprintElementStyle = (topOffset: number) =>
   css({
     position: 'absolute',
     zIndex: LEVELS.SUB_BRANCH,
-    top: topOffset * SIZES.BRANCH_MAINSTREAM_HEIGHT + 50,
+    top: topOffset * SIZES.BRANCH_MAINSTREAM_FOOTPRINT_HEIGHT + 50,
     left: 15,
     height: 50,
     display: 'flex',
@@ -180,6 +196,7 @@ const footprintLinkInnerStyle = (isHover: boolean) =>
       fontSize: SIZES.FONT_ML,
       marginBottom: 10,
       color: COLORS.GRAY6,
+      textAlign: 'center',
     },
 
     span: {

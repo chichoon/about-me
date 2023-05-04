@@ -22,13 +22,30 @@ interface Props {
 }
 
 export const ProjectElement = ({ project, minDay, maxDay }: Props) => {
-  const { key, imageRef, githubLink, publishedLink, startDateMonth, startDateYear, startDateDay = 1 } = project;
+  const {
+    key,
+    imageRef,
+    githubLink,
+    publishedLink,
+    startDateMonth,
+    startDateYear,
+    startDateDay = 1,
+    fakeDateYear,
+    fakeDateMonth,
+    fakeDateDay,
+  } = project;
   const { windowWidth } = useGetScreenSize();
   const { selectedProjectKey, setSelectedProjectKey } = useContext(SelectedProjectKeyContext);
   const [isHover, setIsHover] = useState(false);
   const [isSelected, setIsSelected] = useState(false);
 
-  const startDateOffset = getTopOffsetPercentage(minDay, maxDay, startDateYear, startDateMonth, startDateDay);
+  const offsetDate = {
+    year: fakeDateYear ?? startDateYear,
+    month: fakeDateMonth ?? startDateMonth,
+    day: fakeDateDay ?? startDateDay,
+  };
+
+  const startDateOffset = getTopOffsetPercentage(minDay, maxDay, offsetDate.year, offsetDate.month, offsetDate.day);
 
   const handleHover = useCallback(function handleHoverCallback() {
     setIsHover(true);
@@ -105,7 +122,7 @@ const projectElementStyle = (topOffset: number) =>
   css({
     position: 'absolute',
     zIndex: LEVELS.SUB_BRANCH,
-    top: topOffset * SIZES.BRANCH_MAINSTREAM_HEIGHT + 50,
+    top: topOffset * SIZES.BRANCH_MAINSTREAM_PROJECT_HEIGHT + 50,
     left: 15,
     height: 50,
     display: 'flex',

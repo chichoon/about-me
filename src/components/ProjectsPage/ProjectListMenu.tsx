@@ -8,13 +8,21 @@ interface Props {
 
 export const ProjectListMenu = ({ projectData }: Props) => {
   const date = new Date();
-  const { startDateYear, startDateMonth, startDateDay = 1 } = projectData[projectData.length - 1];
+  const {
+    startDateYear,
+    startDateMonth,
+    startDateDay = 1,
+    fakeDateYear,
+    fakeDateMonth,
+    fakeDateDay,
+  } = projectData[projectData.length - 1];
   const {
     endDateYear = date.getFullYear(),
     endDateMonth = date.getMonth() + 1,
     endDateDay = date.getDate(),
   } = projectData[0];
-  const min = startDateYear * 12 * 30 + startDateMonth * 30 + startDateDay;
+  const min =
+    (fakeDateYear ?? startDateYear) * 12 * 30 + (fakeDateMonth ?? startDateMonth) * 30 + (fakeDateDay ?? startDateDay);
   const max = endDateYear * 12 * 30 + endDateMonth * 30 + endDateDay;
 
   return (

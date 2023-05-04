@@ -7,11 +7,23 @@ interface Props {
 }
 
 export const FootprintListMenu = ({ footprintData }: Props) => {
+  const date = new Date();
+  const {
+    startDateYear,
+    startDateMonth,
+    startDateDay = 1,
+    fakeDateYear,
+    fakeDateMonth,
+    fakeDateDay,
+  } = footprintData[footprintData.length - 1];
+  const {
+    endDateYear = date.getFullYear(),
+    endDateMonth = date.getMonth() + 1,
+    endDateDay = date.getDate(),
+  } = footprintData[0];
   const min =
-    footprintData[footprintData.length - 1].startDateYear * 12 * 30 +
-    footprintData[footprintData.length - 1].startDateMonth * 30 +
-    1;
-  const max = footprintData[0].startDateYear * 12 * 30 + footprintData[0].startDateMonth * 30 + 1;
+    (fakeDateYear ?? startDateYear) * 12 * 30 + (fakeDateMonth ?? startDateMonth) * 30 + (fakeDateDay ?? startDateDay);
+  const max = endDateYear * 12 * 30 + endDateMonth * 30 + endDateDay;
 
   return (
     <BranchListWrapper>
