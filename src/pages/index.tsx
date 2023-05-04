@@ -20,13 +20,9 @@ const Home = ({ data }: Props) => {
     <Layout profileData={data}>
       <>
         <Head>
-          <meta name='title' content='About Ji Yoon Choi' />
-          <meta name='description' content='내가 프론트엔드에 발을 들이게 된 계기' />
-          <meta name='keywords' content='자기소개' />
-          <meta name='robots' content='index, follow' />
-          <meta httpEquiv='Content-Type' content='text/html; charset=utf-8' />
-          <meta name='language' content='Korean' />
-          <meta name='author' content='chichoon' />
+          <meta name='title' content='About chichoon' />
+          <meta name='description' content='치춘입니다' />
+          <meta name='keywords' content='Main Page' />
         </Head>
         <MainPage profileImageRef={profileImageRef} summaries={summaries} stacks={stacks} />
       </>
