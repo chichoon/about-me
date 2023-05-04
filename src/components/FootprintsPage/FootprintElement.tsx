@@ -193,19 +193,27 @@ const footprintLinkInnerStyle = (isHover: boolean) =>
     },
 
     h3: {
-      fontSize: SIZES.FONT_ML,
+      fontSize: SIZES.FONT_MS,
       marginBottom: 10,
       color: COLORS.GRAY6,
       textAlign: 'center',
     },
 
     span: {
-      fontSize: SIZES.FONT_MS,
+      fontSize: SIZES.FONT_S,
       color: COLORS.GRAYA,
     },
 
     [getResponsiveAfter('ML')]: {
       width: 200,
       height: 75,
+
+      h3: {
+        fontSize: SIZES.FONT_ML,
+      },
+
+      span: {
+        fontSize: SIZES.FONT_MS,
+      },
     },
   });
