@@ -1,3 +1,5 @@
+import Head from 'next/head';
+
 import { Layout, ProjectPage } from '@/components';
 import { getProfile, getProjectByKey, getProjectKeys } from '@/services';
 import { ProfileType, ProjectType } from '@/types/profileData';
@@ -33,7 +35,14 @@ export async function getStaticProps({ params }: Params) {
 const Project = ({ profileData, projectData }: Props) => {
   return (
     <Layout profileData={profileData}>
-      <ProjectPage project={projectData} />
+      <>
+        <Head>
+          <meta name='title' content={`chichoon's project ${projectData.key}`} />
+          <meta name='description' content={`치춘이 작업했던 ${projectData.title}`} />
+          <meta name='keywords' content={`${projectData.key} Page`} />
+        </Head>
+        <ProjectPage project={projectData} />
+      </>
     </Layout>
   );
 };

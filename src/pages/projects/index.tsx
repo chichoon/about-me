@@ -1,3 +1,5 @@
+import Head from 'next/head';
+
 import { Layout, ProjectsPage } from '@/components';
 import { ProfileType, ProjectListType } from '@/types/profileData';
 import { getProfile, getProjects } from '@/services';
@@ -18,7 +20,14 @@ interface Props {
 const projects = ({ profileData, projectData }: Props) => {
   return (
     <Layout profileData={profileData}>
-      <ProjectsPage projectData={projectData} />
+      <>
+        <Head>
+          <meta name='title' content='Projects chichoon participated' />
+          <meta name='description' content='치춘이 참여한 프로젝트' />
+          <meta name='keywords' content='Projects Page' />
+        </Head>
+        <ProjectsPage projectData={projectData} />
+      </>
     </Layout>
   );
 };
