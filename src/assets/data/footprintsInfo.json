@@ -8,7 +8,8 @@
     "summary": "4기",
     "description": [
       {
-        "title": "42 Seoul 본과정 수료 후 심화과정 활동"
+        "title": "42 Seoul 본과정 수료 후 심화과정 활동",
+        "mainText": []
       }
     ]
   },
@@ -25,7 +26,8 @@
     "summary": "멤버십",
     "description": [
       {
-        "title": "멤버십 과정에 참여"
+        "title": "멤버십 과정에 참여",
+        "mainText": []
       }
     ],
     "achievements": [
@@ -54,7 +56,8 @@
     "summary": "챌린지",
     "description": [
       {
-        "title": "챌린지 과정에 참여"
+        "title": "챌린지 과정에 참여",
+        "mainText": []
       }
     ]
   },
@@ -68,7 +71,8 @@
     "summary": "4기",
     "description": [
       {
-        "title": "42 Seoul 본과정 수료"
+        "title": "42 Seoul 본과정 수료",
+        "mainText": []
       }
     ],
     "achievements": [
@@ -98,7 +102,8 @@
     "summary": "4기",
     "description": [
       {
-        "title": "42 Seoul 본과정 수료"
+        "title": "42 Seoul 본과정 수료",
+        "mainText": []
       }
     ],
     "achievements": [
@@ -127,7 +132,8 @@
     "summary": "4기",
     "description": [
       {
-        "title": "La Piscine 과정 수료"
+        "title": "La Piscine 과정 수료",
+        "mainText": []
       }
     ]
   },
