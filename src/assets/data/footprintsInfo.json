@@ -14,7 +14,7 @@
   },
   {
     "key": "boostcamp-membership",
-    "title": "네이버 커넥트재단 부스트캠프 웹・모바일 7기",
+    "title": "네이버 커넥트재단\n부스트캠프 웹・모바일 7기",
     "startDateYear": 2022,
     "startDateMonth": 8,
     "startDateDay": 31,
@@ -44,7 +44,7 @@
   },
   {
     "key": "boostcamp-challenge",
-    "title": "네이버 커넥트재단 부스트캠프 웹・모바일 7기",
+    "title": "네이버 커넥트재단\n부스트캠프 웹・모바일 7기",
     "startDateYear": 2022,
     "startDateMonth": 7,
     "startDateDay": 18,
@@ -60,7 +60,7 @@
   },
   {
     "key": "preonboarding",
-    "title": "원티드 프리온보딩 프론트엔드 코스",
+    "title": "원티드 프리온보딩\n프론트엔드 코스",
     "startDateYear": 2022,
     "startDateMonth": 5,
     "endDateYear": 2022,
@@ -87,7 +87,7 @@
   },
   {
     "key": "42cursus",
-    "title": "42 Seoul 본과정 (Learner)",
+    "title": "42 Seoul 본과정\n(Learner)",
     "startDateYear": 2021,
     "startDateMonth": 5,
     "startDateDay": 3,
@@ -140,7 +140,7 @@
     "endDateMonth": 2,
     "fakeDateYear": 2020,
     "fakeDateMonth": 11,
-    "summary": "전자공학과",
+    "summary": "전자공학과 학사",
     "description": [
       {
         "title": "전자공학과 학사 졸업",
