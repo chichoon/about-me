@@ -1,50 +1,112 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useContext, useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { css } from '@emotion/react';
 
+import { useGetScreenSize } from '@/hooks';
+import { SelectedProjectKeyContext } from '@/context';
 import { ProjectType } from '@/types/profileData';
+import { getTopOffsetPercentage } from '@/utils';
 
 import { GithubIcon, ShareIcon } from '@/assets/svgs';
 
+import { getMinBreakpoint, getResponsiveAfter } from '@/styles/getResponsiveBreakpoint';
 import { LEVELS } from '@/styles/levels';
 import { SIZES } from '@/styles/sizes';
 import { COLORS } from '@/styles/colors';
-import { getResponsiveAfter } from '@/styles/getResponsiveBreakpoint';
 
 interface Props {
   project: ProjectType;
-  topOffset: number;
+  minDay: number;
+  maxDay: number;
 }
 
-export const ProjectElement = ({ project, topOffset }: Props) => {
-  const { key, imageRef, githubLink, publishedLink, startDateMonth, startDateYear } = project;
+export const ProjectElement = ({ project, minDay, maxDay }: Props) => {
+  const {
+    key,
+    imageRef,
+    githubLink,
+    publishedLink,
+    startDateMonth,
+    startDateYear,
+    startDateDay = 1,
+    fakeDateYear,
+    fakeDateMonth,
+    fakeDateDay,
+  } = project;
+  const { windowWidth } = useGetScreenSize();
+  const { selectedProjectKey, setSelectedProjectKey } = useContext(SelectedProjectKeyContext);
   const [isHover, setIsHover] = useState(false);
+  const [isSelected, setIsSelected] = useState(false);
+
+  const offsetDate = {
+    year: fakeDateYear ?? startDateYear,
+    month: fakeDateMonth ?? startDateMonth,
+    day: fakeDateDay ?? startDateDay,
+  };
+
+  const startDateOffset = getTopOffsetPercentage(minDay, maxDay, offsetDate.year, offsetDate.month, offsetDate.day);
 
   const handleHover = useCallback(function handleHoverCallback() {
     setIsHover(true);
   }, []);
+
   const handleOut = useCallback(function handleHoverCallback() {
     setIsHover(false);
   }, []);
 
+  const handleClickProjectButton = useCallback(
+    function handleClickProjectCallback() {
+      if (isSelected) {
+        setSelectedProjectKey(null);
+        setIsSelected(false);
+        return;
+      }
+      setSelectedProjectKey(key);
+      setIsSelected(true);
+    },
+    [key, isSelected, setSelectedProjectKey]
+  );
+
+  useEffect(() => {
+    if (key !== selectedProjectKey) setIsSelected(false);
+  }, [key, selectedProjectKey]);
+
   return (
     <li
-      css={projectElementStyle(topOffset)}
+      css={projectElementStyle(startDateOffset)}
       onMouseOver={handleHover}
       onFocus={handleHover}
       onMouseOut={handleOut}
       onBlur={handleOut}
     >
-      <div css={projectBranchStyle(isHover)}>
+      <div css={projectBranchStyle(isHover || isSelected)}>
         <span>
-          {startDateYear}. {startDateMonth.toString().padStart(2, '0')}
+          {startDateYear}. {startDateMonth.toString().padStart(2, '0')}. {startDateDay.toString().padStart(2, '0')}
         </span>
       </div>
-      <Link href={`/projects/${key}`} css={projectLinkInnerStyle}>
-        <Image src={imageRef} width={160} height={50} alt={`${key}-logo`} css={coverImageStyle(isHover)} />
-      </Link>
-      <div css={sideIconDivStyle(isHover)}>
+      {windowWidth <= getMinBreakpoint('LD') ? (
+        <Link href={`/projects/${key}`} css={projectLinkInnerStyle}>
+          <Image
+            src={imageRef ?? ''}
+            width={160}
+            height={50}
+            alt={`${key}-logo`}
+            css={coverImageStyle(isHover || isSelected)}
+          />
+        </Link>
+      ) : (
+        <button type='button' onClick={handleClickProjectButton} css={projectLinkInnerStyle}>
+          <Image
+            src={imageRef ?? ''}
+            width={160}
+            height={50}
+            alt={`${key}-logo`}
+            css={coverImageStyle(isHover || isSelected)}
+          />
+        </button>
+      )}
+      <div css={sideIconDivStyle(isHover || isSelected)}>
         <a href={githubLink}>
           <GithubIcon />
         </a>
@@ -60,7 +122,7 @@ const projectElementStyle = (topOffset: number) =>
   css({
     position: 'absolute',
     zIndex: LEVELS.SUB_BRANCH,
-    top: topOffset * SIZES.$BRANCH_MAINSTREAM_HEIGHT + 50,
+    top: topOffset * SIZES.BRANCH_MAINSTREAM_PROJECT_HEIGHT + 50,
     left: 15,
     height: 50,
     display: 'flex',
@@ -76,6 +138,10 @@ const projectLinkInnerStyle = css({
   width: 120,
   height: 37.5,
 
+  ':hover': {
+    cursor: 'pointer',
+  },
+
   [getResponsiveAfter('ML')]: {
     width: 160,
     height: 50,
@@ -90,10 +156,12 @@ const projectBranchStyle = (isHover: boolean) =>
 
     span: {
       position: 'absolute',
-      left: 20,
+      left: 15,
       top: -5,
       color: isHover ? COLORS.GRAYA : COLORS.GRAYC,
       transition: `color 0.2s ease-in`,
+      userSelect: 'none',
+      fontSize: SIZES.FONT_MS,
     },
 
     ':before': {
@@ -124,7 +192,8 @@ const projectBranchStyle = (isHover: boolean) =>
       width: 150,
 
       span: {
-        left: 35,
+        left: 40,
+        fontSize: SIZES.FONT_M,
       },
 
       ':before': {

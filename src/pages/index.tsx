@@ -15,7 +15,7 @@ interface Props {
 }
 
 const Home = ({ data }: Props) => {
-  const { profileImageRef, summaries, stacks } = data;
+  const { stacks } = data;
   return (
     <Layout profileData={data}>
       <>
@@ -24,7 +24,7 @@ const Home = ({ data }: Props) => {
           <meta name='description' content='치춘입니다' />
           <meta name='keywords' content='Main Page' />
         </Head>
-        <MainPage profileImageRef={profileImageRef} summaries={summaries} stacks={stacks} />
+        <MainPage stacks={stacks} />
       </>
     </Layout>
   );

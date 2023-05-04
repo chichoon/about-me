@@ -77,7 +77,7 @@ const numeralStatsTitleStyle = css({
   },
 
   span: {
-    fontSize: SIZES.$FONT_ML,
+    fontSize: SIZES.FONT_ML,
   },
 });
 

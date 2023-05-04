@@ -66,6 +66,6 @@ const valueWrapperStyle = (percentage: number) =>
     span: {
       lineHeight: '20px',
       verticalAlign: 'center',
-      fontSize: SIZES.$FONT_M,
+      fontSize: SIZES.FONT_M,
     },
   });

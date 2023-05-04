@@ -12,6 +12,9 @@ export const NavBar = () => {
   return (
     <nav css={navTabsStyle}>
       <Link href='/' css={tabStyle(router.pathname === '/')}>
+        <span>홈</span>
+      </Link>
+      <Link href='/introduction' css={tabStyle(router.pathname === '/introduction')}>
         <span>소개</span>
       </Link>
       <Link href='/projects' css={tabStyle(router.pathname.startsWith('/projects'))}>
@@ -58,7 +61,8 @@ const tabStyle = (isSelected: boolean) =>
 
     span: {
       userSelect: 'none',
-      fontSize: SIZES.$FONT_MS,
+      fontSize: SIZES.FONT_MS,
+      color: isSelected ? COLORS.GRAY3 : COLORS.GRAY9,
     },
 
     ':hover': {
@@ -70,7 +74,7 @@ const tabStyle = (isSelected: boolean) =>
       height: 50,
 
       span: {
-        fontSize: SIZES.$FONT_M,
+        fontSize: SIZES.FONT_M,
       },
     },
   });

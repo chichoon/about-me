@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import { Layout } from '@/components';
+import { FootprintsPage, Layout } from '@/components';
 import { getFootprints, getProfile } from '@/services';
 import { FootprintType, ProfileType } from '@/types/profileData';
 
@@ -26,12 +26,7 @@ const footprints = ({ profileData, footprintData }: Props) => {
           <meta name='description' content='치춘의 발자취' />
           <meta name='keywords' content='Footprints Page' />
         </Head>
-        <menu>
-          {footprintData.map((footprint, index) => (
-            <span key={`footprint-${index}`}>{footprint.title}</span>
-          ))}
-          <span>안녕하세요!!</span>
-        </menu>
+        <FootprintsPage footprintData={footprintData} />
       </>
     </Layout>
   );

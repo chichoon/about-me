@@ -1,23 +1,19 @@
 import Image from 'next/image';
 import { css } from '@emotion/react';
 
-import { COLORS } from '@/styles/colors';
 import { getResponsiveAfter } from '@/styles/getResponsiveBreakpoint';
+import { COLORS } from '@/styles/colors';
 import { SIZES } from '@/styles/sizes';
-import { StackType } from '@/types/profileData';
-import { BadgeList } from '../BadgeList';
 
 interface Props {
   profileImageRef: string;
-  stacks: StackType[];
   summaries: string[];
 }
 
-export const MainPage = ({ profileImageRef, stacks, summaries }: Props) => {
+export const IntroPage = ({ profileImageRef, summaries }: Props) => {
   return (
     <>
       <Image src={profileImageRef} alt='Profile' width={200} height={200} css={imageStyle} />
-      <BadgeList stacks={stacks} />
       {summaries.map((summary, i) => (
         <p key={`summary-${i}`} css={paragraphStyle}>
           {summary}
@@ -46,11 +42,13 @@ const imageStyle = css({
 });
 
 const paragraphStyle = css({
-  wordBreak: 'break-word',
+  maxWidth: SIZES.MAIN_INNER_MAX_WIDTH,
+  wordBreak: 'keep-all',
   width: '100%',
   whiteSpace: 'pre-line',
   marginBottom: 25,
-  fontSize: SIZES.$FONT_M,
+  fontSize: SIZES.FONT_M,
   fontWeight: 400,
-  lineHeight: `${SIZES.$FONT_M + 5}px`,
+  color: COLORS.GRAY3,
+  lineHeight: `${SIZES.FONT_M + 5}px`,
 });

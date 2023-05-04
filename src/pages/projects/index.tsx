@@ -1,23 +1,23 @@
 import Head from 'next/head';
 
 import { Layout, ProjectsPage } from '@/components';
-import { ProfileType, ProjectType } from '@/types/profileData';
+import { ProfileType, ProjectListType } from '@/types/profileData';
 import { getProfile, getProjects } from '@/services';
 
 export async function getStaticProps() {
   const profileData = await getProfile();
-  const projectsData = await getProjects();
+  const projectData = await getProjects();
   return {
-    props: { profileData, projectsData }, // will be passed to the page component as props
+    props: { profileData, projectData }, // will be passed to the page component as props
   };
 }
 
 interface Props {
   profileData: ProfileType;
-  projectsData: ProjectType[];
+  projectData: ProjectListType;
 }
 
-const projects = ({ profileData, projectsData }: Props) => {
+const projects = ({ profileData, projectData }: Props) => {
   return (
     <Layout profileData={profileData}>
       <>
@@ -26,7 +26,7 @@ const projects = ({ profileData, projectsData }: Props) => {
           <meta name='description' content='치춘이 참여한 프로젝트' />
           <meta name='keywords' content='Projects Page' />
         </Head>
-        <ProjectsPage projectsData={projectsData} />
+        <ProjectsPage projectData={projectData} />
       </>
     </Layout>
   );

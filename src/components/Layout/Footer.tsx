@@ -31,7 +31,7 @@ const footerWrapperStyle = css({
   span: {
     color: COLORS.GRAY9,
     marginRight: 10,
-    fontSize: SIZES.$FONT_M,
+    fontSize: SIZES.FONT_M,
     userSelect: 'none',
     cursor: 'default',
   },

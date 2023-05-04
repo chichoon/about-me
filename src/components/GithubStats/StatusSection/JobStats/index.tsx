@@ -68,7 +68,7 @@ const rangeWrapperStyle = css({
 
   span: {
     userSelect: 'none',
-    fontSize: SIZES.$FONT_S,
+    fontSize: SIZES.FONT_S,
     color: SECRET_COLORS.BUTTON_ICON,
   },
 });
@@ -94,9 +94,9 @@ const keywordInner = css({
     wordBreak: 'keep-all',
     userSelect: 'none',
     color: SECRET_COLORS.BUTTON_ICON,
-    fontSize: SIZES.$FONT_MS,
-    lineHeight: `${SIZES.$FONT_MS}px`,
-    height: `${SIZES.$FONT_MS}px`,
+    fontSize: SIZES.FONT_MS,
+    lineHeight: `${SIZES.FONT_MS}px`,
+    height: `${SIZES.FONT_MS}px`,
     verticalAlign: 'center',
   },
 });

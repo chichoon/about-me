@@ -1,4 +1,4 @@
-import projects from '@/assets/projectsInfo.json';
+import projects from '@/assets/data/projectsInfo.json';
 
 export async function getProjectKeys() {
   const data = await new Promise<string[]>((resolve) => {
