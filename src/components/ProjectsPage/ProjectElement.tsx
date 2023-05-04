@@ -40,10 +40,15 @@ export const ProjectElement = ({ project, minDay, maxDay }: Props) => {
 
   const handleClickProjectButton = useCallback(
     function handleClickProjectCallback() {
+      if (isSelected) {
+        setSelectedProjectKey(null);
+        setIsSelected(false);
+        return;
+      }
       setSelectedProjectKey(key);
       setIsSelected(true);
     },
-    [key, setSelectedProjectKey]
+    [key, isSelected, setSelectedProjectKey]
   );
 
   useEffect(() => {

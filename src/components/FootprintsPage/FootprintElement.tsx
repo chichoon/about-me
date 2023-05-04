@@ -38,10 +38,15 @@ export const FootprintElement = ({ footprint, index, minDay, maxDay }: Props) =>
 
   const handleClickFootprintButton = useCallback(
     function handleClickFootprintCallback() {
+      if (isSelected) {
+        setSelectedFootprintIndex(-1);
+        setIsSelected(false);
+        return;
+      }
       setSelectedFootprintIndex(index);
       setIsSelected(true);
     },
-    [index, setSelectedFootprintIndex]
+    [index, isSelected, setSelectedFootprintIndex]
   );
 
   useEffect(() => {
