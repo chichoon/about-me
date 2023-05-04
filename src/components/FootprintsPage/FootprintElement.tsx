@@ -174,6 +174,7 @@ const footprintLinkInnerStyle = (isHover: boolean) =>
     h3: {
       fontSize: SIZES.FONT_ML,
       marginBottom: 10,
+      color: COLORS.GRAY6,
     },
 
     span: {
