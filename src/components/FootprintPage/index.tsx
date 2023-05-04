@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { FootprintType } from '@/types/profileData';
 import { FootprintInfoHeader } from './FootprintInfoHeader';
@@ -13,6 +13,10 @@ interface Props {
 export const FootprintPage = ({ footprint }: Props) => {
   const [selectedTabIndex, setSelectedTabIndex] = useState<number>(0);
   const tabNames = ['발자취 설명', footprint.achievements && '주요 활동'];
+
+  useEffect(() => {
+    setSelectedTabIndex(0);
+  }, [footprint]);
 
   return (
     <>

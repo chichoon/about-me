@@ -17,8 +17,13 @@ interface HistoryType {
   imageRef?: string;
   startDateYear: number;
   startDateMonth: number;
+  startDateDay?: number;
   endDateYear?: number;
   endDateMonth?: number;
+  endDateDay?: number;
+  fakeDateYear?: number;
+  fakeDateMonth?: number;
+  fakeDateDay?: number;
   summary: string;
 }
 

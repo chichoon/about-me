@@ -6,6 +6,7 @@ import { css } from '@emotion/react';
 import { useGetScreenSize } from '@/hooks';
 import { SelectedProjectKeyContext } from '@/context';
 import { ProjectType } from '@/types/profileData';
+import { getTopOffsetPercentage } from '@/utils';
 
 import { GithubIcon, ShareIcon } from '@/assets/svgs';
 
@@ -16,15 +17,35 @@ import { COLORS } from '@/styles/colors';
 
 interface Props {
   project: ProjectType;
-  topOffset: number;
+  minDay: number;
+  maxDay: number;
 }
 
-export const ProjectElement = ({ project, topOffset }: Props) => {
-  const { key, imageRef, githubLink, publishedLink, startDateMonth, startDateYear } = project;
+export const ProjectElement = ({ project, minDay, maxDay }: Props) => {
+  const {
+    key,
+    imageRef,
+    githubLink,
+    publishedLink,
+    startDateMonth,
+    startDateYear,
+    startDateDay = 1,
+    fakeDateYear,
+    fakeDateMonth,
+    fakeDateDay,
+  } = project;
   const { windowWidth } = useGetScreenSize();
   const { selectedProjectKey, setSelectedProjectKey } = useContext(SelectedProjectKeyContext);
   const [isHover, setIsHover] = useState(false);
   const [isSelected, setIsSelected] = useState(false);
+
+  const offsetDate = {
+    year: fakeDateYear ?? startDateYear,
+    month: fakeDateMonth ?? startDateMonth,
+    day: fakeDateDay ?? startDateDay,
+  };
+
+  const startDateOffset = getTopOffsetPercentage(minDay, maxDay, offsetDate.year, offsetDate.month, offsetDate.day);
 
   const handleHover = useCallback(function handleHoverCallback() {
     setIsHover(true);
@@ -36,10 +57,15 @@ export const ProjectElement = ({ project, topOffset }: Props) => {
 
   const handleClickProjectButton = useCallback(
     function handleClickProjectCallback() {
+      if (isSelected) {
+        setSelectedProjectKey(null);
+        setIsSelected(false);
+        return;
+      }
       setSelectedProjectKey(key);
       setIsSelected(true);
     },
-    [key, setSelectedProjectKey]
+    [key, isSelected, setSelectedProjectKey]
   );
 
   useEffect(() => {
@@ -48,7 +74,7 @@ export const ProjectElement = ({ project, topOffset }: Props) => {
 
   return (
     <li
-      css={projectElementStyle(topOffset)}
+      css={projectElementStyle(startDateOffset)}
       onMouseOver={handleHover}
       onFocus={handleHover}
       onMouseOut={handleOut}
@@ -56,7 +82,7 @@ export const ProjectElement = ({ project, topOffset }: Props) => {
     >
       <div css={projectBranchStyle(isHover || isSelected)}>
         <span>
-          {startDateYear}. {startDateMonth.toString().padStart(2, '0')}
+          {startDateYear}. {startDateMonth.toString().padStart(2, '0')}. {startDateDay.toString().padStart(2, '0')}
         </span>
       </div>
       {windowWidth <= getMinBreakpoint('LD') ? (
@@ -96,7 +122,7 @@ const projectElementStyle = (topOffset: number) =>
   css({
     position: 'absolute',
     zIndex: LEVELS.SUB_BRANCH,
-    top: topOffset * SIZES.BRANCH_MAINSTREAM_HEIGHT + 50,
+    top: topOffset * SIZES.BRANCH_MAINSTREAM_PROJECT_HEIGHT + 50,
     left: 15,
     height: 50,
     display: 'flex',
@@ -130,11 +156,12 @@ const projectBranchStyle = (isHover: boolean) =>
 
     span: {
       position: 'absolute',
-      left: 20,
+      left: 15,
       top: -5,
       color: isHover ? COLORS.GRAYA : COLORS.GRAYC,
       transition: `color 0.2s ease-in`,
       userSelect: 'none',
+      fontSize: SIZES.FONT_MS,
     },
 
     ':before': {
@@ -165,7 +192,8 @@ const projectBranchStyle = (isHover: boolean) =>
       width: 150,
 
       span: {
-        left: 35,
+        left: 40,
+        fontSize: SIZES.FONT_M,
       },
 
       ':before': {
