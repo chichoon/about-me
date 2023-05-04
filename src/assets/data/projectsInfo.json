@@ -137,6 +137,7 @@
     "startDateYear": 2022,
     "startDateMonth": 6,
     "startDateDay": 12,
+    "fakeDateMonth": 7,
     "githubLink": "https://github.com/chichoon/JiychoiStandardTime",
     "publishedLink": "https://jst.chichoon.com/main",
     "stacks": [
