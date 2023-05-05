@@ -13,8 +13,14 @@ interface Props {
 export const ResumeHeader = ({ profileData }: Props) => {
   return (
     <header css={headerWrapperStyle}>
-      <Image src={profileData.profileImageRef} width={200} height={200} css={imageStyle} />
-      <div>
+      <Image
+        src={profileData.profileImageRef}
+        alt='ji yoon choi resume photo'
+        width={200}
+        height={200}
+        css={imageStyle}
+      />
+      <div css={headerInnerStyle}>
         <h1>{profileData.name}</h1>
         <div css={headerDataWrapperStyle}>
           <h2>이메일</h2>
@@ -51,7 +57,9 @@ const headerWrapperStyle = css({
   alignItems: 'center',
   justifyContent: 'center',
   backgroundColor: COLORS.WHITE,
+});
 
+const headerInnerStyle = css({
   h1: {
     fontSize: SIZES.FONT_XL,
     color: COLORS.BLACK,
@@ -63,8 +71,9 @@ const headerWrapperStyle = css({
 const headerDataWrapperStyle = css({
   display: 'flex',
   flexDirection: 'row',
-  marginBottom: 10,
-  h2: { fontSize: SIZES.FONT_ML, color: COLORS.GRAY6, marginRight: 5 },
+  marginBottom: 15,
+
+  h2: { width: 80, fontSize: SIZES.FONT_ML, color: COLORS.GRAY6, userSelect: 'none' },
 
   span: {
     color: COLORS.GRAY9,
