@@ -1,5 +1,9 @@
+import { css } from '@emotion/react';
+
 import { FootprintType, ProfileType, ProjectListType } from '@/types/profileData';
 import { ResumeHeader } from './ResumeHeader';
+import { ResumeProjects } from './ResumeProjects';
+import { COLORS } from '@/styles/colors';
 
 interface Props {
   profileData: ProfileType;
@@ -19,6 +23,15 @@ export const ResumePage = ({ profileData, projectData, footprintData }: Props) =
         `}
       </style>
       <ResumeHeader profileData={profileData} />
+      <main css={mainWrapper}>
+        <ResumeProjects projectData={projectData} />
+      </main>
     </>
   );
 };
+
+const mainWrapper = css({
+  width: '100%',
+  padding: 50,
+  backgroundColor: COLORS.WHITE,
+});
