@@ -59,6 +59,10 @@ const headerWrapperStyle = css({
   backgroundColor: COLORS.WHITE,
 });
 
+const imageStyle = css({
+  marginRight: 40,
+});
+
 const headerInnerStyle = css({
   h1: {
     fontSize: SIZES.FONT_XL,
@@ -79,8 +83,4 @@ const headerDataWrapperStyle = css({
     color: COLORS.GRAY9,
     textDecoration: 'underline',
   },
-});
-
-const imageStyle = css({
-  marginRight: 20,
 });
