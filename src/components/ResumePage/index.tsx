@@ -3,6 +3,7 @@ import { css } from '@emotion/react';
 import { ResumeProfileType, ResumeProjectListType } from '@/types/resumeData';
 import { FootprintType } from '@/types/profileData';
 import { ResumeHeader } from './ResumeHeader';
+import { ResumeIntroduce } from './ResumeIntroduce';
 import { ResumeProjects } from './ResumeProjects';
 
 import { COLORS } from '@/styles/colors';
@@ -16,16 +17,9 @@ interface Props {
 export const ResumePage = ({ profileData, projectData, footprintData }: Props) => {
   return (
     <>
-      <style jsx global>
-        {`
-          body {
-            width: 1000px;
-            height: 1414.2px;
-          }
-        `}
-      </style>
       <ResumeHeader profileData={profileData} />
       <main css={mainWrapper}>
+        <ResumeIntroduce resumeSummaries={profileData.resumeSummaries} />
         <ResumeProjects projectData={projectData} />
       </main>
     </>

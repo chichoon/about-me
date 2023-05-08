@@ -21,8 +21,14 @@ export const ResumeProjects = ({ projectData }: Props) => {
 };
 
 const projectsSectionWrapper = css({
+  width: '100%',
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'center',
+
+  ul: {
+    width: '100%',
+    padding: '0 50px',
+  },
 });
