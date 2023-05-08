@@ -22,23 +22,23 @@ export const ResumeHeader = ({ profileData }: Props) => {
       />
       <div css={headerInnerStyle}>
         <h1>{profileData.name}</h1>
-        <div css={headerDataWrapperStyle}>
+        <div css={headerDataWrapperStyle(true)}>
           <h2>이메일</h2>
           <a href={`mailto:${profileData.email}`}>
             <span>{profileData.email}</span>
           </a>
         </div>
-        <div css={headerDataWrapperStyle}>
+        <div css={headerDataWrapperStyle(false)}>
           <h2>전화번호</h2>
-          <span>{profileData.blogLink}</span>
+          <span>{process.env.NEXT_PUBLIC_PROFILE_PHONE_NBR}</span>
         </div>
-        <div css={headerDataWrapperStyle}>
+        <div css={headerDataWrapperStyle(true)}>
           <h2>GitHub</h2>
           <a href={`https://github.com/${profileData.githubUsername}`}>
             <span>{`https://github.com/${profileData.githubUsername}`}</span>
           </a>
         </div>
-        <div css={headerDataWrapperStyle}>
+        <div css={headerDataWrapperStyle(true)}>
           <h2>블로그</h2>
           <a href={profileData.blogLink}>
             <span>{profileData.blogLink}</span>
@@ -72,15 +72,18 @@ const headerInnerStyle = css({
   },
 });
 
-const headerDataWrapperStyle = css({
-  display: 'flex',
-  flexDirection: 'row',
-  marginBottom: 15,
+const headerDataWrapperStyle = (isLink: boolean) =>
+  css({
+    display: 'flex',
+    flexDirection: 'row',
+    marginBottom: 15,
 
-  h2: { width: 80, fontSize: SIZES.FONT_ML, color: COLORS.GRAY6, userSelect: 'none' },
+    h2: { width: 80, fontSize: SIZES.FONT_ML, color: COLORS.GRAY6, userSelect: 'none' },
 
-  span: {
-    color: COLORS.GRAY9,
-    textDecoration: 'underline',
-  },
-});
+    span: {
+      color: COLORS.GRAY9,
+      textDecoration: isLink ? 'underline' : 'none',
+      letterSpacing: 0.5,
+      fontSize: SIZES.FONT_M,
+    },
+  });
