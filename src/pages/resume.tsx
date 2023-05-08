@@ -1,10 +1,11 @@
 import { ResumePage } from '@/components';
-import { getFootprints, getProfile, getProjects } from '@/services';
-import { FootprintType, ProfileType, ProjectListType } from '@/types/profileData';
+import { getFootprints, getProfile, getProjectsAsResumeType } from '@/services';
+import { FootprintType, ProfileType } from '@/types/profileData';
+import { ResumeProjectListType } from '@/types/resumeData';
 
 export async function getStaticProps() {
   const profileData = await getProfile();
-  const projectData = await getProjects();
+  const projectData = await getProjectsAsResumeType();
   const footprintData = await getFootprints();
 
   return {
@@ -18,7 +19,7 @@ export async function getStaticProps() {
 
 interface Props {
   profileData: ProfileType;
-  projectData: ProjectListType;
+  projectData: ResumeProjectListType;
   footprintData: FootprintType[];
 }
 

@@ -1,10 +1,4 @@
-import { ProfileType, ProjectType, FootprintType } from './profileData';
-
-export interface ResumeType {
-  profile: ProfileType;
-  projects: ResumeProjectListType;
-  footprints: FootprintType[];
-}
+import { ProjectType } from './profileData';
 
 export interface ResumeProjectListType {
   [key: string]: ResumeProjectType;

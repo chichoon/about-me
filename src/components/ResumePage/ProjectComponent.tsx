@@ -1,10 +1,11 @@
 import Image from 'next/image';
 
-import { ProjectType } from '@/types/profileData';
+import { ResumeProjectType } from '@/types/resumeData';
+
 import { GithubIcon, ShareIcon } from '@/assets/svgs';
 
 interface Props {
-  project: ProjectType;
+  project: ResumeProjectType;
 }
 
 export const ProjectComponent = ({ project }: Props) => {
@@ -23,11 +24,13 @@ export const ProjectComponent = ({ project }: Props) => {
             </a>
           </div>
         </div>
-        <ul>
-          {project.description.map(({ title, link }, index) => (
-            <li key={`${project.key}-${index}`}>{title}</li>
-          ))}
-        </ul>
+        {project.digest && (
+          <ul>
+            {project.digest.map(({ description, link }, index) => (
+              <li key={`${project.key}-${index}`}>{description}</li>
+            ))}
+          </ul>
+        )}
       </div>
     </li>
   );

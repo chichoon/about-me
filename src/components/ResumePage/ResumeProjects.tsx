@@ -1,10 +1,10 @@
 import { css } from '@emotion/react';
 
-import { ProjectListType } from '@/types/profileData';
+import { ResumeProjectListType } from '@/types/resumeData';
 import { ProjectComponent } from './ProjectComponent';
 
 interface Props {
-  projectData: ProjectListType;
+  projectData: ResumeProjectListType;
 }
 
 export const ResumeProjects = ({ projectData }: Props) => {

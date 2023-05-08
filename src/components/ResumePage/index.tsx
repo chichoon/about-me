@@ -4,10 +4,11 @@ import { FootprintType, ProfileType, ProjectListType } from '@/types/profileData
 import { ResumeHeader } from './ResumeHeader';
 import { ResumeProjects } from './ResumeProjects';
 import { COLORS } from '@/styles/colors';
+import { ResumeProjectListType } from '@/types/resumeData';
 
 interface Props {
   profileData: ProfileType;
-  projectData: ProjectListType;
+  projectData: ResumeProjectListType;
   footprintData: FootprintType[];
 }
 
