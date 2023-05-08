@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 
 import { ResumeProjectListType } from '@/types/resumeData';
 import { ProjectComponent } from './ProjectComponent';
+import { Section } from './Section';
 
 interface Props {
   projectData: ResumeProjectListType;
@@ -10,25 +11,16 @@ interface Props {
 export const ResumeProjects = ({ projectData }: Props) => {
   const projectKeys = Object.keys(projectData);
   return (
-    <section css={projectsSectionWrapper}>
-      <ul>
+    <Section title='프로젝트'>
+      <ul css={projectsWrapper}>
         {projectKeys.map((projectKey, index) => (
           <ProjectComponent project={projectData[projectKey]} key={`project-${index}`} />
         ))}
       </ul>
-    </section>
+    </Section>
   );
 };
 
-const projectsSectionWrapper = css({
+const projectsWrapper = css({
   width: '100%',
-  display: 'flex',
-  flexDirection: 'row',
-  alignItems: 'center',
-  justifyContent: 'center',
-
-  ul: {
-    width: '100%',
-    padding: '0 50px',
-  },
 });

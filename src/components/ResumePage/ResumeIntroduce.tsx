@@ -7,7 +7,7 @@ interface Props {
 
 export const ResumeIntroduce = ({ resumeSummaries }: Props) => {
   return (
-    <Section title='소개' color='#DDDDDD'>
+    <Section title='소개'>
       <Paragraph paragraph={resumeSummaries} lineGap={5} />
     </Section>
   );
