@@ -1,4 +1,5 @@
-import { Title } from './Title';
+import { Paragraph } from '../Paragraph';
+import { Section } from './Section';
 
 interface Props {
   resumeSummaries: string[];
@@ -6,11 +7,8 @@ interface Props {
 
 export const ResumeIntroduce = ({ resumeSummaries }: Props) => {
   return (
-    <section>
-      <Title title='소개' color='#CCCCCC' />
-      {resumeSummaries.map((summary, i) => (
-        <p key={`summary-${i}`}>{summary}</p>
-      ))}
-    </section>
+    <Section title='소개' color='#DDDDDD'>
+      <Paragraph paragraph={resumeSummaries} lineGap={5} />
+    </Section>
   );
 };

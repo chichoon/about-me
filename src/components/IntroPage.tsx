@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import { css } from '@emotion/react';
 
+import { Paragraph } from './Paragraph';
+
 import { getResponsiveAfter } from '@/styles/getResponsiveBreakpoint';
 import { COLORS } from '@/styles/colors';
-import { SIZES } from '@/styles/sizes';
 
 interface Props {
   profileImageRef: string;
@@ -14,11 +15,7 @@ export const IntroPage = ({ profileImageRef, summaries }: Props) => {
   return (
     <>
       <Image src={profileImageRef} alt='Profile' width={200} height={200} css={imageStyle} />
-      {summaries.map((summary, i) => (
-        <p key={`summary-${i}`} css={paragraphStyle}>
-          {summary}
-        </p>
-      ))}
+      <Paragraph paragraph={summaries} lineGap={25} />
     </>
   );
 };
@@ -39,16 +36,4 @@ const imageStyle = css({
     float: 'left',
     marginRight: 25,
   },
-});
-
-const paragraphStyle = css({
-  maxWidth: SIZES.MAIN_INNER_MAX_WIDTH,
-  wordBreak: 'keep-all',
-  width: '100%',
-  whiteSpace: 'pre-line',
-  marginBottom: 25,
-  fontSize: SIZES.FONT_M,
-  fontWeight: 400,
-  color: COLORS.GRAY3,
-  lineHeight: `${SIZES.FONT_M + 5}px`,
 });

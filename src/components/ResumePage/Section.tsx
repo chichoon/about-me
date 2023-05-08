@@ -5,11 +5,25 @@ import { SIZES } from '@/styles/sizes';
 interface Props {
   title: string;
   color: string;
+  children: JSX.Element;
 }
 
-export const Title = ({ title, color }: Props) => {
-  return <h2 css={titleStyle(color)}>{title}</h2>;
+export const Section = ({ title, color, children }: Props) => {
+  return (
+    <section css={sectionWrapperStyle}>
+      <h2 css={titleStyle(color)}>{title}</h2>
+      <div>{children}</div>
+    </section>
+  );
 };
+
+const sectionWrapperStyle = css({
+  width: '100%',
+
+  '> div': {
+    padding: '0 10px',
+  },
+});
 
 const titleStyle = (color: string) =>
   css({
