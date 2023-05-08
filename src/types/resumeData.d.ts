@@ -1,4 +1,4 @@
-import { ProfileType, StackType, ProjectType, FootprintType, LinkType } from './profileData';
+import { ProfileType, ProjectType, FootprintType } from './profileData';
 
 export interface ResumeType {
   profile: ProfileType;
@@ -11,10 +11,10 @@ export interface ResumeProjectListType {
 }
 
 export interface ResumeProjectType extends ProjectType {
-  experience?: ExperienceType[];
+  digest?: DigestType[];
 }
 
-interface ExperienceType {
+interface DigestType {
   description: string;
   link?: string[];
 }
