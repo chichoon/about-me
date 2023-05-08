@@ -5,6 +5,7 @@ import { css } from '@emotion/react';
 import { FootprintType } from '@/types/profileData';
 import { SelectedFootprintIndexContext } from '@/context';
 import { useGetScreenSize } from '@/hooks';
+import { getTopOffsetPercentage } from '@/utils';
 
 import { getMinBreakpoint, getResponsiveAfter } from '@/styles/getResponsiveBreakpoint';
 import { LEVELS } from '@/styles/levels';
@@ -14,15 +15,34 @@ import { SIZES } from '@/styles/sizes';
 interface Props {
   footprint: FootprintType;
   index: number;
-  topOffset: number;
+  minDay: number;
+  maxDay: number;
 }
 
-export const FootprintElement = ({ footprint, index, topOffset }: Props) => {
-  const { title, startDateMonth, startDateYear, endDateMonth, endDateYear } = footprint;
+export const FootprintElement = ({ footprint, index, minDay, maxDay }: Props) => {
+  const {
+    title,
+    startDateMonth,
+    startDateYear,
+    endDateMonth,
+    endDateYear,
+    startDateDay = 1,
+    fakeDateYear,
+    fakeDateMonth,
+    fakeDateDay,
+  } = footprint;
   const { windowWidth } = useGetScreenSize();
   const { selectedFootprintIndex, setSelectedFootprintIndex } = useContext(SelectedFootprintIndexContext);
   const [isHover, setIsHover] = useState(false);
   const [isSelected, setIsSelected] = useState(false);
+
+  const offsetDate = {
+    year: fakeDateYear ?? startDateYear,
+    month: fakeDateMonth ?? startDateMonth,
+    day: fakeDateDay ?? startDateDay,
+  };
+
+  const startDateOffset = getTopOffsetPercentage(minDay, maxDay, offsetDate.year, offsetDate.month, offsetDate.day);
 
   const handleHover = useCallback(function handleHoverCallback() {
     setIsHover(true);
@@ -34,10 +54,15 @@ export const FootprintElement = ({ footprint, index, topOffset }: Props) => {
 
   const handleClickFootprintButton = useCallback(
     function handleClickFootprintCallback() {
+      if (isSelected) {
+        setSelectedFootprintIndex(-1);
+        setIsSelected(false);
+        return;
+      }
       setSelectedFootprintIndex(index);
       setIsSelected(true);
     },
-    [index, setSelectedFootprintIndex]
+    [index, isSelected, setSelectedFootprintIndex]
   );
 
   useEffect(() => {
@@ -46,7 +71,7 @@ export const FootprintElement = ({ footprint, index, topOffset }: Props) => {
 
   return (
     <li
-      css={footprintElementStyle(topOffset)}
+      css={footprintElementStyle(startDateOffset)}
       onMouseOver={handleHover}
       onFocus={handleHover}
       onMouseOut={handleOut}
@@ -82,7 +107,7 @@ const footprintElementStyle = (topOffset: number) =>
   css({
     position: 'absolute',
     zIndex: LEVELS.SUB_BRANCH,
-    top: topOffset * SIZES.BRANCH_MAINSTREAM_HEIGHT + 50,
+    top: topOffset * SIZES.BRANCH_MAINSTREAM_FOOTPRINT_HEIGHT + 50,
     left: 15,
     height: 50,
     display: 'flex',
@@ -98,7 +123,7 @@ const footprintBranchStyle = (isHover: boolean) =>
 
     span: {
       position: 'absolute',
-      left: 20,
+      left: 15,
       top: -5,
       fontSize: SIZES.FONT_MS,
       color: isHover ? COLORS.GRAYA : COLORS.GRAYC,
@@ -134,7 +159,8 @@ const footprintBranchStyle = (isHover: boolean) =>
       width: 150,
 
       span: {
-        left: 35,
+        left: 40,
+        fontSize: SIZES.FONT_M,
       },
 
       ':before': {
@@ -150,14 +176,16 @@ const footprintBranchStyle = (isHover: boolean) =>
 
 const footprintLinkInnerStyle = (isHover: boolean) =>
   css({
+    backgroundColor: COLORS.WHITE,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
     width: 150,
     height: 60,
-    border: `2px solid ${isHover ? COLORS.GRAYA : COLORS.GRAYC}`,
-    transition: `border 0.2s ease-in`,
+    border: `2px solid ${COLORS.GRAYA}`,
+    opacity: isHover ? 1 : 0.5,
+    transition: `all 0.2s ease-in`,
     borderRadius: 5,
 
     ':hover': {
@@ -165,17 +193,27 @@ const footprintLinkInnerStyle = (isHover: boolean) =>
     },
 
     h3: {
-      fontSize: SIZES.FONT_ML,
+      fontSize: SIZES.FONT_MS,
       marginBottom: 10,
+      color: COLORS.GRAY6,
+      textAlign: 'center',
     },
 
     span: {
-      fontSize: SIZES.FONT_MS,
+      fontSize: SIZES.FONT_S,
       color: COLORS.GRAYA,
     },
 
     [getResponsiveAfter('ML')]: {
       width: 200,
       height: 75,
+
+      h3: {
+        fontSize: SIZES.FONT_ML,
+      },
+
+      span: {
+        fontSize: SIZES.FONT_MS,
+      },
     },
   });

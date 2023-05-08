@@ -23,6 +23,12 @@ export const HeadMetaData = () => {
       <meta name='msapplication-TileColor' content='#ffffff' />
       <meta name='msapplication-TileImage' content='/gh-icon/ms-icon-144x144.png' />
       <meta name='theme-color' content='#ffffff' />
+      <meta name='title' content="chichoon's GitHub Stats" />
+      <meta name='keywords' content='GitHub Stats Page' />
+      <meta name='robots' content='index, follow' />
+      <meta httpEquiv='Content-Type' content='text/html; charset=utf-8' />
+      <meta name='language' content='Korean' />
+      <meta name='author' content='chichoon' />
     </Head>
   );
 };

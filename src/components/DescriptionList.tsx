@@ -2,6 +2,8 @@ import { css } from '@emotion/react';
 
 import { DescriptionType } from '@/types/profileData';
 
+import { ShareIcon } from '@/assets/svgs';
+
 import { SIZES } from '@/styles/sizes';
 import { COLORS } from '@/styles/colors';
 
@@ -26,6 +28,18 @@ export const DescriptionList = ({ descriptionData }: Props) => {
           ) : (
             <p css={descriptionParagraphStyle}>{description.mainText}</p>
           )}
+          {description.link && (
+            <ul css={descriptionLinkWrapperStyle}>
+              {description.link.map((link, linkIndex) => (
+                <li key={`link-${index}-${linkIndex}`}>
+                  <ShareIcon />
+                  <a href={link.link} target='_blank'>
+                    <span>{link.title}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
         </li>
       ))}
     </ul>
@@ -39,7 +53,7 @@ const descriptionListWrapperStyle = css({
 });
 
 const descriptionElementStyle = css({
-  marginBottom: 10,
+  marginBottom: 20,
 
   h5: {
     fontSize: SIZES.FONT_ML,
@@ -71,5 +85,45 @@ const descriptionParagraphStyle = css({
   whiteSpace: 'pre-line',
   fontSize: SIZES.FONT_M,
   color: COLORS.GRAY6,
-  lineHeight: `${SIZES.FONT_M + 5}px`,
+  lineHeight: `${SIZES.FONT_M + 8}px`,
+});
+
+const descriptionLinkWrapperStyle = css({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'flex-start',
+  paddingLeft: 25,
+  marginTop: 10,
+
+  svg: {
+    width: 15,
+    height: 15,
+    fill: COLORS.GRAYA,
+    marginRight: 5,
+    transition: 'color 0.2s ease-in',
+  },
+
+  li: {
+    paddingBottom: 10,
+  },
+
+  'li:last-child': {
+    paddingBottom: 0,
+  },
+
+  span: {
+    color: COLORS.GRAYA,
+    fontSize: SIZES.FONT_MS,
+    transition: 'color 0.2s ease-in',
+  },
+
+  ':hover': {
+    span: {
+      color: COLORS.GRAY9,
+    },
+
+    svg: {
+      fill: COLORS.GRAY9,
+    },
+  },
 });

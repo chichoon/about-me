@@ -1,3 +1,5 @@
+import Head from 'next/head';
+
 import { FootprintsPage, Layout } from '@/components';
 import { getFootprints, getProfile } from '@/services';
 import { FootprintType, ProfileType } from '@/types/profileData';
@@ -18,7 +20,14 @@ interface Props {
 const footprints = ({ profileData, footprintData }: Props) => {
   return (
     <Layout profileData={profileData}>
-      <FootprintsPage footprintData={footprintData} />
+      <>
+        <Head>
+          <meta name='title' content='Footprints of chichoon' />
+          <meta name='description' content='치춘의 발자취' />
+          <meta name='keywords' content='Footprints Page' />
+        </Head>
+        <FootprintsPage footprintData={footprintData} />
+      </>
     </Layout>
   );
 };

@@ -4,7 +4,6 @@ export const HeadMetaData = () => {
   return (
     <Head>
       <title>About Ji Yoon Choi</title>
-      <meta name='description' content='About Ji Yoon Choi' />
       <meta name='viewport' content='width=device-width, initial-scale=1' />
       <link rel='apple-touch-icon' sizes='57x57' href='/icon/apple-icon-57x57.png' />
       <link rel='apple-touch-icon' sizes='60x60' href='/icon/apple-icon-60x60.png' />
@@ -23,6 +22,10 @@ export const HeadMetaData = () => {
       <meta name='msapplication-TileColor' content='#ffffff' />
       <meta name='msapplication-TileImage' content='/icon/ms-icon-144x144.png' />
       <meta name='theme-color' content='#ffffff' />
+      <meta name='robots' content='index, follow' />
+      <meta httpEquiv='Content-Type' content='text/html; charset=utf-8' />
+      <meta name='language' content='Korean' />
+      <meta name='author' content='chichoon' />
     </Head>
   );
 };

@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { css } from '@emotion/react';
 
 import { COLORS } from '@/styles/colors';
@@ -10,10 +11,13 @@ interface Props {
 }
 
 export const BranchListWrapper = ({ children }: Props) => {
-  return <menu css={projectPageMenuStyle()}>{children}</menu>;
+  const router = useRouter();
+  const BRANCH_MAINSTREAM_HEIGHT =
+    router.pathname === '/projects' ? SIZES.BRANCH_MAINSTREAM_PROJECT_HEIGHT : SIZES.BRANCH_MAINSTREAM_FOOTPRINT_HEIGHT;
+  return <menu css={projectPageMenuStyle(BRANCH_MAINSTREAM_HEIGHT)}>{children}</menu>;
 };
 
-const projectPageMenuStyle = () =>
+const projectPageMenuStyle = (height: number) =>
   css({
     position: 'relative',
     display: 'flex',
@@ -21,7 +25,7 @@ const projectPageMenuStyle = () =>
     alignItems: 'flex-start',
     paddingLeft: 10,
     width: 'calc(100% - 10px)',
-    height: SIZES.BRANCH_MAINSTREAM_HEIGHT + 150,
+    height: height + 150,
     overflowX: 'scroll',
 
     ':before': {
@@ -29,7 +33,7 @@ const projectPageMenuStyle = () =>
       display: 'block',
       zIndex: LEVELS.MAINSTREAM_BRANCH,
       width: 10,
-      height: SIZES.BRANCH_MAINSTREAM_HEIGHT + 100,
+      height: height + 100,
       background: `linear-gradient(to top, ${COLORS.GRAY9} 90%, ${COLORS.WHITE} 100% )`,
     },
 

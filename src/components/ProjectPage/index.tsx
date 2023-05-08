@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { ProjectType } from '@/types/profileData';
 import { ProjectInfoHeader } from './ProjectInfoHeader';
@@ -13,6 +13,10 @@ interface Props {
 export const ProjectPage = ({ project }: Props) => {
   const [selectedTabIndex, setSelectedTabIndex] = useState<number>(0);
   const tabNames = ['프로젝트 설명', project.technicalSpec && '기술적 도전 요소'];
+
+  useEffect(() => {
+    setSelectedTabIndex(0);
+  }, [project]);
 
   return (
     <>
