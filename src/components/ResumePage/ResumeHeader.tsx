@@ -1,13 +1,13 @@
 import Image from 'next/image';
 import { css } from '@emotion/react';
 
-import { ProfileType } from '@/types/profileData';
+import { ResumeProfileType } from '@/types/resumeData';
 
 import { SIZES } from '@/styles/sizes';
 import { COLORS } from '@/styles/colors';
 
 interface Props {
-  profileData: ProfileType;
+  profileData: ResumeProfileType;
 }
 
 export const ResumeHeader = ({ profileData }: Props) => {

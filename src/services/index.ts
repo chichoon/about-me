@@ -1,6 +1,7 @@
 // export { getGithubStats } from './getGithubStats';
 
 export { getProfile } from './getProfile';
+export { getProfileAsResumeType } from './getProfileAsResumeType';
 
 export { getProjects } from './getProjects';
 export { getProjectKeys } from './getProjectKeys';
