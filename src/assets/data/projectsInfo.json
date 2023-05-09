@@ -17,7 +17,7 @@
       { "name": "Emotion", "color": "D26AC2" },
       { "name": "Socket.io", "color": "010101", "logo": "Socket.io" }
     ],
-    "summary": "42 서울 마지막 과제로, 온라인으로 Pong 멀티플레이가 가능한 웹 페이지 제작",
+    "summary": "42 서울 마지막 과제로, 온라인으로 Pong 멀티플레이가 가능한 웹 게임 서비스",
     "description": [
       {
         "title": "과제 목표",
@@ -164,7 +164,7 @@
       { "name": "Redux Toolkit", "color": "764ABC" },
       { "name": "Sass", "color": "CC6699", "logo": "Sass" }
     ],
-    "summary": "좋은 아침 🌄 입니다\n추천곡 모아보기 웹서비스",
+    "summary": "좋은 아침 🌄 입니다,\n아침마다 올리는 추천곡 모아보기 웹서비스",
     "description": [
       {
         "title": "만들게 된 계기",
