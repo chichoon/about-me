@@ -24,6 +24,7 @@ const paragraphStyle = (lineGap: number) =>
   css({
     maxWidth: SIZES.MAIN_INNER_MAX_WIDTH,
     wordBreak: 'keep-all',
+    letterSpacing: 0.05,
     width: '100%',
     whiteSpace: 'pre-line',
     marginBottom: lineGap,
