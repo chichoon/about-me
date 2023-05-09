@@ -28,7 +28,6 @@ export const ProjectComponent = ({ project }: Props) => {
   return (
     <li css={projectWrapperStyle}>
       <div css={iconAndImageWrapperStyle}>
-        <Image width={160} height={50} src={project.imageRef ?? ''} alt={`${project.key}-logo`} priority />
         <h3>{project.title}</h3>
         <span>{periodString}</span>
         <div css={linkWrapperStyle}>
@@ -67,11 +66,6 @@ const projectWrapperStyle = css({
 const iconAndImageWrapperStyle = css({
   display: 'flex',
   flexDirection: 'column',
-
-  img: {
-    objectFit: 'cover',
-    marginBottom: 20,
-  },
 
   h3: {
     fontSize: SIZES.FONT_L,
