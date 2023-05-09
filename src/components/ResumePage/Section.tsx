@@ -12,7 +12,7 @@ export const Section = ({ title, children }: Props) => {
   return (
     <section css={sectionWrapperStyle}>
       <h2 css={titleStyle}>{title}</h2>
-      <div>{children}</div>
+      <div css={innerStyle}>{children}</div>
     </section>
   );
 };
@@ -20,11 +20,6 @@ export const Section = ({ title, children }: Props) => {
 const sectionWrapperStyle = css({
   width: '100%',
   marginBottom: 50,
-
-  '> div': {
-    width: 'calc(100% - 20px)',
-    padding: '0 10px',
-  },
 });
 
 const titleStyle = css({
@@ -34,5 +29,10 @@ const titleStyle = css({
   lineHeight: `${SIZES.FONT_XL + 10}px`,
   backgroundColor: COLORS.GRAYE,
   marginBottom: 20,
+  padding: '0 10px',
+});
+
+const innerStyle = css({
+  width: '100%',
   padding: '0 10px',
 });
