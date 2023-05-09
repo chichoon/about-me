@@ -6,6 +6,7 @@ import { ResumeProjectType } from '@/types/resumeData';
 import { GithubIcon, ShareIcon } from '@/assets/svgs';
 import { SIZES } from '@/styles/sizes';
 import { COLORS } from '@/styles/colors';
+import { ProjectDigestComponent } from './ProjectDigestComponent';
 
 interface Props {
   project: ResumeProjectType;
@@ -26,15 +27,10 @@ export const ProjectComponent = ({ project }: Props) => {
           </a>
         </div>
       </div>
-      {project.digest && (
-        <ul css={digestWrapper}>
-          {project.digest.map(({ description, link }, index) => (
-            <li key={`${project.key}-${index}`}>
-              <span>{description}</span>
-            </li>
-          ))}
-        </ul>
-      )}
+      <div css={digestWrapper}>
+        <span>{project.summary}</span>
+        <ProjectDigestComponent projectKey={project.key} digest={project.digest ?? []} />
+      </div>
     </li>
   );
 };
@@ -42,7 +38,7 @@ export const ProjectComponent = ({ project }: Props) => {
 const projectWrapperStyle = css({
   width: '100%',
   display: 'grid',
-  gridTemplateColumns: `30% 70%`,
+  gridTemplateColumns: `30% calc(70% - 25px)`,
   gap: 25,
   padding: '25px 0',
 
@@ -90,17 +86,6 @@ const iconAndImageWrapperStyle = css({
 });
 
 const digestWrapper = css({
-  paddingLeft: 20,
-
-  li: {
-    listStyle: 'square',
-    marginBottom: 10,
-  },
-
-  'li:last-child': {
-    marginBottom: 0,
-  },
-
   span: {
     color: COLORS.BLACK,
   },
