@@ -13,9 +13,12 @@ export const ResumeProjects = ({ projectData }: Props) => {
   return (
     <Section title='프로젝트'>
       <ul css={projectsWrapper}>
-        {projectKeys.map((projectKey, index) => (
-          <ProjectComponent project={projectData[projectKey]} key={`project-${index}`} />
-        ))}
+        {projectKeys.map(
+          (projectKey, index) =>
+            projectData[projectKey].digest && (
+              <ProjectComponent project={projectData[projectKey]} key={`project-${index}`} />
+            )
+        )}
       </ul>
     </Section>
   );
