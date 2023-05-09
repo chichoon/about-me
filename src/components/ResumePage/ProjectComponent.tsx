@@ -32,10 +32,10 @@ export const ProjectComponent = ({ project }: Props) => {
         <h3>{project.title}</h3>
         <span>{periodString}</span>
         <div css={linkWrapperStyle}>
-          <a href={project.githubLink}>
+          <a href={project.githubLink} target='_blank'>
             <GithubIcon />
           </a>
-          <a href={project.publishedLink}>
+          <a href={project.publishedLink} target='_blank'>
             <ShareIcon />
           </a>
         </div>
@@ -75,8 +75,14 @@ const iconAndImageWrapperStyle = css({
 
   h3: {
     fontSize: SIZES.FONT_L,
-    marginBottom: 20,
+    marginBottom: 5,
     color: COLORS.GRAY6,
+  },
+
+  '> span': {
+    color: COLORS.GRAYA,
+    fontSize: SIZES.FONT_M,
+    marginBottom: 15,
   },
 });
 

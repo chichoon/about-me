@@ -24,7 +24,7 @@ export const ResumeHeader = ({ profileData }: Props) => {
         <h1>{profileData.name}</h1>
         <div css={headerDataWrapperStyle(true)}>
           <h2>이메일</h2>
-          <a href={`mailto:${profileData.email}`}>
+          <a href={`mailto:${profileData.email}`} target='_blank'>
             <span>{profileData.email}</span>
           </a>
         </div>
@@ -34,13 +34,13 @@ export const ResumeHeader = ({ profileData }: Props) => {
         </div>
         <div css={headerDataWrapperStyle(true)}>
           <h2>GitHub</h2>
-          <a href={`https://github.com/${profileData.githubUsername}`}>
+          <a href={`https://github.com/${profileData.githubUsername}`} target='_blank'>
             <span>{`https://github.com/${profileData.githubUsername}`}</span>
           </a>
         </div>
         <div css={headerDataWrapperStyle(true)}>
           <h2>블로그</h2>
-          <a href={profileData.blogLink}>
+          <a href={profileData.blogLink} target='_blank'>
             <span>{profileData.blogLink}</span>
           </a>
         </div>

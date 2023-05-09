@@ -18,7 +18,7 @@ export const ProjectDigestComponent = ({ projectKey, digest }: Props) => {
         <li key={`${projectKey}-${index}`}>
           <span>{description}</span>
           {link?.map((href, linkIndex) => (
-            <a href={href} key={`${projectKey}-${index}-${linkIndex}`}>
+            <a href={href} key={`${projectKey}-${index}-${linkIndex}`} target='_blank'>
               <ShareIcon />
             </a>
           ))}
