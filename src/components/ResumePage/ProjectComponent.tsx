@@ -1,12 +1,13 @@
 import { css } from '@emotion/react';
 
 import { ResumeProjectType } from '@/types/resumeData';
-
-import { GithubIcon, ShareIcon } from '@/assets/svgs';
-import { SIZES } from '@/styles/sizes';
-import { COLORS } from '@/styles/colors';
 import { ProjectDigestComponent } from './ProjectDigestComponent';
 import { getPeriodString } from '@/utils';
+
+import { GithubIcon, ShareIcon } from '@/assets/svgs';
+
+import { SIZES } from '@/styles/sizes';
+import { COLORS } from '@/styles/colors';
 
 interface Props {
   project: ResumeProjectType;
