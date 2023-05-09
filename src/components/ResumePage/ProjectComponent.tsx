@@ -7,18 +7,31 @@ import { GithubIcon, ShareIcon } from '@/assets/svgs';
 import { SIZES } from '@/styles/sizes';
 import { COLORS } from '@/styles/colors';
 import { ProjectDigestComponent } from './ProjectDigestComponent';
+import { getPeriodString } from '@/utils';
 
 interface Props {
   project: ResumeProjectType;
 }
 
 export const ProjectComponent = ({ project }: Props) => {
+  const { startDateYear, startDateMonth, startDateDay, endDateYear, endDateMonth, endDateDay } = project;
+
+  const periodString = getPeriodString({
+    startDateYear,
+    startDateMonth,
+    startDateDay,
+    endDateYear,
+    endDateMonth,
+    endDateDay,
+  });
+
   return (
     <li css={projectWrapperStyle}>
       <div css={iconAndImageWrapperStyle}>
         <Image width={160} height={50} src={project.imageRef ?? ''} alt={`${project.key}-logo`} priority />
         <h3>{project.title}</h3>
-        <div>
+        <span>{periodString}</span>
+        <div css={linkWrapperStyle}>
           <a href={project.githubLink}>
             <GithubIcon />
           </a>
@@ -27,7 +40,7 @@ export const ProjectComponent = ({ project }: Props) => {
           </a>
         </div>
       </div>
-      <div css={digestWrapper}>
+      <div css={digestWrapperStyle}>
         <span>{project.summary}</span>
         <ProjectDigestComponent projectKey={project.key} digest={project.digest ?? []} />
       </div>
@@ -63,30 +76,33 @@ const iconAndImageWrapperStyle = css({
   h3: {
     fontSize: SIZES.FONT_L,
     marginBottom: 20,
-    color: COLORS.BLACK,
-  },
-
-  '> div': {
-    width: 60,
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-
-    a: {
-      width: 25,
-      height: 25,
-    },
-
-    svg: {
-      width: 25,
-      height: 25,
-      fill: COLORS.GRAY6,
-    },
+    color: COLORS.GRAY6,
   },
 });
 
-const digestWrapper = css({
-  span: {
+const linkWrapperStyle = css({
+  width: 60,
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+
+  a: {
+    width: 25,
+    height: 25,
+  },
+
+  svg: {
+    width: 25,
+    height: 25,
+    fill: COLORS.GRAY6,
+  },
+});
+
+const digestWrapperStyle = css({
+  '> span': {
+    display: 'inline-block',
     color: COLORS.BLACK,
+    fontSize: SIZES.FONT_M,
+    marginBottom: 15,
   },
 });
