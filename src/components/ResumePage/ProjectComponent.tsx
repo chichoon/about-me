@@ -42,7 +42,7 @@ export const ProjectComponent = ({ project }: Props) => {
 const projectWrapperStyle = css({
   width: '100%',
   display: 'grid',
-  gridTemplateColumns: `20% 80%`,
+  gridTemplateColumns: `30% 70%`,
   gap: 25,
   padding: '25px 0',
 
@@ -61,13 +61,13 @@ const iconAndImageWrapperStyle = css({
 
   img: {
     objectFit: 'cover',
-    marginBottom: 10,
+    marginBottom: 20,
   },
 
   h3: {
     fontSize: SIZES.FONT_L,
-    marginBottom: 10,
-    letterSpacing: 0.1,
+    marginBottom: 20,
+    color: COLORS.BLACK,
   },
 
   '> div': {
@@ -102,6 +102,6 @@ const digestWrapper = css({
   },
 
   span: {
-    letterSpacing: 0.1,
+    color: COLORS.BLACK,
   },
 });
