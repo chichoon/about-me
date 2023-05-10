@@ -5,6 +5,7 @@ export interface ResumeProjectListType {
 }
 
 export interface ResumeProfileType extends ProfileType {
+  resumeImageRef: string;
   resumeSummaries: string[];
 }
 

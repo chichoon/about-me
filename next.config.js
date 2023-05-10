@@ -12,7 +12,7 @@ const nextConfig = {
   },
 
   images: {
-    domains: ['user-images.githubusercontent.com', 'localhost', 'avatars.githubusercontent.com'],
+    domains: ['user-images.githubusercontent.com', 'localhost', 'avatars.githubusercontent.com', 'github.com'],
   },
 };
 

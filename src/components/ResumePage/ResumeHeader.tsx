@@ -14,7 +14,7 @@ export const ResumeHeader = ({ profileData }: Props) => {
   return (
     <header css={headerWrapperStyle}>
       <Image
-        src={profileData.profileImageRef}
+        src={profileData.resumeImageRef}
         alt='ji yoon choi resume photo'
         width={200}
         height={200}
