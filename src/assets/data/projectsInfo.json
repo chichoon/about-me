@@ -39,7 +39,6 @@
       }
     ],
     "digest": [
-      { "description": "프론트엔드 3인, 백엔드 2인으로 구성된 프로젝트" },
       { "description": "전체 페이지 디자인 및 채팅 기능, 메인 페이지와 채팅 페이지, 소켓 통신 로직 담당" },
       { "description": "전역 상태관리를 통한 최상단 훅에서의 소켓 관리 수행" }
     ]
@@ -135,7 +134,6 @@
       }
     ],
     "digest": [
-      { "description": "프론트엔드 2인, 백엔드 2인으로 구성된 프로젝트" },
       { "description": "프론트엔드 전반 및 페이지 디자인 작업 담당" },
       { "description": "Server Sent Event를 통한 쪽지 알림 기능 추가", "link": ["https://blog.chichoon.com/778"] },
       {
@@ -304,7 +302,6 @@
       }
     ],
     "digest": [
-      { "description": "프론트엔드 4~6인, 백엔드 4~5인으로 구성된 팀 프로젝트" },
       { "description": "마이페이지 및 asset 제작을 담당" },
       { "description": "42서울 커뮤니티에서의 꾸준한 홍보와 이벤트를 통해 누적 500명 이상의 회원수 확보" },
       { "description": "실제 사용자들에게 피드백과 버그리포팅 수렴 및 반영" },
