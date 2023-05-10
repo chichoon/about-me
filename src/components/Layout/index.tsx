@@ -1,12 +1,7 @@
-import { css } from '@emotion/react';
-
 import { ProfileType } from '@/types/profileData';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { HeadMetaData } from './HeadMetaData';
-
-import { getResponsiveAfter } from '@/styles/getResponsiveBreakpoint';
-import { COLORS } from '@/styles/colors';
 
 interface Props {
   children: JSX.Element;
@@ -20,36 +15,39 @@ export const Layout = ({ children, profileData }: Props) => {
     <>
       <HeadMetaData />
       <Header {...profileData} />
-      <main css={mainWrapperStyle}>
+      {/* <main css={mainWrapperStyle}>
         <div css={mainInnerStyle}>{children}</div>
+      </main> */}
+      <main>
+        <div>{children}</div>
       </main>
       <Footer githubUsername={githubUsername} bioGithubLink={bioGithubLink} />
     </>
   );
 };
 
-const mainWrapperStyle = css({
-  padding: '0 25px',
+// const mainWrapperStyle = css({
+//   padding: '0 25px',
 
-  [getResponsiveAfter('SD')]: {
-    padding: '0 100px',
-  },
-});
+//   [getResponsiveAfter('SD')]: {
+//     padding: '0 100px',
+//   },
+// });
 
-const mainInnerStyle = css({
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  backgroundColor: COLORS.WHITE,
-  padding: 25,
-  borderRadius: 5,
-  overflowX: 'hidden',
+// const mainInnerStyle = css({
+//   display: 'flex',
+//   flexDirection: 'column',
+//   alignItems: 'center',
+//   backgroundColor: COLORS.WHITE,
+//   padding: 25,
+//   borderRadius: 5,
+//   overflowX: 'hidden',
 
-  [getResponsiveAfter('ML')]: {
-    display: 'block',
-  },
+//   [getResponsiveAfter('ML')]: {
+//     display: 'block',
+//   },
 
-  [getResponsiveAfter('SD')]: {
-    padding: 50,
-  },
-});
+//   [getResponsiveAfter('SD')]: {
+//     padding: 50,
+//   },
+// });
