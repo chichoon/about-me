@@ -141,8 +141,7 @@
         "link": ["https://blog.chichoon.com/774"]
       },
       { "description": "시맨틱 태그를 활용한 페이지 공용 레이아웃 작업", "link": ["https://blog.chichoon.com/772"] },
-      { "description": "최상위 컴포넌트 훅을 이용한 로그인 유지", "link": ["https://blog.chichoon.com/812"] },
-      { "description": "로그인 정보를 활용한 페이지 접근 권한 제어" }
+      { "description": "최상위 컴포넌트 훅을 이용한 로그인 유지", "link": ["https://blog.chichoon.com/812"] }
     ]
   },
   "jst": {
@@ -173,7 +172,10 @@
         "mainText": "배운 내용을 복습하기 위해 단기간 빠르게 배포하는 것을 목표로 한 프로젝트로, 기획부터 배포까지 1인 프로젝트로 수행하였다.\n평소에 아이디어만 갖고 있던 프로젝트를 도전해본다는 마음으로 약 일주일 간 빠르게 기획부터 Netlify로 배포까지 전 과정을 혼자 진행하였다."
       }
     ],
-    "digest": [{ "description": "배운 내용을 복습하기 위해 혼자서 단기간 빠르게 배포하는 것을 목표로 한 프로젝트" }]
+    "digest": [
+      { "description": "배운 내용을 복습하기 위해 혼자서 단기간 빠르게 배포하는 것을 목표로 한 프로젝트" },
+      { "description": "기획, 디자인, 구현 담당" }
+    ]
   },
   "dashboard": {
     "key": "dashboard",
