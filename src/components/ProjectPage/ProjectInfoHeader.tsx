@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { css } from '@emotion/react';
 
 import { ProjectType } from '@/types/profileData';
+import { getPeriodString } from '@/utils';
 
 import { GithubIcon, HomeIcon } from '@/assets/svgs';
 
@@ -14,8 +15,27 @@ interface Props {
 }
 
 export const ProjectInfoHeader = ({ project }: Props) => {
-  const { title, imageRef, startDateMonth, startDateYear, endDateMonth, endDateYear, githubLink, publishedLink } =
-    project;
+  const {
+    title,
+    imageRef,
+    startDateMonth,
+    startDateYear,
+    startDateDay,
+    endDateMonth,
+    endDateYear,
+    endDateDay,
+    githubLink,
+    publishedLink,
+  } = project;
+
+  const periodString = getPeriodString({
+    startDateYear,
+    startDateMonth,
+    startDateDay,
+    endDateYear,
+    endDateMonth,
+    endDateDay,
+  });
 
   return (
     <div css={projectHeaderWrapperStyle}>
@@ -32,7 +52,7 @@ export const ProjectInfoHeader = ({ project }: Props) => {
             </a>
           )}
         </div>
-        <span>{`${startDateYear}. ${startDateMonth} ~ ${endDateYear ? `${endDateYear}. ${endDateMonth}` : ''}`}</span>
+        <span>{periodString}</span>
       </div>
     </div>
   );

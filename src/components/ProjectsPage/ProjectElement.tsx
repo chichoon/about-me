@@ -107,10 +107,10 @@ export const ProjectElement = ({ project, minDay, maxDay }: Props) => {
         </button>
       )}
       <div css={sideIconDivStyle(isHover || isSelected)}>
-        <a href={githubLink}>
+        <a href={githubLink} target='_blank'>
           <GithubIcon />
         </a>
-        <a href={publishedLink}>
+        <a href={publishedLink} target='_blank'>
           <ShareIcon />
         </a>
       </div>

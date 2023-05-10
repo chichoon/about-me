@@ -32,7 +32,7 @@ const starWrapper = css({
     fill: COLORS.WHITE,
     filter: `drop-shadow(${ELEMENT_SHADOW})`,
 
-    ':not(:first-child)': {
+    ':not(:first-of-type)': {
       marginLeft: -10,
     },
   },
