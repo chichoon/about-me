@@ -51,6 +51,8 @@ export const ResumeHeader = ({ profileData }: Props) => {
 
 const headerWrapperStyle = css({
   width: '100%',
+  minWidth: SIZES.RESUME_MIN_WIDTH,
+  maxWidth: SIZES.RESUME_MAX_WIDTH,
   padding: 50,
   display: 'flex',
   flexDirection: 'row',

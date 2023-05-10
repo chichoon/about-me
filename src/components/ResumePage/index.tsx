@@ -7,6 +7,7 @@ import { ResumeIntroduce } from './ResumeIntroduce';
 import { ResumeProjects } from './ResumeProjects';
 
 import { COLORS } from '@/styles/colors';
+import { SIZES } from '@/styles/sizes';
 
 interface Props {
   profileData: ResumeProfileType;
@@ -28,6 +29,12 @@ export const ResumePage = ({ profileData, projectData, footprintData }: Props) =
 
 const mainWrapper = css({
   width: '100%',
+  minWidth: SIZES.RESUME_MIN_WIDTH,
+  maxWidth: SIZES.RESUME_MAX_WIDTH,
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  overflowX: 'scroll',
   padding: 50,
   paddingTop: 0,
   backgroundColor: COLORS.WHITE,

@@ -50,7 +50,7 @@ export const ProjectComponent = ({ project }: Props) => {
 const projectWrapperStyle = css({
   width: '100%',
   display: 'grid',
-  gridTemplateColumns: `30% calc(70% - 25px)`,
+  gridTemplateColumns: `25% calc(75% - 25px)`,
   gap: 25,
   padding: '25px 0',
 
