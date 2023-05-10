@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 
 import { ResumeProjectListType } from '@/types/resumeData';
 import { ProjectComponent } from './ProjectComponent';
-import { Section } from './Section';
+import { Section } from '../Section';
 
 interface Props {
   projectData: ResumeProjectListType;
