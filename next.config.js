@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
+  async redirects() {
+    return [{ source: '/', destination: '/main', permanent: true }];
+  },
   webpack: (config) => {
     // 아래를 추가합니다.
     config.module.rules.push({
