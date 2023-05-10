@@ -79,7 +79,7 @@ const iconAndImageWrapperStyle = css({
 
   '> span': {
     color: COLORS.GRAYA,
-    fontSize: SIZES.FONT_S,
+    fontSize: SIZES.FONT_MS,
     marginBottom: 15,
   },
 });
