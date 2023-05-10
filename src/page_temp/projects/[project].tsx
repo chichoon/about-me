@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import { Layout, ProjectPage } from '@/components';
+import { Layout, ProjectPage } from '../../../.__components__';
 import { getProfile, getProjectByKey, getProjectKeys } from '@/services';
 import { ProfileType, ProjectType } from '@/types/profileData';
 

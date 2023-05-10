@@ -1,4 +1,4 @@
-import { Layout, IntroPage } from '@/components';
+import { Layout, IntroPage } from '../../.__components__';
 import { getProfile } from '@/services';
 import { ProfileType } from '@/types/profileData';
 

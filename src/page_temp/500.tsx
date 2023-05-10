@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import { ErrorPage500 } from '@/components';
+import { ErrorPage500 } from '../../.__components__';
 
 const Custom500 = () => {
   return (

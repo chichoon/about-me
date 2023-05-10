@@ -1,4 +1,4 @@
-import { ResumePage } from '@/components';
+import { ResumePage } from '../../.__components__';
 import { getFootprints, getProfileAsResumeType, getProjectsAsResumeType } from '@/services';
 import { FootprintType } from '@/types/profileData';
 import { ResumeProfileType, ResumeProjectListType } from '@/types/resumeData';

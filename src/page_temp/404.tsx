@@ -1,7 +1,8 @@
-import { Layout, MainPage } from '@/components';
+import Head from 'next/head';
+
+import { Layout, ErrorPage404 } from '../../.__components__';
 import { getProfile } from '@/services';
 import { ProfileType } from '@/types/profileData';
-import Head from 'next/head';
 
 export async function getStaticProps() {
   const data = await getProfile();
@@ -14,20 +15,19 @@ interface Props {
   data: ProfileType;
 }
 
-const Home = ({ data }: Props) => {
-  const { stacks } = data;
+const Custom404 = ({ data }: Props) => {
   return (
     <Layout profileData={data}>
       <>
         <Head>
-          <meta name='title' content='About chichoon' />
-          <meta name='description' content='치춘입니다' />
-          <meta name='keywords' content='Main Page' />
+          <meta name='title' content='404 Not Found' />
+          <meta name='description' content='페이지를 찾을 수 없습니다' />
+          <meta name='keywords' content='404 Error Page' />
         </Head>
-        <MainPage stacks={stacks} />
+        <ErrorPage404 />
       </>
     </Layout>
   );
 };
 
-export default Home;
+export default Custom404;

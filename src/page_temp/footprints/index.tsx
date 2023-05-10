@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import { FootprintsPage, Layout } from '@/components';
+import { FootprintsPage, Layout } from '../../../.__components__';
 import { getFootprints, getProfile } from '@/services';
 import { FootprintType, ProfileType } from '@/types/profileData';
 

@@ -1,6 +1,6 @@
 // import { Octokit } from 'octokit';
 
-import { GithubStats } from '@/components';
+import { GithubStats } from '../../.__components__';
 // import { getGithubStats } from '@/services';
 
 export async function getStaticProps() {
