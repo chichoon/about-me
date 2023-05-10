@@ -1,7 +1,9 @@
 import { css } from '@emotion/react';
 
 import { ShareIcon } from '@/assets/svgs';
+
 import { COLORS } from '@/styles/colors';
+import { SIZES } from '@/styles/sizes';
 
 interface Props {
   projectKey: string;
@@ -42,7 +44,8 @@ const listWrapperStyle = css({
 
   span: {
     color: COLORS.BLACK,
-    lineHeight: '15px',
+    lineHeight: `${SIZES.FONT_MS + 4}px`,
+    fontSize: SIZES.FONT_MS,
   },
 
   a: {

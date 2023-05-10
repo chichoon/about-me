@@ -19,17 +19,18 @@ export const Section = ({ title, children }: Props) => {
 
 const sectionWrapperStyle = css({
   width: '100%',
-  marginBottom: 50,
+  marginBottom: 25,
 });
 
 const titleStyle = css({
   width: '100%',
-  height: SIZES.FONT_XL + 10,
-  fontSize: SIZES.FONT_XL,
-  lineHeight: `${SIZES.FONT_XL + 10}px`,
+  height: SIZES.FONT_L + 10,
+  fontSize: SIZES.FONT_L,
+  lineHeight: `${SIZES.FONT_L + 10}px`,
   backgroundColor: COLORS.GRAYE,
   marginBottom: 20,
   padding: '0 10px',
+  borderBottom: `1px solid ${COLORS.GRAYE}`,
 });
 
 const innerStyle = css({

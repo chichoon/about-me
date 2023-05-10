@@ -31,12 +31,16 @@ export const ProjectComponent = ({ project }: Props) => {
         <h3>{project.title}</h3>
         <span>{periodString}</span>
         <div css={linkWrapperStyle}>
-          <a href={project.githubLink} target='_blank'>
-            <GithubIcon />
-          </a>
-          <a href={project.publishedLink} target='_blank'>
-            <ShareIcon />
-          </a>
+          {project.githubLink && (
+            <a href={project.githubLink} target='_blank'>
+              <GithubIcon />
+            </a>
+          )}
+          {project.publishedLink && (
+            <a href={project.publishedLink} target='_blank'>
+              <ShareIcon />
+            </a>
+          )}
         </div>
       </div>
       <div css={digestWrapperStyle}>
@@ -50,12 +54,12 @@ export const ProjectComponent = ({ project }: Props) => {
 const projectWrapperStyle = css({
   width: '100%',
   display: 'grid',
-  gridTemplateColumns: `25% calc(75% - 25px)`,
-  gap: 25,
-  padding: '25px 0',
+  gridTemplateColumns: `25% calc(75% - 10px)`,
+  gap: 10,
+  padding: '20px 0',
 
   '&:not(:last-child)': {
-    borderBottom: `1px solid ${COLORS.GRAYA}`,
+    borderBottom: `1px solid ${COLORS.GRAYC}`,
   },
 
   '&:first-child': {
@@ -68,32 +72,31 @@ const iconAndImageWrapperStyle = css({
   flexDirection: 'column',
 
   h3: {
-    fontSize: SIZES.FONT_L,
+    fontSize: SIZES.FONT_ML,
     marginBottom: 5,
     color: COLORS.GRAY6,
   },
 
   '> span': {
     color: COLORS.GRAYA,
-    fontSize: SIZES.FONT_M,
+    fontSize: SIZES.FONT_S,
     marginBottom: 15,
   },
 });
 
 const linkWrapperStyle = css({
-  width: 60,
   display: 'flex',
   flexDirection: 'row',
-  justifyContent: 'space-between',
 
   a: {
-    width: 25,
-    height: 25,
+    width: 20,
+    height: 20,
+    marginRight: 10,
   },
 
   svg: {
-    width: 25,
-    height: 25,
+    width: 20,
+    height: 20,
     fill: COLORS.GRAY6,
   },
 });
@@ -102,7 +105,8 @@ const digestWrapperStyle = css({
   '> span': {
     display: 'inline-block',
     color: COLORS.BLACK,
-    fontSize: SIZES.FONT_M,
-    marginBottom: 15,
+    fontSize: SIZES.FONT_MS,
+    lineHeight: `${SIZES.FONT_MS + 4}px`,
+    marginBottom: 10,
   },
 });

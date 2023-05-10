@@ -6,13 +6,14 @@ import { SIZES } from '@/styles/sizes';
 interface Props {
   paragraph: string[];
   lineGap: number;
+  fontSize?: number;
 }
 
-export const Paragraph = ({ paragraph, lineGap }: Props) => {
+export const Paragraph = ({ paragraph, fontSize = SIZES.FONT_M, lineGap }: Props) => {
   return (
     <>
       {paragraph.map((sentence, i) => (
-        <p key={`paragraph-${i}`} css={paragraphStyle(lineGap)}>
+        <p key={`paragraph-${i}`} css={paragraphStyle(fontSize, lineGap)}>
           {sentence}
         </p>
       ))}
@@ -20,7 +21,7 @@ export const Paragraph = ({ paragraph, lineGap }: Props) => {
   );
 };
 
-const paragraphStyle = (lineGap: number) =>
+const paragraphStyle = (fontSize: number, lineGap: number) =>
   css({
     maxWidth: SIZES.MAIN_INNER_MAX_WIDTH,
     wordBreak: 'keep-all',
@@ -28,8 +29,8 @@ const paragraphStyle = (lineGap: number) =>
     width: '100%',
     whiteSpace: 'pre-line',
     marginBottom: lineGap,
-    fontSize: SIZES.FONT_M,
+    fontSize,
     fontWeight: 400,
     color: COLORS.BLACK,
-    lineHeight: `${SIZES.FONT_M + 5}px`,
+    lineHeight: `${fontSize + 5}px`,
   });

@@ -16,8 +16,8 @@ export const ResumeHeader = ({ profileData }: Props) => {
       <Image
         src={profileData.resumeImageRef}
         alt='ji yoon choi resume photo'
-        width={200}
-        height={200}
+        width={150}
+        height={150}
         css={imageStyle}
       />
       <div css={headerInnerStyle}>
@@ -53,7 +53,7 @@ const headerWrapperStyle = css({
   width: '100%',
   minWidth: SIZES.RESUME_MIN_WIDTH,
   maxWidth: SIZES.RESUME_MAX_WIDTH,
-  padding: 50,
+  padding: 25,
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
@@ -67,9 +67,9 @@ const imageStyle = css({
 
 const headerInnerStyle = css({
   h1: {
-    fontSize: SIZES.FONT_XL,
+    fontSize: SIZES.FONT_L,
     color: COLORS.BLACK,
-    marginBottom: 20,
+    marginBottom: 15,
     fontWeight: 700,
   },
 });
@@ -78,14 +78,14 @@ const headerDataWrapperStyle = (isLink: boolean) =>
   css({
     display: 'flex',
     flexDirection: 'row',
-    marginBottom: 15,
+    marginBottom: 10,
 
-    h2: { width: 80, fontSize: SIZES.FONT_ML, color: COLORS.GRAY6, userSelect: 'none' },
+    h2: { width: 80, fontSize: SIZES.FONT_M, color: COLORS.GRAY6, userSelect: 'none' },
 
     span: {
       color: COLORS.GRAY9,
       textDecoration: isLink ? 'underline' : 'none',
       letterSpacing: 0.5,
-      fontSize: SIZES.FONT_M,
+      fontSize: SIZES.FONT_MS,
     },
   });
