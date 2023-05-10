@@ -59,10 +59,10 @@ const projectWrapperStyle = css({
   padding: '20px 0',
 
   '&:not(:last-child)': {
-    borderBottom: `1px solid ${COLORS.GRAYC}`,
+    borderBottom: `1px solid ${COLORS.GRAYE}`,
   },
 
-  '&:first-child': {
+  '&:first-of-type': {
     paddingTop: 0,
   },
 });

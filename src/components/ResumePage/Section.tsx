@@ -30,7 +30,7 @@ const titleStyle = css({
   backgroundColor: COLORS.GRAYE,
   marginBottom: 20,
   padding: '0 10px',
-  borderBottom: `1px solid ${COLORS.GRAYE}`,
+  borderBottom: `1px solid ${COLORS.GRAYC}`,
 });
 
 const innerStyle = css({

@@ -75,7 +75,7 @@ const innerListStyle = css({
     marginTop: 5,
   },
 
-  'li:first-child': {
+  'li:first-of-type': {
     marginTop: 0,
   },
 });
