@@ -1,0 +1,66 @@
+@use '@/styles/constants/colors';
+@use '@/styles/constants/sizes';
+@use '@/styles/responsive';
+
+.navTabsStyle {
+  width: 100vw;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 50px;
+
+  @include responsive.after(M) {
+    height: 50px;
+  }
+
+  @include responsive.after(SD) {
+    padding: 0 75px 0 275px;
+  }
+}
+
+.tabStyle {
+  background: none;
+  flex: 1;
+  max-width: 100px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s linear;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
+  span {
+    user-select: none;
+    font-size: sizes.$FONT_MS;
+    color: colors.$GRAY9;
+  }
+
+  &:hover {
+    background-color: colors.$GRAYE;
+  }
+
+  @include responsive.after(M) {
+    width: 100px;
+    height: 50px;
+
+    span: {
+      font-size: sizes.$FONT_M;
+    }
+  }
+}
+
+.selected {
+  background: colors.$WHITE;
+
+  span {
+    color: colors.$GRAY3;
+  }
+
+  &:hover {
+    background-color: colors.$WHITE;
+  }
+}
