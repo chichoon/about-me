@@ -8,6 +8,7 @@ import { ResumeProjects } from './ResumeProjects';
 
 import { COLORS } from '@/styles/colors';
 import { SIZES } from '@/styles/sizes';
+import { ResumeFootprints } from './ResumeFootprints';
 
 interface Props {
   profileData: ResumeProfileType;
@@ -22,6 +23,7 @@ export const ResumePage = ({ profileData, projectData, footprintData }: Props) =
       <main css={mainWrapper}>
         <ResumeIntroduce resumeSummaries={profileData.resumeSummaries} />
         <ResumeProjects projectData={projectData} />
+        <ResumeFootprints footprintData={footprintData} />
       </main>
     </>
   );
