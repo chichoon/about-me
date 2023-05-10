@@ -1,0 +1,133 @@
+@use '@/styles/constants/colors';
+@use '@/styles/constants/sizes';
+@use '@/styles/responsive';
+
+.headerWrapper {
+  background-color: colors.$WHITE;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100px;
+  padding: 0 25px;
+  margin-bottom: 25px;
+
+  @include responsive.after(M) {
+    height: 150px;
+  }
+
+  @include responsive.after(SD) {
+    padding: 0, 100px;
+  }
+}
+
+.headerImage {
+  border-radius: 5px;
+  display: none;
+
+  @include responsive.after(M) {
+    display: block;
+    margin-top: 50px;
+    width: 100px;
+    height: 100px;
+  }
+
+  @include responsive.after(ML) {
+    margin-top: 25px;
+    width: 125px;
+    height: 125px;
+  }
+
+  @include responsive.after(SD) {
+    margin-top: 50px;
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.headerProfileSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 300px;
+  height: 100px;
+  margin-top: 0px;
+  padding: 10px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  @include responsive.after(M) {
+    margin-top: 25px;
+    margin-left: 25px;
+    padding: 0px;
+  }
+
+  @include responsive.after(SD) {
+    justify-content: flex-start;
+    width: sizes.$MAIN_INNER_MAX_WIDTH;
+    margin-top: 50px;
+  }
+}
+
+.headerProfileNamespace {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+
+  h1 {
+    font-size: sizes.$FONT_L;
+    color: colors.$GRAY3;
+  }
+
+  a {
+    padding: 2.5px;
+    width: 25px;
+    height: 25px;
+    margin-left: 15px;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  @include responsive.after(ML) {
+    h1 {
+      font-size: sizes.$FONT_XL;
+    }
+
+    a {
+      width: 30px;
+      height: 30px;
+    }
+
+    svg {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  @include responsive.after(SD) {
+    width: 700px;
+    margin-top: 25px;
+  }
+}
+
+.headerProfileComment {
+  display: -webkit-box;
+  width: 100%;
+  font-size: sizes.$FONT_M;
+  color: colors.$GRAY3;
+  line-height: sizes.$FONT_M;
+  height: calc(sizes.$FONT_M * 2);
+  overflow: hidden;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+
+  @include responsive.after(ML) {
+    font-size: sizes.$FONT_L;
+    line-height: sizes.$FONT_L;
+    height: calc(sizes.$FONT_L * 2);
+  }
+}

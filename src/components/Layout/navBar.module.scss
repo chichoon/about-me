@@ -2,7 +2,7 @@
 @use '@/styles/constants/sizes';
 @use '@/styles/responsive';
 
-.navTabsStyle {
+.navTabs {
   width: 100vw;
   height: 40px;
   display: flex;
@@ -20,7 +20,7 @@
   }
 }
 
-.tabStyle {
+.tab {
   background: none;
   flex: 1;
   max-width: 100px;
@@ -47,7 +47,7 @@
     width: 100px;
     height: 50px;
 
-    span: {
+    span {
       font-size: sizes.$FONT_M;
     }
   }
