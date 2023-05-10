@@ -13,37 +13,28 @@ interface Props {
 export const ResumeHeader = ({ profileData }: Props) => {
   return (
     <header css={headerWrapperStyle}>
-      <Image
-        src={profileData.resumeImageRef}
-        alt='ji yoon choi resume photo'
-        width={150}
-        height={150}
-        css={imageStyle}
-      />
-      <div css={headerInnerStyle}>
-        <h1>{profileData.name}</h1>
-        <div css={headerDataWrapperStyle(true)}>
-          <h2>이메일</h2>
-          <a href={`mailto:${profileData.email}`} target='_blank'>
-            <span>{profileData.email}</span>
-          </a>
-        </div>
-        <div css={headerDataWrapperStyle(false)}>
-          <h2>전화번호</h2>
-          <span>{process.env.NEXT_PUBLIC_PROFILE_PHONE_NBR}</span>
-        </div>
-        <div css={headerDataWrapperStyle(true)}>
-          <h2>GitHub</h2>
-          <a href={`https://github.com/${profileData.githubUsername}`} target='_blank'>
-            <span>{`https://github.com/${profileData.githubUsername}`}</span>
-          </a>
-        </div>
-        <div css={headerDataWrapperStyle(true)}>
-          <h2>블로그</h2>
-          <a href={profileData.blogLink} target='_blank'>
-            <span>{profileData.blogLink}</span>
-          </a>
-        </div>
+      <h1>{profileData.name}</h1>
+      <div css={headerDataWrapperStyle(true)}>
+        <h2>이메일</h2>
+        <a href={`mailto:${profileData.email}`} target='_blank'>
+          <span>{profileData.email}</span>
+        </a>
+      </div>
+      <div css={headerDataWrapperStyle(false)}>
+        <h2>전화번호</h2>
+        <span>{process.env.NEXT_PUBLIC_PROFILE_PHONE_NBR}</span>
+      </div>
+      <div css={headerDataWrapperStyle(true)}>
+        <h2>GitHub</h2>
+        <a href={`https://github.com/${profileData.githubUsername}`} target='_blank'>
+          <span>{`https://github.com/${profileData.githubUsername}`}</span>
+        </a>
+      </div>
+      <div css={headerDataWrapperStyle(true)}>
+        <h2>블로그</h2>
+        <a href={profileData.blogLink} target='_blank'>
+          <span>{profileData.blogLink}</span>
+        </a>
       </div>
     </header>
   );
@@ -53,19 +44,13 @@ const headerWrapperStyle = css({
   width: '100%',
   minWidth: SIZES.RESUME_MIN_WIDTH,
   maxWidth: SIZES.RESUME_MAX_WIDTH,
-  padding: 25,
+  padding: '25px 60px',
   display: 'flex',
-  flexDirection: 'row',
-  alignItems: 'center',
+  flexDirection: 'column',
+  alignItems: 'flex-start',
   justifyContent: 'center',
   backgroundColor: COLORS.WHITE,
-});
 
-const imageStyle = css({
-  marginRight: 40,
-});
-
-const headerInnerStyle = css({
   h1: {
     fontSize: SIZES.FONT_L,
     color: COLORS.BLACK,
