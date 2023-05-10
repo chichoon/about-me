@@ -69,7 +69,7 @@
     "endDateYear": 2022,
     "endDateMonth": 6,
     "summary": "4기",
-    "description": [],
+    "description": [{ "title": "프리온보딩 코스에 참여" }],
     "achievements": [
       {
         "title": "할일 대시보드",
