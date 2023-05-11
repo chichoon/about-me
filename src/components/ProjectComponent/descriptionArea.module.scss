@@ -1,0 +1,41 @@
+@use '@/styles/constants/colors';
+@use '@/styles/constants/sizes';
+@use '@/styles/responsive';
+
+.tabListWrapper {
+  border-top: 1px solid colors.$GRAYA;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  @include responsive.after(ML) {
+    justify-content: flex-start;
+  }
+}
+
+.tabListElementWrapper {
+  border-right: 1px solid colors.$GRAYA;
+
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.tabListButtonWrapper {
+  padding: 5px 10px;
+
+  span {
+    font-size: sizes.$FONT_L;
+    color: colors.$GRAYA;
+    transition: color 0.2s ease-in;
+  }
+}
+
+.selected {
+  span {
+    color: colors.$GRAY3;
+  }
+}
