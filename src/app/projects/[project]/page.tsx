@@ -13,9 +13,7 @@ const Page = async ({ params }: Props) => {
 
   return (
     <Layout profileData={profileData}>
-      <ProjectComponent project={projectData}>
-        <div>하이</div>
-      </ProjectComponent>
+      <ProjectComponent project={projectData} />
     </Layout>
   );
 };
