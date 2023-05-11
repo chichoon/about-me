@@ -6,7 +6,7 @@ import { getProfile } from '@/services';
 
 import styles from './introductionPage.module.scss';
 
-const IntroductionPage = async () => {
+const Page = async () => {
   const data = await getProfile();
   return (
     <Layout profileData={data}>
@@ -23,4 +23,4 @@ const IntroductionPage = async () => {
   );
 };
 
-export default IntroductionPage;
+export default Page;
