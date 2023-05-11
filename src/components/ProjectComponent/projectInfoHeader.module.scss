@@ -1,0 +1,68 @@
+@use '@/styles/constants/colors';
+@use '@/styles/constants/sizes';
+@use '@/styles/responsive';
+
+.projectHeaderWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 150px;
+  margin-bottom: 25px;
+
+  img {
+    margin-bottom: 25px;
+  }
+
+  @include responsive.after(ML) {
+    height: fit-content;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    img {
+      margin-bottom: 0;
+      margin-right: 25px;
+      object-fit: cover;
+    }
+  }
+}
+
+.projectHeaderInfoWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & > span {
+    color: colors.$GRAYA;
+    font-size: sizes.$FONT_M;
+  }
+
+  @include responsive.after(ML) {
+    align-items: flex-start;
+  }
+}
+
+.projectTitleSection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 5px;
+
+  a {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+  }
+
+  svg {
+    width: 30px;
+    height: 30px;
+    fill: colors.$GRAY3;
+  }
+
+  h3 {
+    font-size: sizes.$FONT_XL;
+  }
+}
