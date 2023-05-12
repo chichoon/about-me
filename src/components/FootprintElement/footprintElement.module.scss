@@ -78,9 +78,12 @@
   height: 60px;
   border: 2px solid colors.$GRAYA;
   border-radius: 5px;
+  transition: opacity 0.2s ease-in;
+  opacity: 0.5;
 
   &:hover {
     cursor: pointer;
+    opacity: 1;
   }
 
   h3 {
