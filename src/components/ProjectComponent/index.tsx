@@ -1,8 +1,7 @@
 import { ProjectType } from '@/types/profileData';
+import { BadgeList } from '@/components';
 import { ProjectInfoHeader } from './ProjectInfoHeader';
 import { DescriptionArea } from './DescriptionArea';
-import { BadgeList } from '../BadgeList';
-import { DescriptionList } from '../DescriptionList';
 
 interface Props {
   project: ProjectType;

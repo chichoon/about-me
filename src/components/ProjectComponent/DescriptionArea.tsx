@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from 'react';
 
 import { ProjectType } from '@/types/profileData';
-import { DescriptionList } from '../DescriptionList';
+import { DescriptionList } from '@/components';
 
 import styles from './descriptionArea.module.scss';
 

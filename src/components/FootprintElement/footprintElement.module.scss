@@ -3,7 +3,7 @@
 @use '@/styles/constants/levels';
 @use '@/styles/responsive';
 
-.elementWrapper {
+.footprintElement {
   position: absolute;
   z-index: levels.$SUB_BRANCH;
   left: 15px;
@@ -13,46 +13,28 @@
   align-items: center;
 }
 
-.projectLinkInner {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  width: 120px;
-  height: 37.5px;
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  @include responsive.after(ML) {
-    width: 160px;
-    height: 50px;
-  }
-}
-
-.projectBranch {
+.footprintBranch {
   position: relative;
-  width: 100px;
+  width: 120px;
   height: 30px;
 
   span {
     position: absolute;
     left: 15px;
     top: -5px;
+    font-size: sizes.$FONT_MS;
     color: colors.$GRAYC;
     user-select: none;
-    font-size: sizes.$FONT_MS;
   }
 
   &:before {
     content: '';
     position: absolute;
     background-color: colors.$GRAYC;
-    width: 70px;
+    width: 120px;
     height: 5px;
     top: 12.5px;
-    left: 14px;
+    left: 1px;
   }
 
   &:after {
@@ -76,8 +58,8 @@
     }
 
     &:before {
-      width: 100px;
-      left: 29px;
+      width: 120px;
+      left: 30px;
     }
 
     &:after {
@@ -86,45 +68,43 @@
   }
 }
 
-.coverImage {
-  width: 120px;
-  height: 37.5px;
-  object-fit: cover;
-  opacity: 0.6;
-  transition: opacity 0.2s ease-in;
+.footprintLinkInner {
+  background-color: colors.$WHITE;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 60px;
+  border: 2px solid colors.$GRAYA;
+  border-radius: 5px;
 
   &:hover {
-    opacity: 1;
+    cursor: pointer;
+  }
+
+  h3 {
+    font-size: sizes.$FONT_MS;
+    margin-bottom: 10px;
+    color: colors.$GRAY6;
+    text-align: center;
+  }
+
+  span {
+    font-size: sizes.$FONT_S;
+    color: colors.$GRAYA;
   }
 
   @include responsive.after(ML) {
-    width: 160px;
-    height: 50px;
-  }
-}
+    width: 200px;
+    height: 75px;
 
-.sideIcon {
-  width: 25px;
-  height: 50px;
-  display: grid;
-  grid-template-rows: repeat(2, 20px);
-  gap: 10px;
-  margin-left: 10px;
+    h3 {
+      font-size: sizes.$FONT_M;
+    }
 
-  a {
-    display: block;
-    width: 20px;
-    height: 20px;
-  }
-
-  svg {
-    width: 20px;
-    height: 20px;
-    fill: colors.$GRAY9;
-    transition: fill 0.2s ease-in;
-
-    &:hover {
-      fill: colors.$GRAY6;
+    span {
+      font-size: sizes.$FONT_MS;
     }
   }
 }
