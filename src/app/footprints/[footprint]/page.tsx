@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import { BranchListWrapper, FootprintElement, Layout } from '@/components';
+import { BranchListWrapper, FootprintComponent, FootprintElement, Layout } from '@/components';
 import { getFootprintByIndex, getProfile } from '@/services';
 
 interface Props {
@@ -21,7 +21,7 @@ const Page = async ({ params }: Props) => {
           <meta name='description' content={`치춘이 머물렀던 ${footprintData.title}`} />
           <meta name='keywords' content={`${footprintData.key} Page`} />
         </Head>
-        <div>{footprintData.title}</div>
+        <FootprintComponent footprint={footprintData} />
       </>
     </Layout>
   );

@@ -10,3 +10,4 @@ export { ProjectElement } from './ProjectElement';
 export { ProjectComponent } from './ProjectComponent';
 
 export { FootprintElement } from './FootprintElement';
+export { FootprintComponent } from './FootprintComponent';

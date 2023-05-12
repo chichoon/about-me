@@ -39,7 +39,7 @@ const projectHeaderWrapperStyle = css({
 });
 
 const projectHeaderTitleStyle = css({
-  fontSize: SIZES.FONT_XL,
+  fontSize: SIZES.FONT_L,
   color: COLORS.GRAY3,
   whiteSpace: 'pre-line',
   textAlign: 'center',

@@ -33,16 +33,10 @@ export interface StackType {
   color: string;
   logo?: string;
 }
-
-export interface AchievementsType {
-  title: string;
-  githubLink?: string;
-  link?: LinkType[];
-}
-
 export interface DescriptionType {
   title: string;
   mainText: string | string[];
+  githubLink?: string;
   link?: LinkType[];
 }
 
