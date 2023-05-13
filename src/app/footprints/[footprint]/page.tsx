@@ -1,11 +1,21 @@
-import Head from 'next/head';
+import { Metadata } from 'next';
 
-import { BranchListWrapper, FootprintComponent, FootprintElement, Layout } from '@/components';
+import { FootprintComponent, Layout } from '@/components';
 import { getFootprintByIndex, getProfile } from '@/services';
 
 interface Props {
   params: {
     footprint: number;
+  };
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const footprintData = await getFootprintByIndex(params.footprint);
+
+  return {
+    title: `chichoon's footprint ${footprintData.key}`,
+    description: `치춘이 머물렀던 ${footprintData.title}`,
+    keywords: `${footprintData.key} Page`,
   };
 }
 
@@ -15,14 +25,7 @@ const Page = async ({ params }: Props) => {
 
   return (
     <Layout profileData={profileData}>
-      <>
-        <Head>
-          <meta name='title' content={`chichoon's footprint ${footprintData.key}`} />
-          <meta name='description' content={`치춘이 머물렀던 ${footprintData.title}`} />
-          <meta name='keywords' content={`${footprintData.key} Page`} />
-        </Head>
-        <FootprintComponent footprint={footprintData} />
-      </>
+      <FootprintComponent footprint={footprintData} />
     </Layout>
   );
 };

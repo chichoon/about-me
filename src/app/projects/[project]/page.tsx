@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import { Metadata } from 'next';
 
 import { Layout, ProjectComponent } from '@/components';
 import { getProfile, getProjectByKey } from '@/services';
@@ -9,20 +9,23 @@ interface Props {
   };
 }
 
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const projectData = await getProjectByKey(params.project);
+
+  return {
+    title: `chichoon's project ${projectData.key}`,
+    description: `치춘이 작업했던 ${projectData.title}`,
+    keywords: `${projectData.key} Page`,
+  };
+}
+
 const Page = async ({ params }: Props) => {
   const profileData = await getProfile();
   const projectData = await getProjectByKey(params.project);
 
   return (
     <Layout profileData={profileData}>
-      <>
-        <Head>
-          <meta name='title' content={`chichoon's project ${projectData.key}`} />
-          <meta name='description' content={`치춘이 작업했던 ${projectData.title}`} />
-          <meta name='keywords' content={`${projectData.key} Page`} />
-        </Head>
-        <ProjectComponent project={projectData} />
-      </>
+      <ProjectComponent project={projectData} />
     </Layout>
   );
 };

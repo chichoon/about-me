@@ -1,7 +1,13 @@
-import Head from 'next/head';
+import { Metadata } from 'next';
 
 import { BranchListWrapper, FootprintElement, Layout } from '@/components';
 import { getFootprints, getProfile } from '@/services';
+
+export const metadata: Metadata = {
+  title: 'Footprints of chichoon',
+  description: '치춘의 발자취',
+  keywords: 'Footprints Page',
+};
 
 const Page = async () => {
   const profileData = await getProfile();
@@ -27,26 +33,19 @@ const Page = async () => {
 
   return (
     <Layout profileData={profileData}>
-      <>
-        <Head>
-          <meta name='title' content='Footprints of chichoon' />
-          <meta name='description' content='치춘의 발자취' />
-          <meta name='keywords' content='Footprints Page' />
-        </Head>
-        <BranchListWrapper>
-          <>
-            {footprintData.map((footprint, index) => (
-              <FootprintElement
-                key={`footprint-${footprint.key}`}
-                footprint={footprint}
-                index={index}
-                minDay={min}
-                maxDay={max}
-              />
-            ))}
-          </>
-        </BranchListWrapper>
-      </>
+      <BranchListWrapper>
+        <>
+          {footprintData.map((footprint, index) => (
+            <FootprintElement
+              key={`footprint-${footprint.key}`}
+              footprint={footprint}
+              index={index}
+              minDay={min}
+              maxDay={max}
+            />
+          ))}
+        </>
+      </BranchListWrapper>
     </Layout>
   );
 };

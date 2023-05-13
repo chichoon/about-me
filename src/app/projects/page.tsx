@@ -1,7 +1,13 @@
-import Head from 'next/head';
+import { Metadata } from 'next';
 
 import { BranchListWrapper, Layout, ProjectElement } from '@/components';
 import { getProfile, getProjects } from '@/services';
+
+export const metadata: Metadata = {
+  title: 'Projects of chichoon',
+  description: '치춘의 프로젝트',
+  keywords: 'Projects Page',
+};
 
 const Page = async () => {
   const profileData = await getProfile();
@@ -28,20 +34,13 @@ const Page = async () => {
 
   return (
     <Layout profileData={profileData}>
-      <>
-        <Head>
-          <meta name='title' content='Projects of chichoon' />
-          <meta name='description' content='치춘의 프로젝트' />
-          <meta name='keywords' content='Projects Page' />
-        </Head>
-        <BranchListWrapper>
-          <>
-            {projectList.map((project) => (
-              <ProjectElement key={`experience-${project.key}`} project={project} minDay={min} maxDay={max} />
-            ))}
-          </>
-        </BranchListWrapper>
-      </>
+      <BranchListWrapper>
+        <>
+          {projectList.map((project) => (
+            <ProjectElement key={`experience-${project.key}`} project={project} minDay={min} maxDay={max} />
+          ))}
+        </>
+      </BranchListWrapper>
     </Layout>
   );
 };
