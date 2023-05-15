@@ -1,4 +1,4 @@
-export { Layout } from './Layout';
+export { CommonLayout } from './CommonLayout';
 
 export { LinkButton } from './LinkButton';
 export { BadgeList } from './BadgeList';

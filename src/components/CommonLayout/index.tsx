@@ -9,7 +9,7 @@ interface Props {
   profileData: ProfileType;
 }
 
-export const Layout = ({ children, profileData }: Props) => {
+export const CommonLayout = ({ children, profileData }: Props) => {
   const { githubUsername, bioGithubLink } = profileData;
 
   return (
