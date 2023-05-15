@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
-import { BranchListWrapper, Layout, ProjectElement } from '@/components';
-import { getProfile, getProjects } from '@/services';
+import { BranchListWrapper, ProjectElement } from '@/components';
+import { getProjects } from '@/services';
 
 export const metadata: Metadata = {
   title: 'Projects of chichoon',
@@ -10,7 +10,6 @@ export const metadata: Metadata = {
 };
 
 const Page = async () => {
-  const profileData = await getProfile();
   const projectData = await getProjects();
   const projectList = Object.values(projectData);
 
@@ -33,15 +32,13 @@ const Page = async () => {
   const max = endDateYear * 12 * 30 + endDateMonth * 30 + endDateDay;
 
   return (
-    <Layout profileData={profileData}>
-      <BranchListWrapper>
-        <>
-          {projectList.map((project) => (
-            <ProjectElement key={`experience-${project.key}`} project={project} minDay={min} maxDay={max} />
-          ))}
-        </>
-      </BranchListWrapper>
-    </Layout>
+    <BranchListWrapper>
+      <>
+        {projectList.map((project) => (
+          <ProjectElement key={`experience-${project.key}`} project={project} minDay={min} maxDay={max} />
+        ))}
+      </>
+    </BranchListWrapper>
   );
 };
 

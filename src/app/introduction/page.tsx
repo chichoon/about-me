@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 
-import { Layout, Paragraph } from '@/components';
+import { Paragraph } from '@/components';
 import { getProfile } from '@/services';
 
 import styles from './introductionPage.module.scss';
@@ -15,12 +15,10 @@ export const metadata: Metadata = {
 const Page = async () => {
   const data = await getProfile();
   return (
-    <Layout profileData={data}>
-      <>
-        <Image src={data.profileImageRef} alt='Profile' width={200} height={200} className={styles.image} />
-        <Paragraph paragraph={data.summaries} lineGap={25} />
-      </>
-    </Layout>
+    <>
+      <Image src={data.profileImageRef} alt='Profile' width={200} height={200} className={styles.image} />
+      <Paragraph paragraph={data.summaries} lineGap={25} />
+    </>
   );
 };
 

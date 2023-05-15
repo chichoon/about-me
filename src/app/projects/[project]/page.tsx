@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
-import { Layout, ProjectComponent } from '@/components';
-import { getProfile, getProjectByKey } from '@/services';
+import { ProjectComponent } from '@/components';
+import { getProjectByKey } from '@/services';
 
 interface Props {
   params: {
@@ -20,14 +20,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const Page = async ({ params }: Props) => {
-  const profileData = await getProfile();
   const projectData = await getProjectByKey(params.project);
 
-  return (
-    <Layout profileData={profileData}>
-      <ProjectComponent project={projectData} />
-    </Layout>
-  );
+  return <ProjectComponent project={projectData} />;
 };
 
 export default Page;

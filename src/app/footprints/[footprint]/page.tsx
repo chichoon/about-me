@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
-import { FootprintComponent, Layout } from '@/components';
-import { getFootprintByIndex, getProfile } from '@/services';
+import { FootprintComponent } from '@/components';
+import { getFootprintByIndex } from '@/services';
 
 interface Props {
   params: {
@@ -20,14 +20,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const Page = async ({ params }: Props) => {
-  const profileData = await getProfile();
   const footprintData = await getFootprintByIndex(params.footprint);
 
-  return (
-    <Layout profileData={profileData}>
-      <FootprintComponent footprint={footprintData} />
-    </Layout>
-  );
+  return <FootprintComponent footprint={footprintData} />;
 };
 
 export default Page;

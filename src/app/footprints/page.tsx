@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
-import { BranchListWrapper, FootprintElement, Layout } from '@/components';
-import { getFootprints, getProfile } from '@/services';
+import { BranchListWrapper, FootprintElement } from '@/components';
+import { getFootprints } from '@/services';
 
 export const metadata: Metadata = {
   title: 'Footprints of chichoon',
@@ -10,7 +10,6 @@ export const metadata: Metadata = {
 };
 
 const Page = async () => {
-  const profileData = await getProfile();
   const footprintData = await getFootprints();
 
   const date = new Date();
@@ -32,21 +31,19 @@ const Page = async () => {
   const max = endDateYear * 12 * 30 + endDateMonth * 30 + endDateDay;
 
   return (
-    <Layout profileData={profileData}>
-      <BranchListWrapper>
-        <>
-          {footprintData.map((footprint, index) => (
-            <FootprintElement
-              key={`footprint-${footprint.key}`}
-              footprint={footprint}
-              index={index}
-              minDay={min}
-              maxDay={max}
-            />
-          ))}
-        </>
-      </BranchListWrapper>
-    </Layout>
+    <BranchListWrapper>
+      <>
+        {footprintData.map((footprint, index) => (
+          <FootprintElement
+            key={`footprint-${footprint.key}`}
+            footprint={footprint}
+            index={index}
+            minDay={min}
+            maxDay={max}
+          />
+        ))}
+      </>
+    </BranchListWrapper>
   );
 };
 
