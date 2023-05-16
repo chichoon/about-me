@@ -98,3 +98,20 @@
     fill: colors.$GRAY9;
   }
 }
+
+.badgeWrapper {
+  margin-bottom: 5px;
+
+  & > div {
+    margin-bottom: 0;
+    background-color: colors.$WHITE !important;
+
+    & > svg {
+      display: none;
+    }
+
+    & > span {
+      color: colors.$BLACK;
+    }
+  }
+}

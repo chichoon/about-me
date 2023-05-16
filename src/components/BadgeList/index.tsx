@@ -6,11 +6,12 @@ import styles from './badgeList.module.scss';
 interface Props {
   stacks: StackType[];
   isCentered?: boolean;
+  className?: string;
 }
 
-export const BadgeList = ({ stacks, isCentered }: Props) => {
+export const BadgeList = ({ stacks, isCentered, className }: Props) => {
   return (
-    <div className={`${styles.badgeWrapper} ${isCentered ? styles.centered : ''}`}>
+    <div className={`${styles.badgeWrapper} ${isCentered ? styles.centered : ''} ${className ?? ''}`}>
       {stacks.map(({ name, color, logo }) => (
         <div key={`${name}-badge`} style={{ backgroundColor: '#' + color }} className={styles.badge}>
           <SimpleIcon slug={logo} />

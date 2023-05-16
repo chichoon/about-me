@@ -2,6 +2,7 @@ import { ResumeProjectType } from '@/types/resumeData';
 import { ProjectDigestComponent } from './ProjectDigestComponent';
 import { getPeriodString } from '@/utils';
 
+import { BadgeList } from '@/components/BadgeList';
 import { GithubIcon, ShareIcon } from '@/assets/svgs';
 
 import styles from './resumeProjects.module.scss';
@@ -42,6 +43,7 @@ export const ProjectComponent = ({ project }: Props) => {
       </div>
       <div className={styles.digestWrapper}>
         <span>{project.summary}</span>
+        <BadgeList stacks={project.stacks} className={styles.badgeWrapper} />
         <ProjectDigestComponent projectKey={project.key} digest={project.digest ?? []} />
       </div>
     </li>
