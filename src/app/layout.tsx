@@ -1,9 +1,6 @@
 import { Metadata } from 'next';
 import { Noto_Sans_KR } from 'next/font/google';
 
-import { CommonLayout } from '@/components';
-import { getProfile } from '@/services';
-
 import '@/styles/reset.css';
 import '@/styles/global.scss';
 
@@ -48,13 +45,9 @@ export const metadata: Metadata = {
 };
 
 const RootLayout = async ({ children }: Props) => {
-  const profileData = await getProfile();
-
   return (
     <html lang='ko'>
-      <body className={noto.className}>
-        <CommonLayout profileData={profileData}>{children}</CommonLayout>
-      </body>
+      <body className={noto.className}>{children}</body>
     </html>
   );
 };
