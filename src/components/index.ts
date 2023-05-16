@@ -12,4 +12,4 @@ export { ProjectComponent } from './ProjectComponent';
 export { FootprintElement } from './FootprintElement';
 export { FootprintComponent } from './FootprintComponent';
 
-export { ResumeHeader, ResumeIntroduce } from './ResumeComponent';
+export { ResumeHeader, ResumeIntroduce, ResumeFootprints } from './ResumeComponent';
