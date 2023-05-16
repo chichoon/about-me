@@ -1,4 +1,4 @@
-import { ResumeFootprints, ResumeHeader, ResumeIntroduce } from '@/components';
+import { ResumeFootprints, ResumeHeader, ResumeIntroduce, ResumeProjects } from '@/components';
 import { getFootprints, getProfileAsResumeType, getProjectsAsResumeType } from '@/services';
 
 import styles from './resumePage.module.scss';
@@ -13,7 +13,7 @@ const Page = async () => {
       <ResumeHeader profileData={profileData} />
       <main className={styles.mainWrapper}>
         <ResumeIntroduce resumeSummaries={profileData.resumeSummaries} />
-
+        <ResumeProjects projectData={projectData} />
         <ResumeFootprints footprintData={footprintData} />
       </main>
     </>

@@ -1,6 +1,5 @@
 @use '@/styles/constants/colors';
 @use '@/styles/constants/sizes';
-@use '@/styles/responsive';
 
 .footprints {
   width: 100%;
@@ -35,7 +34,7 @@
   }
 }
 
-.footprintTimestampo {
+.footprintTimestamp {
   color: colors.$GRAYA;
   font-size: sizes.$FONT_MS;
   margin-bottom: 15px;
