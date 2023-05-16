@@ -104,14 +104,18 @@
 
   & > div {
     margin-bottom: 0;
+    margin-right: 0;
     background-color: colors.$WHITE !important;
+    padding-left: 0;
 
-    & > svg {
+    & > svg,
+    & > div {
       display: none;
     }
 
     & > span {
       color: colors.$BLACK;
+      margin-left: 0;
     }
   }
 }
