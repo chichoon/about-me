@@ -1,4 +1,4 @@
-import { ResumeHeader } from '@/components';
+import { ResumeHeader, ResumeIntroduce } from '@/components';
 import { getFootprints, getProfileAsResumeType, getProjectsAsResumeType } from '@/services';
 
 import styles from './resumePage.module.scss';
@@ -11,7 +11,9 @@ const Page = async () => {
   return (
     <>
       <ResumeHeader profileData={profileData} />
-      <main className={styles.mainWrapper}>하이</main>
+      <main className={styles.mainWrapper}>
+        <ResumeIntroduce resumeSummaries={profileData.resumeSummaries} />
+      </main>
     </>
   );
 };

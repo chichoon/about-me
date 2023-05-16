@@ -1,4 +1,4 @@
-import { Paragraph } from '../../src/components/Paragraph';
+import { Paragraph } from '../Paragraph';
 import { Section } from './Section';
 
 interface Props {
