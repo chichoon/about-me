@@ -1,5 +1,5 @@
 /* eslint-disable no-await-in-loop */
-import { Octokit } from 'octokit';
+// import { Octokit } from 'octokit';
 
 export async function getGithubStats() {
   return 0;

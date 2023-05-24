@@ -1,0 +1,19 @@
+@use '@/styles/constants/colors';
+@use '@/styles/responsive';
+
+.image {
+  display: none;
+
+  @include responsive.after(M) {
+    display: block;
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 5px colors.$BLACK_TRANSPARENT;
+  }
+
+  @include responsive.after(ML) {
+    float: left;
+    margin-right: 25px;
+  }
+}

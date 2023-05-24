@@ -25,6 +25,7 @@ interface HistoryType {
   fakeDateMonth?: number;
   fakeDateDay?: number;
   summary: string;
+  description: DescriptionType[];
 }
 
 export interface StackType {
@@ -32,16 +33,10 @@ export interface StackType {
   color: string;
   logo?: string;
 }
-
-export interface AchievementsType {
-  title: string;
-  githubLink?: string;
-  link?: LinkType[];
-}
-
 export interface DescriptionType {
   title: string;
   mainText: string | string[];
+  githubLink?: string;
   link?: LinkType[];
 }
 
@@ -54,14 +49,10 @@ export interface ProjectType extends HistoryType {
   githubLink?: string;
   publishedLink?: string;
   stacks: StackType[];
-  description: DescriptionType[];
   technicalSpec?: DescriptionType[];
 }
 
-export interface FootprintType extends HistoryType {
-  description: DescriptionType[];
-  achievements?: AchievementsType[];
-}
+export interface FootprintType extends HistoryType {}
 
 export interface ProjectListType {
   [key: string]: ProjectType;

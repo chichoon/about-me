@@ -1,0 +1,113 @@
+@use '@/styles/constants/colors';
+@use '@/styles/constants/sizes';
+@use '@/styles/constants/levels';
+@use '@/styles/responsive';
+
+.footprintElement {
+  position: absolute;
+  z-index: levels.$SUB_BRANCH;
+  left: 15px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.footprintBranch {
+  position: relative;
+  width: 120px;
+  height: 30px;
+
+  span {
+    position: absolute;
+    left: 15px;
+    top: -5px;
+    font-size: sizes.$FONT_MS;
+    color: colors.$GRAYC;
+    user-select: none;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    background-color: colors.$GRAYC;
+    width: 120px;
+    height: 5px;
+    top: 12.5px;
+    left: 1px;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    border: 5px solid colors.$GRAYC;
+    background-color: colors.$WHITE;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    top: 0;
+    left: -15px;
+  }
+
+  @include responsive.after(ML) {
+    width: 150px;
+
+    span {
+      left: 40px;
+      font-size: sizes.$FONT_M;
+    }
+
+    &:before {
+      width: 120px;
+      left: 30px;
+    }
+
+    &:after {
+      left: 0;
+    }
+  }
+}
+
+.footprintLinkInner {
+  background-color: colors.$WHITE;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 60px;
+  border: 2px solid colors.$GRAYA;
+  border-radius: 5px;
+  transition: opacity 0.2s ease-in;
+  opacity: 0.5;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
+
+  h3 {
+    font-size: sizes.$FONT_MS;
+    margin-bottom: 10px;
+    color: colors.$GRAY6;
+    text-align: center;
+  }
+
+  span {
+    font-size: sizes.$FONT_S;
+    color: colors.$GRAYA;
+  }
+
+  @include responsive.after(ML) {
+    width: 200px;
+    height: 75px;
+
+    h3 {
+      font-size: sizes.$FONT_M;
+    }
+
+    span {
+      font-size: sizes.$FONT_MS;
+    }
+  }
+}

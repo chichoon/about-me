@@ -21,7 +21,7 @@
   "stacks": [
     { "name": "JavaScript", "color": "F7DF1E", "logo": "JavaScript" },
     { "name": "TypeScript", "color": "3178C6", "logo": "TypeScript" },
-    { "name": "HTML5", "color": "F7DF1E", "logo": "HTML5" },
+    { "name": "HTML5", "color": "E34F26", "logo": "HTML5" },
     { "name": "CSS3", "color": "1572B6", "logo": "CSS3" },
     { "name": "Sass", "color": "CC6699", "logo": "Sass" },
     { "name": "React", "color": "61DAFB", "logo": "React" },

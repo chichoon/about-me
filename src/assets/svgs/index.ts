@@ -1,8 +1,5 @@
-import BlogIcon from './blogIcon.svg';
-import EmailIcon from './emailIcon.svg';
-import GithubIcon from './githubIcon.svg';
-import LeftArrowIcon from './leftArrowIcon.svg';
-import HomeIcon from './homeIcon.svg';
-import ShareIcon from './shareIcon.svg';
-
-export { BlogIcon, EmailIcon, GithubIcon, LeftArrowIcon, HomeIcon, ShareIcon };
+export { BlogIcon } from './BlogIcon';
+export { EmailIcon } from './EmailIcon';
+export { GithubIcon } from './GithubIcon';
+export { LeftArrowIcon } from './LeftArrowIcon';
+export { ShareIcon } from './ShareIcon';

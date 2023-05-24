@@ -1,0 +1,50 @@
+@use '@/styles/constants/colors';
+@use '@/styles/constants/sizes';
+@use '@/styles/constants/levels';
+@use '@/styles/responsive';
+
+.projectPageMenu {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 10px;
+  width: calc(100% - 10px);
+  height: sizes.$BRANCH_MAINSTREAM_HEIGHT + 150;
+  overflow-x: scroll;
+
+  &:before {
+    content: '';
+    display: block;
+    z-index: levels.$MAINSTREAM_BRANCH;
+    width: 10px;
+    background: linear-gradient(to top, colors.$GRAY9 90%, colors.$WHITE 100%);
+    height: sizes.$BRANCH_MAINSTREAM_HEIGHT + 100;
+  }
+
+  &:after {
+    content: '';
+    background-color: colors.$WHITE;
+    z-index: levels.$SUB_BRANCH;
+    margin-left: -10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 25px;
+    border: 5px solid colors.$GRAY9;
+  }
+
+  @include responsive.after(ML) {
+    padding-left: 25px;
+    width: 370px;
+
+    &:after {
+      margin-left: -20px;
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  @include responsive.after(LD) {
+    margin-right: 50px;
+  }
+}

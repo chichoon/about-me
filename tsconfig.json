@@ -14,11 +14,15 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
     "paths": {
       "@/*": ["./src/*"]
-    },
-    "jsxImportSource": "@emotion/react" // Add this line.
+    }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/GithubStats/StatusSection/ExpStats"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }

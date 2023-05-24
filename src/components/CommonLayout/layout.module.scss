@@ -1,0 +1,29 @@
+@use '@/styles/constants/colors';
+@use '@/styles/constants/sizes';
+@use '@/styles/responsive';
+
+.mainWrapper {
+  padding: 0 25px;
+
+  @include responsive.after(SD) {
+    padding: 0 100px;
+  }
+}
+
+.mainInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: colors.$WHITE;
+  padding: 25px;
+  border-radius: 5px;
+  overflow-x: hidden;
+
+  @include responsive.after(ML) {
+    display: block;
+  }
+
+  @include responsive.after(SD) {
+    padding: 50px;
+  }
+}

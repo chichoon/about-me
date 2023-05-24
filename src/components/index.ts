@@ -1,12 +1,15 @@
-export { Layout } from './Layout';
-export { ErrorPage404, ErrorPage500 } from './ErrorPage';
+export { CommonLayout } from './CommonLayout';
 
-export { MainPage } from './MainPage';
-export { IntroPage } from './IntroPage';
-export { ProjectsPage } from './ProjectsPage';
-export { ProjectPage } from './ProjectPage';
-export { FootprintsPage } from './FootprintsPage';
-export { FootprintPage } from './FootprintPage';
+export { LinkButton } from './LinkButton';
+export { BadgeList } from './BadgeList';
+export { Paragraph } from './Paragraph';
+export { DescriptionList } from './DescriptionList';
+export { BranchListWrapper } from './BranchListWrapper';
 
-export { GithubStats } from './GithubStats';
-export { ResumePage } from './ResumePage';
+export { ProjectElement } from './ProjectElement';
+export { ProjectComponent } from './ProjectComponent';
+
+export { FootprintElement } from './FootprintElement';
+export { FootprintComponent } from './FootprintComponent';
+
+export { ResumeHeader, ResumeIntroduce, ResumeProjects, ResumeFootprints } from './ResumeComponent';
