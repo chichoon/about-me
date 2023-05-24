@@ -1,4 +1,4 @@
-import { FootprintType, ProjectType } from '@/types/profileData';
+import { FootprintType } from '@/types/profileData';
 import { DescriptionList } from '@/components';
 
 import styles from './descriptionArea.module.scss';

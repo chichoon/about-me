@@ -1,7 +1,5 @@
 {
   "extends": [
-    "airbnb",
-    "airbnb/hooks",
     "react-app",
     "prettier",
     "plugin:react/recommended",
@@ -31,7 +29,6 @@
     "react/function-component-definition": ["warn", { "namedComponents": "arrow-function" }],
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
-    "react/jsx-indent": "warn",
     "react/jsx-props-no-spreading": "off",
     "react/no-array-index-key": "off",
     "react/require-default-props": "off",
