@@ -87,6 +87,26 @@
     ]
   },
   {
+    "key": "opensource",
+    "title": "오픈소스 컨트리뷰션 아카데미 2021",
+    "startDateYear": 2021,
+    "startDateMonth": 7,
+    "endDateYear": 2021,
+    "endDateMonth": 11,
+    "fakeDateMonth": 9,
+    "summary": "KiCad (PCB Design Tool) 한국어 번역",
+    "description": [
+      {
+        "title": "KiCad 한국어 번역 멘티 활동",
+        "mainText": [
+          "활동 기간 동안 총 49110개의 단어 번역, 추가한 글자 수 52589개로 가장 많은 글자수 기여",
+          "이후 리드 멘티로 발탁되어 3달간 꾸준한 번역 질 개선 및 새로운 번역 참여"
+        ],
+        "link": [{ "link": "https://chichoon.tistory.com/90", "title": "KiCad 한국어 번역 챌린저 활동 근황" }]
+      }
+    ]
+  },
+  {
     "key": "42cursus",
     "title": "42 Seoul 본과정\n(Learner)",
     "startDateYear": 2021,
