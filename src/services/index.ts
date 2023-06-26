@@ -11,3 +11,4 @@ export { getFootprintIndexes } from './getFootprintIndexes';
 export { getFootprintByIndex } from './getFootprintByIndex';
 
 export { getCertificates } from './getCertificates';
+export { getCertificatesAsResumeType } from './getCertificatesAsResumeType';
