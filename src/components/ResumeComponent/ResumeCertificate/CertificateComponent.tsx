@@ -1,19 +1,23 @@
-import { CertificateType } from '@/types/certificateData';
+import { ResumeCertificateType } from '@/types/resumeData';
+
+import styles from './resumeCertificate.module.scss';
 
 interface Props {
-  certificate: CertificateType;
+  certificate: ResumeCertificateType;
 }
 
 export const CertificateComponent = ({ certificate }: Props) => {
   const date = `${certificate.year}. ${certificate.month.toString().padStart(2, '0')}`;
 
   return (
-    <li>
-      <div>
+    <li className={styles.certificateWrapper}>
+      <div className={styles.certificateTitle}>
         <h3>{certificate.title}</h3>
         <span>{date}</span>
       </div>
-      <div>{certificate.score}</div>
+      <div className={styles.certificateScore}>
+        <span>{certificate.score}</span>
+      </div>
     </li>
   );
 };
