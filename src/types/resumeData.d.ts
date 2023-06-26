@@ -4,7 +4,7 @@ export interface ResumeProjectListType {
   [key: string]: ResumeProjectType;
 }
 
-export interface ResumeProfileType extends ProfileType {
+export interface ResumeProfileType extends Omit<ProfileType, 'summaries' | 'profileImageRef'> {
   resumeImageRef: string;
   resumeSummaries: string[];
 }
