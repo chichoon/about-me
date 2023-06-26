@@ -1,4 +1,4 @@
-import { ResumeFootprints, ResumeHeader, ResumeIntroduce, ResumeProjects } from '@/components';
+import { ResumeFootprints, ResumeHeader, ResumeIntroduce, ResumeProjects, ResumeCertificate } from '@/components';
 import { getCertificates, getFootprints, getProfileAsResumeType, getProjectsAsResumeType } from '@/services';
 
 import styles from './resumePage.module.scss';
@@ -16,6 +16,7 @@ const Page = async () => {
         <ResumeIntroduce resumeSummaries={profileData.resumeSummaries} />
         <ResumeProjects projectData={projectData} />
         <ResumeFootprints footprintData={footprintData} />
+        <ResumeCertificate certificateData={certificateData} />
       </main>
     </>
   );
