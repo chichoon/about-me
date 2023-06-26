@@ -9,3 +9,6 @@ export { getProjectsAsResumeType } from './getProjectsAsResumeType';
 export { getFootprints } from './getFootprints';
 export { getFootprintIndexes } from './getFootprintIndexes';
 export { getFootprintByIndex } from './getFootprintByIndex';
+
+export { getCertificates } from './getCertificates';
+export { getCertificatesAsResumeType } from './getCertificatesAsResumeType';

@@ -1,10 +1,11 @@
+import { CertificateType } from './certificateData';
 import { ProfileType, ProjectType } from './profileData';
 
 export interface ResumeProjectListType {
   [key: string]: ResumeProjectType;
 }
 
-export interface ResumeProfileType extends ProfileType {
+export interface ResumeProfileType extends Omit<ProfileType, 'summaries' | 'profileImageRef'> {
   resumeImageRef: string;
   resumeSummaries: string[];
 }
@@ -16,4 +17,8 @@ export interface ResumeProjectType extends ProjectType {
 interface DigestType {
   description: string;
   link?: string[];
+}
+
+export interface ResumeCertificateType extends CertificateType {
+  isVisible?: boolean;
 }
