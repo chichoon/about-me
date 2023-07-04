@@ -1,11 +1,11 @@
-import { FootprintType } from '@/types/profileData';
+import { ResumeFootprintType } from '@/types/resumeData';
 import { FootprintComponent } from './FootprintComponent';
 import { Section } from '../Section';
 
 import styles from './resumeFootprints.module.scss';
 
 interface Props {
-  footprintData: FootprintType[];
+  footprintData: ResumeFootprintType[];
 }
 
 export const ResumeFootprints = ({ footprintData }: Props) => {

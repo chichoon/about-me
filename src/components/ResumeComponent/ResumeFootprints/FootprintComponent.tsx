@@ -1,11 +1,11 @@
-import { FootprintType } from '@/types/profileData';
+import { ResumeFootprintType } from '@/types/resumeData';
 import { getPeriodString } from '@/utils';
 import { DigestComponent } from '../DigestComponent';
 
 import styles from './resumeFootprints.module.scss';
 
 interface Props {
-  footprint: FootprintType;
+  footprint: ResumeFootprintType;
 }
 
 export const FootprintComponent = ({ footprint }: Props) => {
@@ -27,7 +27,9 @@ export const FootprintComponent = ({ footprint }: Props) => {
         <span>{footprint.summary}</span>
       </div>
       <span className={styles.footprintTimestamp}>{periodString}</span>
-      {footprint.digest && <DigestComponent elementKey={footprint.title} digest={footprint.digest} />}
+      {footprint.digest && (
+        <DigestComponent elementKey={footprint.title} digest={footprint.digest} className={styles.footprintDigest} />
+      )}
     </li>
   );
 };

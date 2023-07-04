@@ -1,6 +1,11 @@
 import { Metadata } from 'next';
 import { ResumeFootprints, ResumeHeader, ResumeIntroduce, ResumeProjects, ResumeCertificate } from '@/components';
-import { getCertificates, getFootprints, getProfileAsResumeType, getProjectsAsResumeType } from '@/services';
+import {
+  getCertificates,
+  getFootprintsAsResumeType,
+  getProfileAsResumeType,
+  getProjectsAsResumeType,
+} from '@/services';
 
 import styles from './resumePage.module.scss';
 
@@ -15,7 +20,7 @@ export const metadata: Metadata = {
 const Page = async () => {
   const profileData = await getProfileAsResumeType();
   const projectData = await getProjectsAsResumeType();
-  const footprintData = await getFootprints();
+  const footprintData = await getFootprintsAsResumeType();
   const certificateData = await getCertificates();
 
   return (
