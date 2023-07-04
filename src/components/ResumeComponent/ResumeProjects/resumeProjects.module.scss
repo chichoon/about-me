@@ -71,7 +71,7 @@
 }
 
 .badgeWrapper {
-  margin-bottom: 5px;
+  margin-bottom: 0;
 
   & > div {
     margin-bottom: 0;
@@ -89,4 +89,8 @@
       margin-left: 0;
     }
   }
+}
+
+.projectDigest {
+  margin-top: 10px;
 }
