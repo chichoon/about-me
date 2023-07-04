@@ -7,6 +7,7 @@ import { getTopOffsetPercentage } from '@/utils';
 import { GithubIcon, ShareIcon } from '@/assets/svgs';
 
 import styles from './projectElement.module.scss';
+import { LinkButton } from '../LinkButton';
 
 interface Props {
   project: ProjectType;
@@ -50,9 +51,7 @@ export const ProjectElement = ({ project, minDay, maxDay }: Props) => {
         <a href={githubLink} target='_blank'>
           <GithubIcon />
         </a>
-        <a href={publishedLink} target='_blank'>
-          <ShareIcon />
-        </a>
+        {publishedLink && <LinkButton href={publishedLink} size={20} />}
       </div>
     </li>
   );

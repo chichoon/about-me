@@ -6,6 +6,7 @@ import { BadgeList } from '@/components/BadgeList';
 import { GithubIcon, ShareIcon } from '@/assets/svgs';
 
 import styles from './resumeProjects.module.scss';
+import { LinkButton } from '@/components/LinkButton';
 
 interface Props {
   project: ResumeProjectType;
@@ -34,11 +35,7 @@ export const ProjectComponent = ({ project }: Props) => {
               <GithubIcon />
             </a>
           )}
-          {project.publishedLink && (
-            <a href={project.publishedLink} target='_blank'>
-              <ShareIcon />
-            </a>
-          )}
+          {project.publishedLink && <LinkButton href={project.publishedLink} size={20} />}
         </div>
       </div>
       <div className={styles.digestWrapper}>

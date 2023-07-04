@@ -3,9 +3,10 @@ import Image from 'next/image';
 import { ProjectType } from '@/types/profileData';
 import { getPeriodString } from '@/utils';
 
-import { GithubIcon, ShareIcon } from '@/assets/svgs';
+import { GithubIcon } from '@/assets/svgs';
 
 import styles from './projectInfoHeader.module.scss';
+import { LinkButton } from '../LinkButton';
 
 interface Props {
   project: ProjectType;
@@ -43,11 +44,7 @@ export const ProjectInfoHeader = ({ project }: Props) => {
           <a href={githubLink} target='_blank'>
             <GithubIcon />
           </a>
-          {publishedLink && (
-            <a href={publishedLink} target='_blank'>
-              <ShareIcon />
-            </a>
-          )}
+          {publishedLink && <LinkButton href={publishedLink} size={30} />}
         </div>
         <span>{periodString}</span>
       </div>
