@@ -54,7 +54,6 @@
     "endDateMonth": 12,
     "endDateDay": 16,
     "githubLink": "https://github.com/boostcampwm-2022/web25-SCOPA",
-    "publishedLink": "https://scopa.ga",
     "stacks": [
       { "name": "TypeScript", "color": "3178C6", "logo": "TypeScript" },
       { "name": "Recoil", "color": "000000" },
