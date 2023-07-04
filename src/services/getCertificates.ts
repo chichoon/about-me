@@ -1,4 +1,4 @@
-import { CertificateType } from '@/types/certificateData';
+import { CertificateType } from '@/types/profileData';
 
 import certificates from '@/assets/data/certificateInfo.json';
 
