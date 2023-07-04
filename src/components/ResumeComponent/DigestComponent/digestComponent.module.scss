@@ -7,9 +7,9 @@
   li {
     list-style: square;
     margin-bottom: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    // display: flex;
+    // flex-direction: row;
+    // align-items: center;
   }
 
   li:last-child {
@@ -25,4 +25,5 @@
 
 .linkButton {
   margin-left: 5px;
+  transform: translateY(2px);
 }
