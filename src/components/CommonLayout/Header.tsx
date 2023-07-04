@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import { NavBar } from './NavBar';
-import { GithubButton } from '..';
+import { GithubButton } from '@/components';
 
 import { BlogIcon, EmailIcon } from '@/assets/svgs';
 

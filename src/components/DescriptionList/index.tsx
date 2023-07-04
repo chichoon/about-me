@@ -1,7 +1,7 @@
 import { DescriptionType } from '@/types/profileData';
 
 import { ShareIcon } from '@/assets/svgs';
-import { GithubButton } from '..';
+import { GithubButton } from '@/components';
 
 import styles from './descriptionList.module.scss';
 
