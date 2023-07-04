@@ -1,3 +1,5 @@
+import cx from 'classnames';
+
 import { ShareIcon } from '@/assets/svgs';
 
 import styles from './button.module.scss';
@@ -10,7 +12,7 @@ interface Props {
 
 export const LinkButton = ({ href, size = 15, className }: Props) => {
   return (
-    <a href={href} className={`${styles.link} ${className}`} target='_blank' style={{ width: size, height: size }}>
+    <a href={href} className={cx(styles.link, className)} target='_blank' style={{ width: size, height: size }}>
       <ShareIcon />
     </a>
   );

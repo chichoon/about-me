@@ -1,3 +1,4 @@
+import cx from 'classnames';
 import { LinkButton } from '@/components';
 
 import styles from './digestComponent.module.scss';
@@ -8,11 +9,12 @@ interface Props {
     description: string;
     link?: string[];
   }[];
+  className?: string;
 }
 
-export const DigestComponent = ({ elementKey, digest }: Props) => {
+export const DigestComponent = ({ elementKey, digest, className }: Props) => {
   return (
-    <ul className={styles.listWrapper}>
+    <ul className={cx(styles.listWrapper, className)}>
       {digest.map(({ description, link }, index) => (
         <li key={`${elementKey}-${index}`}>
           <span>{description}</span>

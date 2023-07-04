@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useState } from 'react';
+import cx from 'classnames';
 
 import { ProjectType } from '@/types/profileData';
 import { DescriptionList } from '@/components';
@@ -36,7 +37,7 @@ export const DescriptionArea = ({ project }: Props) => {
                 <button
                   type='button'
                   onClick={handleClickTab(index)}
-                  className={`${styles.tabListButtonWrapper} ${index === selectedTabIndex ? styles.selected : ''}`}
+                  className={cx(styles.tabListButtonWrapper, { [styles.selected]: index === selectedTabIndex })}
                 >
                   <span>{tabName}</span>
                 </button>

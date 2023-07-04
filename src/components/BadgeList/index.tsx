@@ -1,3 +1,5 @@
+import cx from 'classnames';
+
 import { SimpleIcon } from '../SimpleIcon';
 import { StackType } from '@/types/profileData';
 
@@ -11,7 +13,7 @@ interface Props {
 
 export const BadgeList = ({ stacks, isCentered, className }: Props) => {
   return (
-    <div className={`${styles.badgeWrapper} ${isCentered ? styles.centered : ''} ${className ?? ''}`}>
+    <div className={cx(styles.badgeWrapper, { [styles.centered]: isCentered }, className)}>
       {stacks.map(({ name, color, logo }) => (
         <div key={`${name}-badge`} style={{ backgroundColor: '#' + color }} className={styles.badge}>
           <SimpleIcon slug={logo} />
