@@ -87,19 +87,6 @@
     line-height: calc(sizes.$FONT_MS + 4px);
     font-size: sizes.$FONT_MS;
   }
-
-  a {
-    width: 15px;
-    height: 15px;
-    display: inline-block;
-    margin-left: 5px;
-  }
-
-  svg {
-    width: 15px;
-    height: 15px;
-    fill: colors.$GRAY9;
-  }
 }
 
 .badgeWrapper {

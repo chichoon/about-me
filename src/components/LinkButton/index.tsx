@@ -1,17 +1,16 @@
-import Link from 'next/link';
+import { ShareIcon } from '@/assets/svgs';
 
 import styles from './linkButton.module.scss';
 
 interface Props {
-  children: JSX.Element;
   href: string;
   className?: string;
 }
 
-export const LinkButton = ({ children, href, className }: Props) => {
+export const LinkButton = ({ href, className }: Props) => {
   return (
-    <Link href={href} className={`${styles.link} ${className}`}>
-      {children}
-    </Link>
+    <a href={href} className={`${styles.link} ${className}`} target='_blank'>
+      <ShareIcon />
+    </a>
   );
 };

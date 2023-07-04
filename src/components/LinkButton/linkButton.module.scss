@@ -1,13 +1,14 @@
 @use '@/styles/constants/colors';
 
 .link {
-  border: 1px solid colors.$GRAYA;
-  width: fit-content;
-  padding: 10px 15px;
-  border-radius: 5px;
-  transition: background-color 0.2s ease-in;
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  margin-left: 5px;
 
-  &:hover {
-    background-color: colors.$GRAYE;
+  svg {
+    width: 15px;
+    height: 15px;
+    fill: colors.$GRAY9;
   }
 }

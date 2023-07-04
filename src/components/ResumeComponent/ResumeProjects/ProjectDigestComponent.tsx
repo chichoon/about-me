@@ -1,4 +1,5 @@
 import { ShareIcon } from '@/assets/svgs';
+import { LinkButton } from '@/components/LinkButton';
 
 import styles from './resumeProjects.module.scss';
 
@@ -17,9 +18,7 @@ export const ProjectDigestComponent = ({ projectKey, digest }: Props) => {
         <li key={`${projectKey}-${index}`}>
           <span>{description}</span>
           {link?.map((href, linkIndex) => (
-            <a href={href} key={`${projectKey}-${index}-${linkIndex}`} target='_blank'>
-              <ShareIcon />
-            </a>
+            <LinkButton href={href} key={`${projectKey}-${index}-${linkIndex}`} />
           ))}
         </li>
       ))}
