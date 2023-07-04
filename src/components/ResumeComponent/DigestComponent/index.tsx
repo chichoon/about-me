@@ -19,7 +19,7 @@ export const DigestComponent = ({ elementKey, digest, className }: Props) => {
         <li key={`${elementKey}-${index}`}>
           <span>{description}</span>
           {link?.map((href, linkIndex) => (
-            <LinkButton href={href} key={`${elementKey}-${index}-${linkIndex}`} />
+            <LinkButton href={href} key={`${elementKey}-${index}-${linkIndex}`} className={styles.linkButton} />
           ))}
         </li>
       ))}
