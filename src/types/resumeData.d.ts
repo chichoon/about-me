@@ -16,7 +16,7 @@ export interface ResumeProjectType
 
 export interface ResumeFootprintType
   extends Omit<FootprintType, 'fakeDateYear' | 'fakeDateMonth' | 'fakeDateDay' | 'description' | 'imageRef'> {
-  digest?: DigestType;
+  digest?: DigestType[];
 }
 
 interface DigestType {
