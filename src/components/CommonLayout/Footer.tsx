@@ -1,4 +1,4 @@
-import { GithubIcon } from '@/assets/svgs';
+import { GithubButton } from '@/components';
 
 import styles from './footer.module.scss';
 
@@ -11,9 +11,7 @@ export const Footer = ({ githubUsername, bioGithubLink }: Props) => {
   return (
     <footer className={styles.footerWrapper}>
       <span>© 2022 {githubUsername}</span>
-      <a href={bioGithubLink} target='_blank'>
-        <GithubIcon />
-      </a>
+      <GithubButton href={bioGithubLink} size={20} />
     </footer>
   );
 };

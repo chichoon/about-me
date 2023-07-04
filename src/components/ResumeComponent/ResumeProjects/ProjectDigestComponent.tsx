@@ -1,5 +1,4 @@
-import { ShareIcon } from '@/assets/svgs';
-import { LinkButton } from '@/components/LinkButton';
+import { LinkButton } from '@/components';
 
 import styles from './resumeProjects.module.scss';
 

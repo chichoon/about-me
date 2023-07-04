@@ -1,12 +1,10 @@
 import { ResumeProjectType } from '@/types/resumeData';
-import { ProjectDigestComponent } from './ProjectDigestComponent';
 import { getPeriodString } from '@/utils';
-
 import { BadgeList } from '@/components/BadgeList';
-import { GithubIcon, ShareIcon } from '@/assets/svgs';
+import { LinkButton, GithubButton } from '@/components';
+import { ProjectDigestComponent } from './ProjectDigestComponent';
 
 import styles from './resumeProjects.module.scss';
-import { LinkButton } from '@/components/LinkButton';
 
 interface Props {
   project: ResumeProjectType;
@@ -30,11 +28,7 @@ export const ProjectComponent = ({ project }: Props) => {
         <h3>{project.title}</h3>
         <span>{periodString}</span>
         <div className={styles.linkWrapper}>
-          {project.githubLink && (
-            <a href={project.githubLink} target='_blank'>
-              <GithubIcon />
-            </a>
-          )}
+          {project.githubLink && <GithubButton href={project.githubLink} size={20} />}
           {project.publishedLink && <LinkButton href={project.publishedLink} size={20} />}
         </div>
       </div>

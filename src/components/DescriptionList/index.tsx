@@ -1,6 +1,7 @@
 import { DescriptionType } from '@/types/profileData';
 
-import { GithubIcon, ShareIcon } from '@/assets/svgs';
+import { ShareIcon } from '@/assets/svgs';
+import { GithubButton } from '..';
 
 import styles from './descriptionList.module.scss';
 
@@ -15,11 +16,7 @@ export const DescriptionList = ({ descriptionData }: Props) => {
         <li key={`description-${index}`} className={styles.descriptionElement}>
           <div className={styles.descriptionInnerLeft}>
             <h5>{title}</h5>
-            {githubLink && (
-              <a href={githubLink} target='_blank' className={styles.githubLinkStyle}>
-                <GithubIcon />
-              </a>
-            )}
+            {githubLink && <GithubButton href={githubLink} className={styles.githubLinkStyle} size={20} />}
           </div>
           {Array.isArray(mainText) ? (
             <ul className={styles.descriptionInnerList}>

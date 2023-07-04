@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 
-import { BadgeList, LinkButton } from '@/components';
+import { BadgeList } from '@/components';
 import { getProfile } from '@/services';
 
 import styles from './mainPage.module.scss';

@@ -1,6 +1,6 @@
 import { ShareIcon } from '@/assets/svgs';
 
-import styles from './linkButton.module.scss';
+import styles from './button.module.scss';
 
 interface Props {
   href: string;
