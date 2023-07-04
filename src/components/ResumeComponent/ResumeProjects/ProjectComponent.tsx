@@ -2,7 +2,7 @@ import { ResumeProjectType } from '@/types/resumeData';
 import { getPeriodString } from '@/utils';
 import { BadgeList } from '@/components/BadgeList';
 import { LinkButton, GithubButton } from '@/components';
-import { ProjectDigestComponent } from './ProjectDigestComponent';
+import { DigestComponent } from '../DigestComponent';
 
 import styles from './resumeProjects.module.scss';
 
@@ -35,7 +35,7 @@ export const ProjectComponent = ({ project }: Props) => {
       <div className={styles.digestWrapper}>
         <span>{project.summary}</span>
         <BadgeList stacks={project.stacks} className={styles.badgeWrapper} />
-        <ProjectDigestComponent projectKey={project.key} digest={project.digest ?? []} />
+        {project.digest && <DigestComponent elementKey={project.key} digest={project.digest} />}
       </div>
     </li>
   );

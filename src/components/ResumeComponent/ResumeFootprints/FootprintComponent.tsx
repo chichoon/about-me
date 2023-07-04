@@ -1,5 +1,6 @@
 import { FootprintType } from '@/types/profileData';
 import { getPeriodString } from '@/utils';
+import { DigestComponent } from '../DigestComponent';
 
 import styles from './resumeFootprints.module.scss';
 
@@ -26,6 +27,7 @@ export const FootprintComponent = ({ footprint }: Props) => {
         <span>{footprint.summary}</span>
       </div>
       <span className={styles.footprintTimestamp}>{periodString}</span>
+      {footprint.digest && <DigestComponent elementKey={footprint.title} digest={footprint.digest} />}
     </li>
   );
 };

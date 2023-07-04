@@ -1,23 +1,23 @@
 import { LinkButton } from '@/components';
 
-import styles from './resumeProjects.module.scss';
+import styles from './digestComponent.module.scss';
 
 interface Props {
-  projectKey: string;
+  elementKey: string;
   digest: {
     description: string;
     link?: string[];
   }[];
 }
 
-export const ProjectDigestComponent = ({ projectKey, digest }: Props) => {
+export const DigestComponent = ({ elementKey, digest }: Props) => {
   return (
     <ul className={styles.listWrapper}>
       {digest.map(({ description, link }, index) => (
-        <li key={`${projectKey}-${index}`}>
+        <li key={`${elementKey}-${index}`}>
           <span>{description}</span>
           {link?.map((href, linkIndex) => (
-            <LinkButton href={href} key={`${projectKey}-${index}-${linkIndex}`} />
+            <LinkButton href={href} key={`${elementKey}-${index}-${linkIndex}`} />
           ))}
         </li>
       ))}
