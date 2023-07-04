@@ -64,3 +64,11 @@ export interface ProjectTimestampType {
   year: number;
   month: number;
 }
+
+export interface CertificateType {
+  key: string;
+  title: string;
+  year: number;
+  month: number;
+  score?: string;
+}

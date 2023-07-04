@@ -1,5 +1,4 @@
-import { CertificateType } from './certificateData';
-import { ProfileType, ProjectType } from './profileData';
+import { CertificateType, ProfileType, ProjectType } from './profileData';
 
 export interface ResumeProjectListType {
   [key: string]: ResumeProjectType;
