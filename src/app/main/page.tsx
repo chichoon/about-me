@@ -1,9 +1,7 @@
 import { Metadata } from 'next';
 
-import { BadgeList, LinkButton } from '@/components';
+import { BadgeList } from '@/components';
 import { getProfile } from '@/services';
-
-import styles from './mainPage.module.scss';
 
 export const metadata: Metadata = {
   title: 'About chichoon',
@@ -16,11 +14,6 @@ const Page = async () => {
   return (
     <>
       <BadgeList stacks={data.stacks} isCentered />
-      <div className={styles.buttonWrapper}>
-        <LinkButton href='/resume'>
-          <span>이력서 보러가기</span>
-        </LinkButton>
-      </div>
     </>
   );
 };

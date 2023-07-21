@@ -1,8 +1,9 @@
 import Image from 'next/image';
 
 import { NavBar } from './NavBar';
+import { GithubButton } from '@/components';
 
-import { BlogIcon, EmailIcon, GithubIcon } from '@/assets/svgs';
+import { BlogIcon, EmailIcon } from '@/assets/svgs';
 
 import styles from './header.module.scss';
 
@@ -32,9 +33,7 @@ export const Header = ({ name, email, oneLineBio, githubUsername, blogLink }: Pr
             <a href={`mailto:${email}`} target='_blank'>
               <EmailIcon />
             </a>
-            <a href={`https://github.com/${githubUsername}`} target='_blank'>
-              <GithubIcon />
-            </a>
+            <GithubButton href={`https://github.com/${githubUsername}`} size={25} />
             <a href={blogLink} target='_blank'>
               <BlogIcon />
             </a>

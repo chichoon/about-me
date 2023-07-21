@@ -1,6 +1,6 @@
 'use client';
-
 import Link from 'next/link';
+import cx from 'classnames';
 import { usePathname } from 'next/navigation';
 
 import styles from './navBar.module.scss';
@@ -10,19 +10,19 @@ export const NavBar = () => {
 
   return (
     <nav className={styles.navTabs}>
-      <Link href='/' className={`${styles.tab} ${pathname.startsWith('/main') ? styles.selected : ''}`}>
+      <Link href='/' className={cx(styles.tab, { [styles.selected]: pathname.startsWith('/main') })}>
         <span>홈</span>
       </Link>
       <Link
         href='/introduction'
-        className={`${styles.tab} ${pathname.startsWith('/introduction') ? styles.selected : ''}`}
+        className={cx(styles.tab, { [styles.selected]: pathname.startsWith('/introduction') })}
       >
         <span>소개</span>
       </Link>
-      <Link href='/projects' className={`${styles.tab} ${pathname.startsWith('/projects') ? styles.selected : ''}`}>
+      <Link href='/projects' className={cx(styles.tab, { [styles.selected]: pathname.startsWith('/projects') })}>
         <span>프로젝트</span>
       </Link>
-      <Link href='/footprints' className={`${styles.tab} ${pathname.startsWith('/footprints') ? styles.selected : ''}`}>
+      <Link href='/footprints' className={cx(styles.tab, { [styles.selected]: pathname.startsWith('/footprints') })}>
         <span>발자취</span>
       </Link>
     </nav>

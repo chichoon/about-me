@@ -33,6 +33,7 @@ export interface StackType {
   color: string;
   logo?: string;
 }
+
 export interface DescriptionType {
   title: string;
   mainText: string | string[];
@@ -58,9 +59,10 @@ export interface ProjectListType {
   [key: string]: ProjectType;
 }
 
-export interface ProjectTimestampType {
+export interface CertificateType {
   key: string;
   title: string;
   year: number;
   month: number;
+  score?: string;
 }

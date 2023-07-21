@@ -3,8 +3,7 @@ import Image from 'next/image';
 
 import { ProjectType } from '@/types/profileData';
 import { getTopOffsetPercentage } from '@/utils';
-
-import { GithubIcon, ShareIcon } from '@/assets/svgs';
+import { LinkButton, GithubButton } from '@/components';
 
 import styles from './projectElement.module.scss';
 
@@ -47,12 +46,8 @@ export const ProjectElement = ({ project, minDay, maxDay }: Props) => {
         <Image src={imageRef ?? ''} width={160} height={50} alt={`${key}-logo`} className={styles.coverImage} />
       </Link>
       <div className={styles.sideIcon}>
-        <a href={githubLink} target='_blank'>
-          <GithubIcon />
-        </a>
-        <a href={publishedLink} target='_blank'>
-          <ShareIcon />
-        </a>
+        {githubLink && <GithubButton href={githubLink} size={20} />}
+        {publishedLink && <LinkButton href={publishedLink} size={20} />}
       </div>
     </li>
   );
